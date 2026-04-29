@@ -1,0 +1,107 @@
+import { AnimatePresence, motion } from 'framer-motion'
+import { Brain, Upload, Calendar, BarChart3, UserCheck } from 'lucide-react'
+import Card from '../components/ui/Card'
+import GradientText from '../components/ui/GradientText'
+import SectionTag from '../components/ui/SectionTag'
+import { fadeUp, stagger } from '../lib/animations'
+
+interface Props { step: number }
+
+const reqs = [
+  {
+    icon: <Brain size={18} />,
+    id: 'FR-06',
+    title: 'AI Match Scoring',
+    items: ['Deterministic skill-overlap engine', 'Score: 0–100 with explanation', 'Strengths & weaknesses breakdown', 'Applied at submission time'],
+    color: '#00B8B3',
+  },
+  {
+    icon: <Upload size={18} />,
+    id: 'FR-07',
+    title: 'CV Parsing',
+    items: ['PDF / DOCX / TXT support', 'Gemini 2.5-flash extraction', 'Structured JSON output', 'Auto pre-fills candidate profile'],
+    color: '#0087F8',
+  },
+  {
+    icon: <UserCheck size={18} />,
+    id: 'FR-08',
+    title: 'Candidate Onboarding',
+    items: ['Anonymous apply-with-CV flow', 'Profile completeness scoring', 'Semantic embedding generation', 'Email verification'],
+    color: '#6D28D9',
+  },
+  {
+    icon: <Calendar size={18} />,
+    id: 'FR-09',
+    title: 'Interview Scheduling',
+    items: ['Interview CRUD with type flags', 'Linked to application record', 'Interviewer assignment', 'Status tracking'],
+    color: '#FEC849',
+  },
+  {
+    icon: <BarChart3 size={18} />,
+    id: 'FR-10',
+    title: 'Analytics Dashboard',
+    items: ['Pipeline funnel metrics', 'Score distribution charts', 'Time-to-hire tracking', 'Per-job + global analytics'],
+    color: '#FE595A',
+  },
+]
+
+export default function FuncReqAI({ step }: Props) {
+  return (
+    <div className="slide-root">
+      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col gap-5">
+
+        {/* Header */}
+        <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
+          <motion.div variants={fadeUp}>
+            <SectionTag section="Functional Requirements" number="4" />
+          </motion.div>
+          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+            AI & analytics <GradientText variant="teal">requirements</GradientText>
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-xl">
+            FR-06 through FR-10 define the intelligence layer — the core differentiator that elevates PEAXIS above traditional ATS tools.
+          </motion.p>
+        </motion.div>
+
+        {/* Requirements grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {reqs.map((r, i) => (
+            <AnimatePresence key={r.id}>
+              {step >= Math.floor(i / 2) + 1 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: (i % 2) * 0.08 }}
+                  className={i === 4 ? 'col-span-2 md:col-span-1' : ''}
+                >
+                  <Card variant="elevated" className="p-4 h-full">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div
+                        className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                        style={{ background: `${r.color}15`, color: r.color, border: `1px solid ${r.color}25` }}
+                      >
+                        {r.icon}
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-mono text-px-muted">{r.id}</span>
+                        <p className="text-xs font-bold text-px-navy leading-tight">{r.title}</p>
+                      </div>
+                    </div>
+                    <ul className="space-y-1">
+                      {r.items.map((item) => (
+                        <li key={item} className="flex items-start gap-1.5 text-[11px] text-px-muted">
+                          <div className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0" style={{ background: r.color }} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}

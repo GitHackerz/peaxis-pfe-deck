@@ -1,0 +1,131 @@
+import { AnimatePresence, motion } from 'framer-motion'
+import { Eye, Lightbulb, Puzzle } from 'lucide-react'
+import Card from '../components/ui/Card'
+import GradientText from '../components/ui/GradientText'
+import SectionTag from '../components/ui/SectionTag'
+import { fadeUp, stagger } from '../lib/animations'
+
+interface Props { step: number }
+
+const gaps = [
+  {
+    icon: <Eye size={20} />,
+    title: 'AI black boxes',
+    body: '"This candidate scored 72" — but why? Recruiters cannot act on scores they cannot explain. Bias complaints follow.',
+    color: '#FE595A',
+  },
+  {
+    icon: <Puzzle size={20} />,
+    title: 'Fragmented tooling',
+    body: 'Notion for job specs. Greenhouse for pipeline. Calendly for interviews. Zero integration — context lost at every handoff.',
+    color: '#FEC849',
+  },
+  {
+    icon: <Lightbulb size={20} />,
+    title: 'No candidate intelligence',
+    body: 'Existing tools track applications. None actively guide recruiters on who to advance, how to interview, or what risks to flag.',
+    color: '#6D28D9',
+  },
+]
+
+const marketStats = [
+  { value: '$1.2B', label: 'HR Tech VC funding in 2024' },
+  { value: '23%', label: 'CAGR of AI Recruitment market' },
+  { value: '78%', label: 'HR leaders plan AI adoption in 2025' },
+]
+
+export default function MarketGap({ step }: Props) {
+  return (
+    <div className="slide-root">
+      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col gap-6">
+
+        {/* Header */}
+        <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
+          <motion.div variants={fadeUp}>
+            <SectionTag section="The Problem" number="3" />
+          </motion.div>
+          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+            The market gap:{' '}
+            <GradientText variant="teal">intelligent + integrated + explainable</GradientText>
+          </motion.h2>
+        </motion.div>
+
+        {/* Gap cards */}
+        <AnimatePresence>
+          {step >= 1 && (
+            <div className="grid grid-cols-3 gap-4">
+              {gaps.map((g, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <Card variant="elevated" className="p-5 h-full flex flex-col gap-3">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: `${g.color}12`, color: g.color, border: `1px solid ${g.color}25` }}
+                    >
+                      {g.icon}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-px-navy mb-1.5">{g.title}</p>
+                      <p className="text-xs text-px-muted leading-relaxed">{g.body}</p>
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </AnimatePresence>
+
+        {/* Market stats */}
+        <AnimatePresence>
+          {step >= 2 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-3 gap-3"
+            >
+              {marketStats.map((s, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.08 }}
+                  className="p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)] text-center"
+                >
+                  <div className="text-2xl font-extrabold text-px-teal">{s.value}</div>
+                  <div className="text-xs text-px-muted mt-0.5">{s.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* PEAXIS answer */}
+        <AnimatePresence>
+          {step >= 3 && (
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center gap-4 p-4 rounded-xl border"
+              style={{ background: 'linear-gradient(135deg, #E6FAF9, #F8FAFC)', borderColor: 'rgba(0,184,179,0.2)' }}
+            >
+              <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                style={{ background: 'linear-gradient(135deg, #00B8B3, #44C4F6)' }}>
+                <Lightbulb size={18} className="text-white" />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-px-navy">PEAXIS fills this exact gap</p>
+                <p className="text-xs text-px-muted">AI scores are explainable. Tools are integrated. The candidate experience is first-class. That's the OS layer missing from the market.</p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  )
+}

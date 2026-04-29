@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── PEAXIS Light Design System ───────────────────────────────────────── */
+:root {
+  --bg:           #F8FAFC;
+  --surface:      #FFFFFF;
+  --card:         #FFFFFF;
+  --teal:         #00B8B3;
+  --teal-lt:      #E6FAF9;
+  --teal-dk:      #009E9A;
+  --coral:        #FE595A;
+  --coral-lt:     #FFF0F0;
+  --yellow:       #FEC849;
+  --yellow-lt:    #FFFBEB;
+  --navy:         #001027;
+  --navy-lt:      #0E2A47;
+  --muted:        #6B7280;
+  --muted-lt:     #9CA3AF;
+  --border:       rgba(0, 0, 0, 0.08);
+  --border-med:   rgba(0, 0, 0, 0.12);
+  --border-strong:rgba(0, 0, 0, 0.18);
+  --radius:       0.75rem;
+  --ease-out:     cubic-bezier(0.22, 1, 0.36, 1);
+
+  --gradient-teal:  linear-gradient(135deg, #00B8B3, #44C4F6);
+  --gradient-coral: linear-gradient(135deg, #FE595A, #FEC849);
+  --gradient-navy:  linear-gradient(135deg, #001027, #0E2A47);
+  --gradient-full:  linear-gradient(135deg, #00B8B3, #44C4F6, #0087F8);
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────────── */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--navy);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Card styles ───────────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.card-teal {
+  background: var(--teal-lt);
+  border: 1px solid rgba(0,184,179, 0.2);
+  border-radius: var(--radius);
+}
+
+.card-elevated {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+}
+
+/* ─── Gradient text ─────────────────────────────────────────────────────── */
+.gradient-text-teal {
+  background: var(--gradient-teal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-coral {
+  background: var(--gradient-coral);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-navy {
+  background: var(--gradient-navy);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Gradient border ───────────────────────────────────────────────────── */
+.gradient-border-teal {
+  position: relative;
+}
+.gradient-border-teal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient-teal);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ─── Section accent bar ────────────────────────────────────────────────── */
+.section-bar {
+  width: 3px;
+  height: 100%;
+  background: var(--gradient-teal);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ─── Slide root ────────────────────────────────────────────────────────── */
+.slide-root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+/* ─── Section divider slide ─────────────────────────────────────────────── */
+.slide-section {
+  background: linear-gradient(135deg, #001027 0%, #0E2A47 60%, #003344 100%);
+  color: white;
+}
+
+/* ─── @page rule for Playwright PDF ──────────────────────────────────────  */
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+
+/* ─── Export mode ───────────────────────────────────────────────────────── */
+body.export-mode,
+body.export-mode #root {
+  width:    1280px;
+  height:   auto;
+  overflow: visible;
+}
+
+body.export-mode .gradient-border-teal::before {
+  display: none !important;
+}
+body.export-mode .gradient-border-teal {
+  border: 1px solid rgba(0, 184, 179, 0.40) !important;
+}
+
+body.export-mode *,
+body.export-mode *::before,
+body.export-mode *::after {
+  animation-duration:   0ms !important;
+  animation-delay:      0ms !important;
+  transition-duration:  0ms !important;
+  transition-delay:     0ms !important;
+  animation-fill-mode:  forwards !important;
+}
+
+.export-page {
+  position:        relative;
+  width:           1280px;
+  height:          720px;
+  overflow:        hidden;
+  page-break-after: always;
+  break-after:      page;
+}
+
+.export-page .slide-root {
+  width:   1280px !important;
+  height:  720px  !important;
+  padding: 2rem   !important;
+}
+
+.export-bg {
+  position: absolute;
+  inset:    0;
+  background: var(--bg);
+  z-index:  0;
+}
+
+.export-bg-dark {
+  position: absolute;
+  inset:    0;
+  background: #001027;
+  z-index:  0;
+}
