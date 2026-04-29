@@ -47,7 +47,7 @@ export default function Cover({ step: _step }: Props) {
         <motion.div
           variants={fadeUp}
           className="w-16 h-[3px] rounded-full"
-          style={{ background: 'linear-gradient(90deg, #00B8B3, #44C4F6)' }}
+          style={{ background: '#00B8B3' }}
         />
 
         {/* Student info */}
@@ -67,7 +67,7 @@ export default function Cover({ step: _step }: Props) {
             className="w-2 h-2 rounded-full animate-pulse"
             style={{ background: '#00B8B3' }}
           />
-          <span className="text-sm font-medium text-px-navy">Full-Stack Engineer · AI Integration · Platform Architect</span>
+          <span className="text-sm font-medium text-px-navy">Software Engineering Intern · Full-Stack &amp; AI Systems Architect</span>
         </motion.div>
 
         {/* Bottom row: tech tags */}
@@ -84,7 +84,7 @@ export default function Cover({ step: _step }: Props) {
       </motion.div>
 
       {/* Bottom geometric decoration */}
-      <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, transparent, #00B8B3, #44C4F6, transparent)' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, transparent, #00B8B3, transparent)' }} />
     </div>
   )
 }

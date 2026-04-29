@@ -6,6 +6,7 @@ import LoadingScreen from './components/layout/LoadingScreen'
 import Logo from './components/layout/Logo'
 import Navigation from './components/layout/Navigation'
 import ProgressBar from './components/layout/ProgressBar'
+import SmallScreenBlocker from './components/layout/SmallScreenBlocker'
 import ExportView from './ExportView'
 import { usePresentation } from './hooks/usePresentation'
 import { slideVariants } from './lib/animations'
@@ -92,6 +93,7 @@ function PresentationApp() {
 
   return (
     <>
+      <SmallScreenBlocker />
       <AnimatePresence>
         {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>

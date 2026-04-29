@@ -7,18 +7,18 @@ interface Props { step: number }
 
 // Docker service nodes
 const services = [
-  { name: 'peaxis-hire', port: '3000', tech: 'Next.js', color: '#6D28D9', network: 'frontend' },
-  { name: 'peaxis-jobs', port: '3001', tech: 'Next.js', color: '#6D28D9', network: 'frontend' },
-  { name: 'peaxis-api', port: '4000', tech: 'NestJS', color: '#0087F8', network: 'backend' },
+  { name: 'peaxis-hire', port: '3000', tech: 'Next.js', color: '#374151', network: 'frontend' },
+  { name: 'peaxis-jobs', port: '3001', tech: 'Next.js', color: '#374151', network: 'frontend' },
+  { name: 'peaxis-api', port: '4000', tech: 'NestJS', color: '#00B8B3', network: 'backend' },
   { name: 'peaxis-ai', port: '8000', tech: 'FastAPI', color: '#00B8B3', network: 'backend' },
-  { name: 'postgres', port: '5432', tech: 'PostgreSQL', color: '#34D399', network: 'data' },
-  { name: 'redis', port: '6379', tech: 'Redis', color: '#FE595A', network: 'data' },
+  { name: 'postgres', port: '5432', tech: 'PostgreSQL', color: '#374151', network: 'data' },
+  { name: 'redis', port: '6379', tech: 'Redis', color: '#374151', network: 'data' },
 ]
 
 const networks = [
-  { id: 'frontend', label: 'frontend-net', color: '#6D28D9', services: ['peaxis-hire', 'peaxis-jobs', 'peaxis-api'] },
-  { id: 'backend', label: 'backend-net', color: '#0087F8', services: ['peaxis-api', 'peaxis-ai', 'postgres', 'redis'] },
-  { id: 'data', label: 'data-net', color: '#34D399', services: ['postgres', 'redis'] },
+  { id: 'frontend', label: 'frontend-net', color: '#374151', services: ['peaxis-hire', 'peaxis-jobs', 'peaxis-api'] },
+  { id: 'backend', label: 'backend-net', color: '#00B8B3', services: ['peaxis-api', 'peaxis-ai', 'postgres', 'redis'] },
+  { id: 'data', label: 'data-net', color: '#001027', services: ['postgres', 'redis'] },
 ]
 
 export default function PhysicalArch({ step }: Props) {
@@ -109,7 +109,7 @@ export default function PhysicalArch({ step }: Props) {
             >
               <span className="font-bold text-px-navy">Exposed to host:</span>
               {[':3000 (Hire)', ':3001 (Jobs)', ':4000 (API)', ':8000 (AI)', ':5432 (PG dev)', ':6379 (Redis dev)'].map((p) => (
-                <code key={p} className="font-mono text-[#0087F8] bg-[#EFF6FF] px-1.5 py-0.5 rounded">{p}</code>
+                <code key={p} className="font-mono text-[#009E9A] bg-[#E6FAF9] px-1.5 py-0.5 rounded">{p}</code>
               ))}
             </motion.div>
           )}

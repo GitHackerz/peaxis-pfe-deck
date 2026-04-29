@@ -13,14 +13,14 @@ const reqs = [
     id: 'FR-01',
     title: 'Authentication & Security',
     items: ['Email/password with Argon2 hashing', 'OAuth2: Google + LinkedIn', 'JWT access (15m) + refresh (7d)', 'Rate limiting: 1000 req/60s'],
-    color: '#0087F8',
+    color: '#00B8B3',
   },
   {
     icon: <Users size={18} />,
     id: 'FR-02',
     title: 'Multi-Tenant Architecture',
     items: ['Business-scoped data isolation', 'X-Business-ID header enforcement', 'User ↔ Business join table', 'Unique business slug routing'],
-    color: '#6D28D9',
+    color: '#00B8B3',
   },
   {
     icon: <Key size={18} />,
@@ -34,14 +34,14 @@ const reqs = [
     id: 'FR-04',
     title: 'Job Management',
     items: ['Full CRUD with rich filters', 'Semantic search via pgvector', 'Auto embedding generation', 'Type, location, salary, skills filters'],
-    color: '#FEC849',
+    color: '#00B8B3',
   },
   {
     icon: <GitBranch size={18} />,
     id: 'FR-05',
     title: 'Application Pipeline',
     items: ['6-stage: Applied→Screening→Interview→Offer→Hired/Rejected', 'Stage transition history', 'AI scoring at application time', 'Recruiter kanban view'],
-    color: '#FE595A',
+    color: '#00B8B3',
   },
 ]
 

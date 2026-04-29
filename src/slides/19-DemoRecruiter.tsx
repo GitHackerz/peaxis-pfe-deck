@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import GradientText from '../components/ui/GradientText'
-import ScreenshotFrame from '../components/ui/ScreenshotFrame'
+import WorkspaceMockup from '../components/mockups/WorkspaceMockup'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
 
@@ -38,11 +38,7 @@ export default function DemoRecruiter({ step }: Props) {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.55 }}
               >
-                <ScreenshotFrame
-                  src="/screenshots/hire-pipeline.png"
-                  alt="PEAXIS Hire — Pipeline Kanban"
-                  caption="Pipeline view — drag cards between stages, click to open Candidate Drawer"
-                />
+                <WorkspaceMockup />
               </motion.div>
             )}
           </AnimatePresence>

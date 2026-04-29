@@ -9,8 +9,8 @@ interface Props { step: number }
 
 const stats = [
   { value: '42 days', label: 'Average time-to-hire', sub: 'SHRM 2024', color: '#FE595A' },
-  { value: '75%', label: 'Recruiters overwhelmed by CV volume', sub: 'LinkedIn Talent Report', color: '#FEC849' },
-  { value: '60%', label: 'Candidates ghost after poor UX', sub: 'Indeed Survey 2023', color: '#6D28D9' },
+  { value: '75%', label: 'Recruiters overwhelmed by CV volume', sub: 'LinkedIn Talent Report', color: '#001027' },
+  { value: '60%', label: 'Candidates ghost after poor UX', sub: 'Indeed Survey 2023', color: '#6B7280' },
 ]
 
 const pains = [
@@ -24,13 +24,13 @@ const pains = [
     icon: <AlertTriangle size={20} />,
     title: 'Bias & inconsistency',
     body: 'Manual screening introduces unconscious bias and inconsistent evaluation criteria across reviewers and hiring rounds.',
-    color: '#FEC849',
+    color: '#001027',
   },
   {
     icon: <UserX size={20} />,
     title: 'Candidate friction',
     body: 'Long applications, no feedback, and opaque processes cause top talent to abandon their candidacies before completion.',
-    color: '#6D28D9',
+    color: '#6B7280',
   },
 ]
 
@@ -107,18 +107,26 @@ export default function RecruitmentPain({ step }: Props) {
           )}
         </AnimatePresence>
 
-        {/* Bottom insight */}
+        {/* Bottom insight with regional relevance */}
         <AnimatePresence>
           {step >= 3 && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#FFF0F0] border border-[rgba(254,89,90,0.2)]"
+              className="grid grid-cols-2 gap-3"
             >
-              <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#FE595A]" />
-              <p className="text-sm text-px-navy">
-                <strong>The result:</strong> companies lose an average of <strong>$14,900</strong> per bad hire, while top candidates accept competing offers in less than 10 days.
-              </p>
+              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#FFF0F0] border border-[rgba(254,89,90,0.2)]">
+                <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#FE595A]" />
+                <p className="text-xs text-px-navy">
+                  <strong>Global impact:</strong> companies lose an average of <strong>$14,900</strong> per bad hire, while top candidates accept competing offers in under 10 days.
+                </p>
+              </div>
+              <div className="flex items-center gap-3 px-4 py-3 rounded-xl border" style={{ background: '#F3F4F6', borderColor: 'rgba(0,0,0,0.07)' }}>
+                <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#6B7280]" />
+                <p className="text-xs text-px-navy">
+                  <strong>Regional context:</strong> In Tunisia &amp; North Africa, growing SMEs rely on spreadsheets and informal networks — modern ATS adoption remains critically low among early-stage companies.
+                </p>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

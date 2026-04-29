@@ -11,22 +11,20 @@ const steps = [
     num: '01',
     actor: 'Browser',
     action: 'HTTP request → NestJS :4000',
-    detail: 'JWT Bearer + X-Business-ID header validated',
-    color: '#6D28D9',
+    color: '#FE595A',
   },
   {
     num: '02',
     actor: 'API',
     action: 'Guard chain: JwtAuthGuard → PlanGuard',
-    detail: 'Business scoping enforced, plan features checked',
-    color: '#0087F8',
+    color: '#374151',
   },
   {
     num: '03',
     actor: 'Queue (async)',
     action: 'Heavy ops → BullMQ → Redis queue',
     detail: 'Embedding generation, AI scoring, analysis',
-    color: '#FEC849',
+    color: '#374151',
   },
   {
     num: '04',
@@ -39,8 +37,7 @@ const steps = [
     num: '05',
     actor: 'Database',
     action: 'Prisma write → PostgreSQL',
-    detail: 'AI result persisted via API layer, never direct',
-    color: '#34D399',
+    color: '#001027',
   },
 ]
 
@@ -76,7 +73,7 @@ export default function DataFlow({ step }: Props) {
                   {/* Step number */}
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-extrabold flex-shrink-0"
-                    style={{ background: `linear-gradient(135deg, ${s.color}, ${s.color}CC)` }}
+                    style={{ background: s.color }}
                   >
                     {s.num}
                   </div>

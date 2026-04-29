@@ -9,42 +9,58 @@ interface Props { step: number }
 const comparison = [
   {
     feature: 'AI-powered candidate ranking',
+    manual: false,
     legacy: false,
+    fragmented: 'partial',
     modern: true,
   },
   {
     feature: 'Explainable match scores',
+    manual: false,
     legacy: false,
+    fragmented: false,
     modern: true,
   },
   {
     feature: 'Automatic CV parsing',
+    manual: false,
     legacy: false,
+    fragmented: 'partial',
     modern: true,
   },
   {
     feature: 'Candidate-facing portal',
+    manual: false,
     legacy: 'basic',
+    fragmented: 'basic',
     modern: true,
   },
   {
     feature: 'Real-time analytics pipeline',
+    manual: false,
     legacy: false,
+    fragmented: false,
     modern: true,
   },
   {
     feature: 'Semantic job search',
+    manual: false,
     legacy: false,
+    fragmented: false,
     modern: true,
   },
   {
     feature: 'Hiring copilot / AI assistant',
+    manual: false,
     legacy: false,
+    fragmented: false,
     modern: true,
   },
   {
     feature: 'Multi-tenant SaaS architecture',
+    manual: false,
     legacy: 'partial',
+    fragmented: false,
     modern: true,
   },
 ]
@@ -66,7 +82,7 @@ function StatusCell({ value }: { value: boolean | string }) {
   )
   return (
     <div className="flex justify-center">
-      <span className="text-[10px] text-[#B78300] font-medium px-2 py-0.5 rounded-full bg-[#FFFBEB] border border-[rgba(254,200,73,0.3)]">
+      <span className="text-[10px] text-[#6B7280] font-medium px-2 py-0.5 rounded-full bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)]">
         {value}
       </span>
     </div>
@@ -84,10 +100,10 @@ export default function ATSLimitations({ step }: Props) {
             <SectionTag section="The Problem" number="3" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Legacy ATS tools are <GradientText variant="coral">not enough</GradientText>
+            Manual workflows, legacy ATS &amp; fragmented stacks are <GradientText variant="coral">not enough</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-xl">
-            Traditional Applicant Tracking Systems were built to store applications — not to intelligently process them.
+            From spreadsheets to traditional ATS to stitched-together SaaS tools — none deliver the AI-native intelligence modern hiring requires.
           </motion.p>
         </motion.div>
 
@@ -101,9 +117,11 @@ export default function ATSLimitations({ step }: Props) {
               className="bg-white rounded-2xl border border-[var(--border)] overflow-hidden shadow-sm"
             >
               {/* Table header */}
-              <div className="grid grid-cols-[1fr_140px_140px] px-5 py-3 bg-[#F8FAFC] border-b border-[var(--border)]">
+              <div className="grid grid-cols-[1fr_100px_100px_100px_100px] px-5 py-3 bg-[#F8FAFC] border-b border-[var(--border)]">
                 <span className="text-xs font-bold text-px-muted uppercase tracking-wider">Capability</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-center" style={{ color: '#9CA3AF' }}>Manual</span>
                 <span className="text-xs font-bold text-[#FE595A] uppercase tracking-wider text-center">Legacy ATS</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-center" style={{ color: '#6B7280' }}>Fragmented</span>
                 <span className="text-xs font-bold text-[#00B8B3] uppercase tracking-wider text-center">PEAXIS</span>
               </div>
 
@@ -115,10 +133,12 @@ export default function ATSLimitations({ step }: Props) {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: (i % 4) * 0.06 }}
-                      className="grid grid-cols-[1fr_140px_140px] px-5 py-2.5 border-b border-[var(--border)] last:border-b-0 hover:bg-[#F8FAFC] transition-colors"
+                      className="grid grid-cols-[1fr_100px_100px_100px_100px] px-5 py-2.5 border-b border-[var(--border)] last:border-b-0 hover:bg-[#F8FAFC] transition-colors"
                     >
                       <span className="text-sm text-px-navy">{row.feature}</span>
+                      <StatusCell value={row.manual} />
                       <StatusCell value={row.legacy} />
+                      <StatusCell value={row.fragmented} />
                       <StatusCell value={row.modern} />
                     </motion.div>
                   )}

@@ -40,7 +40,7 @@ export const SLIDES: SlideConfig[] = [
   { id: 'demo-candidate',      steps: 3, label: 'Demo: Jobs'     },
   { id: 'demo-ai',             steps: 3, label: 'Demo: AI'       },
   // §11 Results
-  { id: 'achievements',        steps: 4, label: 'Results'        },
+  { id: 'achievements',        steps: 5, label: 'Results'        },
   { id: 'roadmap',             steps: 3, label: 'Roadmap'        },
   // §12 Conclusion
   { id: 'challenges',          steps: 3, label: 'Challenges'     },

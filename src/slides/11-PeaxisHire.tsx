@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { BarChart3, Brain, Edit, Kanban } from 'lucide-react'
 import Badge from '../components/ui/Badge'
+import WorkspaceMockup from '../components/mockups/WorkspaceMockup'
 import GradientText from '../components/ui/GradientText'
-import ScreenshotFrame from '../components/ui/ScreenshotFrame'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
 
@@ -77,11 +77,7 @@ export default function PeaxisHire({ step }: Props) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.55 }}
               >
-                <ScreenshotFrame
-                  src="/screenshots/hire-dashboard.png"
-                  alt="PEAXIS Hire — Job Workspace"
-                  caption="Job Workspace: Pipeline Kanban + Candidate Drawer + AI Insights"
-                />
+                <WorkspaceMockup />
               </motion.div>
             )}
           </AnimatePresence>

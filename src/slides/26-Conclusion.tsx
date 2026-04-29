@@ -6,10 +6,11 @@ import { cinemaEntrance, fadeUp } from '../lib/animations'
 interface Props { step: number }
 
 const summary = [
-  { label: 'Problem solved', value: 'AI-powered hiring with full explainability + end-to-end platform' },
+  { label: 'Problem solved', value: 'AI-powered hiring with full explainability + end-to-end platform — addressing SME recruitment inefficiencies in Tunisia & globally' },
   { label: 'Tech stack', value: 'Next.js · NestJS · FastAPI · PostgreSQL + pgvector · Redis · BullMQ · Gemini · Stripe' },
   { label: 'Architecture', value: '4 microservices · Multi-tenant SaaS · Queue-based AI pipeline · Cache-first strategy' },
   { label: 'Delivered', value: '14 API modules · 60+ endpoints · 6 AI features · 4 Docker services · Production-ready' },
+  { label: 'Internship context', value: 'Developed independently during 6-month internship at Prospecter · SaaS & AI architecture principles transferred from sales to HR tech domain' },
 ]
 
 export default function Conclusion({ step: _step }: Props) {
@@ -72,14 +73,15 @@ export default function Conclusion({ step: _step }: Props) {
         >
           <p className="text-base font-bold text-px-navy">BIBANI Mohamed Habib Allah</p>
           <p className="text-sm text-px-muted">École Supérieure Privée d'Ingénierie et de Technologie — ESPRIT</p>
+          <p className="text-xs text-px-teal font-medium mt-1">Internship at Prospecter · AI Sales SaaS → AI Hiring Platform</p>
         </motion.div>
 
         {/* Bottom teal bar */}
-        <div className="w-16 h-[3px] rounded-full" style={{ background: 'linear-gradient(90deg, #00B8B3, #44C4F6)' }} />
+        <div className="w-16 h-[3px] rounded-full bg-[#00B8B3]" />
       </div>
 
       {/* Bottom gradient line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, transparent, #00B8B3, #44C4F6, transparent)' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, transparent, #00B8B3, transparent)' }} />
     </div>
   )
 }

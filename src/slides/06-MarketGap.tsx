@@ -18,13 +18,13 @@ const gaps = [
     icon: <Puzzle size={20} />,
     title: 'Fragmented tooling',
     body: 'Notion for job specs. Greenhouse for pipeline. Calendly for interviews. Zero integration — context lost at every handoff.',
-    color: '#FEC849',
+    color: '#6B7280',
   },
   {
     icon: <Lightbulb size={20} />,
     title: 'No candidate intelligence',
     body: 'Existing tools track applications. None actively guide recruiters on who to advance, how to interview, or what risks to flag.',
-    color: '#6D28D9',
+    color: '#001027',
   },
 ]
 
@@ -94,9 +94,9 @@ export default function MarketGap({ step }: Props) {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.08 }}
-                  className="p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)] text-center"
+                  className="p-3 rounded-xl bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)] text-center"
                 >
-                  <div className="text-2xl font-extrabold text-px-teal">{s.value}</div>
+                  <div className="text-2xl font-extrabold text-px-navy">{s.value}</div>
                   <div className="text-xs text-px-muted mt-0.5">{s.label}</div>
                 </motion.div>
               ))}
@@ -115,7 +115,7 @@ export default function MarketGap({ step }: Props) {
               style={{ background: 'linear-gradient(135deg, #E6FAF9, #F8FAFC)', borderColor: 'rgba(0,184,179,0.2)' }}
             >
               <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ background: 'linear-gradient(135deg, #00B8B3, #44C4F6)' }}>
+                style={{ background: '#E6FAF9' }}>
                 <Lightbulb size={18} className="text-white" />
               </div>
               <div>

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Brain, Calendar, Code2, Layers } from 'lucide-react'
+import { ArrowRight, Brain, Calendar, Code2, Lightbulb, Layers } from 'lucide-react'
 import Badge from '../components/ui/Badge'
 import Card from '../components/ui/Card'
 import GradientText from '../components/ui/GradientText'
@@ -18,21 +18,21 @@ const contributions = [
   {
     icon: <Brain size={18} />,
     area: 'AI Integration',
-    items: ['FastAPI AI microservice', 'CV parsing (Gemini)', 'Match scoring engine', 'Hiring Copilot', 'JD Generator'],
-    color: '#0087F8',
+    items: ['FastAPI AI microservice', 'CV parsing (Gemini)', 'Match scoring engine', 'Hiring Copilot · JD Generator'],
+    color: '#374151',
   },
   {
     icon: <Code2 size={18} />,
     area: 'Platform Engineering',
     items: ['Docker dev + prod setup', 'Prisma schema + migrations', 'pgvector semantic search', 'Stripe billing integration'],
-    color: '#6D28D9',
+    color: '#374151',
   },
 ]
 
 export default function InternshipContext({ step }: Props) {
   return (
     <div className="slide-root">
-      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col gap-6">
+      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col gap-5">
 
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
@@ -40,31 +40,76 @@ export default function InternshipContext({ step }: Props) {
             <SectionTag section="Internship Context" number="2" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Building PEAXIS from <GradientText variant="teal">day zero</GradientText>
+            From <GradientText variant="teal">AI Sales</GradientText> Infrastructure
+            {' '}to <GradientText variant="teal">AI Hiring</GradientText> Infrastructure
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-xl">
-            A 6-month final year internship starting December 22 — sole engineer responsible for design, architecture, and full implementation.
+          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
+            A 6-month final year internship at Prospecter — sole engineer responsible for design, architecture, and full implementation of PEAXIS.
           </motion.p>
         </motion.div>
 
-        {/* Timeline strip */}
+        {/* Cross-domain innovation bridge */}
         <AnimatePresence>
           {step >= 1 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center gap-2 p-4 rounded-xl bg-white border border-[var(--border)] shadow-sm"
+              className="flex items-center gap-3 p-4 rounded-xl bg-white border border-[var(--border)] shadow-sm"
             >
-              <Calendar size={16} className="text-px-teal flex-shrink-0" />
+              <div className="flex items-center gap-3 flex-1">
+                {/* Left: Prospecter context */}
+                <div className="flex flex-col gap-1 p-3 rounded-xl flex-1" style={{ background: '#E6FAF9', border: '1px solid rgba(0,184,179,0.2)' }}>
+                  <p className="text-[10px] font-bold text-px-teal uppercase tracking-wider">Prospecter environment</p>
+                  {['LLM pipeline architecture', 'Multi-tenant SaaS patterns', 'Redis caching strategies', 'AI-as-a-service design'].map((item) => (
+                    <div key={item} className="flex items-center gap-1.5">
+                      <div className="w-1 h-1 rounded-full bg-[#00B8B3]" />
+                      <span className="text-[10px] text-px-navy">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Arrow + bridge */}
+                <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                  <Lightbulb size={16} className="text-px-teal" />
+                  <ArrowRight size={18} className="text-px-teal" />
+                  <span className="text-[9px] font-bold text-px-muted uppercase tracking-wider">Cross-domain</span>
+                  <span className="text-[9px] font-bold text-px-muted uppercase tracking-wider">Innovation</span>
+                </div>
+
+                {/* Right: PEAXIS output */}
+                <div className="flex flex-col gap-1 p-3 rounded-xl flex-1" style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.07)' }}>
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-px-navy">PEAXIS innovation</p>
+                  {['AI-powered CV parsing & scoring', 'Explainable hiring decisions', 'Async background workers', 'Candidate-facing portal UX'].map((item) => (
+                    <div key={item} className="flex items-center gap-1.5">
+                      <div className="w-1 h-1 rounded-full bg-[#001027]" />
+                      <span className="text-[10px] text-px-navy">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Timeline strip */}
+        <AnimatePresence>
+          {step >= 1 && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex items-center gap-2 p-3 rounded-xl bg-white border border-[var(--border)] shadow-sm"
+            >
+              <Calendar size={14} className="text-px-teal flex-shrink-0" />
               <div className="flex items-center gap-3 flex-1 overflow-x-auto">
                 {[
-                  { date: 'Dec 22', label: 'Kickoff', color: '#00B8B3' },
-                  { date: 'Jan', label: 'Architecture design', color: '#0087F8' },
-                  { date: 'Feb', label: 'Core API + Auth', color: '#6D28D9' },
-                  { date: 'Mar', label: 'AI service + pipeline', color: '#FEC849' },
-                  { date: 'Apr', label: 'Frontends + billing', color: '#FE595A' },
-                  { date: 'May', label: 'Polish + defense prep', color: '#34D399' },
+                  { date: 'Dec 22', label: 'Kickoff · Prospecter', color: '#00B8B3' },
+                  { date: 'Jan', label: 'Architecture design', color: '#374151' },
+                  { date: 'Feb', label: 'Core API + Auth', color: '#374151' },
+                  { date: 'Mar', label: 'AI service + pipeline', color: '#374151' },
+                  { date: 'Apr', label: 'Frontends + billing', color: '#374151' },
+                  { date: 'May', label: 'Polish + defense prep', color: '#009E9A' },
                 ].map((m, i) => (
                   <div key={i} className="flex items-center gap-1.5 flex-shrink-0">
                     {i > 0 && <div className="w-6 h-[1px] bg-gray-200" />}
@@ -124,7 +169,7 @@ export default function InternshipContext({ step }: Props) {
               animate={{ opacity: 1 }}
               className="flex items-center gap-2"
             >
-              <Badge variant="teal">Full-Stack Engineer</Badge>
+              <Badge variant="teal">Software Engineering Intern</Badge>
               <Badge variant="navy">AI Integration</Badge>
               <Badge variant="gray">Platform Architect</Badge>
               <Badge variant="outline">Solo Contributor</Badge>

@@ -28,7 +28,7 @@ const nfrs = [
     id: 'NFR-03',
     title: 'Performance',
     detail: 'Redis 3-layer caching (embeddings 7d, CV parse 30d, AI results 24h). Sub-200ms API p95. Async BullMQ for heavy operations.',
-    color: '#0087F8',
+    color: '#374151',
     metric: 'p95 < 200ms',
   },
   {
@@ -36,7 +36,7 @@ const nfrs = [
     id: 'NFR-04',
     title: 'Availability',
     detail: 'Preferred-region retries in SDK. BullMQ retry logic. Docker health checks. Graceful degradation on AI service downtime.',
-    color: '#6D28D9',
+    color: '#374151',
     metric: '99.5% target SLA',
   },
   {
@@ -44,7 +44,7 @@ const nfrs = [
     id: 'NFR-05',
     title: 'Explainability',
     detail: 'Every AI score exposes: numeric value, label (Strong/Good/Weak), matched skills, missing skills, and a plain-language explanation.',
-    color: '#FEC849',
+    color: '#001027',
     metric: 'Full audit trail',
   },
   {
@@ -52,7 +52,7 @@ const nfrs = [
     id: 'NFR-06',
     title: 'Modularity',
     detail: 'NestJS feature modules. Independent AI service. Decoupled frontend apps. BullMQ workers isolated from request handlers.',
-    color: '#34D399',
+    color: '#00B8B3',
     metric: 'Microservices',
   },
   {
@@ -60,7 +60,7 @@ const nfrs = [
     id: 'NFR-07',
     title: 'Cost Optimization',
     detail: 'Gemini Flash for fast tasks. GPT-4.1-mini for quality outputs. Redis caching prevents redundant LLM calls. Docker resource limits.',
-    color: '#EC4899',
+    color: '#374151',
     metric: 'Cache-first AI',
   },
 ]

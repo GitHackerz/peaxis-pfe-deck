@@ -39,20 +39,30 @@ const roadmap: { label: string; items: { text: string; status: Status }[] }[] = 
     ],
   },
   {
-    label: 'Phase 4 — Future (Planned)',
+    label: 'Phase 4 — Near-term (Realistic)',
     items: [
-      { text: 'Video interview integration', status: 'planned' },
       { text: 'Email notification system', status: 'active' },
-      { text: 'Candidate referral engine', status: 'planned' },
       { text: 'GDPR compliance toolkit', status: 'planned' },
+      { text: 'API rate limiting per plan', status: 'planned' },
+      { text: 'End-to-end Playwright tests', status: 'planned' },
+      { text: 'Candidate referral engine', status: 'planned' },
+    ],
+  },
+  {
+    label: 'Phase 5 — Long-term (Visionary)',
+    items: [
+      { text: 'Video interview + AI scoring', status: 'planned' },
       { text: 'Mobile-first candidate app', status: 'planned' },
+      { text: 'Predictive attrition modeling', status: 'planned' },
+      { text: 'Multi-region deployment', status: 'planned' },
+      { text: 'Enterprise SSO + audit logs', status: 'planned' },
     ],
   },
 ]
 
 const statusColor: Record<Status, { bg: string; text: string; label: string }> = {
   done:    { bg: '#E6FAF9', text: '#009E9A', label: 'Done' },
-  active:  { bg: '#FFFBEB', text: '#B78300', label: 'In Progress' },
+  active:  { bg: '#F3F4F6', text: '#001027', label: 'In Progress' },
   planned: { bg: '#F3F4F6', text: '#6B7280', label: 'Planned' },
 }
 
@@ -77,7 +87,7 @@ export default function Roadmap({ step }: Props) {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="grid grid-cols-4 gap-3"
+              className="grid grid-cols-5 gap-3"
             >
               {roadmap.map((phase, pi) => (
                 <motion.div
@@ -90,9 +100,9 @@ export default function Roadmap({ step }: Props) {
                   {/* Phase header */}
                   <div
                     className="px-3 py-2 border-b border-[var(--border)]"
-                    style={{ background: pi === 3 ? '#F8FAFC' : '#E6FAF9' }}
+                    style={{ background: pi >= 3 ? '#F8FAFC' : '#E6FAF9' }}
                   >
-                    <p className="text-[10px] font-bold" style={{ color: pi === 3 ? '#6B7280' : '#009E9A' }}>
+                    <p className="text-[10px] font-bold" style={{ color: pi >= 3 ? '#6B7280' : '#009E9A' }}>
                       {phase.label}
                     </p>
                   </div>

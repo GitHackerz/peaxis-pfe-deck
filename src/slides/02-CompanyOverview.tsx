@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Building2, Layers, Target, Users } from 'lucide-react'
+import { BarChart2, Bot, Building2, Target, Zap } from 'lucide-react'
 import Badge from '../components/ui/Badge'
 import Card from '../components/ui/Card'
 import GradientText from '../components/ui/GradientText'
@@ -10,32 +10,32 @@ interface Props { step: number }
 
 const pillars = [
   {
-    icon: <Layers size={18} />,
-    title: 'PEAXIS Core',
-    body: 'NestJS REST API — central data authority, auth, billing, multi-tenant isolation',
+    icon: <Bot size={18} />,
+    title: 'AI SDR Engine',
+    body: 'Autonomous AI sales development rep — qualifies leads, drafts outreach, and orchestrates follow-up sequences at scale.',
     color: '#00B8B3',
     bg: '#E6FAF9',
   },
   {
-    icon: <Building2 size={18} />,
-    title: 'PEAXIS Hire',
-    body: 'Next.js recruiter dashboard — pipeline Kanban, AI insights, analytics',
-    color: '#0087F8',
-    bg: '#EFF6FF',
-  },
-  {
-    icon: <Users size={18} />,
-    title: 'PEAXIS Jobs',
-    body: 'Next.js candidate portal — job discovery, CV upload, application tracking',
-    color: '#6D28D9',
-    bg: '#F5F3FF',
-  },
-  {
     icon: <Target size={18} />,
-    title: 'AI Brain',
-    body: 'FastAPI service — CV parsing, match scoring, hiring copilot, JD generation',
-    color: '#FE595A',
-    bg: '#FFF0F0',
+    title: 'Lead Intelligence',
+    body: 'Enriches prospect data with firmographics, intent signals, and behavioural triggers to prioritise highest-value targets.',
+    color: '#374151',
+    bg: '#F3F4F6',
+  },
+  {
+    icon: <Zap size={18} />,
+    title: 'Outbound Automation',
+    body: 'Multi-channel sequences (email, LinkedIn) with LLM personalisation — zero manual copy-paste prospecting.',
+    color: '#374151',
+    bg: '#F3F4F6',
+  },
+  {
+    icon: <BarChart2 size={18} />,
+    title: 'Pipeline Analytics',
+    body: 'Real-time conversion tracking, A/B testing for messaging, and CRM-sync to close the loop from prospect to revenue.',
+    color: '#374151',
+    bg: '#F3F4F6',
   },
 ]
 
@@ -50,10 +50,10 @@ export default function CompanyOverview({ step }: Props) {
             <SectionTag section="Company Presentation" number="2" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
-            What is <GradientText variant="teal">PEAXIS</GradientText>?
+            <GradientText variant="teal">Prospecter</GradientText> — Internship Host Company
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
-            A modular SaaS recruitment platform that combines AI-powered hiring intelligence with a best-in-class candidate experience — built from scratch during this PFE.
+            An AI-powered B2B sales prospecting platform — automating outbound pipeline generation for growth-stage companies through autonomous AI SDR technology.
           </motion.p>
         </motion.div>
 
@@ -64,20 +64,27 @@ export default function CompanyOverview({ step }: Props) {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-[#E6FAF9] to-[#F8FAFC] border border-[rgba(0,184,179,0.15)]"
+              className="flex items-start gap-3 p-4 rounded-xl bg-gradient-to-r from-[#E6FAF9] to-[#F8FAFC] border border-[rgba(0,184,179,0.15)]"
             >
-              <div className="w-1 h-10 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(180deg, #00B8B3, #44C4F6)' }} />
-              <div>
-                <p className="text-xs font-bold text-px-teal uppercase tracking-widest mb-0.5">Mission</p>
-                <p className="text-sm font-semibold text-px-navy">
-                  Eliminate hiring friction for growing companies by making every recruitment decision faster, smarter, and explainable.
-                </p>
+              <div className="w-1 h-14 rounded-full flex-shrink-0 mt-0.5" style={{ background: '#00B8B3' }} />
+              <div className="flex flex-col gap-2">
+                <div>
+                  <p className="text-xs font-bold text-px-teal uppercase tracking-widest mb-0.5">Mission</p>
+                  <p className="text-sm font-semibold text-px-navy">
+                    Replace manual sales prospecting with a fully autonomous AI SDR — enabling B2B companies to scale outbound revenue generation without scaling headcount.
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  {['AI / LLM', 'B2B SaaS', 'Sales Automation', 'Outbound GTM'].map((tag) => (
+                    <Badge key={tag} variant="teal" size="sm">{tag}</Badge>
+                  ))}
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Four pillars */}
+        {/* Four product pillars */}
         <AnimatePresence>
           {step >= 2 && (
             <motion.div
@@ -111,18 +118,21 @@ export default function CompanyOverview({ step }: Props) {
           )}
         </AnimatePresence>
 
-        {/* Sector tag */}
+        {/* Strategic bridge */}
         <AnimatePresence>
           {step >= 3 && (
             <motion.div
               variants={fadeRight}
               initial="hidden"
               animate="visible"
-              className="flex items-center gap-3 flex-wrap"
+              className="flex items-start gap-3 p-4 rounded-xl border"
+              style={{ background: '#F3F4F6', borderColor: 'rgba(0,0,0,0.07)' }}
             >
-              {['HR Tech', 'SaaS B2B', 'AI/ML', 'Recruitment Automation'].map((tag) => (
-                <Badge key={tag} variant="teal" size="sm">{tag}</Badge>
-              ))}
+              <Building2 size={16} className="flex-shrink-0 mt-0.5 text-px-muted" />
+              <p className="text-xs text-px-muted leading-relaxed">
+                <span className="font-bold text-px-navy">Strategic context — </span>
+                Although Prospecter specialises in AI-powered sales prospecting, its product and engineering environment — LLM pipelines, multi-tenant SaaS, background workers, Redis caching — provided the architectural foundation for developing PEAXIS as a next-generation HR technology platform during this internship.
+              </p>
             </motion.div>
           )}
         </AnimatePresence>

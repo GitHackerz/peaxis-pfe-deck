@@ -13,7 +13,7 @@ export default function ProgressBar({
         className="h-full transition-all duration-500 ease-out"
         style={{
           width: `${pct}%`,
-          background: 'linear-gradient(90deg, #00B8B3, #44C4F6)',
+          background: 'linear-gradient(90deg, #00B8B3, #009E9A)',
         }}
       />
     </div>

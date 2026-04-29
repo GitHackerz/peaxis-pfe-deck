@@ -45,7 +45,7 @@ export default function LoadingScreen({ onComplete }: Props) {
             animate={{ scaleX: 1 }}
             transition={{ delay: 0.8, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="mt-6 w-32 h-[2px] rounded-full origin-left"
-            style={{ background: 'linear-gradient(90deg, #00B8B3, #44C4F6)' }}
+            style={{ background: 'linear-gradient(90deg, #00B8B3, #009E9A)' }}
           />
         </motion.div>
       )}

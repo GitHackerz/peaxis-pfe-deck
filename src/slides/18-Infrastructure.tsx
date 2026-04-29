@@ -19,7 +19,7 @@ const envs = [
     name: 'Production',
     compose: 'docker-compose.prod.yml',
     desc: 'All services containerised with multi-stage Dockerfiles and resource limits.',
-    color: '#0087F8',
+    color: '#374151',
     services: ['All 6 services', 'Multi-stage builds', 'Resource limits', 'Health checks'],
   },
 ]
@@ -88,13 +88,13 @@ export default function Infrastructure({ step }: Props) {
                   icon: <Lock size={16} />,
                   title: 'Secrets management',
                   body: 'All credentials via environment variables. .env.example committed. No secrets in version control.',
-                  color: '#FE595A',
+                  color: '#374151',
                 },
                 {
                   icon: <Settings size={16} />,
                   title: 'Config via ConfigService',
                   body: 'NestJS ConfigService wraps process.env. Direct process.env access is prohibited in application code.',
-                  color: '#0087F8',
+                  color: '#00B8B3',
                 },
                 {
                   icon: <Repeat size={16} />,

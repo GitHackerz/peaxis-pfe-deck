@@ -4,12 +4,12 @@ type Variant = 'teal' | 'coral' | 'yellow' | 'navy' | 'gray' | 'outline'
 type Size = 'sm' | 'md' | 'lg'
 
 const variantStyles: Record<Variant, string> = {
-  teal:    'bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.25)]',
-  coral:   'bg-[#FFF0F0] text-[#E03E3F] border border-[rgba(254,89,90,0.25)]',
-  yellow:  'bg-[#FFFBEB] text-[#B78300] border border-[rgba(254,200,73,0.35)]',
-  navy:    'bg-[#001027] text-white border border-[rgba(0,16,39,0.2)]',
-  gray:    'bg-gray-100 text-gray-600 border border-gray-200',
-  outline: 'bg-transparent text-px-teal border border-[rgba(0,184,179,0.5)]',
+  teal:    'bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.2)]',
+  coral:   'bg-[#FFF0F0] text-[#D63E3F] border border-[rgba(254,89,90,0.2)]',
+  yellow:  'bg-[#F3F4F6] text-[#374151] border border-[rgba(0,0,0,0.08)]',
+  navy:    'bg-[#001027] text-white border border-transparent',
+  gray:    'bg-[#F3F4F6] text-[#6B7280] border border-[rgba(0,0,0,0.07)]',
+  outline: 'bg-transparent text-[#009E9A] border border-[rgba(0,184,179,0.4)]',
 }
 
 const sizeStyles: Record<Size, string> = {

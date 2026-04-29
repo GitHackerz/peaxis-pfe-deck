@@ -10,8 +10,8 @@ const kpis = [
   { value: '14', label: 'NestJS Feature Modules', sublabel: 'auth, jobs, apps, AI, billing…', color: 'teal' as const },
   { value: '60+', label: 'REST API Endpoints', sublabel: 'documented with Swagger', color: 'navy' as const },
   { value: '6', label: 'AI Features', sublabel: 'parse · score · copilot · JD · cover letter · embedding', color: 'teal' as const },
-  { value: '4', label: 'Microservices', sublabel: 'Hire · Jobs · API · AI', color: 'coral' as const },
-  { value: '3', label: 'Redis Cache Layers', sublabel: 'embeddings 7d · CV 30d · results 24h', color: 'yellow' as const },
+  { value: '4', label: 'Microservices', sublabel: 'Hire · Jobs · API · AI', color: 'navy' as const },
+  { value: '3', label: 'Redis Cache Layers', sublabel: 'embeddings 7d · CV 30d · results 24h', color: 'navy' as const },
   { value: '100%', label: 'Multi-tenant Isolation', sublabel: 'every record scoped to businessId', color: 'teal' as const },
 ]
 
@@ -37,7 +37,7 @@ export default function Achievements({ step }: Props) {
             <SectionTag section="Results" number="11" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Technical <GradientText variant="teal">achievements</GradientText>
+            Technical <GradientText variant="teal">achievements</GradientText> &amp; operational <GradientText variant="teal">outcomes</GradientText>
           </motion.h2>
         </motion.div>
 
@@ -103,10 +103,10 @@ export default function Achievements({ step }: Props) {
               className="grid grid-cols-4 gap-3"
             >
               {[
-                { lang: 'TypeScript', pct: 65, color: '#1D4ED8' },
-                { lang: 'Python', pct: 20, color: '#F59E0B' },
-                { lang: 'SQL/Prisma', pct: 10, color: '#34D399' },
-                { lang: 'CSS/Tailwind', pct: 5, color: '#00B8B3' },
+                { lang: 'TypeScript', pct: 65, color: '#001027' },
+                { lang: 'Python', pct: 20, color: '#00B8B3' },
+                { lang: 'SQL/Prisma', pct: 10, color: '#6B7280' },
+                { lang: 'CSS/Tailwind', pct: 5, color: '#9CA3AF' },
               ].map((l) => (
                 <div key={l.lang} className="p-3 rounded-xl bg-white border border-[var(--border)]">
                   <div className="flex items-center justify-between mb-2">
@@ -121,6 +121,33 @@ export default function Achievements({ step }: Props) {
                   </div>
                 </div>
               ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Business / operational outcomes */}
+        <AnimatePresence>
+          {step >= 4 && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col gap-2"
+            >
+              <p className="text-xs font-bold text-px-muted uppercase tracking-wider">Operational outcomes</p>
+              <div className="grid grid-cols-4 gap-3">
+                {[
+                  { label: 'Reduced screening friction', sub: 'Automated CV parsing & AI ranking eliminates manual shortlisting', color: '#00B8B3' },
+                  { label: 'Faster candidate processing', sub: 'Async BullMQ workers process scoring without blocking user actions', color: '#00B8B3' },
+                  { label: 'Explainable AI decisions', sub: 'Every match score includes matched skills, gaps & natural language rationale', color: '#00B8B3' },
+                  { label: 'Improved candidate UX', sub: 'Semantic search, real-time status tracking & transparent pipeline feedback', color: '#00B8B3' },
+                ].map((o) => (
+                  <div key={o.label} className="p-3 rounded-xl bg-white border border-[var(--border)] flex flex-col gap-1.5">
+                    <div className="w-1.5 h-1.5 rounded-full" style={{ background: o.color }} />
+                    <p className="text-xs font-bold text-px-navy leading-tight">{o.label}</p>
+                    <p className="text-[10px] text-px-muted leading-relaxed">{o.sub}</p>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

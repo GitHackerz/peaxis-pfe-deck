@@ -8,11 +8,11 @@ interface Props { step: number }
 
 const aiFeatures = [
   { name: 'CV Parsing',       model: 'Gemini 2.5-flash', color: '#00B8B3', reason: 'Fast structured JSON, low cost' },
-  { name: 'Match Scoring',    model: 'Deterministic',    color: '#0087F8', reason: 'Reproducible, explainable, no LLM needed' },
-  { name: 'JD Generation',    model: 'Gemini 2.5-flash', color: '#6D28D9', reason: 'Structured output + bias checking' },
-  { name: 'Hiring Copilot',   model: 'Gemini 2.5-flash', color: '#FEC849', reason: 'Summaries, risk flags, interview Qs' },
-  { name: 'Cover Letters',    model: 'GPT-4.1-mini',     color: '#34D399', reason: 'Higher creative quality' },
-  { name: 'Embeddings',       model: 'text-embedding-3-small', color: '#FE595A', reason: '1536-dim, cost-effective' },
+  { name: 'Match Scoring',    model: 'Deterministic',    color: '#374151', reason: 'Reproducible, explainable, no LLM needed' },
+  { name: 'JD Generation',    model: 'Gemini 2.5-flash', color: '#374151', reason: 'Structured output + bias checking' },
+  { name: 'Hiring Copilot',   model: 'Gemini 2.5-flash', color: '#374151', reason: 'Summaries, risk flags, interview Qs' },
+  { name: 'Cover Letters',    model: 'GPT-4.1-mini',     color: '#374151', reason: 'Higher creative quality' },
+  { name: 'Embeddings',       model: 'text-embedding-3-small', color: '#374151', reason: '1536-dim, cost-effective' },
 ]
 
 const infra = [

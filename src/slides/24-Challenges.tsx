@@ -11,7 +11,7 @@ const challenges = [
     title: 'Multi-tenant data isolation at scale',
     challenge: 'Every query, guard, and background job must be scoped to a businessId without leaking data between tenants.',
     resolution: 'X-Business-ID header enforced at controller level. PrismaService always receives businessId from the guard. BullMQ jobs include businessId in payload.',
-    color: '#FE595A',
+    color: '#001027',
     lesson: 'Design security boundaries first — retrofitting scoping is 10× harder.',
   },
   {
@@ -19,7 +19,7 @@ const challenges = [
     title: 'AI explainability vs. LLM cost',
     challenge: 'Deterministic scoring is cheap but limited. LLM scoring is rich but expensive and non-reproducible at scale.',
     resolution: 'Hybrid approach: deterministic skill-overlap for the score (reproducible, zero cost), Gemini Flash for the explanation text (low cost, high quality, cached 24h).',
-    color: '#FEC849',
+    color: '#001027',
     lesson: 'Separate "what" (deterministic) from "why" (LLM). Cache aggressively.',
   },
   {
@@ -27,7 +27,7 @@ const challenges = [
     title: 'Frontend state vs. server freshness',
     challenge: 'Next.js server components cache aggressively. After inline edits (job form, stage moves), UI must reflect the updated state without full navigation.',
     resolution: 'Server actions call router.refresh() after mutations — triggers server component re-fetch without navigation. Client components own transient state only.',
-    color: '#6D28D9',
+    color: '#001027',
     lesson: 'Understand Next.js cache invalidation deeply before building complex workspaces.',
   },
 ]
@@ -61,7 +61,7 @@ export default function Challenges({ step }: Props) {
                   {/* Number */}
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-extrabold flex-shrink-0"
-                    style={{ background: `linear-gradient(135deg, ${c.color}, ${c.color}BB)` }}
+                    style={{ background: c.color }}
                   >
                     {c.num}
                   </div>

@@ -13,32 +13,32 @@ const pillars = [
     name: 'PEAXIS Core',
     sub: 'API Layer',
     desc: 'NestJS REST API — single source of truth. Auth, billing, multi-tenant, all data owned here.',
-    color: '#00B8B3',
-    grad: 'linear-gradient(135deg, #00B8B3, #44C4F6)',
+    color: '#001027',
+    grad: '#001027',
   },
   {
     icon: <Building2 size={22} />,
     name: 'PEAXIS Hire',
     sub: 'Recruiter Dashboard',
     desc: 'Next.js SPA — pipeline Kanban, AI insights panel, job management, analytics.',
-    color: '#0087F8',
-    grad: 'linear-gradient(135deg, #0087F8, #44C4F6)',
+    color: '#001027',
+    grad: '#001027',
   },
   {
     icon: <Users size={22} />,
     name: 'PEAXIS Jobs',
     sub: 'Candidate Portal',
     desc: 'Next.js SPA — semantic job search, CV upload & parse, application tracking.',
-    color: '#6D28D9',
-    grad: 'linear-gradient(135deg, #6D28D9, #0087F8)',
+    color: '#001027',
+    grad: '#001027',
   },
   {
     icon: <Brain size={22} />,
     name: 'AI Brain',
     sub: 'FastAPI Service',
     desc: 'Stateless Python service — CV parsing, match scoring, copilot, JD generation.',
-    color: '#FE595A',
-    grad: 'linear-gradient(135deg, #FE595A, #FEC849)',
+    color: '#001027',
+    grad: '#001027',
   },
 ]
 
@@ -53,10 +53,10 @@ export default function SolutionOverview({ step }: Props) {
             <SectionTag section="The Solution" number="6" />
           </motion.div>
           <motion.h2 variants={cinemaEntrance} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            <GradientText variant="teal">PEAXIS</GradientText> — The Hiring Operating System
+            <GradientText variant="teal">PEAXIS</GradientText> — Integrated AI Hiring Operating System
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
-            Four deeply integrated products that replace the fragmented stack every recruiter tolerates today.
+            Four deeply integrated products that replace the fragmented stack every recruiter tolerates today — built on SaaS architecture principles refined at Prospecter.
           </motion.p>
         </motion.div>
 

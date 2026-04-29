@@ -20,28 +20,28 @@ const reqs = [
     id: 'FR-07',
     title: 'CV Parsing',
     items: ['PDF / DOCX / TXT support', 'Gemini 2.5-flash extraction', 'Structured JSON output', 'Auto pre-fills candidate profile'],
-    color: '#0087F8',
+    color: '#00B8B3',
   },
   {
     icon: <UserCheck size={18} />,
     id: 'FR-08',
     title: 'Candidate Onboarding',
     items: ['Anonymous apply-with-CV flow', 'Profile completeness scoring', 'Semantic embedding generation', 'Email verification'],
-    color: '#6D28D9',
+    color: '#00B8B3',
   },
   {
     icon: <Calendar size={18} />,
     id: 'FR-09',
     title: 'Interview Scheduling',
     items: ['Interview CRUD with type flags', 'Linked to application record', 'Interviewer assignment', 'Status tracking'],
-    color: '#FEC849',
+    color: '#00B8B3',
   },
   {
     icon: <BarChart3 size={18} />,
     id: 'FR-10',
     title: 'Analytics Dashboard',
     items: ['Pipeline funnel metrics', 'Score distribution charts', 'Time-to-hire tracking', 'Per-job + global analytics'],
-    color: '#FE595A',
+    color: '#00B8B3',
   },
 ]
 

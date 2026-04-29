@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { ClipboardList, Search, Star, Upload } from 'lucide-react'
 import Badge from '../components/ui/Badge'
+import CandidatePortalMockup from '../components/mockups/CandidatePortalMockup'
 import GradientText from '../components/ui/GradientText'
-import ScreenshotFrame from '../components/ui/ScreenshotFrame'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
 
@@ -47,11 +47,7 @@ export default function PeaxisJobs({ step }: Props) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.55 }}
               >
-                <ScreenshotFrame
-                  src="/screenshots/jobs-portal.png"
-                  alt="PEAXIS Jobs — Candidate Portal"
-                  caption="Candidate Portal: Job Feed + CV Upload + Application Tracker"
-                />
+                <CandidatePortalMockup />
               </motion.div>
             )}
           </AnimatePresence>
@@ -73,7 +69,7 @@ export default function PeaxisJobs({ step }: Props) {
                     transition={{ delay: i * 0.08 }}
                     className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-[var(--border)]"
                   >
-                    <div className="w-6 h-6 rounded-lg bg-[#F5F3FF] flex items-center justify-center text-[#6D28D9] flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0 mt-0.5">
                       {f.icon}
                     </div>
                     <div>

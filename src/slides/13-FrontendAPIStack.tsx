@@ -9,9 +9,9 @@ interface Props { step: number }
 const layers = [
   {
     name: 'Frontend Layer',
-    color: '#6D28D9',
-    bg: '#F5F3FF',
-    border: 'rgba(109,40,217,0.2)',
+    color: '#374151',
+    bg: '#F9FAFB',
+    border: 'rgba(55,65,81,0.15)',
     tech: ['Next.js', 'React', 'Tailwind', 'TypeScript'],
     details: [
       { label: 'PEAXIS Hire', desc: 'Recruiter dashboard — port 3000, Bun runtime' },
@@ -21,9 +21,9 @@ const layers = [
   },
   {
     name: 'API Layer',
-    color: '#0087F8',
-    bg: '#EFF6FF',
-    border: 'rgba(0,135,248,0.2)',
+    color: '#374151',
+    bg: '#F9FAFB',
+    border: 'rgba(55,65,81,0.15)',
     tech: ['NestJS', 'TypeScript', 'Prisma', 'JWT'],
     details: [
       { label: 'Core API', desc: '14 modules — port 4000, single source of truth' },
@@ -112,8 +112,8 @@ export default function FrontendAPIStack({ step }: Props) {
             >
               {[
                 { label: 'Password hashing', value: 'Argon2id', color: '#00B8B3' },
-                { label: 'Session tokens', value: 'JWT HS256 · 15m / 7d', color: '#0087F8' },
-                { label: 'Rate limiting', value: '1000 req / 60s global', color: '#6D28D9' },
+                { label: 'Session tokens', value: 'JWT HS256 · 15m / 7d', color: '#374151' },
+                { label: 'Rate limiting', value: '1000 req / 60s global', color: '#374151' },
               ].map((s) => (
                 <div key={s.label} className="flex items-center gap-2 p-3 rounded-xl bg-white border border-[var(--border)]">
                   <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: s.color }} />

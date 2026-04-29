@@ -12,29 +12,26 @@ const futureItems = [
     icon: <Globe size={20} />,
     title: 'Video Interview Integration',
     desc: 'Embedded video screening with AI transcription, question generation, and candidate scoring.',
-    horizon: 'v2.0',
-    color: '#0087F8',
+    color: '#00B8B3',
   },
   {
     icon: <ShieldCheck size={20} />,
     title: 'GDPR Compliance Toolkit',
     desc: 'Candidate data deletion workflows, consent management, export requests, and audit logs.',
-    horizon: 'v2.0',
-    color: '#34D399',
+    color: '#374151',
   },
   {
     icon: <Rocket size={20} />,
     title: 'Candidate Referral Engine',
     desc: 'Referral tracking, incentive management, and social sharing — turning every hire into a sourcing channel.',
     horizon: 'v2.1',
-    color: '#FEC849',
+    color: '#374151',
   },
   {
     icon: <Smartphone size={20} />,
     title: 'Mobile-first Candidate App',
     desc: 'React Native app for on-the-go job search, CV scan, and application tracking.',
-    horizon: 'v3.0',
-    color: '#6D28D9',
+    color: '#374151',
   },
 ]
 
@@ -115,7 +112,7 @@ export default function FutureScope({ step }: Props) {
                     transition={{ delay: i * 0.06 }}
                     className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[var(--border)] text-[11px] text-px-muted"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#FEC849] flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#9CA3AF] flex-shrink-0" />
                     {item}
                   </motion.div>
                 ))}
@@ -130,9 +127,9 @@ export default function FutureScope({ step }: Props) {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3 p-3 rounded-xl bg-gradient-to-r from-[#E6FAF9] to-[#F8FAFC] border border-[rgba(0,184,179,0.2)]"
+              className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
             >
-              <div className="w-1 h-8 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(180deg, #00B8B3, #44C4F6)' }} />
+              <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#00B8B3]" />
               <p className="text-xs text-px-muted">
                 <strong className="text-px-navy">Vision:</strong>{' '}
                 PEAXIS becomes the OS layer for every hiring team — from sourcing to onboarding. The AI brain gets smarter with every hire, the candidate experience becomes the competitive advantage, and the data moat makes PEAXIS the default choice for growing companies.
