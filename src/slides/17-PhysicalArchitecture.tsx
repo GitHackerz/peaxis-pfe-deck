@@ -18,7 +18,7 @@ const services = [
 const networks = [
   { id: 'frontend', label: 'frontend-net', color: '#374151', services: ['peaxis-hire', 'peaxis-jobs', 'peaxis-api'] },
   { id: 'backend', label: 'backend-net', color: '#00B8B3', services: ['peaxis-api', 'peaxis-ai', 'postgres', 'redis'] },
-  { id: 'data', label: 'data-net', color: '#001027', services: ['postgres', 'redis'] },
+  { id: 'data', label: 'data-net', color: '#FEC849', services: ['postgres', 'redis'] },
 ]
 
 export default function PhysicalArch({ step }: Props) {

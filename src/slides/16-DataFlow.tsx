@@ -37,7 +37,7 @@ const steps = [
     num: '05',
     actor: 'Database',
     action: 'Prisma write → PostgreSQL',
-    color: '#001027',
+    color: '#FEC849',
   },
 ]
 

@@ -10,8 +10,8 @@ const kpis = [
   { value: '14', label: 'NestJS Feature Modules', sublabel: 'auth, jobs, apps, AI, billing…', color: 'teal' as const },
   { value: '60+', label: 'REST API Endpoints', sublabel: 'documented with Swagger', color: 'navy' as const },
   { value: '6', label: 'AI Features', sublabel: 'parse · score · copilot · JD · cover letter · embedding', color: 'teal' as const },
-  { value: '4', label: 'Microservices', sublabel: 'Hire · Jobs · API · AI', color: 'navy' as const },
-  { value: '3', label: 'Redis Cache Layers', sublabel: 'embeddings 7d · CV 30d · results 24h', color: 'navy' as const },
+  { value: '4', label: 'Microservices', sublabel: 'Hire · Jobs · API · AI', color: 'coral' as const },
+  { value: '3', label: 'Redis Cache Layers', sublabel: 'embeddings 7d · CV 30d · results 24h', color: 'yellow' as const },
   { value: '100%', label: 'Multi-tenant Isolation', sublabel: 'every record scoped to businessId', color: 'teal' as const },
 ]
 

@@ -6,22 +6,22 @@ import { fadeUp, stagger } from '../lib/animations'
 
 interface Props { step: number }
 
-// 5 steps: monochrome progression system
+// 5 steps: merged Pre-fill + Apply into one "Apply"
 const flowSteps = [
-  { label: 'Discover',  active: true  },
-  { label: 'Upload CV', active: true  },
-  { label: 'AI Parse',  active: true  },
-  { label: 'Apply',     active: true  },
-  { label: 'Track',     active: false },
+  { label: 'Discover',   color: '#00B8B3', n: '1' },
+  { label: 'Upload CV',  color: '#00B8B3', n: '2' },
+  { label: 'AI Parse',   color: '#00B8B3', n: '3' },
+  { label: 'Apply',      color: '#00B8B3', n: '4' },
+  { label: 'Track',      color: '#FE595A', n: '5' },
 ]
 
 const pipelineSteps = [
-  { label: 'PDF / DOCX',       bg: '#F3F4F6', text: '#6B7280' },
+  { label: 'PDF / DOCX', bg: '#F3F4F6', text: '#374151' },
   { label: 'Gemini 2.5-flash', bg: '#E6FAF9', text: '#009E9A' },
-  { label: 'JSON Profile',     bg: '#F3F4F6', text: '#6B7280' },
-  { label: 'Redis Cache (30d)',bg: '#F3F4F6', text: '#6B7280' },
-  { label: 'Score + Apply',    bg: '#F3F4F6', text: '#374151' },
-  { label: 'Pipeline Stage',   bg: '#001027', text: '#FFFFFF' },
+  { label: 'JSON Profile', bg: '#F3F4F6', text: '#374151' },
+  { label: 'Redis Cache (30d)', bg: '#F3F4F6', text: '#374151' },
+  { label: 'Score + Apply', bg: '#F3F4F6', text: '#374151' },
+  { label: 'Pipeline Stage', bg: '#F3F4F6', text: '#374151' },
 ]
 
 export default function DemoCandidate({ step }: Props) {
@@ -40,26 +40,22 @@ export default function DemoCandidate({ step }: Props) {
               Demo: <GradientText variant="navy">Candidate Flow</GradientText>
             </motion.h2>
           </div>
-          {/* Compact monochrome horizontal stepper */}
+          {/* Compact horizontal stepper */}
           <motion.div variants={fadeUp}
-            className="flex items-center gap-0 bg-white border border-[var(--border)] rounded-xl px-4 py-2 shadow-sm">
+            className="flex items-center gap-0 bg-white border border-[var(--border)] rounded-2xl px-4 py-2.5 shadow-sm">
             {flowSteps.map((s, i) => (
               <div key={s.label} className="flex items-center">
                 <div className="flex flex-col items-center gap-1">
                   <div
-                    className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold"
-                    style={{
-                      background: s.active ? '#00B8B3' : '#F3F4F6',
-                      color: s.active ? 'white' : '#9CA3AF',
-                      border: s.active ? 'none' : '1px solid #E5E7EB',
-                    }}
+                    className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[10px] font-extrabold"
+                    style={{ background: s.color }}
                   >
-                    {i + 1}
+                    {s.n}
                   </div>
-                  <span className="text-[9px] font-medium whitespace-nowrap" style={{ color: s.active ? '#001027' : '#9CA3AF' }}>{s.label}</span>
+                  <span className="text-[9px] font-semibold text-px-navy whitespace-nowrap">{s.label}</span>
                 </div>
                 {i < flowSteps.length - 1 && (
-                  <div className="w-7 h-[1px] mx-1 mb-3" style={{ background: i < 3 ? '#00B8B3' : '#E5E7EB' }} />
+                  <div className="w-8 h-[1px] mx-1 mb-3.5 bg-[#E5E7EB]" />
                 )}
               </div>
             ))}
