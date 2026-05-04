@@ -82,7 +82,7 @@ function StatusCell({ value }: { value: boolean | string }) {
   )
   return (
     <div className="flex justify-center">
-      <span className="text-[10px] text-[#6B7280] font-medium px-2 py-0.5 rounded-full bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)]">
+      <span className="text-xs text-[#6B7280] font-medium px-2 py-0.5 rounded-full bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)]">
         {value}
       </span>
     </div>
@@ -99,11 +99,11 @@ export default function ATSLimitations({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="The Problem" number="3" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Manual workflows, legacy ATS &amp; fragmented stacks are <GradientText variant="coral">not enough</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-xl">
-            From spreadsheets to traditional ATS to stitched-together SaaS tools — none deliver the AI-native intelligence modern hiring requires.
+          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
+            None deliver the AI-native intelligence modern hiring requires.
           </motion.p>
         </motion.div>
 
@@ -118,11 +118,11 @@ export default function ATSLimitations({ step }: Props) {
             >
               {/* Table header */}
               <div className="grid grid-cols-[1fr_100px_100px_100px_100px] px-5 py-3 bg-[#F8FAFC] border-b border-[var(--border)]">
-                <span className="text-xs font-bold text-px-muted uppercase tracking-wider">Capability</span>
-                <span className="text-xs font-bold uppercase tracking-wider text-center" style={{ color: '#9CA3AF' }}>Manual</span>
-                <span className="text-xs font-bold text-[#FE595A] uppercase tracking-wider text-center">Legacy ATS</span>
-                <span className="text-xs font-bold uppercase tracking-wider text-center" style={{ color: '#6B7280' }}>Fragmented</span>
-                <span className="text-xs font-bold text-[#00B8B3] uppercase tracking-wider text-center">PEAXIS</span>
+                <span className="text-sm font-bold text-px-muted uppercase tracking-wider">Capability</span>
+                <span className="text-sm font-bold uppercase tracking-wider text-center" style={{ color: '#9CA3AF' }}>Manual</span>
+                <span className="text-sm font-bold text-[#FE595A] uppercase tracking-wider text-center">Legacy ATS</span>
+                <span className="text-sm font-bold uppercase tracking-wider text-center" style={{ color: '#6B7280' }}>Fragmented</span>
+                <span className="text-sm font-bold text-[#00B8B3] uppercase tracking-wider text-center">PEAXIS</span>
               </div>
 
               {/* Rows */}

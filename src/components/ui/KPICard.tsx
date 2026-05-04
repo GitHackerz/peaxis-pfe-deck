@@ -20,14 +20,14 @@ export default function KPICard({ value, label, sublabel, color = 'teal' }: KPIC
       style={{ background: c.bg, border: `1px solid ${c.border}` }}
     >
       <div
-        className="text-3xl font-extrabold leading-none tracking-tight"
+        className="text-4xl font-extrabold leading-none tracking-tight"
         style={{ color: c.value }}
       >
         {value}
       </div>
-      <div className="mt-2 text-xs font-semibold text-[var(--navy)] leading-snug">{label}</div>
+      <div className="mt-2 text-sm font-semibold text-[var(--navy)] leading-snug">{label}</div>
       {sublabel && (
-        <div className="mt-1 text-[10px] text-[var(--muted)]">{sublabel}</div>
+        <div className="mt-1 text-xs text-[var(--muted)]">{sublabel}</div>
       )}
     </div>
   )

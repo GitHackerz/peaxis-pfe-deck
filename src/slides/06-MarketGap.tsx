@@ -44,7 +44,7 @@ export default function MarketGap({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="The Problem" number="3" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             The market gap:{' '}
             <GradientText variant="teal">intelligent + integrated + explainable</GradientText>
           </motion.h2>
@@ -69,8 +69,8 @@ export default function MarketGap({ step }: Props) {
                       {g.icon}
                     </div>
                     <div>
-                      <p className="text-sm font-bold text-px-navy mb-1.5">{g.title}</p>
-                      <p className="text-xs text-px-muted leading-relaxed">{g.body}</p>
+                      <p className="text-base font-bold text-px-navy mb-1.5">{g.title}</p>
+                      <p className="text-sm text-px-muted leading-relaxed">{g.body}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -96,8 +96,8 @@ export default function MarketGap({ step }: Props) {
                   transition={{ delay: i * 0.08 }}
                   className="p-3 rounded-xl bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)] text-center"
                 >
-                  <div className="text-2xl font-extrabold text-px-navy">{s.value}</div>
-                  <div className="text-xs text-px-muted mt-0.5">{s.label}</div>
+                  <div className="text-3xl font-extrabold text-px-navy">{s.value}</div>
+                  <div className="text-sm text-px-muted mt-0.5">{s.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -119,8 +119,8 @@ export default function MarketGap({ step }: Props) {
                 <Lightbulb size={18} className="text-white" />
               </div>
               <div>
-                <p className="text-sm font-bold text-px-navy">PEAXIS fills this exact gap</p>
-                <p className="text-xs text-px-muted">AI scores are explainable. Tools are integrated. The candidate experience is first-class. That's the OS layer missing from the market.</p>
+                <p className="text-base font-bold text-px-navy">PEAXIS fills this exact gap</p>
+                <p className="text-sm text-px-muted">AI scores are explainable. Tools are integrated. The candidate experience is first-class. That's the OS layer missing from the market.</p>
               </div>
             </motion.div>
           )}

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { BarChart3, Brain, Edit, Kanban } from 'lucide-react'
-import Badge from '../components/ui/Badge'
 import WorkspaceMockup from '../components/mockups/WorkspaceMockup'
+import Badge from '../components/ui/Badge'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
@@ -26,7 +26,7 @@ export default function PeaxisHire({ step }: Props) {
             <SectionTag section="Solution" number="6" />
           </motion.div>
           <motion.div variants={fadeUp} className="flex items-center gap-3">
-            <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+            <h2 className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
               <GradientText variant="teal">PEAXIS Hire</GradientText> — Recruiter Dashboard
             </h2>
             <Badge variant="navy" size="sm">Next.js 16</Badge>
@@ -60,8 +60,8 @@ export default function PeaxisHire({ step }: Props) {
                       {f.icon}
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-px-navy">{f.label}</p>
-                      <p className="text-[10px] text-px-muted leading-relaxed">{f.desc}</p>
+                      <p className="text-sm font-bold text-px-navy">{f.label}</p>
+                      <p className="text-xs text-px-muted leading-relaxed">{f.desc}</p>
                     </div>
                   </motion.div>
                 ))}

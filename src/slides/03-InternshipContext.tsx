@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowRight, Brain, Calendar, Code2, Lightbulb, Layers } from 'lucide-react'
+import { Brain, Calendar, Code2, Layers, Lightbulb } from 'lucide-react'
 import Badge from '../components/ui/Badge'
 import Card from '../components/ui/Card'
 import GradientText from '../components/ui/GradientText'
@@ -10,21 +10,21 @@ interface Props { step: number }
 
 const contributions = [
   {
-    icon: <Layers size={18} />,
+    icon: <Layers size={20} />,
     area: 'Full-Stack Architecture',
-    items: ['NestJS API (14 modules)', 'Next.js Hire + Jobs portals', 'Multi-tenant data model', 'BullMQ background pipeline'],
+    items: ['NestJS API — 14 feature modules', 'Next.js Hire + Jobs portals', 'Multi-tenant data model'],
     color: '#00B8B3',
   },
   {
-    icon: <Brain size={18} />,
+    icon: <Brain size={20} />,
     area: 'AI Integration',
-    items: ['FastAPI AI microservice', 'CV parsing (Gemini)', 'Match scoring engine', 'Hiring Copilot · JD Generator'],
+    items: ['FastAPI AI microservice', 'CV parsing + match scoring engine', 'Hiring Copilot · JD Generator'],
     color: '#374151',
   },
   {
-    icon: <Code2 size={18} />,
+    icon: <Code2 size={20} />,
     area: 'Platform Engineering',
-    items: ['Docker dev + prod setup', 'Prisma schema + migrations', 'pgvector semantic search', 'Stripe billing integration'],
+    items: ['Docker multi-stage deployment', 'pgvector semantic search', 'Stripe billing integration'],
     color: '#374151',
   },
 ]
@@ -39,55 +39,28 @@ export default function InternshipContext({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Internship Context" number="2" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             From <GradientText variant="teal">AI Sales</GradientText> Infrastructure
             {' '}to <GradientText variant="teal">AI Hiring</GradientText> Infrastructure
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
-            A 6-month final year internship at Prospecter — sole engineer responsible for design, architecture, and full implementation of PEAXIS.
+          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
+            A 6-month final year internship at Prospecter — sole engineer for the design, architecture, and implementation work. PEAXIS is a separate product developed during the internship and is not a Prospecter product.
           </motion.p>
         </motion.div>
 
-        {/* Cross-domain innovation bridge */}
+        {/* Context note */}
         <AnimatePresence>
           {step >= 1 && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex items-center gap-3 p-4 rounded-xl bg-white border border-[var(--border)] shadow-sm"
+              transition={{ duration: 0.45 }}
+              className="flex items-center gap-3 p-4 rounded-xl bg-[#F8FAFC] border border-[var(--border)]"
             >
-              <div className="flex items-center gap-3 flex-1">
-                {/* Left: Prospecter context */}
-                <div className="flex flex-col gap-1 p-3 rounded-xl flex-1" style={{ background: '#E6FAF9', border: '1px solid rgba(0,184,179,0.2)' }}>
-                  <p className="text-[10px] font-bold text-px-teal uppercase tracking-wider">Prospecter environment</p>
-                  {['LLM pipeline architecture', 'Multi-tenant SaaS patterns', 'Redis caching strategies', 'AI-as-a-service design'].map((item) => (
-                    <div key={item} className="flex items-center gap-1.5">
-                      <div className="w-1 h-1 rounded-full bg-[#00B8B3]" />
-                      <span className="text-[10px] text-px-navy">{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Arrow + bridge */}
-                <div className="flex flex-col items-center gap-1 flex-shrink-0">
-                  <Lightbulb size={16} className="text-px-teal" />
-                  <ArrowRight size={18} className="text-px-teal" />
-                  <span className="text-[9px] font-bold text-px-muted uppercase tracking-wider">Cross-domain</span>
-                  <span className="text-[9px] font-bold text-px-muted uppercase tracking-wider">Innovation</span>
-                </div>
-
-                {/* Right: PEAXIS output */}
-                <div className="flex flex-col gap-1 p-3 rounded-xl flex-1" style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.07)' }}>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-px-navy">PEAXIS innovation</p>
-                  {['AI-powered CV parsing & scoring', 'Explainable hiring decisions', 'Async background workers', 'Candidate-facing portal UX'].map((item) => (
-                    <div key={item} className="flex items-center gap-1.5">
-                      <div className="w-1 h-1 rounded-full bg-[#001027]" />
-                      <span className="text-[10px] text-px-navy">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Lightbulb size={20} className="text-px-teal flex-shrink-0" />
+              <p className="text-sm text-px-muted leading-relaxed">
+                <strong className="text-px-navy">PEAXIS</strong> is an independent product developed during the internship period at <strong className="text-px-navy">Prospecter</strong>. It is not related to Prospecter's product — it is a separate AI recruitment SaaS platform conceived, designed, and built entirely as the internship project.
+              </p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -115,8 +88,8 @@ export default function InternshipContext({ step }: Props) {
                     {i > 0 && <div className="w-6 h-[1px] bg-gray-200" />}
                     <div className="flex flex-col items-center gap-0.5">
                       <div className="w-2.5 h-2.5 rounded-full" style={{ background: m.color }} />
-                      <span className="text-[9px] font-bold text-px-navy">{m.date}</span>
-                      <span className="text-[9px] text-px-muted whitespace-nowrap">{m.label}</span>
+                      <span className="text-xs font-bold text-px-navy">{m.date}</span>
+                      <span className="text-xs text-px-muted whitespace-nowrap">{m.label}</span>
                     </div>
                   </div>
                 ))}
@@ -144,11 +117,11 @@ export default function InternshipContext({ step }: Props) {
                       >
                         {c.icon}
                       </div>
-                      <p className="text-sm font-bold text-px-navy">{c.area}</p>
+                      <p className="text-base font-bold text-px-navy">{c.area}</p>
                     </div>
                     <ul className="space-y-1.5">
                       {c.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-xs text-px-muted">
+                        <li key={item} className="flex items-start gap-2 text-sm text-px-muted">
                           <div className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0" style={{ background: c.color }} />
                           {item}
                         </li>

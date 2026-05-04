@@ -52,12 +52,12 @@ export default function Conclusion({ step: _step }: Props) {
           {summary.map((s, i) => (
             <div
               key={i}
-              className="grid grid-cols-[160px_1fr] border-b border-[var(--border)] last:border-b-0 hover:bg-[#F8FAFC] transition-colors"
+              className="grid grid-cols-[180px_1fr] border-b border-[var(--border)] last:border-b-0 hover:bg-[#F8FAFC] transition-colors"
             >
-              <div className="px-4 py-3 text-xs font-bold text-px-teal uppercase tracking-wider border-r border-[var(--border)]">
+              <div className="px-4 py-3.5 text-sm font-bold text-px-teal uppercase tracking-wider border-r border-[var(--border)]">
                 {s.label}
               </div>
-              <div className="px-4 py-3 text-xs text-px-muted">
+              <div className="px-4 py-3.5 text-sm text-px-muted">
                 {s.value}
               </div>
             </div>
@@ -71,9 +71,9 @@ export default function Conclusion({ step: _step }: Props) {
           transition={{ delay: 0.6 }}
           className="flex flex-col items-center gap-1"
         >
-          <p className="text-base font-bold text-px-navy">BIBANI Mohamed Habib Allah</p>
-          <p className="text-sm text-px-muted">École Supérieure Privée d'Ingénierie et de Technologie — ESPRIT</p>
-          <p className="text-xs text-px-teal font-medium mt-1">Internship at Prospecter · AI Sales SaaS → AI Hiring Platform</p>
+          <p className="text-xl font-bold text-px-navy">BIBANI Mohamed Habib Allah</p>
+          <p className="text-base text-px-muted">École Supérieure Privée d'Ingénierie et de Technologie — ESPRIT</p>
+          <p className="text-sm text-px-teal font-medium mt-1">Internship at Prospecter · AI Sales SaaS → AI Hiring Platform</p>
         </motion.div>
 
         {/* Bottom teal bar */}

@@ -75,7 +75,7 @@ export default function Cover({ step: _step }: Props) {
           {['Next.js', 'NestJS', 'FastAPI', 'PostgreSQL', 'Gemini', 'Docker'].map((t) => (
             <span
               key={t}
-              className="text-[11px] font-mono text-px-muted px-2.5 py-1 rounded-full bg-white border border-[var(--border)]"
+              className="text-xs font-mono text-px-muted px-2.5 py-1 rounded-full bg-white border border-[var(--border)]"
             >
               {t}
             </span>

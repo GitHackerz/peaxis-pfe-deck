@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Zap, ShieldCheck, TrendingUp, Activity, Eye, Box, DollarSign } from 'lucide-react'
+import { Activity, Box, Eye, ShieldCheck, TrendingUp, Zap } from 'lucide-react'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
@@ -11,7 +11,7 @@ const nfrs = [
     icon: <Zap size={20} />,
     id: 'NFR-01',
     title: 'Scalability',
-    detail: 'Stateless API pods behind load balancer. BullMQ handles surge traffic via Redis queue. pgvector scales to millions of embeddings.',
+    detail: 'Stateless API pods behind load balancer. BullMQ handles surge via Redis queue.',
     color: '#00B8B3',
     metric: 'Horizontal scale',
   },
@@ -19,7 +19,7 @@ const nfrs = [
     icon: <ShieldCheck size={20} />,
     id: 'NFR-02',
     title: 'Security',
-    detail: 'Argon2 passwords, JWT rotation, OAuth2, X-Business-ID multi-tenant isolation, OWASP-hardened API, X-Service-Secret inter-service auth.',
+    detail: 'Argon2, JWT rotation, OAuth2, X-Business-ID isolation, OWASP-hardened API.',
     color: '#FE595A',
     metric: 'OWASP aligned',
   },
@@ -27,7 +27,7 @@ const nfrs = [
     icon: <Activity size={20} />,
     id: 'NFR-03',
     title: 'Performance',
-    detail: 'Redis 3-layer caching (embeddings 7d, CV parse 30d, AI results 24h). Sub-200ms API p95. Async BullMQ for heavy operations.',
+    detail: 'Redis 3-layer caching (7d/30d/24h). Sub-200ms p95. Async BullMQ for heavy ops.',
     color: '#374151',
     metric: 'p95 < 200ms',
   },
@@ -35,15 +35,15 @@ const nfrs = [
     icon: <TrendingUp size={20} />,
     id: 'NFR-04',
     title: 'Availability',
-    detail: 'Preferred-region retries in SDK. BullMQ retry logic. Docker health checks. Graceful degradation on AI service downtime.',
+    detail: 'Preferred-region SDK retries. BullMQ retry logic. Docker health checks.',
     color: '#374151',
-    metric: '99.5% target SLA',
+    metric: '99.5% SLA target',
   },
   {
     icon: <Eye size={20} />,
     id: 'NFR-05',
     title: 'Explainability',
-    detail: 'Every AI score exposes: numeric value, label (Strong/Good/Weak), matched skills, missing skills, and a plain-language explanation.',
+    detail: 'Every AI score exposes: numeric value, label, matched skills, missing skills, explanation.',
     color: '#001027',
     metric: 'Full audit trail',
   },
@@ -51,17 +51,9 @@ const nfrs = [
     icon: <Box size={20} />,
     id: 'NFR-06',
     title: 'Modularity',
-    detail: 'NestJS feature modules. Independent AI service. Decoupled frontend apps. BullMQ workers isolated from request handlers.',
+    detail: 'NestJS feature modules. Independent AI service. Decoupled frontend apps.',
     color: '#00B8B3',
     metric: 'Microservices',
-  },
-  {
-    icon: <DollarSign size={20} />,
-    id: 'NFR-07',
-    title: 'Cost Optimization',
-    detail: 'Gemini Flash for fast tasks. GPT-4.1-mini for quality outputs. Redis caching prevents redundant LLM calls. Docker resource limits.',
-    color: '#374151',
-    metric: 'Cache-first AI',
   },
 ]
 
@@ -75,13 +67,13 @@ export default function NFR({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Non-Functional Requirements" number="5" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Production-grade <GradientText variant="teal">quality attributes</GradientText>
           </motion.h2>
         </motion.div>
 
         {/* NFR grid */}
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-3 gap-3">
           {nfrs.map((n, i) => (
             <AnimatePresence key={n.id}>
               {step >= Math.floor(i / 2) + 1 && (
@@ -89,8 +81,7 @@ export default function NFR({ step }: Props) {
                   initial={{ opacity: 0, scale: 0.92 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: (i % 2) * 0.08 }}
-                  className={i === 6 ? 'col-span-2' : ''}
-                >
+                  className={i === 6 ? 'col-span-2' : ''}                >
                   <div
                     className="p-4 rounded-2xl border h-full flex flex-col gap-2"
                     style={{ background: `${n.color}08`, borderColor: `${n.color}20` }}
@@ -103,7 +94,7 @@ export default function NFR({ step }: Props) {
                         {n.icon}
                       </div>
                       <span
-                        className="text-[9px] font-bold px-2 py-0.5 rounded-full"
+                        className="text-xs font-bold px-2 py-0.5 rounded-full"
                         style={{ background: `${n.color}18`, color: n.color }}
                       >
                         {n.metric}
@@ -111,10 +102,10 @@ export default function NFR({ step }: Props) {
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5 mb-1">
-                        <span className="text-[9px] font-mono text-px-muted">{n.id}</span>
-                        <p className="text-xs font-bold text-px-navy">{n.title}</p>
+                        <span className="text-xs font-mono text-px-muted">{n.id}</span>
+                        <p className="text-base font-bold text-px-navy">{n.title}</p>
                       </div>
-                      <p className="text-[10px] text-px-muted leading-relaxed">{n.detail}</p>
+                      <p className="text-sm text-px-muted leading-relaxed">{n.detail}</p>
                     </div>
                   </div>
                 </motion.div>

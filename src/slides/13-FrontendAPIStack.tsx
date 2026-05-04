@@ -55,7 +55,7 @@ export default function FrontendAPIStack({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Technologies" number="7" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Frontend & API <GradientText variant="teal">stack</GradientText>
           </motion.h2>
         </motion.div>
@@ -74,7 +74,7 @@ export default function FrontendAPIStack({ step }: Props) {
                 >
                   {/* Layer label */}
                   <div
-                    className="w-28 flex-shrink-0 text-xs font-bold rounded-lg py-2 px-3 text-center"
+                    className="w-28 flex-shrink-0 text-sm font-bold rounded-lg py-2 px-3 text-center"
                     style={{ background: `${layer.color}20`, color: layer.color }}
                   >
                     {layer.name}
@@ -84,8 +84,8 @@ export default function FrontendAPIStack({ step }: Props) {
                   <div className="flex-1 grid grid-cols-3 gap-3">
                     {layer.details.map((d) => (
                       <div key={d.label}>
-                        <p className="text-xs font-bold text-px-navy">{d.label}</p>
-                        <p className="text-[10px] text-px-muted leading-relaxed">{d.desc}</p>
+                        <p className="text-sm font-bold text-px-navy">{d.label}</p>
+                        <p className="text-xs text-px-muted leading-relaxed">{d.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -118,8 +118,8 @@ export default function FrontendAPIStack({ step }: Props) {
                 <div key={s.label} className="flex items-center gap-2 p-3 rounded-xl bg-white border border-[var(--border)]">
                   <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: s.color }} />
                   <div>
-                    <p className="text-[10px] text-px-muted">{s.label}</p>
-                    <p className="text-xs font-bold text-px-navy font-mono">{s.value}</p>
+                    <p className="text-xs text-px-muted">{s.label}</p>
+                    <p className="text-sm font-bold text-px-navy font-mono">{s.value}</p>
                   </div>
                 </div>
               ))}

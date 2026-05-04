@@ -53,7 +53,7 @@ export default function FutureScope({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Conclusion" number="12" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Future <GradientText variant="teal">scope & roadmap</GradientText>
           </motion.h2>
         </motion.div>
@@ -78,15 +78,15 @@ export default function FutureScope({ step }: Props) {
                         {f.icon}
                       </div>
                       <span
-                        className="text-[9px] font-bold px-2 py-0.5 rounded-full"
+                        className="text-xs font-bold px-2 py-0.5 rounded-full"
                         style={{ background: `${f.color}15`, color: f.color }}
                       >
                         {f.horizon}
                       </span>
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-px-navy mb-1">{f.title}</p>
-                      <p className="text-[10px] text-px-muted leading-relaxed">{f.desc}</p>
+                      <p className="text-base font-bold text-px-navy mb-1">{f.title}</p>
+                      <p className="text-sm text-px-muted leading-relaxed">{f.desc}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -110,7 +110,7 @@ export default function FutureScope({ step }: Props) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: i * 0.06 }}
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[var(--border)] text-[11px] text-px-muted"
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[var(--border)] text-sm text-px-muted"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-[#9CA3AF] flex-shrink-0" />
                     {item}
@@ -130,8 +130,7 @@ export default function FutureScope({ step }: Props) {
               className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
             >
               <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#00B8B3]" />
-              <p className="text-xs text-px-muted">
-                <strong className="text-px-navy">Vision:</strong>{' '}
+              <p className="text-sm text-px-muted">{' '}
                 PEAXIS becomes the OS layer for every hiring team — from sourcing to onboarding. The AI brain gets smarter with every hire, the candidate experience becomes the competitive advantage, and the data moat makes PEAXIS the default choice for growing companies.
               </p>
             </motion.div>

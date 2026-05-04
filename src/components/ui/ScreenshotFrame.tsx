@@ -29,7 +29,7 @@ export default function ScreenshotFrame({ src, alt, caption, className = '' }: S
           <div className="w-2.5 h-2.5 rounded-full bg-[#FEC849]" />
           <div className="w-2.5 h-2.5 rounded-full bg-[#34D399]" />
           <div className="flex-1 mx-2 h-4 rounded bg-gray-200 flex items-center px-2">
-            <span className="text-[9px] text-gray-400 font-mono truncate">peaxis.app</span>
+            <span className="text-xs text-gray-400 font-mono truncate">peaxis.app</span>
           </div>
         </div>
 
@@ -53,12 +53,12 @@ export default function ScreenshotFrame({ src, alt, caption, className = '' }: S
               </svg>
             </div>
             <p className="text-xs font-semibold text-[var(--teal)]">{alt}</p>
-            <p className="text-[10px] text-[var(--muted)] mt-1">Screenshot placeholder</p>
+            <p className="text-xs text-[var(--muted)] mt-1">Screenshot placeholder</p>
           </div>
         )}
       </div>
       {caption && (
-        <p className="text-[10px] text-center text-[var(--muted)]">{caption}</p>
+        <p className="text-xs text-center text-[var(--muted)]">{caption}</p>
       )}
     </div>
   )

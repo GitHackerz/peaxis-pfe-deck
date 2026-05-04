@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Brain, Upload, Calendar, BarChart3, UserCheck } from 'lucide-react'
+import { BarChart3, Brain, Calendar, Upload, UserCheck } from 'lucide-react'
 import Card from '../components/ui/Card'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
@@ -9,38 +9,38 @@ interface Props { step: number }
 
 const reqs = [
   {
-    icon: <Brain size={18} />,
+    icon: <Brain size={20} />,
     id: 'FR-06',
     title: 'AI Match Scoring',
-    items: ['Deterministic skill-overlap engine', 'Score: 0–100 with explanation', 'Strengths & weaknesses breakdown', 'Applied at submission time'],
+    items: ['Deterministic skill-overlap engine', 'Score 0–100 with explanation', 'Strengths & weaknesses breakdown'],
     color: '#00B8B3',
   },
   {
-    icon: <Upload size={18} />,
+    icon: <Upload size={20} />,
     id: 'FR-07',
     title: 'CV Parsing',
-    items: ['PDF / DOCX / TXT support', 'Gemini 2.5-flash extraction', 'Structured JSON output', 'Auto pre-fills candidate profile'],
+    items: ['PDF / DOCX / TXT support', 'Gemini 2.5-flash extraction', 'Auto pre-fills candidate profile'],
     color: '#00B8B3',
   },
   {
-    icon: <UserCheck size={18} />,
+    icon: <UserCheck size={20} />,
     id: 'FR-08',
     title: 'Candidate Onboarding',
-    items: ['Anonymous apply-with-CV flow', 'Profile completeness scoring', 'Semantic embedding generation', 'Email verification'],
+    items: ['Anonymous apply-with-CV flow', 'Profile completeness scoring', 'Semantic embedding generation'],
     color: '#00B8B3',
   },
   {
-    icon: <Calendar size={18} />,
+    icon: <Calendar size={20} />,
     id: 'FR-09',
     title: 'Interview Scheduling',
-    items: ['Interview CRUD with type flags', 'Linked to application record', 'Interviewer assignment', 'Status tracking'],
+    items: ['Interview CRUD with type flags', 'Linked to application record', 'Interviewer assignment & tracking'],
     color: '#00B8B3',
   },
   {
-    icon: <BarChart3 size={18} />,
+    icon: <BarChart3 size={20} />,
     id: 'FR-10',
     title: 'Analytics Dashboard',
-    items: ['Pipeline funnel metrics', 'Score distribution charts', 'Time-to-hire tracking', 'Per-job + global analytics'],
+    items: ['Pipeline funnel metrics', 'Score distribution charts', 'Time-to-hire tracking'],
     color: '#00B8B3',
   },
 ]
@@ -55,11 +55,11 @@ export default function FuncReqAI({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Functional Requirements" number="4" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             AI & analytics <GradientText variant="teal">requirements</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-xl">
-            FR-06 through FR-10 define the intelligence layer — the core differentiator that elevates PEAXIS above traditional ATS tools.
+          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
+            FR-06 to FR-10: the intelligence layer — PEAXIS's core differentiator above traditional ATS tools.
           </motion.p>
         </motion.div>
 
@@ -83,13 +83,13 @@ export default function FuncReqAI({ step }: Props) {
                         {r.icon}
                       </div>
                       <div>
-                        <span className="text-[10px] font-mono text-px-muted">{r.id}</span>
-                        <p className="text-xs font-bold text-px-navy leading-tight">{r.title}</p>
+                        <span className="text-xs font-mono text-px-muted">{r.id}</span>
+                        <p className="text-base font-bold text-px-navy leading-tight">{r.title}</p>
                       </div>
                     </div>
-                    <ul className="space-y-1">
+                    <ul className="space-y-1.5">
                       {r.items.map((item) => (
-                        <li key={item} className="flex items-start gap-1.5 text-[11px] text-px-muted">
+                        <li key={item} className="flex items-start gap-1.5 text-sm text-px-muted">
                           <div className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0" style={{ background: r.color }} />
                           {item}
                         </li>

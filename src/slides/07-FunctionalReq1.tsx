@@ -9,38 +9,38 @@ interface Props { step: number }
 
 const reqs = [
   {
-    icon: <ShieldCheck size={18} />,
+    icon: <ShieldCheck size={20} />,
     id: 'FR-01',
     title: 'Authentication & Security',
-    items: ['Email/password with Argon2 hashing', 'OAuth2: Google + LinkedIn', 'JWT access (15m) + refresh (7d)', 'Rate limiting: 1000 req/60s'],
+    items: ['Email/password — Argon2 hashing', 'OAuth2: Google + LinkedIn', 'JWT access (15m) + refresh (7d)'],
     color: '#00B8B3',
   },
   {
-    icon: <Users size={18} />,
+    icon: <Users size={20} />,
     id: 'FR-02',
     title: 'Multi-Tenant Architecture',
-    items: ['Business-scoped data isolation', 'X-Business-ID header enforcement', 'User ↔ Business join table', 'Unique business slug routing'],
+    items: ['Business-scoped data isolation', 'X-Business-ID header enforcement', 'Unique business slug routing'],
     color: '#00B8B3',
   },
   {
-    icon: <Key size={18} />,
+    icon: <Key size={20} />,
     id: 'FR-03',
     title: 'Roles & Permissions',
-    items: ['Plan-based feature gating', 'Free / Starter / Pro / Enterprise tiers', 'JwtAuthGuard + PlanGuard', 'Business member roles'],
+    items: ['Plan-based feature gating', 'Free / Starter / Pro / Enterprise', 'JwtAuthGuard + PlanGuard'],
     color: '#00B8B3',
   },
   {
-    icon: <Briefcase size={18} />,
+    icon: <Briefcase size={20} />,
     id: 'FR-04',
     title: 'Job Management',
-    items: ['Full CRUD with rich filters', 'Semantic search via pgvector', 'Auto embedding generation', 'Type, location, salary, skills filters'],
+    items: ['Full CRUD with rich filters', 'Semantic search via pgvector', 'Auto embedding generation'],
     color: '#00B8B3',
   },
   {
-    icon: <GitBranch size={18} />,
+    icon: <GitBranch size={20} />,
     id: 'FR-05',
     title: 'Application Pipeline',
-    items: ['6-stage: Applied→Screening→Interview→Offer→Hired/Rejected', 'Stage transition history', 'AI scoring at application time', 'Recruiter kanban view'],
+    items: ['6 stages: Applied → Hired/Rejected', 'Stage transition history', 'AI scoring at submission time'],
     color: '#00B8B3',
   },
 ]
@@ -55,11 +55,11 @@ export default function FuncReqCore({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Functional Requirements" number="4" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Core platform <GradientText variant="teal">requirements</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-xl">
-            FR-01 through FR-05 cover the foundational platform capabilities required for a production-grade SaaS recruitment system.
+          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
+            FR-01 to FR-05: foundational capabilities for a production-grade SaaS recruitment system.
           </motion.p>
         </motion.div>
 
@@ -83,13 +83,13 @@ export default function FuncReqCore({ step }: Props) {
                         {r.icon}
                       </div>
                       <div>
-                        <span className="text-[10px] font-mono text-px-muted">{r.id}</span>
-                        <p className="text-xs font-bold text-px-navy leading-tight">{r.title}</p>
+                        <span className="text-xs font-mono text-px-muted">{r.id}</span>
+                        <p className="text-base font-bold text-px-navy leading-tight">{r.title}</p>
                       </div>
                     </div>
-                    <ul className="space-y-1">
+                    <ul className="space-y-1.5">
                       {r.items.map((item) => (
-                        <li key={item} className="flex items-start gap-1.5 text-[11px] text-px-muted">
+                        <li key={item} className="flex items-start gap-1.5 text-sm text-px-muted">
                           <div className="w-1 h-1 rounded-full mt-1.5 flex-shrink-0" style={{ background: r.color }} />
                           {item}
                         </li>

@@ -13,9 +13,9 @@ const variantStyles: Record<Variant, string> = {
 }
 
 const sizeStyles: Record<Size, string> = {
-  sm: 'text-[10px] px-2 py-0.5 font-semibold tracking-wide',
-  md: 'text-xs px-3 py-1 font-semibold tracking-wide',
-  lg: 'text-sm px-4 py-1.5 font-semibold tracking-wide',
+  sm: 'text-xs px-2.5 py-0.5 font-semibold tracking-wide',
+  md: 'text-sm px-3 py-1 font-semibold tracking-wide',
+  lg: 'text-base px-4 py-1.5 font-semibold tracking-wide',
 }
 
 interface BadgeProps {

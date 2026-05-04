@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { ClipboardList, Search, Star, Upload } from 'lucide-react'
-import Badge from '../components/ui/Badge'
 import CandidatePortalMockup from '../components/mockups/CandidatePortalMockup'
+import Badge from '../components/ui/Badge'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
@@ -26,7 +26,7 @@ export default function PeaxisJobs({ step }: Props) {
             <SectionTag section="Solution" number="6" />
           </motion.div>
           <motion.div variants={fadeUp} className="flex items-center gap-3">
-            <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+            <h2 className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
               <GradientText variant="navy">PEAXIS Jobs</GradientText> — Candidate Portal
             </h2>
             <Badge variant="gray" size="sm">Next.js 16</Badge>
@@ -73,8 +73,8 @@ export default function PeaxisJobs({ step }: Props) {
                       {f.icon}
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-px-navy">{f.label}</p>
-                      <p className="text-[10px] text-px-muted leading-relaxed">{f.desc}</p>
+                      <p className="text-sm font-bold text-px-navy">{f.label}</p>
+                      <p className="text-xs text-px-muted leading-relaxed">{f.desc}</p>
                     </div>
                   </motion.div>
                 ))}

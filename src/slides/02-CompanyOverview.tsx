@@ -10,30 +10,30 @@ interface Props { step: number }
 
 const pillars = [
   {
-    icon: <Bot size={18} />,
+    icon: <Bot size={20} />,
     title: 'AI SDR Engine',
-    body: 'Autonomous AI sales development rep — qualifies leads, drafts outreach, and orchestrates follow-up sequences at scale.',
+    body: 'Autonomous AI sales rep — qualifies leads and orchestrates outreach sequences at scale.',
     color: '#00B8B3',
     bg: '#E6FAF9',
   },
   {
-    icon: <Target size={18} />,
+    icon: <Target size={20} />,
     title: 'Lead Intelligence',
-    body: 'Enriches prospect data with firmographics, intent signals, and behavioural triggers to prioritise highest-value targets.',
+    body: 'Enriches prospects with firmographics and intent signals to prioritise high-value targets.',
     color: '#374151',
     bg: '#F3F4F6',
   },
   {
-    icon: <Zap size={18} />,
+    icon: <Zap size={20} />,
     title: 'Outbound Automation',
-    body: 'Multi-channel sequences (email, LinkedIn) with LLM personalisation — zero manual copy-paste prospecting.',
+    body: 'Multi-channel sequences with LLM personalisation — zero manual prospecting.',
     color: '#374151',
     bg: '#F3F4F6',
   },
   {
-    icon: <BarChart2 size={18} />,
+    icon: <BarChart2 size={20} />,
     title: 'Pipeline Analytics',
-    body: 'Real-time conversion tracking, A/B testing for messaging, and CRM-sync to close the loop from prospect to revenue.',
+    body: 'Real-time conversion tracking, A/B message testing, and CRM sync.',
     color: '#374151',
     bg: '#F3F4F6',
   },
@@ -49,11 +49,11 @@ export default function CompanyOverview({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Company Presentation" number="2" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">Prospecter</GradientText> — Internship Host Company
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
-            An AI-powered B2B sales prospecting platform — automating outbound pipeline generation for growth-stage companies through autonomous AI SDR technology.
+          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
+            An AI-powered B2B sales prospecting platform — automating outbound pipeline generation through autonomous AI SDR technology.
           </motion.p>
         </motion.div>
 
@@ -71,7 +71,7 @@ export default function CompanyOverview({ step }: Props) {
                 <div>
                   <p className="text-xs font-bold text-px-teal uppercase tracking-widest mb-0.5">Mission</p>
                   <p className="text-sm font-semibold text-px-navy">
-                    Replace manual sales prospecting with a fully autonomous AI SDR — enabling B2B companies to scale outbound revenue generation without scaling headcount.
+                    Replace manual sales prospecting with a fully autonomous AI SDR — enabling B2B companies to scale outbound revenue without scaling headcount.
                   </p>
                 </div>
                 <div className="flex items-center gap-2 flex-wrap">
@@ -108,8 +108,8 @@ export default function CompanyOverview({ step }: Props) {
                       {p.icon}
                     </div>
                     <div>
-                      <p className="text-sm font-bold text-px-navy mb-1">{p.title}</p>
-                      <p className="text-xs text-px-muted leading-relaxed">{p.body}</p>
+                      <p className="text-base font-bold text-px-navy mb-1">{p.title}</p>
+                      <p className="text-sm text-px-muted leading-relaxed">{p.body}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -129,9 +129,9 @@ export default function CompanyOverview({ step }: Props) {
               style={{ background: '#F3F4F6', borderColor: 'rgba(0,0,0,0.07)' }}
             >
               <Building2 size={16} className="flex-shrink-0 mt-0.5 text-px-muted" />
-              <p className="text-xs text-px-muted leading-relaxed">
+              <p className="text-sm text-px-muted leading-relaxed">
                 <span className="font-bold text-px-navy">Strategic context — </span>
-                Although Prospecter specialises in AI-powered sales prospecting, its product and engineering environment — LLM pipelines, multi-tenant SaaS, background workers, Redis caching — provided the architectural foundation for developing PEAXIS as a next-generation HR technology platform during this internship.
+                Prospecter's LLM pipelines, multi-tenant SaaS, Redis caching, and background workers provided the architectural foundation transferred directly into PEAXIS.
               </p>
             </motion.div>
           )}

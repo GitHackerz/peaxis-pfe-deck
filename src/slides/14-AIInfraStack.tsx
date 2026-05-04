@@ -33,7 +33,7 @@ export default function AIInfraStack({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Technologies" number="7" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             AI & infrastructure <GradientText variant="teal">stack</GradientText>
           </motion.h2>
         </motion.div>
@@ -49,9 +49,9 @@ export default function AIInfraStack({ step }: Props) {
                 className="bg-white rounded-2xl border border-[var(--border)] overflow-hidden shadow-sm"
               >
                 <div className="px-4 py-2.5 bg-[#F8FAFC] border-b border-[var(--border)] grid grid-cols-[1fr_160px_1fr]">
-                  <span className="text-[10px] font-bold text-px-muted uppercase tracking-wider">AI Feature</span>
-                  <span className="text-[10px] font-bold text-px-muted uppercase tracking-wider">Model</span>
-                  <span className="text-[10px] font-bold text-px-muted uppercase tracking-wider">Why</span>
+                  <span className="text-xs font-bold text-px-muted uppercase tracking-wider">AI Feature</span>
+                  <span className="text-xs font-bold text-px-muted uppercase tracking-wider">Model</span>
+                  <span className="text-xs font-bold text-px-muted uppercase tracking-wider">Why</span>
                 </div>
                 {aiFeatures.map((f, i) => (
                   <motion.div
@@ -59,14 +59,14 @@ export default function AIInfraStack({ step }: Props) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: i * 0.06 }}
-                    className="grid grid-cols-[1fr_160px_1fr] px-4 py-2 border-b border-[var(--border)] last:border-b-0 hover:bg-[#F8FAFC] transition-colors"
+                    className="grid grid-cols-[1fr_160px_1fr] px-4 py-2.5 border-b border-[var(--border)] last:border-b-0 hover:bg-[#F8FAFC] transition-colors"
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: f.color }} />
-                      <span className="text-xs font-medium text-px-navy">{f.name}</span>
+                      <span className="text-sm font-medium text-px-navy">{f.name}</span>
                     </div>
-                    <span className="text-xs font-mono text-px-muted">{f.model}</span>
-                    <span className="text-[10px] text-px-muted">{f.reason}</span>
+                    <span className="text-sm font-mono text-px-muted">{f.model}</span>
+                    <span className="text-sm text-px-muted">{f.reason}</span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -81,7 +81,7 @@ export default function AIInfraStack({ step }: Props) {
                 animate={{ opacity: 1, x: 0 }}
                 className="flex flex-col gap-2"
               >
-                <p className="text-xs font-bold text-px-navy mb-1">Infrastructure</p>
+                <p className="text-sm font-bold text-px-navy mb-1">Infrastructure</p>
                 {infra.map((t, i) => (
                   <motion.div
                     key={t.name}
@@ -91,7 +91,7 @@ export default function AIInfraStack({ step }: Props) {
                     className="flex items-start gap-2 p-3 rounded-xl bg-white border border-[var(--border)]"
                   >
                     <TechBadge name={t.name} />
-                    <p className="text-[10px] text-px-muted leading-relaxed">{t.role}</p>
+                    <p className="text-sm text-px-muted leading-relaxed">{t.role}</p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -105,7 +105,7 @@ export default function AIInfraStack({ step }: Props) {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)] text-xs"
+              className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)] text-sm"
             >
               <div className="w-1 h-8 rounded-full bg-px-teal flex-shrink-0" />
               <div>

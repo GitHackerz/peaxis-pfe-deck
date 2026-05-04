@@ -3,7 +3,6 @@ import { useCallback, useState } from 'react'
 import GridBackground from './components/background/GridBackground'
 import LightAurora from './components/background/LightAurora'
 import LoadingScreen from './components/layout/LoadingScreen'
-import Logo from './components/layout/Logo'
 import Navigation from './components/layout/Navigation'
 import ProgressBar from './components/layout/ProgressBar'
 import SmallScreenBlocker from './components/layout/SmallScreenBlocker'
@@ -11,6 +10,7 @@ import ExportView from './ExportView'
 import { usePresentation } from './hooks/usePresentation'
 import { slideVariants } from './lib/animations'
 
+import GeneralIntro from './slides/00-GeneralIntro'
 import Cover from './slides/01-Cover'
 import CompanyOverview from './slides/02-CompanyOverview'
 import InternshipContext from './slides/03-InternshipContext'
@@ -26,9 +26,7 @@ import PeaxisJobs from './slides/12-PeaxisJobs'
 import FrontendAPIStack from './slides/13-FrontendAPIStack'
 import AIInfraStack from './slides/14-AIInfraStack'
 import LogicalArch from './slides/15-LogicalArchitecture'
-import DataFlow from './slides/16-DataFlow'
 import PhysicalArch from './slides/17-PhysicalArchitecture'
-import Infrastructure from './slides/18-Infrastructure'
 import DemoRecruiter from './slides/19-DemoRecruiter'
 import DemoCandidate from './slides/20-DemoCandidate'
 import DemoAI from './slides/21-DemoAI'
@@ -36,10 +34,12 @@ import Achievements from './slides/22-Achievements'
 import Roadmap from './slides/23-Roadmap'
 import Challenges from './slides/24-Challenges'
 import FutureScope from './slides/25-FutureScope'
-import Conclusion from './slides/26-Conclusion'
+import GeneralConclusion from './slides/27-GeneralConclusion'
+import ThankYou from './slides/28-ThankYou'
 
 export const SLIDE_COMPONENTS = [
   Cover,
+  GeneralIntro,
   CompanyOverview,
   InternshipContext,
   RecruitmentPain,
@@ -54,9 +54,8 @@ export const SLIDE_COMPONENTS = [
   FrontendAPIStack,
   AIInfraStack,
   LogicalArch,
-  DataFlow,
   PhysicalArch,
-  Infrastructure,
+  
   DemoRecruiter,
   DemoCandidate,
   DemoAI,
@@ -64,7 +63,8 @@ export const SLIDE_COMPONENTS = [
   Roadmap,
   Challenges,
   FutureScope,
-  Conclusion,
+  GeneralConclusion,
+  ThankYou,
 ]
 
 export default function App() {
@@ -108,14 +108,15 @@ function PresentationApp() {
           onClick={handleClick}
         >
           {/* Top bar */}
-          <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 pt-5 pointer-events-none">
-            <div className="pointer-events-auto">
-              <Logo height={26} />
-            </div>
-            <div className="hidden md:flex items-center gap-2 text-xs font-mono text-px-muted tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-px-teal inline-block" />
-              PFE Defense · 2026
-            </div>
+          <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 pt-4 pointer-events-none">
+            {/* Left — Prospecter */}
+            <img src="/prospecter-logo.png" alt="Prospecter" style={{ height: 40, width: 'auto', display: 'block' }} />
+           
+            {/* Centre — PEAXIS */}
+            <img src="/peaxis-logo.png" alt="PEAXIS" style={{ height: 32, width: 'auto', display: 'block' }} />
+
+            {/* Right — ESPRIT */}
+            <img src="/esprit-logo.png" alt="ESPRIT" style={{ height: 40, width: 'auto', display: 'block' }} />
           </div>
 
           <ProgressBar slideIndex={state.slideIndex} totalSlides={state.totalSlides} />

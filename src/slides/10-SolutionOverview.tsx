@@ -55,8 +55,8 @@ export default function SolutionOverview({ step }: Props) {
           <motion.h2 variants={cinemaEntrance} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">PEAXIS</GradientText> — Integrated AI Hiring Operating System
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
-            Four deeply integrated products that replace the fragmented stack every recruiter tolerates today — built on SaaS architecture principles refined at Prospecter.
+          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
+            Four deeply integrated products replacing the fragmented stack every recruiter tolerates today.
           </motion.p>
         </motion.div>
 
@@ -80,9 +80,9 @@ export default function SolutionOverview({ step }: Props) {
                     </div>
                     <div>
                       <p className="text-xs font-mono text-px-muted mb-0.5">{p.sub}</p>
-                      <p className="text-sm font-extrabold text-px-navy">{p.name}</p>
-                    </div>
-                    <p className="text-xs text-px-muted leading-relaxed">{p.desc}</p>
+                    <p className="text-base font-extrabold text-px-navy">{p.name}</p>
+                  </div>
+                  <p className="text-sm text-px-muted leading-relaxed">{p.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -101,7 +101,7 @@ export default function SolutionOverview({ step }: Props) {
               <div className="h-[1px] flex-1 max-w-32" style={{ background: 'linear-gradient(90deg, transparent, #00B8B3)' }} />
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#E6FAF9] border border-[rgba(0,184,179,0.25)]">
                 <div className="w-2 h-2 rounded-full bg-px-teal animate-pulse" />
-                <span className="text-xs font-semibold text-px-teal">All four products share a single Prisma → PostgreSQL data layer</span>
+                <span className="text-sm font-semibold text-px-teal">All four products share a single Prisma → PostgreSQL data layer</span>
               </div>
               <div className="h-[1px] flex-1 max-w-32" style={{ background: 'linear-gradient(90deg, #00B8B3, transparent)' }} />
             </motion.div>

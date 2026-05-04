@@ -76,7 +76,7 @@ export default function Roadmap({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Results" number="11" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Product <GradientText variant="teal">roadmap</GradientText>
           </motion.h2>
         </motion.div>
@@ -102,7 +102,7 @@ export default function Roadmap({ step }: Props) {
                     className="px-3 py-2 border-b border-[var(--border)]"
                     style={{ background: pi >= 3 ? '#F8FAFC' : '#E6FAF9' }}
                   >
-                    <p className="text-[10px] font-bold" style={{ color: pi >= 3 ? '#6B7280' : '#009E9A' }}>
+                    <p className="text-xs font-bold" style={{ color: pi >= 3 ? '#6B7280' : '#009E9A' }}>
                       {phase.label}
                     </p>
                   </div>
@@ -114,12 +114,12 @@ export default function Roadmap({ step }: Props) {
                       return (
                         <div key={item.text} className="flex items-center gap-1.5">
                           <div
-                            className="w-4 h-4 rounded flex items-center justify-center flex-shrink-0 text-[8px] font-bold"
+                            className="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 text-xs font-bold"
                             style={{ background: sc.bg, color: sc.text }}
                           >
                             {item.status === 'done' ? '✓' : item.status === 'active' ? '→' : '○'}
                           </div>
-                          <span className="text-[10px] text-px-navy leading-tight">{item.text}</span>
+                          <span className="text-xs text-px-navy leading-tight">{item.text}</span>
                         </div>
                       )
                     })}
@@ -141,7 +141,7 @@ export default function Roadmap({ step }: Props) {
               {Object.entries(statusColor).map(([key, val]) => (
                 <div key={key} className="flex items-center gap-1.5">
                   <div className="w-3 h-3 rounded flex-shrink-0" style={{ background: val.bg, border: `1px solid ${val.text}40` }} />
-                  <span className="text-[10px] text-px-muted">{val.label}</span>
+                  <span className="text-xs text-px-muted">{val.label}</span>
                 </div>
               ))}
             </motion.div>

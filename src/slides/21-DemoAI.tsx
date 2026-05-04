@@ -41,7 +41,7 @@ export default function DemoAI({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Product Demo" number="11" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-3xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Demo: <GradientText variant="teal">AI Intelligence Layer</GradientText>
           </motion.h2>
         </motion.div>
@@ -73,7 +73,7 @@ export default function DemoAI({ step }: Props) {
                       />
                       <span className="text-xs font-extrabold text-px-navy">{c.name}</span>
                     </div>
-                    <p className="text-[10px] text-px-muted leading-relaxed">{c.desc}</p>
+                    <p className="text-xs text-px-muted leading-relaxed">{c.desc}</p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -96,19 +96,19 @@ export default function DemoAI({ step }: Props) {
                       <path d="M6 1l1.3 2.6L10 4.3l-2 1.9.5 2.8L6 7.6 3.5 9l.5-2.8L2 4.3l2.7-.7L6 1z" fill="#00B8B3" />
                     </svg>
                   </div>
-                  <span className="text-[11px] font-bold text-px-navy">AI Decision Engine</span>
+                  <span className="text-xs font-bold text-px-navy">AI Decision Engine</span>
                 </div>
 
                 <div className="flex flex-col gap-3 p-4 flex-1">
                   {/* Input row */}
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-[9px] font-bold uppercase tracking-widest text-px-muted">Input</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-px-muted">Input</span>
                     <div className="flex gap-2">
-                      <span className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.25)]">
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.25)]">
                         CV (PDF)
                       </span>
-                      <span className="text-[9px] text-px-muted flex items-center">+</span>
-                      <span className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-[#F3F4F6] text-[#374151] border border-[#E5E7EB]">
+                      <span className="text-xs text-px-muted flex items-center">+</span>
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#F3F4F6] text-[#374151] border border-[#E5E7EB]">
                         Job Description
                       </span>
                     </div>
@@ -116,11 +116,11 @@ export default function DemoAI({ step }: Props) {
 
                   {/* Engine row */}
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-[9px] font-bold uppercase tracking-widest text-px-muted">Engine</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-px-muted">Engine</span>
                     <div className="flex flex-wrap gap-1.5">
                       {['Parse CV', 'Embed Skills', 'pgvector Match', 'Score + Explain'].map((e, i) => (
                         <span key={e}
-                          className="flex items-center gap-1 text-[9px] font-semibold px-2 py-0.5 rounded-full bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.2)]"
+                          className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.2)]"
                         >
                           {i > 0 && <svg width="6" height="6" viewBox="0 0 6 6" fill="none"><path d="M1 3h4M3 1l2 2-2 2" stroke="#009E9A" strokeWidth="1" strokeLinecap="round" /></svg>}
                           {e}
@@ -131,11 +131,11 @@ export default function DemoAI({ step }: Props) {
 
                   {/* Output — score */}
                   <div className="flex flex-col gap-2 p-3 rounded-xl bg-white border border-[rgba(0,184,179,0.2)]">
-                    <span className="text-[9px] font-bold uppercase tracking-widest text-px-muted">Output</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-px-muted">Output</span>
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl font-extrabold text-px-navy">82</span>
                       <span className="text-sm text-px-muted">/100</span>
-                      <span className="ml-auto text-[9px] font-bold bg-[#E6FAF9] text-[#009E9A] px-2 py-0.5 rounded-full border border-[rgba(0,184,179,0.2)]">
+                      <span className="ml-auto text-xs font-bold bg-[#E6FAF9] text-[#009E9A] px-2 py-0.5 rounded-full border border-[rgba(0,184,179,0.2)]">
                         Strong Match
                       </span>
                     </div>
@@ -144,13 +144,13 @@ export default function DemoAI({ step }: Props) {
                     </div>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {matchedSkills.map(s => (
-                        <span key={s} className="text-[8px] font-semibold px-1.5 py-0.5 rounded bg-[#E6FAF9] text-[#009E9A]">{s} ✓</span>
+                        <span key={s} className="text-xs font-semibold px-1.5 py-0.5 rounded bg-[#E6FAF9] text-[#009E9A]">{s} ✓</span>
                       ))}
                       {missingSkills.map(s => (
-                        <span key={s} className="text-[8px] font-semibold px-1.5 py-0.5 rounded bg-[#FFF0F0] text-[#E03E3F]">{s} ✗</span>
+                        <span key={s} className="text-xs font-semibold px-1.5 py-0.5 rounded bg-[#FFF0F0] text-[#E03E3F]">{s} ✗</span>
                       ))}
                     </div>
-                    <p className="text-[8px] text-px-muted italic leading-snug mt-1">
+                    <p className="text-xs text-px-muted italic leading-snug mt-1">
                       "Strong React + TS background. GraphQL gap is trainable given existing Node.js depth."
                     </p>
                   </div>
@@ -169,7 +169,7 @@ export default function DemoAI({ step }: Props) {
               className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
             >
               <div className="w-1 h-5 rounded-full bg-[#00B8B3] flex-shrink-0" />
-              <p className="text-[10px] text-px-muted">
+              <p className="text-xs text-px-muted">
                 <strong className="text-px-navy">Design rule:</strong>{' '}
                 Every AI score exposes — numeric value · confidence label · matched skills (teal) · missing skills (coral) · plain-language explanation. No silent black boxes.
               </p>

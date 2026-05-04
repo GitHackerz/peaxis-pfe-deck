@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import GradientText from '../components/ui/GradientText'
 import WorkspaceMockup from '../components/mockups/WorkspaceMockup'
+import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
 
@@ -23,7 +23,7 @@ export default function DemoRecruiter({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Product Demo" number="10" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Demo: <GradientText variant="teal">Recruiter Dashboard</GradientText>
           </motion.h2>
         </motion.div>
@@ -59,8 +59,8 @@ export default function DemoRecruiter({ step }: Props) {
                     transition={{ delay: i * 0.07 }}
                     className="p-3 rounded-xl bg-white border border-[var(--border)]"
                   >
-                    <p className="text-xs font-bold text-px-navy mb-0.5">{f.label}</p>
-                    <p className="text-[10px] text-px-muted">{f.desc}</p>
+                    <p className="text-sm font-bold text-px-navy mb-0.5">{f.label}</p>
+                    <p className="text-xs text-px-muted">{f.desc}</p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -74,8 +74,7 @@ export default function DemoRecruiter({ step }: Props) {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)] text-xs"
-            >
+              className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)] text-sm">
               <div className="w-1 h-8 rounded-full bg-px-teal flex-shrink-0" />
               <p className="text-px-muted">
                 <strong className="text-px-navy">UX principle:</strong>{' '}

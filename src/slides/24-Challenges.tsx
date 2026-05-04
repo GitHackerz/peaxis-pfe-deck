@@ -42,7 +42,7 @@ export default function Challenges({ step }: Props) {
           <motion.div variants={fadeUp}>
             <SectionTag section="Conclusion" number="12" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Challenges & <GradientText variant="teal">lessons learned</GradientText>
           </motion.h2>
         </motion.div>
@@ -69,20 +69,20 @@ export default function Challenges({ step }: Props) {
                   {/* Content */}
                   <div className="flex-1 grid grid-cols-[1fr_1fr_200px] gap-4">
                     <div>
-                      <p className="text-xs font-bold text-px-muted uppercase tracking-wider mb-1">Challenge</p>
-                      <p className="text-sm font-bold text-px-navy mb-1">{c.title}</p>
-                      <p className="text-xs text-px-muted leading-relaxed">{c.challenge}</p>
+                      <p className="text-sm font-bold text-px-muted uppercase tracking-wider mb-1">Challenge</p>
+                      <p className="text-base font-bold text-px-navy mb-1">{c.title}</p>
+                      <p className="text-sm text-px-muted leading-relaxed">{c.challenge}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-px-muted uppercase tracking-wider mb-1">Resolution</p>
-                      <p className="text-xs text-px-muted leading-relaxed">{c.resolution}</p>
+                      <p className="text-sm font-bold text-px-muted uppercase tracking-wider mb-1">Resolution</p>
+                      <p className="text-sm text-px-muted leading-relaxed">{c.resolution}</p>
                     </div>
                     <div
                       className="p-3 rounded-xl border"
                       style={{ background: `${c.color}08`, borderColor: `${c.color}25` }}
                     >
-                      <p className="text-[9px] font-bold uppercase tracking-wider mb-1" style={{ color: c.color }}>Key lesson</p>
-                      <p className="text-[10px] text-px-muted italic leading-relaxed">{c.lesson}</p>
+                      <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: c.color }}>Key lesson</p>
+                      <p className="text-xs text-px-muted italic leading-relaxed">{c.lesson}</p>
                     </div>
                   </div>
                 </motion.div>

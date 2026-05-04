@@ -10,6 +10,8 @@ export interface SlideConfig {
 export const SLIDES: SlideConfig[] = [
   // §1 Cover
   { id: 'cover',               steps: 0, label: 'Cover'          },
+  // §1b General Introduction
+  { id: 'general-intro',       steps: 5, label: 'Introduction'    },
   // §2 Company
   { id: 'company-overview',    steps: 3, label: 'Company'        },
   { id: 'internship-context',  steps: 3, label: 'Context'        },
@@ -31,10 +33,8 @@ export const SLIDES: SlideConfig[] = [
   { id: 'ai-infra-stack',      steps: 4, label: 'AI/Infra'       },
   // §8 Logical Architecture
   { id: 'logical-arch',        steps: 4, label: 'Logical Arch.'  },
-  { id: 'data-flow',           steps: 5, label: 'Data Flow'      },
   // §9 Physical Architecture
-  { id: 'physical-arch',       steps: 3, label: 'Physical Arch.' },
-  { id: 'infrastructure',      steps: 3, label: 'Infrastructure' },
+  { id: 'physical-arch',       steps: 4, label: 'Physical Arch.' },
   // §10 Demo
   { id: 'demo-recruiter',      steps: 3, label: 'Demo: Hire'     },
   { id: 'demo-candidate',      steps: 3, label: 'Demo: Jobs'     },
@@ -45,7 +45,10 @@ export const SLIDES: SlideConfig[] = [
   // §12 Conclusion
   { id: 'challenges',          steps: 3, label: 'Challenges'     },
   { id: 'future-scope',        steps: 3, label: 'Future'         },
-  { id: 'conclusion',          steps: 0, label: 'Conclusion'     },
+  // Final consolidated conclusion
+  { id: 'general-conclusion',  steps: 4, label: 'Conclusion'      },
+  // Thank you
+  { id: 'thank-you',           steps: 0, label: 'Thanks'          },
 ]
 
 export const SLIDE_COUNT = SLIDES.length

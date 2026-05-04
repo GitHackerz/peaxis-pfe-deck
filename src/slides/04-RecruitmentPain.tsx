@@ -15,21 +15,21 @@ const stats = [
 
 const pains = [
   {
-    icon: <Clock size={20} />,
+    icon: <Clock size={22} />,
     title: 'Screening bottleneck',
-    body: 'Recruiters spend 23 hours per week manually reviewing CVs. 80% of that time is wasted on unqualified applications.',
+    body: 'Recruiters spend 23 hours/week manually reviewing CVs. 80% of that time is wasted on unqualified applications.',
     color: '#FE595A',
   },
   {
-    icon: <AlertTriangle size={20} />,
+    icon: <AlertTriangle size={22} />,
     title: 'Bias & inconsistency',
-    body: 'Manual screening introduces unconscious bias and inconsistent evaluation criteria across reviewers and hiring rounds.',
+    body: 'Manual screening introduces unconscious bias and inconsistent evaluation criteria across reviewers.',
     color: '#001027',
   },
   {
-    icon: <UserX size={20} />,
+    icon: <UserX size={22} />,
     title: 'Candidate friction',
-    body: 'Long applications, no feedback, and opaque processes cause top talent to abandon their candidacies before completion.',
+    body: 'Long applications, zero feedback, and opaque processes cause top talent to abandon before completion.',
     color: '#6B7280',
   },
 ]
@@ -47,7 +47,7 @@ export default function RecruitmentPain({ step }: Props) {
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Recruitment is <GradientText variant="coral">broken</GradientText> at every layer
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-xl">
+          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
             The hiring process hasn't fundamentally changed in 20 years. Time, money, and talent are wasted at every step.
           </motion.p>
         </motion.div>
@@ -69,9 +69,9 @@ export default function RecruitmentPain({ step }: Props) {
                   className="p-4 rounded-2xl text-center border"
                   style={{ background: `${s.color}10`, borderColor: `${s.color}25` }}
                 >
-                  <div className="text-3xl font-extrabold" style={{ color: s.color }}>{s.value}</div>
-                  <div className="text-xs font-semibold text-px-navy mt-1">{s.label}</div>
-                  <div className="text-[10px] text-px-muted mt-0.5">{s.sub}</div>
+                  <div className="text-4xl font-extrabold" style={{ color: s.color }}>{s.value}</div>
+                  <div className="text-sm font-semibold text-px-navy mt-1">{s.label}</div>
+                  <div className="text-xs text-px-muted mt-0.5">{s.sub}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -97,8 +97,8 @@ export default function RecruitmentPain({ step }: Props) {
                       {p.icon}
                     </div>
                     <div>
-                      <p className="text-sm font-bold text-px-navy mb-1">{p.title}</p>
-                      <p className="text-xs text-px-muted leading-relaxed">{p.body}</p>
+                      <p className="text-base font-bold text-px-navy mb-1">{p.title}</p>
+                      <p className="text-sm text-px-muted leading-relaxed">{p.body}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -117,14 +117,14 @@ export default function RecruitmentPain({ step }: Props) {
             >
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#FFF0F0] border border-[rgba(254,89,90,0.2)]">
                 <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#FE595A]" />
-                <p className="text-xs text-px-navy">
-                  <strong>Global impact:</strong> companies lose an average of <strong>$14,900</strong> per bad hire, while top candidates accept competing offers in under 10 days.
+                <p className="text-sm text-px-navy">
+                  <strong>Global:</strong> companies lose <strong>$14,900</strong> per bad hire; top candidates accept offers in under 10 days.
                 </p>
               </div>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl border" style={{ background: '#F3F4F6', borderColor: 'rgba(0,0,0,0.07)' }}>
                 <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#6B7280]" />
-                <p className="text-xs text-px-navy">
-                  <strong>Regional context:</strong> In Tunisia &amp; North Africa, growing SMEs rely on spreadsheets and informal networks — modern ATS adoption remains critically low among early-stage companies.
+                <p className="text-sm text-px-navy">
+                  <strong>Regional:</strong> In Tunisia & North Africa, growing SMEs rely on spreadsheets — modern ATS adoption remains critically low.
                 </p>
               </div>
             </motion.div>
