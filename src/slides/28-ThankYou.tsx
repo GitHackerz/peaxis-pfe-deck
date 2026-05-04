@@ -18,7 +18,7 @@ export default function ThankYou() {
         </motion.h1>
 
         <motion.p variants={fadeUp} initial="hidden" animate="visible" className="text-base text-px-muted max-w-2xl">
-          Contact: BIBANI Mohamed Habib Allah — peaxis@contact.example · Questions welcome after the session.
+          Contact: BIBANI Mohamed Habib Allah — contact@peaxis.com · Questions welcome after the session.
         </motion.p>
 
         <motion.div variants={fadeUp} initial="hidden" animate="visible" className="mt-4">

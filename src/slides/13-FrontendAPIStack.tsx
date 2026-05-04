@@ -14,8 +14,9 @@ const layers = [
     border: 'rgba(55,65,81,0.15)',
     tech: ['Next.js', 'React', 'Tailwind', 'TypeScript'],
     details: [
-      { label: 'PEAXIS Hire', desc: 'Recruiter dashboard — port 3000, Bun runtime' },
-      { label: 'PEAXIS Jobs', desc: 'Candidate portal — port 3001, Bun runtime' },
+      { label: 'Landing', desc: 'Marketing landing — port 3000, pnpm (node)' },
+      { label: 'PEAXIS Jobs', desc: 'Candidate portal — port 3100, pnpm (node)' },
+      { label: 'PEAXIS Hire', desc: 'Recruiter dashboard — port 3101, pnpm (node)' },
       { label: 'Rendering', desc: 'Server components fetch → client components own state' },
     ],
   },

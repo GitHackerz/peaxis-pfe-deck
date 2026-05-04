@@ -31,9 +31,7 @@ import DemoRecruiter from './slides/19-DemoRecruiter'
 import DemoCandidate from './slides/20-DemoCandidate'
 import DemoAI from './slides/21-DemoAI'
 import Achievements from './slides/22-Achievements'
-import Roadmap from './slides/23-Roadmap'
 import Challenges from './slides/24-Challenges'
-import FutureScope from './slides/25-FutureScope'
 import GeneralConclusion from './slides/27-GeneralConclusion'
 import ThankYou from './slides/28-ThankYou'
 
@@ -60,9 +58,7 @@ export const SLIDE_COMPONENTS = [
   DemoCandidate,
   DemoAI,
   Achievements,
-  Roadmap,
   Challenges,
-  FutureScope,
   GeneralConclusion,
   ThankYou,
 ]

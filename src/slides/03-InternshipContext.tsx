@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Brain, Calendar, Code2, Layers, Lightbulb } from 'lucide-react'
+import { Brain, Code2, Layers } from 'lucide-react'
 import Badge from '../components/ui/Badge'
 import Card from '../components/ui/Card'
 import GradientText from '../components/ui/GradientText'
@@ -57,7 +57,6 @@ export default function InternshipContext({ step }: Props) {
               transition={{ duration: 0.45 }}
               className="flex items-center gap-3 p-4 rounded-xl bg-[#F8FAFC] border border-[var(--border)]"
             >
-              <Lightbulb size={20} className="text-px-teal flex-shrink-0" />
               <p className="text-sm text-px-muted leading-relaxed">
                 <strong className="text-px-navy">PEAXIS</strong> is an independent product developed during the internship period at <strong className="text-px-navy">Prospecter</strong>. It is not related to Prospecter's product — it is a separate AI recruitment SaaS platform conceived, designed, and built entirely as the internship project.
               </p>
@@ -74,8 +73,7 @@ export default function InternshipContext({ step }: Props) {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="flex items-center gap-2 p-3 rounded-xl bg-white border border-[var(--border)] shadow-sm"
             >
-              <Calendar size={14} className="text-px-teal flex-shrink-0" />
-              <div className="flex items-center gap-3 flex-1 overflow-x-auto">
+              <div className="flex items-center justify-center gap-3 flex-1 overflow-x-auto">
                 {[
                   { date: 'Dec 22', label: 'Kickoff · Prospecter', color: '#00B8B3' },
                   { date: 'Jan', label: 'Architecture design', color: '#374151' },

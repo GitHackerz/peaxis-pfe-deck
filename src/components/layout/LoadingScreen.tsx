@@ -32,14 +32,7 @@ export default function LoadingScreen({ onComplete }: Props) {
           <motion.div variants={logoReveal} initial="hidden" animate="visible">
             <Logo height={48} />
           </motion.div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="mt-4 text-sm text-px-muted font-medium tracking-widest uppercase"
-          >
-            PFE Defense 2026
-          </motion.p>
+          {/* Caption removed per request */}
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
