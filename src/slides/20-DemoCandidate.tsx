@@ -6,13 +6,13 @@ import { fadeUp, stagger } from '../lib/animations'
 
 interface Props { step: number }
 
-// 5 steps: merged Pre-fill + Apply into one "Apply"
 const flowSteps = [
   { label: 'Discover',   color: '#00B8B3', n: '1' },
   { label: 'Upload CV',  color: '#00B8B3', n: '2' },
   { label: 'AI Parse',   color: '#00B8B3', n: '3' },
-  { label: 'Apply',      color: '#00B8B3', n: '4' },
-  { label: 'Track',      color: '#FE595A', n: '5' },
+  { label: 'Match Score', color: '#00B8B3', n: '4' },
+  { label: 'Apply',      color: '#00B8B3', n: '5' },
+  { label: 'Track',      color: '#FE595A', n: '6' },
 ]
 
 const pipelineSteps = [
@@ -20,7 +20,8 @@ const pipelineSteps = [
   { label: 'Gemini 2.5-flash', bg: '#E6FAF9', text: '#009E9A' },
   { label: 'JSON Profile', bg: '#F3F4F6', text: '#374151' },
   { label: 'Redis Cache (30d)', bg: '#F3F4F6', text: '#374151' },
-  { label: 'Score + Apply', bg: '#F3F4F6', text: '#374151' },
+  { label: 'Match Preview', bg: '#E6FAF9', text: '#009E9A' },
+  { label: 'Apply', bg: '#F3F4F6', text: '#374151' },
   { label: 'Pipeline Stage', bg: '#F3F4F6', text: '#374151' },
 ]
 
@@ -34,11 +35,14 @@ export default function DemoCandidate({ step }: Props) {
           className="flex items-center justify-between gap-4">
           <div className="flex flex-col gap-1">
             <motion.div variants={fadeUp}>
-              <SectionTag section="Product Demo" number="10" />
+              <SectionTag section="Product Modules" number="10" />
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-3xl font-extrabold leading-tight tracking-tight text-px-navy">
-              Demo: <GradientText variant="navy">Candidate Flow</GradientText>
+              <GradientText variant="navy">PEAXIS Jobs</GradientText> — Candidate Journey
             </motion.h2>
+            <motion.p variants={fadeUp} className="text-xs text-px-muted max-w-sm">
+              From job discovery to application tracking — with AI transparency at every step.
+            </motion.p>
           </div>
           {/* Compact horizontal stepper */}
           <motion.div variants={fadeUp}
@@ -62,7 +66,7 @@ export default function DemoCandidate({ step }: Props) {
           </motion.div>
         </motion.div>
 
-        {/* Primary mockup — dominant zone */}
+        {/* Primary mockup */}
         <AnimatePresence>
           {step >= 1 && (
             <motion.div
@@ -76,7 +80,7 @@ export default function DemoCandidate({ step }: Props) {
           )}
         </AnimatePresence>
 
-        {/* Technical pipeline footer — compact strip */}
+        {/* Technical pipeline footer */}
         <AnimatePresence>
           {step >= 2 && (
             <motion.div
@@ -85,7 +89,7 @@ export default function DemoCandidate({ step }: Props) {
               className="flex items-center gap-1.5 p-2.5 rounded-xl bg-white border border-[var(--border)]"
             >
               <span className="text-xs font-bold text-px-muted uppercase tracking-widest mr-2 flex-shrink-0">
-                Pipeline
+                AI Pipeline
               </span>
               {pipelineSteps.map((p, i) => (
                 <div key={p.label} className="flex items-center gap-1.5 flex-shrink-0">
@@ -103,7 +107,7 @@ export default function DemoCandidate({ step }: Props) {
                 </div>
               ))}
               <span className="ml-auto text-xs text-px-muted italic flex-shrink-0">
-                Upload CV once — AI handles the rest.
+                Upload once — AI handles the rest.
               </span>
             </motion.div>
           )}

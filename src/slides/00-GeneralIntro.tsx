@@ -8,26 +8,26 @@ interface Props { step: number }
 const pillars = [
   {
     number: '01',
-    title: 'Context',
-    body: 'AI is reshaping every industry. Recruitment — still largely manual — is one of the last domains to benefit from intelligent automation.',
+    title: 'Hiring Fragmentation',
+    body: 'SMEs juggle 5+ disconnected tools to complete a single hire — job boards, spreadsheets, email threads, calendar apps, and manual ATS entries. There is no unified operational layer.',
     color: '#00B8B3',
   },
   {
     number: '02',
-    title: 'Problem Statement',
-    body: 'Traditional ATS tools are keyword-driven and rigid. Hiring teams waste hours on manual screening while qualified candidates go unnoticed.',
+    title: 'Legacy ATS Failure',
+    body: 'Traditional ATS platforms rely on keyword matching and rigid workflows. They miss qualified candidates, penalise non-standard CVs, and provide zero intelligence — just a database with filters.',
     color: '#FE595A',
   },
   {
     number: '03',
-    title: 'Objectives',
-    body: 'Design and build PEAXIS — an AI-native, full-stack recruitment platform that automates scoring, surfaces explainable insights, and scales for SMEs.',
-    color: '#001027',
+    title: 'Candidate Friction',
+    body: 'Candidates apply into black boxes. No feedback, no transparency, no skill gap visibility. The application experience is broken — and it silently destroys employer talent brand.',
+    color: '#374151',
   },
   {
     number: '04',
-    title: 'Methodology',
-    body: '6-month PFE internship at Prospecter. Iterative agile cycles: requirements → architecture → full-stack implementation → AI integration → deployment.',
+    title: 'The Intelligence Gap',
+    body: 'Recruiters make consequential decisions without data. No explainable scoring, no skill alignment visibility, no suggested actions. AI in recruitment today is mostly marketing — not infrastructure.',
     color: '#6B7280',
   },
 ]
@@ -51,10 +51,10 @@ export default function GeneralIntro({ step }: Props) {
             <SectionTag section="Introduction" number="1" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            General <GradientText variant="teal">Introduction</GradientText>
+            Why <GradientText variant="teal">PEAXIS?</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            Academic framing of the project — context, problem, objectives, and methodology.
+            Recruitment does not need another tool — it needs an integrated operating system.
           </motion.p>
         </motion.div>
 
@@ -99,7 +99,7 @@ export default function GeneralIntro({ step }: Props) {
           ))}
         </div>
 
-        {/* Footer note — visible after all pillars */}
+        {/* Core thesis — visible after all pillars */}
         <AnimatePresence>
           {step >= 5 && (
             <motion.div
@@ -109,9 +109,10 @@ export default function GeneralIntro({ step }: Props) {
             >
               <div className="w-2 h-2 rounded-full flex-shrink-0 bg-px-teal" />
               <p className="text-px-navy">
-                <strong>Internship scope:</strong> 6-month PFE at{' '}
-                <span className="font-semibold text-px-teal">Prospecter</span> — full-stack engineering
-                and AI systems architecture, independently designed and delivered.
+                <strong>Core thesis:</strong>{' '}
+                PEAXIS unifies business infrastructure, recruiter execution, candidate experience, and AI intelligence
+                into a single modular ecosystem — replacing the fragmented stack with an{' '}
+                <span className="font-semibold text-px-teal">AI-powered Hiring Operating System</span>.
               </p>
             </motion.div>
           )}

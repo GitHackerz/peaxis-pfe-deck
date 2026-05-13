@@ -7,10 +7,10 @@ import { fadeUp, stagger } from '../lib/animations'
 interface Props { step: number }
 
 const features = [
-  { label: 'Job Workspace', desc: 'All job-related data in one tabbed view — no page hops' },
-  { label: 'Pipeline Kanban', desc: 'Drag-and-drop stage management with AI scores on every card' },
-  { label: 'Candidate Drawer', desc: 'Slide-in panel reveals AI insights without leaving the pipeline' },
-  { label: 'Inline Job Edit', desc: 'Edit job details within the workspace — router.refresh() on save' },
+  { label: 'Job Workspace', desc: 'All job-related data — pipeline, candidates, analytics — in one tabbed view. No page hops.' },
+  { label: 'Pipeline Kanban', desc: 'Drag-and-drop stage management with AI match scores and status on every candidate card' },
+  { label: 'Candidate Drawer', desc: 'Slide-in panel reveals AI insights, score breakdown, and interview tools without leaving the pipeline' },
+  { label: 'Hiring Copilot', desc: 'Contextual AI assistance — candidate summary, interview questions, risk flags, suggested actions' },
 ]
 
 export default function DemoRecruiter({ step }: Props) {
@@ -21,11 +21,14 @@ export default function DemoRecruiter({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Product Demo" number="10" />
+            <SectionTag section="Product Modules" number="10" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Demo: <GradientText variant="teal">Recruiter Dashboard</GradientText>
+            <GradientText variant="teal">PEAXIS Hire</GradientText> — In Operation
           </motion.h2>
+          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-xl">
+            The recruiter's full operating environment — from posting to pipeline management to AI-powered decisions.
+          </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-[1fr_220px] gap-5 items-start">
@@ -68,7 +71,7 @@ export default function DemoRecruiter({ step }: Props) {
           </AnimatePresence>
         </div>
 
-        {/* Key UX rule */}
+        {/* Key UX principle */}
         <AnimatePresence>
           {step >= 3 && (
             <motion.div
@@ -78,7 +81,8 @@ export default function DemoRecruiter({ step }: Props) {
               <div className="w-1 h-8 rounded-full bg-px-teal flex-shrink-0" />
               <p className="text-px-muted">
                 <strong className="text-px-navy">UX principle:</strong>{' '}
-                Candidate card click <em>never navigates</em> — it opens the CandidateDrawer (slide-in panel). "View Full Profile" inside the drawer navigates. One action, clear intent.
+                Candidate card click opens the <strong>CandidateDrawer</strong> — never navigates away.
+                "View Full Profile" inside the drawer navigates to the full profile page. Every action has a clear, single intent.
               </p>
             </motion.div>
           )}

@@ -24,7 +24,7 @@ const capabilities = [
   {
     name: 'JD Generator',
     desc: 'Bias-checked job description from title + bullets, with skill requirement suggestions',
-    color: '#374151', bg: '#F9FAFB',
+    color: '#7C3AED', bg: '#F5F3FF',
   },
 ]
 
@@ -39,11 +39,14 @@ export default function DemoAI({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-1">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Product Demo" number="11" />
+            <SectionTag section="Product Modules" number="11" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Demo: <GradientText variant="teal">AI Intelligence Layer</GradientText>
+            <GradientText variant="teal">AI Brain</GradientText> — Intelligence in Action
           </motion.h2>
+          <motion.p variants={fadeUp} className="text-xs text-px-muted max-w-xl">
+            Explainable AI at every decision point — no silent scoring, no unexplained rejections.
+          </motion.p>
         </motion.div>
 
         {/* Main 2-column layout */}
@@ -80,7 +83,7 @@ export default function DemoAI({ step }: Props) {
             )}
           </AnimatePresence>
 
-          {/* RIGHT — unified AI decision hero card */}
+          {/* RIGHT — AI decision hero card */}
           <AnimatePresence>
             {step >= 2 && (
               <motion.div
@@ -96,32 +99,24 @@ export default function DemoAI({ step }: Props) {
                       <path d="M6 1l1.3 2.6L10 4.3l-2 1.9.5 2.8L6 7.6 3.5 9l.5-2.8L2 4.3l2.7-.7L6 1z" fill="#00B8B3" />
                     </svg>
                   </div>
-                  <span className="text-xs font-bold text-px-navy">AI Decision Engine</span>
+                  <span className="text-xs font-bold text-px-navy">AI Match Engine — Live Output</span>
                 </div>
 
                 <div className="flex flex-col gap-3 p-4 flex-1">
-                  {/* Input row */}
                   <div className="flex flex-col gap-1.5">
                     <span className="text-xs font-bold uppercase tracking-widest text-px-muted">Input</span>
                     <div className="flex gap-2">
-                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.25)]">
-                        CV (PDF)
-                      </span>
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.25)]">CV (PDF)</span>
                       <span className="text-xs text-px-muted flex items-center">+</span>
-                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#F3F4F6] text-[#374151] border border-[#E5E7EB]">
-                        Job Description
-                      </span>
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#F3F4F6] text-[#374151] border border-[#E5E7EB]">Job Description</span>
                     </div>
                   </div>
 
-                  {/* Engine row */}
                   <div className="flex flex-col gap-1.5">
                     <span className="text-xs font-bold uppercase tracking-widest text-px-muted">Engine</span>
                     <div className="flex flex-wrap gap-1.5">
                       {['Parse CV', 'Embed Skills', 'pgvector Match', 'Score + Explain'].map((e, i) => (
-                        <span key={e}
-                          className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.2)]"
-                        >
+                        <span key={e} className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.2)]">
                           {i > 0 && <svg width="6" height="6" viewBox="0 0 6 6" fill="none"><path d="M1 3h4M3 1l2 2-2 2" stroke="#009E9A" strokeWidth="1" strokeLinecap="round" /></svg>}
                           {e}
                         </span>
@@ -129,15 +124,12 @@ export default function DemoAI({ step }: Props) {
                     </div>
                   </div>
 
-                  {/* Output — score */}
                   <div className="flex flex-col gap-2 p-3 rounded-xl bg-white border border-[rgba(0,184,179,0.2)]">
                     <span className="text-xs font-bold uppercase tracking-widest text-px-muted">Output</span>
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl font-extrabold text-px-navy">82</span>
                       <span className="text-sm text-px-muted">/100</span>
-                      <span className="ml-auto text-xs font-bold bg-[#E6FAF9] text-[#009E9A] px-2 py-0.5 rounded-full border border-[rgba(0,184,179,0.2)]">
-                        Strong Match
-                      </span>
+                      <span className="ml-auto text-xs font-bold bg-[#E6FAF9] text-[#009E9A] px-2 py-0.5 rounded-full border border-[rgba(0,184,179,0.2)]">Strong Match</span>
                     </div>
                     <div className="w-full h-1.5 bg-gray-100 rounded-full">
                       <div className="h-full rounded-full" style={{ width: '82%', background: '#00B8B3' }} />
@@ -160,7 +152,7 @@ export default function DemoAI({ step }: Props) {
           </AnimatePresence>
         </div>
 
-        {/* Bottom — single design principle */}
+        {/* Bottom — design principle */}
         <AnimatePresence>
           {step >= 3 && (
             <motion.div
@@ -170,8 +162,8 @@ export default function DemoAI({ step }: Props) {
             >
               <div className="w-1 h-5 rounded-full bg-[#00B8B3] flex-shrink-0" />
               <p className="text-xs text-px-muted">
-                <strong className="text-px-navy">Design rule:</strong>{' '}
-                Every AI score exposes — numeric value · confidence label · matched skills (teal) · missing skills (coral) · plain-language explanation. No silent black boxes.
+                <strong className="text-px-navy">Explainability principle:</strong>{' '}
+                Every score exposes — numeric value · confidence label · matched skills (teal) · missing skills (coral) · plain-language rationale. No silent black boxes.
               </p>
             </motion.div>
           )}

@@ -12,19 +12,19 @@ const contributions = [
   {
     icon: <Layers size={20} />,
     area: 'Full-Stack Architecture',
-    items: ['NestJS API — 14 feature modules', 'Next.js Hire + Jobs portals', 'Multi-tenant data model'],
+    items: ['NestJS API — 14 feature modules', 'Next.js Core + Hire + Jobs + Landing', 'Multi-tenant data model with full isolation'],
     color: '#00B8B3',
   },
   {
     icon: <Brain size={20} />,
     area: 'AI Integration',
-    items: ['FastAPI AI microservice', 'CV parsing + match scoring engine', 'Hiring Copilot · JD Generator'],
+    items: ['FastAPI AI microservice', 'CV parsing + match scoring engine', 'Hiring Copilot · JD Generator · Bias Check'],
     color: '#374151',
   },
   {
     icon: <Code2 size={20} />,
     area: 'Platform Engineering',
-    items: ['Docker multi-stage deployment', 'pgvector semantic search', 'Stripe billing integration'],
+    items: ['Docker multi-stage deployment', 'pgvector semantic search', 'Stripe billing + Webhook integration'],
     color: '#374151',
   },
 ]
@@ -40,11 +40,10 @@ export default function InternshipContext({ step }: Props) {
             <SectionTag section="Internship Context" number="2" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            From <GradientText variant="teal">AI Sales</GradientText> Infrastructure
-            {' '}to <GradientText variant="teal">AI Hiring</GradientText> Infrastructure
+            Building <GradientText variant="teal">PEAXIS</GradientText> at Production Scale
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            A 6-month final year internship at Prospecter — sole engineer for the design, architecture, and implementation work. PEAXIS is a separate product developed during the internship and is not a Prospecter product.
+            Internship at Prospecter — serving concurrently as <strong className="text-px-navy">Technical Lead &amp; Software Engineer</strong>. PEAXIS is an independent product conceived, architected, and built entirely as the internship project.
           </motion.p>
         </motion.div>
 
@@ -58,7 +57,7 @@ export default function InternshipContext({ step }: Props) {
               className="flex items-center gap-3 p-4 rounded-xl bg-[#F8FAFC] border border-[var(--border)]"
             >
               <p className="text-sm text-px-muted leading-relaxed">
-                <strong className="text-px-navy">PEAXIS</strong> is an independent product developed during the internship period at <strong className="text-px-navy">Prospecter</strong>. It is not related to Prospecter's product — it is a separate AI recruitment SaaS platform conceived, designed, and built entirely as the internship project.
+                <strong className="text-px-navy">PEAXIS</strong> is not a Prospecter product. It is a separate AI recruitment SaaS ecosystem independently designed and built during the internship period — combining academic engineering rigour with real production-grade software development practices.
               </p>
             </motion.div>
           )}
@@ -80,7 +79,7 @@ export default function InternshipContext({ step }: Props) {
                   { date: 'Feb', label: 'Core API + Auth', color: '#374151' },
                   { date: 'Mar', label: 'AI service + pipeline', color: '#374151' },
                   { date: 'Apr', label: 'Frontends + billing', color: '#374151' },
-                  { date: 'May', label: 'Polish + defense prep', color: '#009E9A' },
+                  { date: 'May', label: 'Integration + polish', color: '#009E9A' },
                 ].map((m, i) => (
                   <div key={i} className="flex items-center gap-1.5 flex-shrink-0">
                     {i > 0 && <div className="w-6 h-[1px] bg-gray-200" />}
@@ -140,9 +139,10 @@ export default function InternshipContext({ step }: Props) {
               animate={{ opacity: 1 }}
               className="flex items-center gap-2"
             >
-              <Badge variant="teal">Software Engineering Intern</Badge>
-              <Badge variant="navy">AI Integration</Badge>
-              <Badge variant="gray">Platform Architect</Badge>
+              <Badge variant="teal">Technical Lead</Badge>
+              <Badge variant="navy">Software Engineer</Badge>
+              <Badge variant="gray">AI Integration</Badge>
+              <Badge variant="outline">Platform Architect</Badge>
               <Badge variant="outline">Solo Contributor</Badge>
             </motion.div>
           )}

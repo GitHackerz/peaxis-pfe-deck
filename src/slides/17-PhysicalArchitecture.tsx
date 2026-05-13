@@ -5,12 +5,6 @@ import { fadeUp, stagger } from '../lib/animations'
 
 interface Props { step: number }
 
-const footerNotes = [
-  'Containerized Services — each service runs in isolated Docker containers',
-  'Network Isolation — frontend-net / backend-net / data-net segmentation',
-  'Scalable Infrastructure — stateless services scale horizontally behind a reverse proxy',
-]
-
 export default function PhysicalArch({ step }: Props) {
   return (
     <div className="slide-root">
@@ -54,25 +48,6 @@ export default function PhysicalArch({ step }: Props) {
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* Footer notes */}
-        <div className="flex-shrink-0 flex flex-wrap gap-2">
-          {footerNotes.map((note, i) => (
-            <AnimatePresence key={note}>
-              {step >= i + 2 && (
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[var(--border)] shadow-sm"
-                >
-                  <div className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-px-teal" />
-                  <span className="text-xs text-px-muted font-medium">{note}</span>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          ))}
-        </div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-[3px]" style={{ background: 'linear-gradient(90deg, transparent, #00B8B3, transparent)' }} />

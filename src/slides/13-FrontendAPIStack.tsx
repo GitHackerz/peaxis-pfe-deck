@@ -8,41 +8,24 @@ interface Props { step: number }
 
 const layers = [
   {
-    name: 'Frontend Layer',
-    color: '#374151',
-    bg: '#F9FAFB',
-    border: 'rgba(55,65,81,0.15)',
-    tech: ['Next.js', 'React', 'Tailwind', 'TypeScript'],
-    details: [
-      { label: 'Landing', desc: 'Marketing landing — port 3000, pnpm (node)' },
-      { label: 'PEAXIS Jobs', desc: 'Candidate portal — port 3100, pnpm (node)' },
-      { label: 'PEAXIS Hire', desc: 'Recruiter dashboard — port 3101, pnpm (node)' },
-      { label: 'Rendering', desc: 'Server components fetch → client components own state' },
-    ],
+    name: 'Frontend',
+    tech: ['Next.js 16', 'React', 'Tailwind', 'TypeScript'],
+    detail: 'PEAXIS Core (port 3000) · Hire (3101) · Jobs (3100) — Server components with interactive client state',
   },
   {
-    name: 'API Layer',
-    color: '#374151',
-    bg: '#F9FAFB',
-    border: 'rgba(55,65,81,0.15)',
-    tech: ['NestJS', 'TypeScript', 'Prisma', 'JWT'],
-    details: [
-      { label: 'Core API', desc: '14 modules — port 4000, single source of truth' },
-      { label: 'Auth', desc: 'JWT RS256 + Passport OAuth2 (Google, LinkedIn)' },
-      { label: 'Queue', desc: 'BullMQ workers for embeddings + AI scoring' },
-    ],
+    name: 'API',
+    tech: ['NestJS', 'Prisma', 'JWT', 'TypeScript'],
+    detail: 'Core API (port 4000) · 14 modules · 60+ endpoints — Single source of truth for all data',
   },
   {
-    name: 'Database Layer',
-    color: '#00B8B3',
-    bg: '#E6FAF9',
-    border: 'rgba(0,184,179,0.2)',
-    tech: ['PostgreSQL', 'pgvector', 'Prisma'],
-    details: [
-      { label: 'PostgreSQL', desc: 'Primary datastore — all persistent data' },
-      { label: 'pgvector', desc: '1536-dim embeddings for semantic search' },
-      { label: 'Redis', desc: 'Cache + BullMQ queue backend' },
-    ],
+    name: 'AI Service',
+    tech: ['FastAPI', 'Gemini', 'Python', 'pgvector'],
+    detail: 'Queue-driven via BullMQ · CV parsing, match scoring, JD generation — Cacheable in Redis',
+  },
+  {
+    name: 'Database',
+    tech: ['PostgreSQL', 'pgvector', 'Redis', 'BullMQ'],
+    detail: 'PostgreSQL + 1536-dim embeddings · Redis multi-layer cache (7d/30d/24h) · Async job queue',
   },
 ]
 
@@ -57,42 +40,27 @@ export default function FrontendAPIStack({ step }: Props) {
             <SectionTag section="Technologies" number="7" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Frontend & API <GradientText variant="teal">stack</GradientText>
+            Tech <GradientText variant="teal">Stack</GradientText> — Four Layers
           </motion.h2>
+          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
+            Production-grade architecture. Modular, scalable, and designed for real-world hiring at scale.
+          </motion.p>
         </motion.div>
 
-        {/* Layer cards */}
-        <div className="flex flex-col gap-3">
+        {/* Four simple cards */}
+        <div className="grid grid-cols-4 gap-3">
           {layers.map((layer, i) => (
             <AnimatePresence key={layer.name}>
               {step >= i + 1 && (
                 <motion.div
-                  initial={{ opacity: 0, x: -24 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="flex items-start gap-4 p-4 rounded-2xl border"
-                  style={{ background: layer.bg, borderColor: layer.border }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
+                  className="flex flex-col gap-3 p-4 rounded-xl bg-white border border-[var(--border)]"
                 >
-                  {/* Layer label */}
-                  <div
-                    className="w-28 flex-shrink-0 text-sm font-bold rounded-lg py-2 px-3 text-center"
-                    style={{ background: `${layer.color}20`, color: layer.color }}
-                  >
-                    {layer.name}
-                  </div>
-
-                  {/* Details */}
-                  <div className="flex-1 grid grid-cols-3 gap-3">
-                    {layer.details.map((d) => (
-                      <div key={d.label}>
-                        <p className="text-sm font-bold text-px-navy">{d.label}</p>
-                        <p className="text-xs text-px-muted leading-relaxed">{d.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Tech badges */}
-                  <div className="flex flex-wrap gap-1.5 justify-end flex-shrink-0 max-w-[200px]">
+                  <p className="text-sm font-extrabold text-px-navy">{layer.name}</p>
+                  <p className="text-xs text-px-muted leading-relaxed">{layer.detail}</p>
+                  <div className="flex flex-wrap gap-1.5 pt-1 border-t border-[var(--border)]">
                     {layer.tech.map((t) => (
                       <TechBadge key={t} name={t} />
                     ))}
@@ -103,25 +71,22 @@ export default function FrontendAPIStack({ step }: Props) {
           ))}
         </div>
 
-        {/* Argon2 + Rate limit callout */}
+        {/* Key principles */}
         <AnimatePresence>
-          {step >= 4 && (
+          {step >= 5 && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
               className="grid grid-cols-3 gap-3"
             >
               {[
-                { label: 'Password hashing', value: 'Argon2id', color: '#00B8B3' },
-                { label: 'Session tokens', value: 'JWT HS256 · 15m / 7d', color: '#374151' },
-                { label: 'Rate limiting', value: '1000 req / 60s global', color: '#374151' },
-              ].map((s) => (
-                <div key={s.label} className="flex items-center gap-2 p-3 rounded-xl bg-white border border-[var(--border)]">
-                  <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: s.color }} />
-                  <div>
-                    <p className="text-xs text-px-muted">{s.label}</p>
-                    <p className="text-sm font-bold text-px-navy font-mono">{s.value}</p>
-                  </div>
+                { label: 'Multi-tenant', value: 'Every query scoped to businessId' },
+                { label: 'Async processing', value: 'BullMQ + background workers' },
+                { label: 'Semantic search', value: 'pgvector + 1536-dim embeddings' },
+              ].map((p) => (
+                <div key={p.label} className="p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]">
+                  <p className="text-xs font-bold text-px-teal uppercase tracking-wider">{p.label}</p>
+                  <p className="text-xs text-px-navy mt-1">{p.value}</p>
                 </div>
               ))}
             </motion.div>

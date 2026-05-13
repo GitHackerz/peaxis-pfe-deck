@@ -11,10 +11,10 @@ export const SLIDES: SlideConfig[] = [
   // §1 Cover
   { id: 'cover',               steps: 0, label: 'Cover'          },
   // §1b General Introduction
-  { id: 'general-intro',       steps: 5, label: 'Introduction'    },
+  { id: 'general-intro',       steps: 5, label: 'Why PEAXIS'      },
   // §2 Company
-  { id: 'company-overview',    steps: 3, label: 'Company'        },
-  { id: 'internship-context',  steps: 3, label: 'Context'        },
+  { id: 'company-overview',    steps: 3, label: 'Prospecter'     },
+  { id: 'internship-context',  steps: 3, label: 'Internship'     },
   // §3 Problem
   { id: 'recruitment-pain',    steps: 3, label: 'Problem'        },
   { id: 'ats-limitations',     steps: 4, label: 'ATS Limits'     },
@@ -25,28 +25,18 @@ export const SLIDES: SlideConfig[] = [
   // §5 Non-Functional Requirements
   { id: 'nfr',                 steps: 6, label: 'NFRs'           },
   // §6 Solution
-  { id: 'solution-overview',   steps: 4, label: 'PEAXIS'         },
-  { id: 'peaxis-hire',         steps: 4, label: 'Hire'           },
-  { id: 'peaxis-jobs',         steps: 3, label: 'Jobs'           },
+  { id: 'solution-overview',   steps: 4, label: 'Overview'       },
+  { id: 'peaxis-core',         steps: 3, label: 'Core Platform'  },
+  { id: 'peaxis-hire',         steps: 4, label: 'Hire ATS'       },
+  { id: 'peaxis-jobs',         steps: 4, label: 'Jobs Portal'    },
   // §7 Technologies
-  { id: 'frontend-api-stack',  steps: 4, label: 'Frontend/API'   },
-  { id: 'ai-infra-stack',      steps: 4, label: 'AI/Infra'       },
+  { id: 'frontend-api-stack',  steps: 5, label: 'Tech Stack'     },
   // §8 Logical Architecture
   { id: 'logical-arch',        steps: 4, label: 'Logical Arch.'  },
   // §9 Physical Architecture
   { id: 'physical-arch',       steps: 4, label: 'Physical Arch.' },
-  // §10 Demo
-  { id: 'demo-recruiter',      steps: 3, label: 'Demo: Hire'     },
-  { id: 'demo-candidate',      steps: 3, label: 'Demo: Jobs'     },
-  { id: 'demo-ai',             steps: 3, label: 'Demo: AI'       },
-  // §11 Results
-  { id: 'achievements',        steps: 5, label: 'Results'        },
-  
-  // §12 Conclusion
-  { id: 'challenges',          steps: 3, label: 'Challenges'     },
-  
-  // Final consolidated conclusion
-  { id: 'general-conclusion',  steps: 4, label: 'Conclusion'      },
+  // §10 Conclusion
+  { id: 'conclusion',          steps: 5, label: 'Conclusion'     },
   // Thank you
   { id: 'thank-you',           steps: 0, label: 'Thanks'          },
 ]

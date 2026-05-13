@@ -24,15 +24,10 @@ import SolutionOverview from './slides/10-SolutionOverview'
 import PeaxisHire from './slides/11-PeaxisHire'
 import PeaxisJobs from './slides/12-PeaxisJobs'
 import FrontendAPIStack from './slides/13-FrontendAPIStack'
-import AIInfraStack from './slides/14-AIInfraStack'
 import LogicalArch from './slides/15-LogicalArchitecture'
+import PeaxisCore from './slides/16-PeaxisCore'
 import PhysicalArch from './slides/17-PhysicalArchitecture'
-import DemoRecruiter from './slides/19-DemoRecruiter'
-import DemoCandidate from './slides/20-DemoCandidate'
-import DemoAI from './slides/21-DemoAI'
-import Achievements from './slides/22-Achievements'
-import Challenges from './slides/24-Challenges'
-import GeneralConclusion from './slides/27-GeneralConclusion'
+import Conclusion from './slides/23-Conclusion'
 import ThankYou from './slides/28-ThankYou'
 
 export const SLIDE_COMPONENTS = [
@@ -47,19 +42,13 @@ export const SLIDE_COMPONENTS = [
   FuncReqAI,
   NFR,
   SolutionOverview,
+  PeaxisCore,
   PeaxisHire,
   PeaxisJobs,
   FrontendAPIStack,
-  AIInfraStack,
   LogicalArch,
   PhysicalArch,
-  
-  DemoRecruiter,
-  DemoCandidate,
-  DemoAI,
-  Achievements,
-  Challenges,
-  GeneralConclusion,
+  Conclusion,
   ThankYou,
 ]
 

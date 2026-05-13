@@ -50,10 +50,10 @@ export default function CompanyOverview({ step }: Props) {
             <SectionTag section="Company Presentation" number="2" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            <GradientText variant="teal">Prospecter</GradientText> — Internship Host Company
+            <GradientText variant="teal">Prospecter</GradientText> — Internship Host
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            An AI-powered B2B sales prospecting platform — automating outbound pipeline generation through autonomous AI SDR technology.
+            An AI-powered B2B sales prospecting platform. I joined Prospecter full-time as <strong className="text-px-navy">Technical Lead &amp; Software Engineer</strong> — leading production engineering while conducting this internship in parallel.
           </motion.p>
         </motion.div>
 
@@ -130,8 +130,8 @@ export default function CompanyOverview({ step }: Props) {
             >
               <Building2 size={16} className="flex-shrink-0 mt-0.5 text-px-muted" />
               <p className="text-sm text-px-muted leading-relaxed">
-                <span className="font-bold text-px-navy">Strategic context — </span>
-                Prospecter's LLM pipelines, multi-tenant SaaS, Redis caching, and background workers provided the architectural foundation transferred directly into PEAXIS.
+                <span className="font-bold text-px-navy">Role context — </span>
+                Working full-time as Technical Lead at Prospecter provided direct production exposure to LLM pipelines, multi-tenant SaaS architecture, and queue-based background processing — all of which were applied directly in designing PEAXIS.
               </p>
             </motion.div>
           )}

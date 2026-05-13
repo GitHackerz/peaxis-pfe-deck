@@ -1,7 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { BarChart3, Brain, Edit, Kanban } from 'lucide-react'
-import WorkspaceMockup from '../components/mockups/WorkspaceMockup'
-import Badge from '../components/ui/Badge'
+import { BarChart3, Brain, CalendarDays, Edit, Kanban } from 'lucide-react'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
@@ -9,10 +7,12 @@ import { fadeUp, stagger } from '../lib/animations'
 interface Props { step: number }
 
 const features = [
-  { icon: <Kanban size={14} />, label: 'Pipeline Kanban', desc: 'Drag-and-drop stage management with AI scores visible on every card' },
-  { icon: <Brain size={14} />, label: 'AI Insight Panel', desc: 'Match score, matched/missing skills, AI explanation per candidate' },
-  { icon: <BarChart3 size={14} />, label: 'Job Analytics', desc: 'Funnel metrics, score distributions, time-to-stage per job' },
-  { icon: <Edit size={14} />, label: 'Inline Editing', desc: 'Edit job details inline without leaving the workspace — no navigation' },
+  { icon: <Kanban size={18} />, title: 'Pipeline Kanban', desc: 'Drag-drop pipeline management with AI match scores on every candidate card' },
+  { icon: <Brain size={18} />, title: 'Hiring Copilot', desc: 'AI summaries, interview questions, risk flags, skill gaps, suggested actions' },
+  { icon: <BarChart3 size={18} />, title: 'Job Analytics', desc: 'Funnel metrics, conversion rates, time-to-stage, score distributions per job' },
+  { icon: <Edit size={18} />, title: 'Job Workspace', desc: 'Central hub — job details, pipeline, candidates, analytics, team collaboration' },
+  { icon: <CalendarDays size={18} />, title: 'Interview Scheduling', desc: 'Integrated calendar with time slots, interview tracking, and team coordination' },
+  { icon: <Brain size={18} />, title: 'Skill Gap Analysis', desc: 'AI-generated candidate vs. job requirement comparison with matched/missing skills' },
 ]
 
 export default function PeaxisHire({ step }: Props) {
@@ -23,78 +23,51 @@ export default function PeaxisHire({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Solution" number="6" />
+            <SectionTag section="Solution" number="3" />
           </motion.div>
-          <motion.div variants={fadeUp} className="flex items-center gap-3">
-            <h2 className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-              <GradientText variant="teal">PEAXIS Hire</GradientText> — Recruiter Dashboard
-            </h2>
-            <Badge variant="navy" size="sm">Next.js 16</Badge>
-          </motion.div>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-xl">
-            The workspace where recruiters live. Every hiring decision powered by AI, every action one click away.
+          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
+            <GradientText variant="teal">PEAXIS Hire</GradientText> — Recruiter Execution
+          </motion.h2>
+          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
+            Complete ATS with AI-assisted workflows. Centralizes recruiter operations into one seamless platform from job creation to offer.
           </motion.p>
         </motion.div>
 
-        {/* Two-column: features + screenshot */}
-        <div className="grid grid-cols-[240px_1fr] gap-6 items-start">
-
-          {/* Feature list */}
-          <AnimatePresence>
-            {step >= 1 && (
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="flex flex-col gap-2"
-              >
-                {features.map((f, i) => (
-                  <motion.div
-                    key={f.label}
-                    initial={{ opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.08 }}
-                    className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-[var(--border)]"
-                  >
-                    <div className="w-6 h-6 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0 mt-0.5">
-                      {f.icon}
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-px-navy">{f.label}</p>
-                      <p className="text-xs text-px-muted leading-relaxed">{f.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Screenshot */}
-          <AnimatePresence>
-            {step >= 2 && (
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.55 }}
-              >
-                <WorkspaceMockup />
-              </motion.div>
-            )}
-          </AnimatePresence>
+        {/* Feature grid: 6 cards */}
+        <div className="grid grid-cols-6 gap-3">
+          {features.map((f, i) => (
+            <AnimatePresence key={f.title}>
+              {step >= i + 1 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+                  className="flex flex-col gap-2.5 p-4 rounded-xl bg-white border border-[var(--border)]"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0">
+                    {f.icon}
+                  </div>
+                  <div>
+                    <p className="text-sm font-extrabold text-px-navy">{f.title}</p>
+                    <p className="text-xs text-px-muted leading-snug">{f.desc}</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          ))}
         </div>
 
-        {/* Key metric */}
+        {/* Strategic value */}
         <AnimatePresence>
-          {step >= 3 && (
+          {step >= 7 && (
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
+              className="flex items-center gap-3 p-4 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
             >
-              <div className="w-1 h-8 rounded-full bg-px-teal flex-shrink-0" />
+              <div className="w-1 h-6 rounded-full bg-px-teal flex-shrink-0" />
               <p className="text-xs text-px-navy">
-                <strong>Architecture:</strong> Server components fetch all data in parallel (Promise.all). Client components own interactive state only.
-                Candidate card click opens a slide-in <strong>CandidateDrawer</strong> — never navigates away.
+                <strong>Strategic Value:</strong> PEAXIS Hire centralizes recruiter workflows into one AI-assisted execution system for faster, smarter, and more explainable hiring decisions.
               </p>
             </motion.div>
           )}

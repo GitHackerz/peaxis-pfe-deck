@@ -12,9 +12,9 @@ export default function Cover({ step: _step }: Props) {
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
         style={{
-          width: 600,
-          height: 600,
-          background: 'radial-gradient(circle, rgba(0,184,179,0.08) 0%, transparent 70%)',
+          width: 640,
+          height: 640,
+          background: 'radial-gradient(circle, rgba(0,184,179,0.07) 0%, transparent 70%)',
           filter: 'blur(40px)',
         }}
       />
@@ -25,10 +25,10 @@ export default function Cover({ step: _step }: Props) {
         animate="visible"
         className="relative z-10 flex flex-col items-center text-center gap-5 max-w-4xl w-full"
       >
-        {/* Top badges row */}
+        {/* Top badge row */}
         <motion.div variants={fadeUp} className="flex items-center gap-3 flex-wrap justify-center">
-          <Badge variant="teal" size="md">Final Year Project — PFE</Badge>
-          <Badge variant="gray" size="md">ESPRIT · 2026</Badge>
+          <Badge variant="teal" size="md">ESPRIT · 2026</Badge>
+          <Badge variant="gray" size="md">Software Engineering</Badge>
         </motion.div>
 
         {/* Main headline */}
@@ -38,9 +38,9 @@ export default function Cover({ step: _step }: Props) {
         >
           <GradientText variant="teal">PEAXIS</GradientText>
           <br />
-          <span className="text-px-navy">An AI-Powered Hiring</span>
+          <span className="text-px-navy">A Modular AI-Powered</span>
           <br />
-          <span className="text-px-navy">Operating System</span>
+          <span className="text-px-navy">Hiring Operating System</span>
         </motion.h1>
 
         {/* Divider */}
@@ -50,29 +50,36 @@ export default function Cover({ step: _step }: Props) {
           style={{ background: '#00B8B3' }}
         />
 
-        {/* Student info */}
+        {/* Presenter */}
         <motion.div variants={fadeUp} className="flex flex-col items-center gap-1">
           <p className="text-lg font-bold text-px-navy">BIBANI Mohamed Habib Allah</p>
           <p className="text-sm text-px-muted">
+            Technical Lead &amp; Software Engineer — Prospecter
+          </p>
+          <p className="text-xs text-px-muted mt-0.5">
             École Supérieure Privée d'Ingénierie et de Technologie — ESPRIT
           </p>
         </motion.div>
 
-        {/* Role tag */}
+        {/* Supervisors row */}
         <motion.div
           variants={fadeUp}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[var(--border)] shadow-sm"
+          className="flex items-center gap-6 px-6 py-3 rounded-2xl bg-white border border-[var(--border)] shadow-sm"
         >
-          <div
-            className="w-2 h-2 rounded-full animate-pulse"
-            style={{ background: '#00B8B3' }}
-          />
-          <span className="text-sm font-medium text-px-navy">Software Engineering Intern · Full-Stack &amp; AI Systems Architect</span>
+          <div className="flex flex-col items-center gap-0.5">
+            <span className="text-xs font-bold text-px-teal uppercase tracking-widest">Academic Supervisor</span>
+            <span className="text-sm font-semibold text-px-navy">Mme Olfa Mannai</span>
+          </div>
+          <div className="w-px h-8 bg-gray-200" />
+          <div className="flex flex-col items-center gap-0.5">
+            <span className="text-xs font-bold text-px-muted uppercase tracking-widest">Company Supervisor</span>
+            <span className="text-sm font-semibold text-px-navy">Mr. Fedi Naimi</span>
+          </div>
         </motion.div>
 
-        {/* Bottom row: tech tags */}
+        {/* Tech stack */}
         <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 mt-1">
-          {['Next.js', 'NestJS', 'FastAPI', 'PostgreSQL', 'Gemini', 'Docker'].map((t) => (
+          {['Next.js', 'NestJS', 'FastAPI', 'PostgreSQL', 'pgvector', 'Gemini', 'Stripe', 'Docker'].map((t) => (
             <span
               key={t}
               className="text-xs font-mono text-px-muted px-2.5 py-1 rounded-full bg-white border border-[var(--border)]"
