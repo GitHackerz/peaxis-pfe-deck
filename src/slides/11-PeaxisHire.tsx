@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { BarChart3, Brain, CalendarDays, Edit, Kanban } from 'lucide-react'
+import { BarChart3, Brain, CalendarDays, CheckSquare, Edit, FileText, Kanban, MessageSquare, Shield, Users, Zap } from 'lucide-react'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
@@ -7,12 +7,18 @@ import { fadeUp, stagger } from '../lib/animations'
 interface Props { step: number }
 
 const features = [
-  { icon: <Kanban size={18} />, title: 'Pipeline Kanban', desc: 'Drag-drop pipeline management with AI match scores on every candidate card' },
-  { icon: <Brain size={18} />, title: 'Hiring Copilot', desc: 'AI summaries, interview questions, risk flags, skill gaps, suggested actions' },
-  { icon: <BarChart3 size={18} />, title: 'Job Analytics', desc: 'Funnel metrics, conversion rates, time-to-stage, score distributions per job' },
-  { icon: <Edit size={18} />, title: 'Job Workspace', desc: 'Central hub — job details, pipeline, candidates, analytics, team collaboration' },
-  { icon: <CalendarDays size={18} />, title: 'Interview Scheduling', desc: 'Integrated calendar with time slots, interview tracking, and team coordination' },
-  { icon: <Brain size={18} />, title: 'Skill Gap Analysis', desc: 'AI-generated candidate vs. job requirement comparison with matched/missing skills' },
+  { icon: <Kanban size={18} />, title: 'Pipeline Kanban', desc: 'Drag-drop stage management with AI scores on every candidate card' },
+  { icon: <Brain size={18} />, title: 'Hiring Copilot', desc: 'AI summaries, interview questions, risk flags, skill gaps, next actions' },
+  { icon: <Edit size={18} />, title: 'Job Workspace', desc: 'Unified hub: job details, pipeline, candidates, analytics, collaboration' },
+  { icon: <Users size={18} />, title: 'Candidate Drawer', desc: 'Slide-in panel with full AI profile without leaving pipeline view' },
+  { icon: <Shield size={18} />, title: 'Candidate Profiles', desc: 'Comprehensive profiles with CV data, skills, experience, AI insights' },
+  { icon: <Zap size={18} />, title: 'AI Match Scoring', desc: '0–100 deterministic score with confidence, matched/missing skills breakdown' },
+  { icon: <BarChart3 size={18} />, title: 'Job Analytics', desc: 'Funnel metrics, conversion rates, time-to-stage, score distributions' },
+  { icon: <CalendarDays size={18} />, title: 'Interview Scheduling', desc: 'Calendar integration with time slots, interview tracking, coordination' },
+  { icon: <Brain size={18} />, title: 'Skill Gap Analysis', desc: 'AI-generated candidate vs. job comparison with actionable insights' },
+  { icon: <MessageSquare size={18} />, title: 'Activity & Notes', desc: 'Conversation history, internal notes, team feedback on candidates' },
+  { icon: <CheckSquare size={18} />, title: 'Team Collaboration', desc: 'Role-based access, approvals, feedback loops for hiring decisions' },
+  { icon: <FileText size={18} />, title: 'Offer Management', desc: 'Draft, customize, and send offers with automated follow-up workflows' },
 ]
 
 export default function PeaxisHire({ step }: Props) {
@@ -33,7 +39,7 @@ export default function PeaxisHire({ step }: Props) {
           </motion.p>
         </motion.div>
 
-        {/* Feature grid: 6 cards */}
+        {/* Feature grid: 12 cards (2 rows) */}
         <div className="grid grid-cols-6 gap-3">
           {features.map((f, i) => (
             <AnimatePresence key={f.title}>
@@ -41,7 +47,7 @@ export default function PeaxisHire({ step }: Props) {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
                   className="flex flex-col gap-2.5 p-4 rounded-xl bg-white border border-[var(--border)]"
                 >
                   <div className="w-8 h-8 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0">
@@ -59,7 +65,7 @@ export default function PeaxisHire({ step }: Props) {
 
         {/* Strategic value */}
         <AnimatePresence>
-          {step >= 7 && (
+          {step >= 13 && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}

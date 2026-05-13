@@ -27,8 +27,8 @@ export const SLIDES: SlideConfig[] = [
   // §6 Solution
   { id: 'solution-overview',   steps: 4, label: 'Overview'       },
   { id: 'peaxis-core',         steps: 3, label: 'Core Platform'  },
-  { id: 'peaxis-hire',         steps: 4, label: 'Hire ATS'       },
-  { id: 'peaxis-jobs',         steps: 4, label: 'Jobs Portal'    },
+  { id: 'peaxis-hire',         steps: 13, label: 'Hire ATS'       },
+  { id: 'peaxis-jobs',         steps: 13, label: 'Jobs Portal'    },
   // §7 Technologies
   { id: 'frontend-api-stack',  steps: 5, label: 'Tech Stack'     },
   // §8 Logical Architecture

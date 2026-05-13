@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Layers, Search, Star, Upload, Zap } from 'lucide-react'
+import { Award, Bookmark, Bell, Filter, ListChecks, Search, Settings, Star, TrendingUp, Upload, Zap } from 'lucide-react'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
@@ -8,11 +8,17 @@ interface Props { step: number }
 
 const features = [
   { icon: <Search size={18} />, title: 'Semantic Job Search', desc: 'pgvector embeddings find relevant jobs beyond keyword matching' },
+  { icon: <Filter size={18} />, title: 'Advanced Filters', desc: 'Filter by location, salary, experience, skills, company, job type' },
+  { icon: <Upload size={18} />, title: 'AI CV Parsing', desc: 'Upload PDF/DOCX → Gemini parses → candidate profile auto-filled' },
+  { icon: <Star size={18} />, title: 'Match Score Preview', desc: 'See AI match percentage + skill gaps before applying' },
   { icon: <Zap size={18} />, title: 'Job Lite Format', desc: 'Lightweight public job listings optimised for mobile discovery' },
-  { icon: <Upload size={18} />, title: 'AI CV Parsing', desc: 'Upload CV → Gemini parses → candidate profile auto-filled instantly' },
-  { icon: <Star size={18} />, title: 'Match Score Preview', desc: 'See AI match percentage + skill gaps before applying — transparency first' },
-  { icon: <Layers size={18} />, title: 'Personalized Feed', desc: 'AI recommendations powered by candidate embedding similarity' },
-  { icon: <Search size={18} />, title: 'Easy Apply + Tracking', desc: 'One-click apply workflow with real-time pipeline stage visibility' },
+  { icon: <TrendingUp size={18} />, title: 'Personalized Feed', desc: 'AI recommendations powered by candidate embedding similarity' },
+  { icon: <Bookmark size={18} />, title: 'Save & Bookmarks', desc: 'Save favorite jobs for later, organize by categories' },
+  { icon: <Award size={18} />, title: 'Skill Gap Insights', desc: 'Detailed breakdown of matched and missing skills for each job' },
+  { icon: <ListChecks size={18} />, title: 'Easy Apply', desc: 'One-click apply workflow with pre-filled profile and cv data' },
+  { icon: <ListChecks size={18} />, title: 'Application Tracking', desc: 'Real-time pipeline visibility — Applied, Screening, Interview, Offer' },
+  { icon: <Settings size={18} />, title: 'Profile Management', desc: 'Candidate-controlled profile creation, skill management, preferences' },
+  { icon: <Bell size={18} />, title: 'Job Notifications', desc: 'Smart alerts for new jobs matching profile and preferences' },
 ]
 
 export default function PeaxisJobs({ step }: Props) {
@@ -33,7 +39,7 @@ export default function PeaxisJobs({ step }: Props) {
           </motion.p>
         </motion.div>
 
-        {/* Feature grid: 6 cards */}
+        {/* Feature grid: 12 cards (2 rows) */}
         <div className="grid grid-cols-6 gap-3">
           {features.map((f, i) => (
             <AnimatePresence key={f.title}>
@@ -41,7 +47,7 @@ export default function PeaxisJobs({ step }: Props) {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
                   className="flex flex-col gap-2.5 p-4 rounded-xl bg-white border border-[var(--border)]"
                 >
                   <div className="w-8 h-8 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0">
@@ -59,7 +65,7 @@ export default function PeaxisJobs({ step }: Props) {
 
         {/* Strategic value */}
         <AnimatePresence>
-          {step >= 7 && (
+          {step >= 13 && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
