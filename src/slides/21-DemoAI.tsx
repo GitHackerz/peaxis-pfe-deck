@@ -39,7 +39,7 @@ export default function DemoAI({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-1">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Product Modules" number="11" />
+            <SectionTag section="Proposed Solution" number="4" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">AI Brain</GradientText> — Intelligence in Action

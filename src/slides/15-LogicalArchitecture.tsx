@@ -21,7 +21,7 @@ export default function LogicalArch({ step }: Props) {
         {/* Compact header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex-shrink-0 flex flex-col gap-0.5">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Architecture" number="8" />
+            <SectionTag section="Architecture & Technologies" number="5" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-3xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">Logical</GradientText> Architecture

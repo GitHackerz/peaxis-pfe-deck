@@ -39,7 +39,7 @@ export default function SolutionOverview({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col items-center text-center gap-3">
           <motion.div variants={fadeUp}>
-            <SectionTag section="The Solution" number="6" />
+            <SectionTag section="Proposed Solution" number="4" />
           </motion.div>
           <motion.h2 variants={cinemaEntrance} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">PEAXIS</GradientText> — Modular AI Hiring Operating System

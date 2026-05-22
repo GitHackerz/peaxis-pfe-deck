@@ -20,12 +20,10 @@ const sections = [
     title: 'Key Achievements',
     color: '#00B8B3',
     items: [
-      'End-to-end multi-tenant SaaS with three consumer apps + business platform',
-      'Explainable AI scoring engine with matched/missing skill breakdown',
-      'Semantic search powered by pgvector embeddings',
-      'Queue-based architecture supporting async background processing',
-      'Production-ready Stripe billing integration with webhook automation',
-      'Full API documentation via Swagger — 60+ endpoints across 14 modules',
+      'Full-stack multi-tenant SaaS: Core workspace, Hire ATS, and Jobs portal',
+      'Explainable AI: Deterministic skill-gap overlap with LLM explanations',
+      'Semantic Search: pgvector embeddings for non-keyword matching',
+      'Queue-based processing: Asynchronous tasks and Stripe automation',
     ],
   },
   {
@@ -33,11 +31,9 @@ const sections = [
     title: 'Technical Lessons',
     color: '#00B8B3',
     items: [
-      'Multi-tenant isolation must be enforced at the guard level — retrofitting is 10x harder',
-      'Separate "what" (deterministic) from "why" (LLM) for cost-effective AI at scale',
-      'Server components + router.refresh() unlock seamless workspace UX without full navigations',
-      'Hybrid scoring (skill-overlap + LLM explanation) beats pure LLM on cost and reproducibility',
-      'Cache-first with intelligent TTLs (7d / 30d / 24h) reduces AI costs by 80%',
+      'Schema-first isolation: Multi-tenant guards must be built-in, not retrofitted',
+      'Horizontal scalability: FastAPI for ML, NestJS for core Business API',
+      'Hybrid AI design: Combining rules and LLMs optimizes cost and reliability',
     ],
   },
   {
@@ -45,14 +41,13 @@ const sections = [
     title: 'Future Roadmap',
     color: '#00B8B3',
     items: [
-      'Real-time collaborative hiring workspace with role-based decision tracking',
-      'Multilingual CV parsing and region-aware job matching (MENA market focus)',
-      'Advanced analytics dashboard with predictive pipeline velocity metrics',
-      'Integration ecosystem — LinkedIn Talent Solution, Greenhouse, Workday connectors',
-      'Mobile candidate app for on-the-go application management',
+      'Collaborative workspaces: Real-time decision tracking for hiring teams',
+      'Regional expansion: Multilingual CV parser optimized for the MENA market',
+      'Enterprise connectors: Direct integration with LinkedIn, Greenhouse, and Workday',
     ],
   },
 ]
+
 
 export default function Conclusion({ step }: Props) {
   return (
@@ -62,7 +57,7 @@ export default function Conclusion({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Conclusion" number="11" />
+            <SectionTag section="Results & Future Work" number="6" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             PEAXIS: <GradientText variant="teal">Achievement & Future</GradientText>

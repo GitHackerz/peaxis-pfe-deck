@@ -35,7 +35,7 @@ export default function DemoCandidate({ step }: Props) {
           className="flex items-center justify-between gap-4">
           <div className="flex flex-col gap-1">
             <motion.div variants={fadeUp}>
-              <SectionTag section="Product Modules" number="10" />
+              <SectionTag section="Proposed Solution" number="4" />
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-3xl font-extrabold leading-tight tracking-tight text-px-navy">
               <GradientText variant="navy">PEAXIS Jobs</GradientText> — Candidate Journey

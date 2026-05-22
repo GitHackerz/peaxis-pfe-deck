@@ -65,7 +65,7 @@ export default function NFR({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Non-Functional Requirements" number="5" />
+            <SectionTag section="Methodology & Requirements" number="3" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Production-grade <GradientText variant="teal">quality attributes</GradientText>

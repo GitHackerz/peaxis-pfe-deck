@@ -24,7 +24,7 @@ export default function PeaxisCore({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Solution" number="6" />
+            <SectionTag section="Proposed Solution" number="4" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">PEAXIS Core</GradientText> — Business Operations

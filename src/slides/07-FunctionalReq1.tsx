@@ -53,7 +53,7 @@ export default function FuncReqCore({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Functional Requirements" number="4" />
+            <SectionTag section="Methodology & Requirements" number="3" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Core platform <GradientText variant="teal">requirements</GradientText>

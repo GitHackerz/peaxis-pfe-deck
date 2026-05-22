@@ -6,56 +6,84 @@ import { fadeUp, stagger } from '../lib/animations'
 
 interface Props { step: number }
 
-const features = [
-  { icon: <Kanban size={18} />, title: 'Pipeline Kanban', desc: 'Drag-drop stage management with AI scores on every candidate card' },
-  { icon: <Brain size={18} />, title: 'Hiring Copilot', desc: 'AI summaries, interview questions, risk flags, skill gaps, next actions' },
-  { icon: <Edit size={18} />, title: 'Job Workspace', desc: 'Unified hub: job details, pipeline, candidates, analytics, collaboration' },
-  { icon: <Users size={18} />, title: 'Candidate Drawer', desc: 'Slide-in panel with full AI profile without leaving pipeline view' },
-  { icon: <Shield size={18} />, title: 'Candidate Profiles', desc: 'Comprehensive profiles with CV data, skills, experience, AI insights' },
-  { icon: <Zap size={18} />, title: 'AI Match Scoring', desc: '0–100 deterministic score with confidence, matched/missing skills breakdown' },
-  { icon: <BarChart3 size={18} />, title: 'Job Analytics', desc: 'Funnel metrics, conversion rates, time-to-stage, score distributions' },
-  { icon: <CalendarDays size={18} />, title: 'Interview Scheduling', desc: 'Calendar integration with time slots, interview tracking, coordination' },
-  { icon: <Brain size={18} />, title: 'Skill Gap Analysis', desc: 'AI-generated candidate vs. job comparison with actionable insights' },
-  { icon: <MessageSquare size={18} />, title: 'Activity & Notes', desc: 'Conversation history, internal notes, team feedback on candidates' },
-  { icon: <CheckSquare size={18} />, title: 'Team Collaboration', desc: 'Role-based access, approvals, feedback loops for hiring decisions' },
-  { icon: <FileText size={18} />, title: 'Offer Management', desc: 'Draft, customize, and send offers with automated follow-up workflows' },
+const sections = [
+  {
+    title: 'Workspace & Pipeline',
+    color: '#00B8B3',
+    items: [
+      { icon: <Edit size={16} />, label: 'Job Workspace', desc: 'Central hub for pipeline, analytics, and job configurations.' },
+      { icon: <Kanban size={16} />, label: 'Pipeline Kanban', desc: 'Drag-and-drop applicant tracking with inline AI scoring.' },
+      { icon: <Users size={16} />, label: 'Candidate Drawer', desc: 'Slide-in panel for full profile review without leaving context.' },
+      { icon: <FileText size={16} />, label: 'Offer Management', desc: 'Standardised drafts with automated scheduling and sign-offs.' },
+    ],
+  },
+  {
+    title: 'Recruiter Intelligence',
+    color: '#009E9A',
+    items: [
+      { icon: <Zap size={16} />, label: 'AI Match Scoring', desc: '0–100 deterministic overlap score mapping required vs candidate skills.' },
+      { icon: <Brain size={16} />, label: 'Hiring Copilot', desc: 'Automated candidate summary cards, risk flags, and interview questions.' },
+      { icon: <BarChart3 size={16} />, label: 'Decision Analytics', desc: 'Recruiter-facing funnel metrics, conversion tracking, and SLA status.' },
+      { icon: <Brain size={16} />, label: 'Skill Gap Tool', desc: 'Visual gap analysis highlighting candidate strengths and weaknesses.' },
+    ],
+  },
+  {
+    title: 'Collaboration & Flow',
+    color: '#001027',
+    items: [
+      { icon: <CalendarDays size={16} />, label: 'Interview Scheduler', desc: 'Dynamic scheduling with automatic calendar slots.' },
+      { icon: <CheckSquare size={16} />, label: 'Team Approvals', desc: 'Role-based access controls for collaborative feedback loops.' },
+      { icon: <MessageSquare size={16} />, label: 'Activity & Notes', desc: 'Internal chat logs and decision histories on applicant records.' },
+      { icon: <Shield size={16} />, label: 'Candidate Profiles', desc: 'Encrypted candidate-controlled resumes and private portfolios.' },
+    ],
+  },
 ]
 
 export default function PeaxisHire({ step }: Props) {
   return (
     <div className="slide-root">
-      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col gap-5">
+      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col gap-4">
 
         {/* Header */}
-        <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
+        <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-1">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Solution" number="3" />
+            <SectionTag section="Proposed Solution" number="4" />
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
+          <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">PEAXIS Hire</GradientText> — Recruiter Execution
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
-            Complete ATS with AI-assisted workflows. Centralizes recruiter operations into one seamless platform from job creation to offer.
+          <motion.p variants={fadeUp} className="text-sm text-px-muted">
+            Core ATS platform. Centralising recruitment workflows and decisions into one AI-assisted environment.
           </motion.p>
         </motion.div>
 
-        {/* Feature grid: 12 cards (2 rows) */}
-        <div className="grid grid-cols-6 gap-3">
-          {features.map((f, i) => (
-            <AnimatePresence key={f.title}>
-              {step >= i + 1 && (
+        {/* Three Columns Grid */}
+        <div className="grid grid-cols-3 gap-4 min-h-[360px]">
+          {sections.map((sec, colIdx) => (
+            <AnimatePresence key={sec.title}>
+              {step >= colIdx + 1 && (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
-                  className="flex flex-col gap-2.5 p-4 rounded-xl bg-white border border-[var(--border)]"
+                  transition={{ duration: 0.45 }}
+                  className="bg-white rounded-xl border border-[var(--border)] p-4 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0">
-                    {f.icon}
+                  <div className="flex items-center gap-2 border-b pb-2">
+                    <div className="w-1.5 h-4 rounded-full" style={{ background: sec.color }} />
+                    <h3 className="text-sm font-bold text-px-navy">{sec.title}</h3>
                   </div>
-                  <div>
-                    <p className="text-sm font-extrabold text-px-navy">{f.title}</p>
-                    <p className="text-xs text-px-muted leading-snug">{f.desc}</p>
+                  <div className="flex flex-col gap-3">
+                    {sec.items.map((item, itemIdx) => (
+                      <div key={itemIdx} className="flex gap-2.5 items-start">
+                        <div className="w-7 h-7 rounded bg-[#E6FAF9] flex items-center justify-center flex-shrink-0 text-px-teal mt-0.5">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-px-navy">{item.label}</p>
+                          <p className="text-[10px] text-px-muted leading-tight mt-0.5">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </motion.div>
               )}
@@ -63,17 +91,17 @@ export default function PeaxisHire({ step }: Props) {
           ))}
         </div>
 
-        {/* Strategic value */}
+        {/* Strategic Value Card (reveals on step 4) */}
         <AnimatePresence>
-          {step >= 13 && (
+          {step >= 4 && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3 p-4 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
+              className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
             >
-              <div className="w-1 h-6 rounded-full bg-px-teal flex-shrink-0" />
+              <div className="w-1.5 h-6 rounded bg-[#00B8B3] flex-shrink-0" />
               <p className="text-xs text-px-navy">
-                <strong>Strategic Value:</strong> PEAXIS Hire centralizes recruiter workflows into one AI-assisted execution system for faster, smarter, and more explainable hiring decisions.
+                <strong>Strategic Value:</strong> PEAXIS Hire consolidates scattered communication, candidate tracking, and evaluation histories into one structured and audit-ready Recruiter interface.
               </p>
             </motion.div>
           )}

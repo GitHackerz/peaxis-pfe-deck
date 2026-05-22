@@ -42,13 +42,13 @@ export default function RecruitmentPain({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="The Problem" number="3" />
+            <SectionTag section="Problem Analysis" number="2" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Recruitment is <GradientText variant="coral">broken</GradientText> at every layer
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            The hiring process hasn't fundamentally changed in 20 years. Time, money, and talent are wasted at every step.
+            Traditional hiring suffers from slow, manual, and unintegrated administrative bottlenecks.
           </motion.p>
         </motion.div>
 
@@ -117,14 +117,14 @@ export default function RecruitmentPain({ step }: Props) {
             >
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#FFF0F0] border border-[rgba(254,89,90,0.2)]">
                 <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#FE595A]" />
-                <p className="text-sm text-px-navy">
-                  <strong>Global:</strong> companies lose <strong>$14,900</strong> per bad hire; top candidates accept offers in under 10 days.
+                <p className="text-xs text-px-navy">
+                  <strong>Global Cost:</strong> Bad hires cost <strong>$14.9K</strong> on average; top tier talent is off the market in 10 days.
                 </p>
               </div>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl border" style={{ background: '#F3F4F6', borderColor: 'rgba(0,0,0,0.07)' }}>
                 <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#6B7280]" />
-                <p className="text-sm text-px-navy">
-                  <strong>Regional:</strong> In Tunisia & North Africa, growing SMEs rely on spreadsheets — modern ATS adoption remains critically low.
+                <p className="text-xs text-px-navy">
+                  <strong>Regional Gap:</strong> MENA SMEs rely on spreadsheets due to high costs and localization gaps in legacy tools.
                 </p>
               </div>
             </motion.div>

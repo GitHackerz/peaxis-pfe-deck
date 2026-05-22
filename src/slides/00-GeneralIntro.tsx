@@ -9,25 +9,25 @@ const pillars = [
   {
     number: '01',
     title: 'Hiring Fragmentation',
-    body: 'SMEs juggle 5+ disconnected tools to complete a single hire — job boards, spreadsheets, email threads, calendar apps, and manual ATS entries. There is no unified operational layer.',
+    body: 'SMEs juggle 5+ disconnected tools (spreadsheets, calendars, job boards) with no unified operational layer.',
     color: '#00B8B3',
   },
   {
     number: '02',
     title: 'Legacy ATS Failure',
-    body: 'Traditional ATS platforms rely on keyword matching and rigid workflows. They miss qualified candidates, penalise non-standard CVs, and provide zero intelligence — just a database with filters.',
+    body: 'Reliance on rigid keyword matching creates flat databases with filters, missing non-standard CVs.',
     color: '#FE595A',
   },
   {
     number: '03',
     title: 'Candidate Friction',
-    body: 'Candidates apply into black boxes. No feedback, no transparency, no skill gap visibility. The application experience is broken — and it silently destroys employer talent brand.',
+    body: 'Candidates apply into opaque black boxes. Lacks feedback, transparency, and skill-gap visibility.',
     color: '#374151',
   },
   {
     number: '04',
     title: 'The Intelligence Gap',
-    body: 'Recruiters make consequential decisions without data. No explainable scoring, no skill alignment visibility, no suggested actions. AI in recruitment today is mostly marketing — not infrastructure.',
+    body: 'Consequential decisions made without explainable metrics. AI used as marketing rather than core infrastructure.',
     color: '#6B7280',
   },
 ]
@@ -48,7 +48,7 @@ export default function GeneralIntro({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-1">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Introduction" number="1" />
+            <SectionTag section="Introduction & Context" number="1" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Why <GradientText variant="teal">PEAXIS?</GradientText>

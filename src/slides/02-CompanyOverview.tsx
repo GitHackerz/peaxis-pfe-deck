@@ -47,13 +47,13 @@ export default function CompanyOverview({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Company Presentation" number="2" />
+            <SectionTag section="Introduction & Context" number="1" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">Prospecter</GradientText> — Internship Host
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            An AI-powered B2B sales prospecting platform. I joined Prospecter full-time as <strong className="text-px-navy">Technical Lead &amp; Software Engineer</strong> — leading production engineering while conducting this internship in parallel.
+            AI-powered B2B sales prospecting platform. Served as <strong className="text-px-navy">Technical Lead &amp; Software Engineer</strong> — bridging enterprise production experience with academic engineering.
           </motion.p>
         </motion.div>
 
@@ -71,7 +71,7 @@ export default function CompanyOverview({ step }: Props) {
                 <div>
                   <p className="text-xs font-bold text-px-teal uppercase tracking-widest mb-0.5">Mission</p>
                   <p className="text-sm font-semibold text-px-navy">
-                    Replace manual sales prospecting with a fully autonomous AI SDR — enabling B2B companies to scale outbound revenue without scaling headcount.
+                    Autonomous outbound lead generation — enabling B2B revenue scaling without increasing headcount.
                   </p>
                 </div>
                 <div className="flex items-center gap-2 flex-wrap">
@@ -130,8 +130,7 @@ export default function CompanyOverview({ step }: Props) {
             >
               <Building2 size={16} className="flex-shrink-0 mt-0.5 text-px-muted" />
               <p className="text-sm text-px-muted leading-relaxed">
-                <span className="font-bold text-px-navy">Role context — </span>
-                Working full-time as Technical Lead at Prospecter provided direct production exposure to LLM pipelines, multi-tenant SaaS architecture, and queue-based background processing — all of which were applied directly in designing PEAXIS.
+                <span className="font-bold text-px-navy">Lead Engineer Synergy:</span> Direct production exposure to <strong>LLM pipelines</strong>, <strong>multi-tenant isolation</strong>, and <strong>async background queues</strong> was applied directly in designing PEAXIS.
               </p>
             </motion.div>
           )}

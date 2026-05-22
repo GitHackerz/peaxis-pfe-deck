@@ -37,7 +37,7 @@ export default function FrontendAPIStack({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Technologies" number="7" />
+            <SectionTag section="Architecture & Technologies" number="5" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Tech <GradientText variant="teal">Stack</GradientText> — Four Layers

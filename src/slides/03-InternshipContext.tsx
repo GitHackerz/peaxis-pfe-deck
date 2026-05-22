@@ -37,13 +37,13 @@ export default function InternshipContext({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Internship Context" number="2" />
+            <SectionTag section="Introduction & Context" number="1" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Building <GradientText variant="teal">PEAXIS</GradientText> at Production Scale
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            Internship at Prospecter — serving concurrently as <strong className="text-px-navy">Technical Lead &amp; Software Engineer</strong>. PEAXIS is an independent product conceived, architected, and built entirely as the internship project.
+            PEAXIS is an independent hiring operating system conceived, designed, and built entirely as the internship project.
           </motion.p>
         </motion.div>
 
@@ -57,7 +57,7 @@ export default function InternshipContext({ step }: Props) {
               className="flex items-center gap-3 p-4 rounded-xl bg-[#F8FAFC] border border-[var(--border)]"
             >
               <p className="text-sm text-px-muted leading-relaxed">
-                <strong className="text-px-navy">PEAXIS</strong> is not a Prospecter product. It is a separate AI recruitment SaaS ecosystem independently designed and built during the internship period — combining academic engineering rigour with real production-grade software development practices.
+                <strong className="text-px-navy">Scope & Integrity:</strong> Developed independently from Prospecter's core codebase. Integrates academic software engineering principles with production-grade SaaS standards.
               </p>
             </motion.div>
           )}

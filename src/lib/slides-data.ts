@@ -10,7 +10,9 @@ export interface SlideConfig {
 export const SLIDES: SlideConfig[] = [
   // §1 Cover
   { id: 'cover',               steps: 0, label: 'Cover'          },
-  // §1b General Introduction
+  // §1b Presentation Plan
+  { id: 'presentation-plan',   steps: 0, label: 'Plan'           },
+  // §1c General Introduction
   { id: 'general-intro',       steps: 5, label: 'Why PEAXIS'      },
   // §2 Company
   { id: 'company-overview',    steps: 3, label: 'Prospecter'     },
@@ -19,6 +21,8 @@ export const SLIDES: SlideConfig[] = [
   { id: 'recruitment-pain',    steps: 3, label: 'Problem'        },
   { id: 'ats-limitations',     steps: 4, label: 'ATS Limits'     },
   { id: 'market-gap',          steps: 3, label: 'Market Gap'     },
+  // §3b Methodology
+  { id: 'methodology',         steps: 2, label: 'Methodology'    },
   // §4 Functional Requirements
   { id: 'func-req-core',       steps: 5, label: 'Func. Req. I'   },
   { id: 'func-req-ai',         steps: 4, label: 'Func. Req. II'  },
@@ -27,14 +31,15 @@ export const SLIDES: SlideConfig[] = [
   // §6 Solution
   { id: 'solution-overview',   steps: 4, label: 'Overview'       },
   { id: 'peaxis-core',         steps: 3, label: 'Core Platform'  },
-  { id: 'peaxis-hire',         steps: 13, label: 'Hire ATS'       },
-  { id: 'peaxis-jobs',         steps: 13, label: 'Jobs Portal'    },
+  { id: 'peaxis-hire',         steps: 4, label: 'Hire ATS'       },
+  { id: 'peaxis-jobs',         steps: 4, label: 'Jobs Portal'    },
+  { id: 'peaxis-ai-brain',     steps: 3, label: 'AI Brain'       },
   // §7 Technologies
   { id: 'frontend-api-stack',  steps: 5, label: 'Tech Stack'     },
   // §8 Logical Architecture
-  { id: 'logical-arch',        steps: 4, label: 'Logical Arch.'  },
+  { id: 'logical-arch',        steps: 1, label: 'Logical Arch.'  },
   // §9 Physical Architecture
-  { id: 'physical-arch',       steps: 4, label: 'Physical Arch.' },
+  { id: 'physical-arch',       steps: 1, label: 'Physical Arch.' },
   // §10 Conclusion
   { id: 'conclusion',          steps: 5, label: 'Conclusion'     },
   // Thank you
