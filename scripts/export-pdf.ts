@@ -22,7 +22,7 @@
  */
 
 import { spawn, type ChildProcess } from 'child_process'
-import { statSync } from 'fs'
+import { existsSync, statSync } from 'fs'
 import { createServer } from 'net'
 import { dirname, resolve } from 'path'
 import { chromium } from 'playwright'
@@ -131,7 +131,7 @@ async function main(): Promise<void> {
     // ── 1. Always start a fresh dev server (auto-finds next available port)
     console.log(`[export] Starting fresh Vite dev server on port ${PORT}…`)
 
-    devServer = spawn('pnpm', ['vite', '--port', String(PORT), '--host', '127.0.0.1'], {
+    devServer = spawn(process.execPath, [resolve(ROOT, 'node_modules', 'vite', 'bin', 'vite.js'), '--port', String(PORT), '--host', '127.0.0.1'], {
       cwd:      ROOT,
       stdio:    ['ignore', 'pipe', 'pipe'],
       detached: false,
@@ -144,8 +144,8 @@ async function main(): Promise<void> {
       process.stderr.write(`[vite]  ${chunk}`),
     )
 
-    console.log(`[export] Detecting Vite server URL…`)
-    const baseUrl = await findViteUrl(devServer)
+    console.log(`[export] Using Vite server URL…`)
+    const baseUrl = BASE_URL
     const exportUrl = baseUrl.includes('?') ? `${baseUrl}&export=true` : `${baseUrl}?export=true`
 
     console.log(`[export] Waiting for → ${exportUrl}`)
@@ -153,7 +153,11 @@ async function main(): Promise<void> {
     console.log('[export] Server is ready.')
 
     // ── 2. Launch Chromium ─────────────────────────────────────────────────
-    browser = await chromium.launch({ headless: true })
+    const chromeFallback = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+    browser = await chromium.launch({
+      headless: true,
+      ...(process.platform === 'win32' && existsSync(chromeFallback) ? { executablePath: chromeFallback } : {}),
+    })
     const context = await browser.newContext({
       viewport: { width: SLIDE_W, height: SLIDE_H },
     })

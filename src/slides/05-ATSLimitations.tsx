@@ -8,7 +8,7 @@ interface Props { step: number }
 
 const comparison = [
   {
-    feature: 'Core ATS Capability',
+    feature: 'Core ATS',
     greenhouse: true,
     lever: true,
     workable: true,
@@ -28,7 +28,7 @@ const comparison = [
     peaxis: true,
   },
   {
-    feature: 'Explainable AI Scoring',
+    feature: 'Explainable AI',
     greenhouse: false,
     lever: false,
     workable: 'partial',
@@ -48,7 +48,7 @@ const comparison = [
     peaxis: true,
   },
   {
-    feature: 'Multi-Tenant SaaS Data Isolation',
+    feature: 'Tenant Isolation',
     greenhouse: true,
     lever: true,
     workable: true,
@@ -76,7 +76,7 @@ function StatusCell({ value }: { value: boolean | string }) {
   )
   return (
     <div className="flex justify-center">
-      <span className="text-[10px] text-[#6B7280] font-bold px-1.5 py-0.5 rounded-full bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)] whitespace-nowrap">
+      <span className="text-xs text-[#6B7280] font-bold px-1.5 py-0.5 rounded-full bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)] whitespace-nowrap">
         {value}
       </span>
     </div>
@@ -91,13 +91,13 @@ export default function ATSLimitations({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-1.5">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Problem Analysis" number="2" />
+            <SectionTag section="Existing Solutions & Gap" number="4" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Competitive Benchmarking &amp; <GradientText variant="teal">Market Positioning</GradientText>
+            Competitive <GradientText variant="teal">Analysis</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
-            PEAXIS balances modular SME infrastructure with enterprise-level explainable intelligence.
+            How existing recruitment platforms cover core ATS, candidate experience, and explainability.
           </motion.p>
         </motion.div>
 
@@ -148,17 +148,18 @@ export default function ATSLimitations({ step }: Props) {
           )}
         </AnimatePresence>
 
-        {/* Positioning statement */}
+        {/* Observation */}
         <AnimatePresence>
           {step >= 3 && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3 p-3.5 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
+              className="flex items-center gap-3 p-3.5 rounded-xl bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)]"
             >
-              <div className="w-1.5 h-6 rounded-full bg-[#00B8B3] flex-shrink-0" />
-              <p className="text-xs text-px-navy leading-relaxed">
-                <strong>Strategic Position:</strong> Unlike enterprise point solutions (Eightfold/HireVue) or costly mid-market ATS tools (Ashby/Greenhouse), PEAXIS unifies recruitment and application workflows with <strong>explainable AI scoring</strong> at an SME-focused cost structure.
+              <div className="w-1.5 h-6 rounded-full bg-[#6B7280] flex-shrink-0" />
+              <p className="text-sm text-px-navy leading-relaxed">
+                <strong>Observation:</strong> few platforms combine core ATS workflows, a candidate-facing portal,
+                and explainable AI scoring in a single, SME-accessible product.
               </p>
             </motion.div>
           )}

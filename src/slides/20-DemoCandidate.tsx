@@ -10,14 +10,14 @@ const flowSteps = [
   { label: 'Discover',   color: '#00B8B3', n: '1' },
   { label: 'Upload CV',  color: '#00B8B3', n: '2' },
   { label: 'AI Parse',   color: '#00B8B3', n: '3' },
-  { label: 'Match Score', color: '#00B8B3', n: '4' },
+  { label: 'Assessment', color: '#00B8B3', n: '4' },
   { label: 'Apply',      color: '#00B8B3', n: '5' },
   { label: 'Track',      color: '#FE595A', n: '6' },
 ]
 
 const pipelineSteps = [
   { label: 'PDF / DOCX', bg: '#F3F4F6', text: '#374151' },
-  { label: 'Gemini 2.5-flash', bg: '#E6FAF9', text: '#009E9A' },
+  { label: 'Configured AI provider', bg: '#E6FAF9', text: '#009E9A' },
   { label: 'JSON Profile', bg: '#F3F4F6', text: '#374151' },
   { label: 'Redis Cache (30d)', bg: '#F3F4F6', text: '#374151' },
   { label: 'Match Preview', bg: '#E6FAF9', text: '#009E9A' },

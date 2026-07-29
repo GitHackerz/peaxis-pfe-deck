@@ -10,34 +10,34 @@ interface Props {
 }
 
 const flowSteps = [
-  { label: 'Problem Analysis', desc: 'SME recruitment constraints & stack gaps.' },
-  { label: 'Requirements', desc: 'Defining FRs, NFRs, and security boundaries.' },
-  { label: 'Architecture Design', desc: 'Multi-tenant database schema & api scoping.' },
-  { label: 'MVP Development', desc: 'Building Core platform, auth, and base ATS.' },
-  { label: 'AI Integration', desc: 'Connecting FastAPI, pgvector, and Gemini.' },
-  { label: 'Testing & Tuning', desc: 'Validating tenant isolation and SLA target.' },
+  { label: 'Problem Analysis', desc: 'SME constraints + stack gaps.' },
+  { label: 'Requirements', desc: 'FRs, NFRs, and security boundaries.' },
+  { label: 'Architecture Design', desc: 'Schema, services, and API scoping.' },
+  { label: 'MVP Development', desc: 'Core, auth, and base ATS.' },
+  { label: 'AI Integration', desc: 'FastAPI, pgvector, and Gemini.' },
+  { label: 'Testing & Tuning', desc: 'Isolation checks and SLA validation.' },
 ]
 
 const strategies = [
   {
     icon: <RotateCw size={18} className="text-[#00B8B3]" />,
-    title: 'Iterative Agile Approach',
-    desc: 'Sprint-based planning with weekly feedback loops aligning academic models with corporate needs.',
+    title: 'Agile Iteration',
+    desc: 'Sprint planning with weekly feedback loops.',
   },
   {
     icon: <ShieldCheck size={18} className="text-[#00B8B3]" />,
-    title: 'Modular Architecture-First',
-    desc: 'Strict interface decoupling ensuring NestJS feature modules remain independent of FastAPI nodes.',
+    title: 'Architecture First',
+    desc: 'Decoupled NestJS modules and FastAPI services.',
   },
   {
     icon: <GitMerge size={18} className="text-[#00B8B3]" />,
     title: 'Incremental Delivery',
-    desc: 'Staged module deployment — validating authentication security before introducing database complexity.',
+    desc: 'Validate auth and tenant scope before advanced modules.',
   },
   {
     icon: <Terminal size={18} className="text-[#00B8B3]" />,
     title: 'Continuous Refinement',
-    desc: 'Performance profiling and pgvector query indexing to guarantee sub-200ms API responses.',
+    desc: 'Profile APIs, tune pgvector, protect p95 targets.',
   },
 ]
 
@@ -48,13 +48,13 @@ export default function Methodology({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-1">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Methodology & Requirements" number="3" />
+            <SectionTag section="Methodology & Requirements" number="5" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
             Engineering <GradientText variant="teal">Methodology</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted">
-            Translating academic requirements into a production-grade modular product.
+            The process used to move from problem to production-grade system.
           </motion.p>
         </motion.div>
 
@@ -85,7 +85,7 @@ export default function Methodology({ step }: Props) {
                           </div>
                           <div>
                             <p className="text-sm font-extrabold text-px-navy pr-4 mb-0.5">{fs.label}</p>
-                            <p className="text-[11px] text-px-muted leading-tight">{fs.desc}</p>
+                            <p className="text-xs text-px-muted leading-snug">{fs.desc}</p>
                           </div>
                         </Card>
                       </motion.div>
@@ -120,8 +120,8 @@ export default function Methodology({ step }: Props) {
                           {strat.icon}
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-px-navy mb-0.5">{strat.title}</p>
-                          <p className="text-[11px] text-px-muted leading-relaxed">{strat.desc}</p>
+                          <p className="text-sm font-bold text-px-navy mb-0.5">{strat.title}</p>
+                          <p className="text-xs text-px-muted leading-snug">{strat.desc}</p>
                         </div>
                       </motion.div>
                     ))}

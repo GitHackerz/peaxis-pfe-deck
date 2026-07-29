@@ -12,28 +12,28 @@ const reqs = [
     icon: <Brain size={20} />,
     id: 'FR-06',
     title: 'AI Match Scoring',
-    items: ['Deterministic skill-overlap engine', 'Score 0–100 with explanation', 'Strengths & weaknesses breakdown'],
+    items: ['Skill-overlap engine', '0-100 score + explanation', 'Strength/weakness breakdown'],
     color: '#00B8B3',
   },
   {
     icon: <Upload size={20} />,
     id: 'FR-07',
     title: 'CV Parsing',
-    items: ['PDF / DOCX / TXT support', 'Gemini 2.5-flash extraction', 'Auto pre-fills candidate profile'],
+    items: ['PDF / DOCX / TXT upload', 'Configured provider extraction', 'Durable candidate-profile parsing'],
     color: '#00B8B3',
   },
   {
     icon: <UserCheck size={20} />,
     id: 'FR-08',
     title: 'Candidate Onboarding',
-    items: ['Anonymous apply-with-CV flow', 'Profile completeness scoring', 'Semantic embedding generation'],
+    items: ['Apply with CV', 'Profile completeness score', 'Candidate embeddings'],
     color: '#00B8B3',
   },
   {
     icon: <Calendar size={20} />,
     id: 'FR-09',
     title: 'Interview Scheduling',
-    items: ['Interview CRUD with type flags', 'Linked to application record', 'Interviewer assignment & tracking'],
+    items: ['Interview CRUD + type', 'Application-linked schedule', 'Interviewer assignment'],
     color: '#00B8B3',
   },
   {
@@ -53,13 +53,13 @@ export default function FuncReqAI({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Methodology & Requirements" number="3" />
+            <SectionTag section="Methodology & Requirements" number="5" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             AI & analytics <GradientText variant="teal">requirements</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            FR-06 to FR-10: the intelligence layer — PEAXIS's core differentiator above traditional ATS tools.
+            FR-06 to FR-10: the intelligence layer above traditional ATS workflows.
           </motion.p>
         </motion.div>
 

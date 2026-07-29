@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { AlertTriangle, Clock, UserX } from 'lucide-react'
+import { AlertTriangle, Clock, Search, UserX } from 'lucide-react'
 import Card from '../components/ui/Card'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
@@ -8,29 +8,35 @@ import { fadeUp, stagger } from '../lib/animations'
 interface Props { step: number }
 
 const stats = [
-  { value: '42 days', label: 'Average time-to-hire', sub: 'SHRM 2024', color: '#FE595A' },
-  { value: '75%', label: 'Recruiters overwhelmed by CV volume', sub: 'LinkedIn Talent Report', color: '#001027' },
-  { value: '60%', label: 'Candidates ghost after poor UX', sub: 'Indeed Survey 2023', color: '#6B7280' },
+  { value: '42 days', label: 'Avg time-to-hire', sub: 'SHRM 2024', color: '#FE595A' },
+  { value: '75%', label: 'Recruiters overloaded', sub: 'LinkedIn Talent Report', color: '#001027' },
+  { value: '60%', label: 'Candidates report no feedback', sub: 'Indeed Survey 2023', color: '#6B7280' },
 ]
 
 const pains = [
   {
     icon: <Clock size={22} />,
-    title: 'Screening bottleneck',
-    body: 'Recruiters spend 23 hours/week manually reviewing CVs. 80% of that time is wasted on unqualified applications.',
+    title: 'Manual screening',
+    body: 'Reviewing every CV by hand does not scale with rising application volume.',
     color: '#FE595A',
   },
   {
-    icon: <AlertTriangle size={22} />,
-    title: 'Bias & inconsistency',
-    body: 'Manual screening introduces unconscious bias and inconsistent evaluation criteria across reviewers.',
+    icon: <Search size={22} />,
+    title: 'Keyword-based ATS',
+    body: 'Legacy filters match exact keywords and miss well-qualified, non-standard CVs.',
     color: '#001027',
   },
   {
-    icon: <UserX size={22} />,
-    title: 'Candidate friction',
-    body: 'Long applications, zero feedback, and opaque processes cause top talent to abandon before completion.',
+    icon: <AlertTriangle size={22} />,
+    title: 'Inconsistent evaluation',
+    body: 'Criteria vary by reviewer, with limited traceability of how a decision was reached.',
     color: '#6B7280',
+  },
+  {
+    icon: <UserX size={22} />,
+    title: 'Candidate experience',
+    body: 'Long application forms and no status feedback push qualified talent away.',
+    color: '#374151',
   },
 ]
 
@@ -42,13 +48,13 @@ export default function RecruitmentPain({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Problem Analysis" number="2" />
+            <SectionTag section="Industry & Problem" number="2" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Recruitment is <GradientText variant="coral">broken</GradientText> at every layer
+            Current recruitment <GradientText variant="coral">challenges</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            Traditional hiring suffers from slow, manual, and unintegrated administrative bottlenecks.
+            Engineering problems behind the hiring process, not just symptoms.
           </motion.p>
         </motion.div>
 
@@ -81,7 +87,7 @@ export default function RecruitmentPain({ step }: Props) {
         {/* Pain cards */}
         <AnimatePresence>
           {step >= 2 && (
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-4 gap-3">
               {pains.map((p, i) => (
                 <motion.div
                   key={i}
@@ -117,14 +123,16 @@ export default function RecruitmentPain({ step }: Props) {
             >
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#FFF0F0] border border-[rgba(254,89,90,0.2)]">
                 <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#FE595A]" />
-                <p className="text-xs text-px-navy">
-                  <strong>Global Cost:</strong> Bad hires cost <strong>$14.9K</strong> on average; top tier talent is off the market in 10 days.
+                <p className="text-sm text-px-navy">
+                  <strong>Cost of a bad hire:</strong> averages <strong>$14.9K</strong>, while strong candidates
+                  accept competing offers within days.
                 </p>
               </div>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl border" style={{ background: '#F3F4F6', borderColor: 'rgba(0,0,0,0.07)' }}>
                 <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#6B7280]" />
-                <p className="text-xs text-px-navy">
-                  <strong>Regional Gap:</strong> MENA SMEs rely on spreadsheets due to high costs and localization gaps in legacy tools.
+                <p className="text-sm text-px-navy">
+                  <strong>Regional gap:</strong> many SMEs in the MENA region still rely on spreadsheets, as
+                  legacy ATS tools are costly and poorly localized.
                 </p>
               </div>
             </motion.div>

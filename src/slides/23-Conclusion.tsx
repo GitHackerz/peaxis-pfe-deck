@@ -1,49 +1,40 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { CheckCircle, Lightbulb, TrendingUp } from 'lucide-react'
+import { CheckCircle, Layers3, Lightbulb } from 'lucide-react'
 import GradientText from '../components/ui/GradientText'
-import KPICard from '../components/ui/KPICard'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
 
 interface Props { step: number }
 
-const kpis = [
-  { value: '14', label: 'API Modules', color: 'teal' as const },
-  { value: '60+', label: 'REST Endpoints', color: 'teal' as const },
-  { value: '6', label: 'AI Features', color: 'teal' as const },
-  { value: '4', label: 'Microservices', color: 'teal' as const },
-]
-
 const sections = [
   {
     icon: <CheckCircle size={18} />,
-    title: 'Key Achievements',
+    title: 'Engineering Achievements',
     color: '#00B8B3',
     items: [
-      'Full-stack multi-tenant SaaS: Core workspace, Hire ATS, and Jobs portal',
-      'Explainable AI: Deterministic skill-gap overlap with LLM explanations',
-      'Semantic Search: pgvector embeddings for non-keyword matching',
-      'Queue-based processing: Asynchronous tasks and Stripe automation',
+      'A full-stack multi-tenant SaaS: Core workspace, Hire ATS, and Jobs portal',
+      'Evidence-based assessment: cited requirements, reviewer overrides, and an audit trail',
+      'Durable AI processing: queued work outside the request path via a dedicated worker',
+    ],
+  },
+  {
+    icon: <Layers3 size={18} />,
+    title: 'Architectural Achievements',
+    color: '#00B8B3',
+    items: [
+      'Clear separation of concerns across frontend, API, worker, and inference layers',
+      'Tenant isolation enforced at the schema and request level, not retrofitted',
+      'Semantic retrieval with pgvector, and a containerized, independently scalable runtime',
     ],
   },
   {
     icon: <Lightbulb size={18} />,
-    title: 'Technical Lessons',
+    title: 'Lessons Learned',
     color: '#00B8B3',
     items: [
-      'Schema-first isolation: Multi-tenant guards must be built-in, not retrofitted',
-      'Horizontal scalability: FastAPI for ML, NestJS for core Business API',
-      'Hybrid AI design: Combining rules and LLMs optimizes cost and reliability',
-    ],
-  },
-  {
-    icon: <TrendingUp size={18} />,
-    title: 'Future Roadmap',
-    color: '#00B8B3',
-    items: [
-      'Collaborative workspaces: Real-time decision tracking for hiring teams',
-      'Regional expansion: Multilingual CV parser optimized for the MENA market',
-      'Enterprise connectors: Direct integration with LinkedIn, Greenhouse, and Workday',
+      'Multi-tenant guards must be designed in from the first schema, not added later',
+      'A stateless inference boundary keeps business state and authority in one place',
+      'Bounded AI — provider limits, credits, and mandatory review — keeps risk manageable',
     ],
   },
 ]
@@ -57,45 +48,18 @@ export default function Conclusion({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Results & Future Work" number="6" />
+            <SectionTag section="Results & Conclusion" number="10" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            PEAXIS: <GradientText variant="teal">Achievement & Future</GradientText>
+            Results & <GradientText variant="teal">Conclusion</GradientText>
           </motion.h2>
         </motion.div>
-
-        {/* KPI row */}
-        <AnimatePresence>
-          {step >= 1 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="grid grid-cols-4 gap-3"
-            >
-              {kpis.map((k, i) => (
-                <motion.div
-                  key={k.label}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                >
-                  <KPICard
-                    value={k.value}
-                    label={k.label}
-                    sublabel=""
-                    color={k.color}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
 
         {/* Three sections */}
         <div className="grid grid-cols-3 gap-3">
           {sections.map((sec, i) => (
             <AnimatePresence key={sec.title}>
-              {step >= i + 2 && (
+              {step >= i + 1 && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -133,7 +97,7 @@ export default function Conclusion({ step }: Props) {
 
         {/* Closing statement */}
         <AnimatePresence>
-          {step >= 5 && (
+          {step >= 4 && (
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -145,8 +109,7 @@ export default function Conclusion({ step }: Props) {
                 </svg>
               </div>
               <p className="text-sm text-px-navy leading-relaxed">
-                <strong>PEAXIS demonstrates that AI-powered recruitment can be built with engineering rigour, academic depth, and real product maturity —
-                transforming a 6-month internship into a fully deployable, multi-tenant SaaS platform ready for market.</strong>
+                <strong>PEAXIS demonstrates that AI-assisted recruitment can remain reviewable, tenant-safe, and operationally bounded — with people retaining authority over hiring decisions.</strong>
               </p>
             </motion.div>
           )}

@@ -9,42 +9,42 @@ interface Props { step: number }
 
 const aiPillars = [
   {
-    icon: <Building2 size={16} />,
+    icon: <Building2 size={20} />,
     title: 'Recruiter AI',
-    features: ['Semantic match scoring', 'Candidate text summaries', 'Interview question generation', 'Dynamic risk flags'],
+    desc: 'Evidence-based assessments with cited, auditable evaluations.',
   },
   {
-    icon: <User size={16} />,
+    icon: <User size={20} />,
     title: 'Candidate AI',
-    features: ['CV parsing & mapping', 'Resume recommendations', 'Smart match preview'],
+    desc: 'Durable CV parsing and application tracking.',
   },
   {
-    icon: <Sparkles size={16} />,
+    icon: <Sparkles size={20} />,
     title: 'Employer AI',
-    features: ['JD generation tools', 'Unconscious bias checking', 'Skill taxonomy mapping'],
+    desc: 'Requirement definition and job description drafting.',
   },
 ]
 
 export default function PeaxisAIBrain({ step }: Props) {
   return (
     <div className="slide-root">
-      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col gap-4">
+      <div className="relative z-10 w-full max-w-5xl px-4 flex flex-col gap-6">
 
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-1">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Proposed Solution" number="4" />
+            <SectionTag section="Proposed Solution" number="6" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
-            <GradientText variant="teal">PEAXIS AI Brain</GradientText> — Intelligence Layer
+            <GradientText variant="teal">PEAXIS AI Brain</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted">
-            Dedicated FastAPI microservice. Processing structured resumes and job data in parallel.
+            A stateless inference service; the API owns evidence, authorization, and hiring decisions.
           </motion.p>
         </motion.div>
 
-        {/* Three compact pillars (reveals initially on step >= 1) */}
-        <div className="grid grid-cols-3 gap-4 min-h-[220px]">
+        {/* Three pillars */}
+        <div className="grid grid-cols-3 gap-4">
           {aiPillars.map((pillar, i) => (
             <AnimatePresence key={pillar.title}>
               {step >= 1 && (
@@ -52,22 +52,13 @@ export default function PeaxisAIBrain({ step }: Props) {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.45, delay: i * 0.08 }}
-                  className="rounded-xl border p-4 flex flex-col gap-3 bg-white border-[var(--border)] shadow-sm"
+                  className="rounded-xl border p-5 flex flex-col gap-3 bg-white border-[var(--border)]"
                 >
-                  <div className="flex items-center gap-2 border-b pb-2">
-                    <div className="w-7 h-7 rounded bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0">
-                      {pillar.icon}
-                    </div>
-                    <p className="text-sm font-bold text-px-navy">{pillar.title}</p>
+                  <div className="w-11 h-11 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0">
+                    {pillar.icon}
                   </div>
-                  <ul className="flex flex-col gap-1.5">
-                    {pillar.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-xs text-px-muted">
-                        <span className="w-1 h-1 rounded-full flex-shrink-0 mt-1.5 bg-px-teal" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="text-base font-extrabold text-px-navy">{pillar.title}</h3>
+                  <p className="text-sm text-px-muted leading-snug">{pillar.desc}</p>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -84,11 +75,11 @@ export default function PeaxisAIBrain({ step }: Props) {
             >
               <div className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]">
                 <Brain size={16} className="text-px-teal flex-shrink-0" />
-                <p className="text-xs text-px-navy"><strong>Hybrid Pipeline:</strong> Deterministic skill-overlap scoring + generative Gemini explanation (cached 24h in Redis).</p>
+                <p className="text-sm text-px-navy">Evidence-first: every assessment stays auditable.</p>
               </div>
               <div className="flex items-center gap-3 p-3 rounded-xl bg-white border border-[var(--border)]">
                 <Sparkles size={16} className="text-px-teal flex-shrink-0" />
-                <p className="text-xs text-px-navy"><strong>Queue-driven:</strong> BullMQ workers dispatch heavy inference jobs asynchronously to prevent API request blockages.</p>
+                <p className="text-sm text-px-navy">Durable work: queued outside the request path.</p>
               </div>
             </motion.div>
           )}
@@ -103,9 +94,8 @@ export default function PeaxisAIBrain({ step }: Props) {
               className="flex items-center gap-2"
             >
               <Badge variant="teal">FastAPI</Badge>
-              <Badge variant="navy">Gemini Pro</Badge>
+              <Badge variant="navy">Gemini / Azure OpenAI</Badge>
               <Badge variant="teal">pgvector</Badge>
-              <Badge variant="outline">Redis cache</Badge>
             </motion.div>
           )}
         </AnimatePresence>

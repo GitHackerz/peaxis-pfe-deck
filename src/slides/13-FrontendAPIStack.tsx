@@ -10,22 +10,22 @@ const layers = [
   {
     name: 'Frontend',
     tech: ['Next.js 16', 'React', 'Tailwind', 'TypeScript'],
-    detail: 'PEAXIS Core (port 3000) · Hire (3101) · Jobs (3100) — Server components with interactive client state',
+    detail: 'Core, Hire, Jobs, and Landing apps with shared React/TypeScript patterns',
   },
   {
     name: 'API',
     tech: ['NestJS', 'Prisma', 'JWT', 'TypeScript'],
-    detail: 'Core API (port 4000) · 14 modules · 60+ endpoints — Single source of truth for all data',
+    detail: 'NestJS + Prisma: 14 modules, 60+ endpoints, one data authority',
   },
   {
     name: 'AI Service',
-    tech: ['FastAPI', 'Gemini', 'Python', 'pgvector'],
-    detail: 'Queue-driven via BullMQ · CV parsing, match scoring, JD generation — Cacheable in Redis',
+    tech: ['FastAPI', 'Gemini / Azure', 'Python', 'Redis'],
+    detail: 'Stateless inference for parsing, classification, embeddings, and structured generation',
   },
   {
     name: 'Database',
     tech: ['PostgreSQL', 'pgvector', 'Redis', 'BullMQ'],
-    detail: 'PostgreSQL + 1536-dim embeddings · Redis multi-layer cache (7d/30d/24h) · Async job queue',
+    detail: 'Authoritative data + pgvector retrieval, Redis, and one durable BullMQ queue',
   },
 ]
 
@@ -37,7 +37,7 @@ export default function FrontendAPIStack({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Architecture & Technologies" number="5" />
+            <SectionTag section="Architecture & Technologies" number="7" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Tech <GradientText variant="teal">Stack</GradientText> — Four Layers
@@ -82,7 +82,7 @@ export default function FrontendAPIStack({ step }: Props) {
               {[
                 { label: 'Multi-tenant', value: 'Every query scoped to businessId' },
                 { label: 'Async processing', value: 'BullMQ + background workers' },
-                { label: 'Semantic search', value: 'pgvector + 1536-dim embeddings' },
+                { label: 'Retrieval', value: 'pgvector supports job discovery and cited evidence' },
               ].map((p) => (
                 <div key={p.label} className="p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]">
                   <p className="text-xs font-bold text-px-teal uppercase tracking-wider">{p.label}</p>

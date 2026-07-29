@@ -7,29 +7,29 @@ interface Props { step: number }
 
 const capabilities = [
   {
-    name: 'Match Scoring',
-    desc: 'Deterministic skill-overlap → 0–100 with matched/missing skills + plain-language explanation',
+    name: 'Evidence Assessment',
+    desc: 'Requirements are evaluated against cited candidate evidence with a reviewable outcome',
     color: '#00B8B3', bg: '#E6FAF9',
   },
   {
     name: 'CV Parsing',
-    desc: 'Gemini 2.5-flash → structured JSON profile from PDF/DOCX in under 3 seconds',
+    desc: 'A durable worker requests a structured profile from a configured inference provider',
     color: '#374151', bg: '#F3F4F6',
   },
   {
-    name: 'Hiring Copilot',
-    desc: 'Candidate summary · interview questions · risk flags · next action — all in-context',
+    name: 'Recruiter Artifacts',
+    desc: 'Summaries, interview questions, JD drafts, and outreach remain reviewable before use',
     color: '#374151', bg: '#F9FAFB',
   },
   {
     name: 'JD Generator',
-    desc: 'Bias-checked job description from title + bullets, with skill requirement suggestions',
+    desc: 'Job-description draft and structured requirements with recruiter confirmation',
     color: '#7C3AED', bg: '#F5F3FF',
   },
 ]
 
-const matchedSkills = ['React', 'TypeScript', 'Node.js', 'PostgreSQL']
-const missingSkills = ['GraphQL', 'Docker']
+const evidence = ['Resume project: React', 'Experience: TypeScript', 'Portfolio: PostgreSQL']
+const verification = ['GraphQL needs verification', 'Work authorization pending']
 
 export default function DemoAI({ step }: Props) {
   return (
@@ -45,7 +45,7 @@ export default function DemoAI({ step }: Props) {
             <GradientText variant="teal">AI Brain</GradientText> — Intelligence in Action
           </motion.h2>
           <motion.p variants={fadeUp} className="text-xs text-px-muted max-w-xl">
-            Explainable AI at every decision point — no silent scoring, no unexplained rejections.
+            Explainable assistance at every decision point — evidence is visible and the recruiter remains in control.
           </motion.p>
         </motion.div>
 
@@ -99,7 +99,7 @@ export default function DemoAI({ step }: Props) {
                       <path d="M6 1l1.3 2.6L10 4.3l-2 1.9.5 2.8L6 7.6 3.5 9l.5-2.8L2 4.3l2.7-.7L6 1z" fill="#00B8B3" />
                     </svg>
                   </div>
-                  <span className="text-xs font-bold text-px-navy">AI Match Engine — Live Output</span>
+                  <span className="text-xs font-bold text-px-navy">Evidence Assessment — Review Output</span>
                 </div>
 
                 <div className="flex flex-col gap-3 p-4 flex-1">
@@ -115,7 +115,7 @@ export default function DemoAI({ step }: Props) {
                   <div className="flex flex-col gap-1.5">
                     <span className="text-xs font-bold uppercase tracking-widest text-px-muted">Engine</span>
                     <div className="flex flex-wrap gap-1.5">
-                      {['Parse CV', 'Embed Skills', 'pgvector Match', 'Score + Explain'].map((e, i) => (
+                      {['Parse CV', 'Extract evidence', 'Evaluate requirements', 'Recruiter review'].map((e, i) => (
                         <span key={e} className="flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded-full bg-[#E6FAF9] text-[#009E9A] border border-[rgba(0,184,179,0.2)]">
                           {i > 0 && <svg width="6" height="6" viewBox="0 0 6 6" fill="none"><path d="M1 3h4M3 1l2 2-2 2" stroke="#009E9A" strokeWidth="1" strokeLinecap="round" /></svg>}
                           {e}
@@ -127,23 +127,23 @@ export default function DemoAI({ step }: Props) {
                   <div className="flex flex-col gap-2 p-3 rounded-xl bg-white border border-[rgba(0,184,179,0.2)]">
                     <span className="text-xs font-bold uppercase tracking-widest text-px-muted">Output</span>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-extrabold text-px-navy">82</span>
-                      <span className="text-sm text-px-muted">/100</span>
-                      <span className="ml-auto text-xs font-bold bg-[#E6FAF9] text-[#009E9A] px-2 py-0.5 rounded-full border border-[rgba(0,184,179,0.2)]">Strong Match</span>
+                      <span className="text-2xl font-extrabold text-px-navy">3</span>
+                      <span className="text-sm text-px-muted">requirements supported</span>
+                      <span className="ml-auto text-xs font-bold bg-[#E6FAF9] text-[#009E9A] px-2 py-0.5 rounded-full border border-[rgba(0,184,179,0.2)]">Ready for review</span>
                     </div>
                     <div className="w-full h-1.5 bg-gray-100 rounded-full">
-                      <div className="h-full rounded-full" style={{ width: '82%', background: '#00B8B3' }} />
+                      <div className="h-full rounded-full" style={{ width: '60%', background: '#00B8B3' }} />
                     </div>
                     <div className="flex flex-wrap gap-1 mt-1">
-                      {matchedSkills.map(s => (
+                      {evidence.map(s => (
                         <span key={s} className="text-xs font-semibold px-1.5 py-0.5 rounded bg-[#E6FAF9] text-[#009E9A]">{s} ✓</span>
                       ))}
-                      {missingSkills.map(s => (
+                      {verification.map(s => (
                         <span key={s} className="text-xs font-semibold px-1.5 py-0.5 rounded bg-[#FFF0F0] text-[#E03E3F]">{s} ✗</span>
                       ))}
                     </div>
                     <p className="text-xs text-px-muted italic leading-snug mt-1">
-                      "Strong React + TS background. GraphQL gap is trainable given existing Node.js depth."
+                      "The recruiter can inspect the cited claims, confirm the evidence, or record an override."
                     </p>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ export default function DemoAI({ step }: Props) {
               <div className="w-1 h-5 rounded-full bg-[#00B8B3] flex-shrink-0" />
               <p className="text-xs text-px-muted">
                 <strong className="text-px-navy">Explainability principle:</strong>{' '}
-                Every score exposes — numeric value · confidence label · matched skills (teal) · missing skills (coral) · plain-language rationale. No silent black boxes.
+                Every assessment exposes — requirement · cited evidence · evaluation · verification state · recruiter review. No autonomous rejection.
               </p>
             </motion.div>
           )}

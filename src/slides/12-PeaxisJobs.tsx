@@ -1,107 +1,83 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Search, Filter, Upload, Star, Zap, TrendingUp, Bookmark, Award, ListChecks, Settings, Bell } from 'lucide-react'
+import { Award, Search, Upload } from 'lucide-react'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
 import { fadeUp, stagger } from '../lib/animations'
 
 interface Props { step: number }
 
-const sections = [
+const pillars = [
   {
-    title: 'Job Discovery & Search',
+    title: 'Job Discovery',
     color: '#00B8B3',
-    items: [
-      { icon: <Search size={16} />, label: 'Semantic Job Search', desc: 'pgvector embeddings match job listings beyond simple keyword checks.' },
-      { icon: <Filter size={16} />, label: 'Advanced Filters', desc: 'Refined filtering by skills, salary brackets, and remote categories.' },
-      { icon: <Zap size={16} />, label: 'Job Lite Format', desc: 'Lightweight job cards optimised for fast mobile browsing.' },
-      { icon: <TrendingUp size={16} />, label: 'Personalised Feed', desc: 'AI recommendations driven by candidate embedding similarity.' },
-    ],
+    icon: <Search size={20} />,
+    desc: 'Semantic search and filters surface roles beyond keyword matching.',
   },
   {
     title: 'Application UX',
     color: '#009E9A',
-    items: [
-      { icon: <Upload size={16} />, label: 'AI CV Parsing', desc: 'PDF upload dynamically populates candidate profile data.' },
-      { icon: <ListChecks size={16} />, label: 'Easy Apply Flow', desc: 'One-click application submitting parsed CV and profile credentials.' },
-      { icon: <ListChecks size={16} />, label: 'Pipeline Tracking', desc: 'Real-time visibility into hiring stage (Applied, Interview, Offer).' },
-      { icon: <Settings size={16} />, label: 'Profile Manager', desc: 'Candidate-controlled preferences, portfolios, and skills inventory.' },
-    ],
+    icon: <Upload size={20} />,
+    desc: 'AI CV parsing pre-fills profiles for a low-friction apply flow.',
   },
   {
     title: 'AI Matching & Insights',
     color: '#001027',
-    items: [
-      { icon: <Star size={16} />, label: 'Match Score Preview', desc: 'AI match percentage shown to candidates before hitting apply.' },
-      { icon: <Award size={16} />, label: 'Skill Gap Tool', desc: 'Highlights overlapping strengths and recommended missing skills.' },
-      { icon: <Bookmark size={16} />, label: 'Job Bookmarks', desc: 'Bookmark interesting job listings to apply for later.' },
-      { icon: <Bell size={16} />, label: 'Job Alerts', desc: 'Instant notifications when roles match candidate skill-sets.' },
-    ],
+    icon: <Award size={20} />,
+    desc: 'Skill-gap feedback and alerts help candidates target the right roles.',
   },
 ]
 
 export default function PeaxisJobs({ step }: Props) {
   return (
     <div className="slide-root">
-      <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col gap-4">
+      <div className="relative z-10 w-full max-w-5xl px-4 flex flex-col gap-6">
 
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-1">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Proposed Solution" number="4" />
+            <SectionTag section="Proposed Solution" number="6" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
-            <GradientText variant="navy">PEAXIS Jobs</GradientText> — Talent Acquisition
+            <GradientText variant="navy">PEAXIS Jobs</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted">
-            Candidate-facing portal. Minimising application friction and empowering job seekers with skill-gap transparency.
+            The candidate portal for discovery, matching, and low-friction applications.
           </motion.p>
         </motion.div>
 
-        {/* Three Columns Grid */}
-        <div className="grid grid-cols-3 gap-4 min-h-[360px]">
-          {sections.map((sec, colIdx) => (
+        {/* Three pillars */}
+        <div className="grid grid-cols-3 gap-4">
+          {pillars.map((sec, colIdx) => (
             <AnimatePresence key={sec.title}>
               {step >= colIdx + 1 && (
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.45 }}
-                  className="bg-white rounded-xl border border-[var(--border)] p-4 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white rounded-xl border border-[var(--border)] p-5 flex flex-col gap-3"
                 >
-                  <div className="flex items-center gap-2 border-b pb-2">
-                    <div className="w-1.5 h-4 rounded-full" style={{ background: sec.color }} />
-                    <h3 className="text-sm font-bold text-px-navy">{sec.title}</h3>
+                  <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${sec.color}1A`, color: sec.color }}>
+                    {sec.icon}
                   </div>
-                  <div className="flex flex-col gap-3">
-                    {sec.items.map((item, itemIdx) => (
-                      <div key={itemIdx} className="flex gap-2.5 items-start">
-                        <div className="w-7 h-7 rounded bg-[#E6FAF9] flex items-center justify-center flex-shrink-0 text-px-teal mt-0.5">
-                          {item.icon}
-                        </div>
-                        <div>
-                          <p className="text-xs font-bold text-px-navy">{item.label}</p>
-                          <p className="text-[10px] text-px-muted leading-tight mt-0.5">{item.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <h3 className="text-base font-extrabold text-px-navy">{sec.title}</h3>
+                  <p className="text-sm text-px-muted leading-snug">{sec.desc}</p>
                 </motion.div>
               )}
             </AnimatePresence>
           ))}
         </div>
 
-        {/* Strategic Value Card (reveals on step 4) */}
+        {/* Business value */}
         <AnimatePresence>
           {step >= 4 && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3 p-3 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
+              className="flex items-center gap-3 p-4 rounded-xl bg-[#E6FAF9] border border-[rgba(0,184,179,0.2)]"
             >
               <div className="w-1.5 h-6 rounded bg-[#00B8B3] flex-shrink-0" />
-              <p className="text-xs text-px-navy">
-                <strong>Strategic Value:</strong> PEAXIS Jobs drives candidate acquisition by replacing opaque application forms with clear matching insights, enhancing employer talent branding.
+              <p className="text-sm text-px-navy">
+                Replaces opaque applications with clear matching insights and faster apply flows.
               </p>
             </motion.div>
           )}

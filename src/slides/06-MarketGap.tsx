@@ -11,19 +11,19 @@ const gaps = [
   {
     icon: <Eye size={20} />,
     title: 'AI black boxes',
-    body: '"This candidate scored 72" — but why? Recruiters cannot act on scores they cannot explain. Bias complaints follow.',
+    body: 'Recommendations need traceability: requirements, cited evidence, and recruiter review.',
     color: '#FE595A',
   },
   {
     icon: <Puzzle size={20} />,
     title: 'Fragmented tooling',
-    body: 'Notion for job specs. Greenhouse for pipeline. Calendly for interviews. Zero integration — context lost at every handoff.',
+    body: 'Specs, pipelines, calendars, and notes live in separate tools.',
     color: '#6B7280',
   },
   {
     icon: <Lightbulb size={20} />,
     title: 'No candidate intelligence',
-    body: 'Existing tools track applications. None actively guide recruiters on who to advance, how to interview, or what risks to flag.',
+    body: 'Tools track applications but rarely guide decisions or interviews.',
     color: '#001027',
   },
 ]
@@ -42,11 +42,10 @@ export default function MarketGap({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Problem Analysis" number="2" />
+            <SectionTag section="Existing Solutions & Gap" number="4" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            The market gap:{' '}
-            <GradientText variant="teal">intelligent + integrated + explainable</GradientText>
+            The gap: <GradientText variant="teal">integrated, explainable AI</GradientText>
           </motion.h2>
         </motion.div>
 
@@ -104,7 +103,7 @@ export default function MarketGap({ step }: Props) {
           )}
         </AnimatePresence>
 
-        {/* PEAXIS answer */}
+        {/* Project objective */}
         <AnimatePresence>
           {step >= 3 && (
             <motion.div
@@ -116,11 +115,11 @@ export default function MarketGap({ step }: Props) {
             >
               <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
                 style={{ background: '#E6FAF9' }}>
-                <Lightbulb size={18} className="text-white" />
+                <Lightbulb size={18} className="text-px-teal" />
               </div>
               <div>
-                <p className="text-base font-bold text-px-navy">PEAXIS fills this exact gap</p>
-                <p className="text-sm text-px-muted">AI scores are explainable. Tools are integrated. The candidate experience is first-class. That's the OS layer missing from the market.</p>
+                <p className="text-base font-bold text-px-navy">This gap defines the project's objective</p>
+                <p className="text-sm text-px-muted">Explainable scoring, integrated workflows, and a candidate-facing experience in a single system.</p>
               </div>
             </motion.div>
           )}

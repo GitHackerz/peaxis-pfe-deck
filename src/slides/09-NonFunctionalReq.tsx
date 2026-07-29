@@ -11,7 +11,7 @@ const nfrs = [
     icon: <Zap size={20} />,
     id: 'NFR-01',
     title: 'Scalability',
-    detail: 'Stateless API pods behind load balancer. BullMQ handles surge via Redis queue.',
+    detail: 'Stateless API pods; Redis queues absorb spikes.',
     color: '#00B8B3',
     metric: 'Horizontal scale',
   },
@@ -19,7 +19,7 @@ const nfrs = [
     icon: <ShieldCheck size={20} />,
     id: 'NFR-02',
     title: 'Security',
-    detail: 'Argon2, JWT rotation, OAuth2, X-Business-ID isolation, OWASP-hardened API.',
+    detail: 'Argon2, JWT rotation, OAuth2, tenant scoping, OWASP checks.',
     color: '#FE595A',
     metric: 'OWASP aligned',
   },
@@ -27,7 +27,7 @@ const nfrs = [
     icon: <Activity size={20} />,
     id: 'NFR-03',
     title: 'Performance',
-    detail: 'Redis 3-layer caching (7d/30d/24h). Sub-200ms p95. Async BullMQ for heavy ops.',
+    detail: 'Redis caching + BullMQ keep heavy work off requests.',
     color: '#374151',
     metric: 'p95 < 200ms',
   },
@@ -35,7 +35,7 @@ const nfrs = [
     icon: <TrendingUp size={20} />,
     id: 'NFR-04',
     title: 'Availability',
-    detail: 'Preferred-region SDK retries. BullMQ retry logic. Docker health checks.',
+    detail: 'SDK retries, job retries, and Docker health checks.',
     color: '#374151',
     metric: '99.5% SLA target',
   },
@@ -43,7 +43,7 @@ const nfrs = [
     icon: <Eye size={20} />,
     id: 'NFR-05',
     title: 'Explainability',
-    detail: 'Every AI score exposes: numeric value, label, matched skills, missing skills, explanation.',
+    detail: 'Scores include match, label, skills, gaps, and explanation.',
     color: '#001027',
     metric: 'Full audit trail',
   },
@@ -51,7 +51,7 @@ const nfrs = [
     icon: <Box size={20} />,
     id: 'NFR-06',
     title: 'Modularity',
-    detail: 'NestJS feature modules. Independent AI service. Decoupled frontend apps.',
+    detail: 'NestJS modules, FastAPI service, decoupled frontends.',
     color: '#00B8B3',
     metric: 'Microservices',
   },
@@ -65,7 +65,7 @@ export default function NFR({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Methodology & Requirements" number="3" />
+            <SectionTag section="Methodology & Requirements" number="5" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Production-grade <GradientText variant="teal">quality attributes</GradientText>

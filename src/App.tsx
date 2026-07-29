@@ -10,37 +10,49 @@ import ExportView from './ExportView'
 import { usePresentation } from './hooks/usePresentation'
 import { slideVariants } from './lib/animations'
 
+import IndustryContext from './slides/00-GeneralIntro'
 import Cover from './slides/01-Cover'
 import PresentationPlan from './slides/01b-PresentationPlan'
-import GeneralIntro from './slides/00-GeneralIntro'
-import CompanyOverview from './slides/02-CompanyOverview'
 import InternshipContext from './slides/03-InternshipContext'
-import RecruitmentPain from './slides/04-RecruitmentPain'
-import ATSLimitations from './slides/05-ATSLimitations'
+import RecruitmentChallenges from './slides/04-RecruitmentPain'
+import CompetitiveAnalysis from './slides/05-ATSLimitations'
 import MarketGap from './slides/06-MarketGap'
 import Methodology from './slides/06b-Methodology'
 import FuncReqCore from './slides/07-FunctionalReq1'
 import FuncReqAI from './slides/08-FunctionalReq2'
 import NFR from './slides/09-NonFunctionalReq'
 import SolutionOverview from './slides/10-SolutionOverview'
-import PeaxisCore from './slides/16-PeaxisCore'
 import PeaxisHire from './slides/11-PeaxisHire'
 import PeaxisJobs from './slides/12-PeaxisJobs'
-import PeaxisAIBrain from './slides/16b-PeaxisAIBrain'
 import FrontendAPIStack from './slides/13-FrontendAPIStack'
 import LogicalArch from './slides/15-LogicalArchitecture'
+import PeaxisCore from './slides/16-PeaxisCore'
+import PeaxisAIBrain from './slides/16b-PeaxisAIBrain'
 import PhysicalArch from './slides/17-PhysicalArchitecture'
+import {
+    AIModelsRouting,
+    ArchitectureDecisions,
+    BackgroundProcessing,
+    DatabaseDesign,
+    EndToEndAIPipeline,
+    ExplainableAI,
+    FutureTechnicalRoadmap,
+    MultiTenantArchitecture,
+    PerformanceOptimizations,
+    RESTAPIDesign,
+    SecurityArchitecture,
+    TechnicalChallenges,
+} from './slides/18-EngineeringDeepDive'
 import Conclusion from './slides/23-Conclusion'
 import ThankYou from './slides/28-ThankYou'
 
 export const SLIDE_COMPONENTS = [
   Cover,
   PresentationPlan,
-  GeneralIntro,
-  CompanyOverview,
+  IndustryContext,
+  RecruitmentChallenges,
   InternshipContext,
-  RecruitmentPain,
-  ATSLimitations,
+  CompetitiveAnalysis,
   MarketGap,
   Methodology,
   FuncReqCore,
@@ -54,6 +66,18 @@ export const SLIDE_COMPONENTS = [
   FrontendAPIStack,
   LogicalArch,
   PhysicalArch,
+  ArchitectureDecisions,
+  EndToEndAIPipeline,
+  ExplainableAI,
+  MultiTenantArchitecture,
+  BackgroundProcessing,
+  SecurityArchitecture,
+  DatabaseDesign,
+  RESTAPIDesign,
+  AIModelsRouting,
+  PerformanceOptimizations,
+  TechnicalChallenges,
+  FutureTechnicalRoadmap,
   Conclusion,
   ThankYou,
 ]

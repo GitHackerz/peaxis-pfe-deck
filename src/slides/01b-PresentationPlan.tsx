@@ -9,12 +9,12 @@ interface Props {
 }
 
 const planSections = [
-  { num: '01', title: 'Introduction & Context', detail: 'Internship context at Prospecter, role background, and PFE goals.' },
-  { num: '02', title: 'Problem Analysis', detail: 'Recruitment bottlenecks, legacy ATS constraints, and market comparisons.' },
-  { num: '03', title: 'Methodology & Requirements', detail: 'Software engineering lifecycle, functional goals, and SLA constraints.' },
-  { num: '04', title: 'Proposed Solution', detail: 'PEAXIS ecosystem overview: Core governance, Hire ATS, and Jobs portal.' },
-  { num: '05', title: 'Architecture & Technologies', detail: 'Logical layers, physical containerisation, and multi-tenant data model.' },
-  { num: '06', title: 'Results & Future Work', detail: 'Implementation achievements, roadmap milestones, and defense wrap-up.' },
+  { num: '01', title: 'Industry & Problem', detail: 'The recruitment landscape today, and the engineering problems within it.' },
+  { num: '02', title: 'Internship Context', detail: 'The environment, technologies, and engineering exposure behind this work.' },
+  { num: '03', title: 'Existing Solutions & Gap', detail: 'Where current recruitment platforms fall short.' },
+  { num: '04', title: 'Methodology & Requirements', detail: 'Engineering process, functional goals, and quality constraints.' },
+  { num: '05', title: 'Proposed Solution & Architecture', detail: 'PEAXIS: modules, technology stack, and system architecture.' },
+  { num: '06', title: 'Results & Conclusion', detail: 'Engineering achievements, lessons learned, and future work.' },
 ]
 
 export default function PresentationPlan({ step: _step }: Props) {
@@ -38,7 +38,7 @@ export default function PresentationPlan({ step: _step }: Props) {
             Presentation <GradientText variant="teal">Plan</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            A comprehensive roadmap of the engineering defense.
+            An engineering defense, from problem to results.
           </motion.p>
         </motion.div>
 

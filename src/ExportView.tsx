@@ -1,6 +1,6 @@
 /**
  * ExportView — Playwright-native PDF export rendering surface.
- * Renders all 26 slides stacked vertically, each at exactly 1280×720px.
+ * Renders all registered slides stacked vertically, each at exactly 1280×720px.
  * MotionConfig reducedMotion="always" skips animations → all content fully visible.
  */
 import { MotionConfig } from 'framer-motion'

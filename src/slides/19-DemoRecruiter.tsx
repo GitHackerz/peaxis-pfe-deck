@@ -8,9 +8,9 @@ interface Props { step: number }
 
 const features = [
   { label: 'Job Workspace', desc: 'All job-related data — pipeline, candidates, analytics — in one tabbed view. No page hops.' },
-  { label: 'Pipeline Kanban', desc: 'Drag-and-drop stage management with AI match scores and status on every candidate card' },
+  { label: 'Pipeline Kanban', desc: 'Drag-and-drop stage management with assessment status and audit-aware workflow' },
   { label: 'Candidate Drawer', desc: 'Slide-in panel reveals AI insights, score breakdown, and interview tools without leaving the pipeline' },
-  { label: 'Hiring Copilot', desc: 'Contextual AI assistance — candidate summary, interview questions, risk flags, suggested actions' },
+  { label: 'Recruiter AI', desc: 'Contextual assistance — evidence review, summaries, interview questions, and generated drafts' },
 ]
 
 export default function DemoRecruiter({ step }: Props) {

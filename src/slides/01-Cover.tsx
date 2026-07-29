@@ -54,7 +54,7 @@ export default function Cover({ step: _step }: Props) {
         <motion.div variants={fadeUp} className="flex flex-col items-center gap-1">
           <p className="text-lg font-bold text-px-navy">BIBANI Mohamed Habib Allah</p>
           <p className="text-sm text-px-muted">
-            Technical Lead &amp; Software Engineer — Prospecter
+            Software Engineer — Prospecter
           </p>
           <p className="text-xs text-px-muted mt-0.5">
             École Supérieure Privée d'Ingénierie et de Technologie — ESPRIT
@@ -77,12 +77,12 @@ export default function Cover({ step: _step }: Props) {
           </div>
         </motion.div>
 
-        {/* Tech stack */}
-        <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 mt-1">
-          {['Next.js', 'NestJS', 'FastAPI', 'PostgreSQL', 'pgvector', 'Gemini', 'Stripe', 'Docker'].map((t) => (
+        {/* Concept badges — what the project is, not what it's built with */}
+        <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 mt-1 max-w-2xl">
+          {['AI-Assisted Recruitment', 'Explainable AI', 'Multi-Tenant SaaS', 'Modular Architecture'].map((t) => (
             <span
               key={t}
-              className="text-xs font-mono text-px-muted px-2.5 py-1 rounded-full bg-white border border-[var(--border)]"
+              className="text-xs font-semibold text-px-muted px-3 py-1.5 rounded-full bg-white border border-[var(--border)]"
             >
               {t}
             </span>

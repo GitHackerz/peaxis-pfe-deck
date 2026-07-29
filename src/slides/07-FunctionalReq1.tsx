@@ -12,14 +12,14 @@ const reqs = [
     icon: <ShieldCheck size={20} />,
     id: 'FR-01',
     title: 'Authentication & Security',
-    items: ['Email/password — Argon2 hashing', 'OAuth2: Google + LinkedIn', 'JWT access (15m) + refresh (7d)'],
+    items: ['Argon2 password hashing', 'Google + LinkedIn OAuth2', '15m access + 7d refresh JWT'],
     color: '#00B8B3',
   },
   {
     icon: <Users size={20} />,
     id: 'FR-02',
     title: 'Multi-Tenant Architecture',
-    items: ['Business-scoped data isolation', 'X-Business-ID header enforcement', 'Unique business slug routing'],
+    items: ['Business-scoped queries', 'X-Business-ID enforcement', 'Unique business slug routing'],
     color: '#00B8B3',
   },
   {
@@ -33,14 +33,14 @@ const reqs = [
     icon: <Briefcase size={20} />,
     id: 'FR-04',
     title: 'Job Management',
-    items: ['Full CRUD with rich filters', 'Semantic search via pgvector', 'Auto embedding generation'],
+    items: ['CRUD + rich filters', 'Semantic search via pgvector', 'Automatic embeddings'],
     color: '#00B8B3',
   },
   {
     icon: <GitBranch size={20} />,
     id: 'FR-05',
     title: 'Application Pipeline',
-    items: ['6 stages: Applied → Hired/Rejected', 'Stage transition history', 'AI scoring at submission time'],
+    items: ['Applied to Hired/Rejected', 'Stage transition history', 'AI score at submission'],
     color: '#00B8B3',
   },
 ]
@@ -53,13 +53,13 @@ export default function FuncReqCore({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Methodology & Requirements" number="3" />
+            <SectionTag section="Methodology & Requirements" number="5" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Core platform <GradientText variant="teal">requirements</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            FR-01 to FR-05: foundational capabilities for a production-grade SaaS recruitment system.
+            FR-01 to FR-05: the foundation for a production-grade recruitment SaaS.
           </motion.p>
         </motion.div>
 

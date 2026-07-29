@@ -12,21 +12,21 @@ const modules = [
     icon: <Settings size={20} />,
     name: 'PEAXIS Core',
     sub: 'Operational Backbone',
-    desc: 'Central business infrastructure: auth, billing, multi-tenant governance, team roles, account management. One unified control center.',
+    desc: 'Auth, billing, tenant governance, roles, and accounts.',
     value: 'Business Operations',
   },
   {
     icon: <Users size={20} />,
     name: 'PEAXIS Hire',
     sub: 'Recruiter Execution',
-    desc: 'Full ATS with AI assistance: pipeline Kanban, job workspace, AI match scoring, candidate summaries, interview scheduling, analytics.',
+    desc: 'ATS pipeline, scoring, summaries, interviews, and analytics.',
     value: 'Recruiter Execution',
   },
   {
     icon: <Building2 size={20} />,
     name: 'PEAXIS Jobs',
     sub: 'Talent Acquisition',
-    desc: 'Public talent platform: semantic job search, CV upload with AI parsing, match preview, skill gap visibility, easy apply, recommendations.',
+    desc: 'Semantic search, CV parsing, match preview, and easy apply.',
     value: 'Talent Acquisition',
   },
 ]
@@ -39,14 +39,13 @@ export default function SolutionOverview({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col items-center text-center gap-3">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Proposed Solution" number="4" />
+            <SectionTag section="Proposed Solution" number="6" />
           </motion.div>
           <motion.h2 variants={cinemaEntrance} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">PEAXIS</GradientText> — Modular AI Hiring Operating System
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            Three deeply integrated modules replacing every tool a modern hiring team tolerates today.
-            One ecosystem. One data layer. Every stakeholder served.
+            Three integrated modules. One ecosystem, one data layer, every stakeholder served.
           </motion.p>
         </motion.div>
 
@@ -76,7 +75,7 @@ export default function SolutionOverview({ step }: Props) {
                       <p className="text-xs font-mono text-px-muted mb-0.5">{m.sub}</p>
                       <p className="text-sm font-extrabold text-px-navy">{m.name}</p>
                     </div>
-                    <p className="text-xs text-px-muted leading-relaxed">{m.desc}</p>
+                    <p className="text-sm text-px-muted leading-relaxed">{m.desc}</p>
                   </div>
                 </motion.div>
               )
@@ -94,9 +93,9 @@ export default function SolutionOverview({ step }: Props) {
               className="grid grid-cols-3 gap-3"
             >
               {[
-                { who: 'Business Admin', uses: 'PEAXIS Core', detail: 'Central governance — billing, team, roles, org settings' },
-                { who: 'Recruiter / HR Team', uses: 'PEAXIS Hire', detail: 'AI-assisted execution — pipelines, scoring, analytics, collaboration' },
-                { who: 'Candidate / Talent', uses: 'PEAXIS Jobs', detail: 'Intelligent discovery — semantic search, match preview, easy apply' },
+                { who: 'Business Admin', uses: 'PEAXIS Core', detail: 'Governance, billing, teams, settings' },
+                { who: 'Recruiter / HR Team', uses: 'PEAXIS Hire', detail: 'Pipelines, scoring, analytics, collaboration' },
+                { who: 'Candidate / Talent', uses: 'PEAXIS Jobs', detail: 'Search, match preview, easy apply' },
               ].map((s, i) => (
                 <motion.div
                   key={s.who}
