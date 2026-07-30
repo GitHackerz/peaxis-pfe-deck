@@ -18,6 +18,7 @@ export const SLIDES: SlideConfig[] = [
   { id: 'internship-context',  steps: 2, label: 'Internship'     },
   { id: 'recruitment-challenges', steps: 3, label: 'Problem'     },
   // §4 Existing Solutions & Gap
+  { id: 'ats-limitations',     steps: 3, label: 'Competitors'    },
   { id: 'market-gap',          steps: 3, label: 'Market Gap'     },
   // §5 Methodology & Requirements
   { id: 'methodology',         steps: 2, label: 'Methodology'    },

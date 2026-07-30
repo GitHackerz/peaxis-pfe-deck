@@ -16,6 +16,7 @@ import PresentationPlan from './slides/01b-PresentationPlan'
 import CompanyOverview from './slides/02-CompanyOverview'
 import InternshipContext from './slides/03-InternshipContext'
 import RecruitmentChallenges from './slides/04-RecruitmentPain'
+import ATSLimitations from './slides/05-ATSLimitations'
 import MarketGap from './slides/06-MarketGap'
 import Methodology from './slides/06b-Methodology'
 import FuncReqCore from './slides/07-FunctionalReq1'
@@ -47,6 +48,7 @@ export const SLIDE_COMPONENTS = [
   CompanyOverview,
   InternshipContext,
   RecruitmentChallenges,
+  ATSLimitations,
   MarketGap,
   Methodology,
   FuncReqCore,
