@@ -43,8 +43,7 @@ export default function InternshipContext({ step }: Props) {
             Internship <GradientText variant="teal">Context</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            This project was carried out during an internship at <strong className="text-px-navy">Prospecter</strong>,
-            an AI-powered B2B sales prospecting platform, as a Software Engineer.
+            Software Engineering internship at <strong className="text-px-navy">Prospecter</strong>, an AI-powered B2B platform.
           </motion.p>
         </motion.div>
 
@@ -91,8 +90,7 @@ export default function InternshipContext({ step }: Props) {
               className="flex items-center gap-3 p-4 rounded-xl bg-[#F8FAFC] border border-[var(--border)]"
             >
               <p className="text-sm text-px-muted leading-relaxed">
-                <strong className="text-px-navy">Scope:</strong> PEAXIS is an independent codebase and product,
-                built with academic rigor and the production standards observed during the internship.
+                <strong className="text-px-navy">Scope:</strong> PEAXIS is an independent product, built to the production standards observed during the internship.
               </p>
             </motion.div>
           )}
@@ -116,4 +114,3 @@ export default function InternshipContext({ step }: Props) {
     </div>
   )
 }
-

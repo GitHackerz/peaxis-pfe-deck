@@ -9,12 +9,12 @@ interface Props {
 }
 
 const planSections = [
-  { num: '01', title: 'Industry & Problem', detail: 'The recruitment landscape today, and the engineering problems within it.' },
-  { num: '02', title: 'Internship Context', detail: 'The environment, technologies, and engineering exposure behind this work.' },
-  { num: '03', title: 'Existing Solutions & Gap', detail: 'Where current recruitment platforms fall short.' },
-  { num: '04', title: 'Methodology & Requirements', detail: 'Engineering process, functional goals, and quality constraints.' },
-  { num: '05', title: 'Proposed Solution & Architecture', detail: 'PEAXIS: modules, technology stack, and system architecture.' },
-  { num: '06', title: 'Results & Conclusion', detail: 'Engineering achievements, lessons learned, and future work.' },
+  { num: '01', title: 'Context & Scope', detail: 'The hiring problem, internship scope, and the project objective.' },
+  { num: '02', title: 'Requirements & Solution', detail: 'Product requirements and the PEAXIS platform modules.' },
+  { num: '03', title: 'Architecture', detail: 'System boundaries, deployment topology, and design decisions.' },
+  { num: '04', title: 'AI Engineering', detail: 'Parsing, evidence matching, deterministic scoring, and explainability.' },
+  { num: '05', title: 'Validation & Findings', detail: 'Tests, delivery evidence, limitations, and hardening priorities.' },
+  { num: '06', title: 'Conclusion', detail: 'What was implemented, what was learned, and what comes next.' },
 ]
 
 export default function PresentationPlan({ step: _step }: Props) {
@@ -38,7 +38,7 @@ export default function PresentationPlan({ step: _step }: Props) {
             Presentation <GradientText variant="teal">Plan</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            An engineering defense, from problem to results.
+            An engineering defense: from problem framing to validated implementation.
           </motion.p>
         </motion.div>
 

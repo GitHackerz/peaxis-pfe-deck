@@ -12,21 +12,21 @@ const modules = [
     icon: <Settings size={20} />,
     name: 'PEAXIS Core',
     sub: 'Operational Backbone',
-    desc: 'Auth, billing, tenant governance, roles, and accounts.',
+    desc: 'Identity, tenant context, roles, and plan controls.',
     value: 'Business Operations',
   },
   {
     icon: <Users size={20} />,
     name: 'PEAXIS Hire',
     sub: 'Recruiter Execution',
-    desc: 'ATS pipeline, scoring, summaries, interviews, and analytics.',
+    desc: 'Candidate pipeline, profile review, and evidence assessment.',
     value: 'Recruiter Execution',
   },
   {
     icon: <Building2 size={20} />,
     name: 'PEAXIS Jobs',
     sub: 'Talent Acquisition',
-    desc: 'Semantic search, CV parsing, match preview, and easy apply.',
+    desc: 'Job discovery, CV parsing, and candidate applications.',
     value: 'Talent Acquisition',
   },
 ]
@@ -45,7 +45,7 @@ export default function SolutionOverview({ step }: Props) {
             <GradientText variant="teal">PEAXIS</GradientText> — Modular AI Hiring Operating System
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            Three integrated modules. One ecosystem, one data layer, every stakeholder served.
+            Three modules, one platform data layer, and a bounded AI service.
           </motion.p>
         </motion.div>
 
@@ -93,9 +93,9 @@ export default function SolutionOverview({ step }: Props) {
               className="grid grid-cols-3 gap-3"
             >
               {[
-                { who: 'Business Admin', uses: 'PEAXIS Core', detail: 'Governance, billing, teams, settings' },
-                { who: 'Recruiter / HR Team', uses: 'PEAXIS Hire', detail: 'Pipelines, scoring, analytics, collaboration' },
-                { who: 'Candidate / Talent', uses: 'PEAXIS Jobs', detail: 'Search, match preview, easy apply' },
+                { who: 'Business Admin', uses: 'PEAXIS Core', detail: 'Access, tenant context, plans' },
+                { who: 'Recruiter / HR Team', uses: 'PEAXIS Hire', detail: 'Pipeline and evidence review' },
+                { who: 'Candidate / Talent', uses: 'PEAXIS Jobs', detail: 'Search, profile, application' },
               ].map((s, i) => (
                 <motion.div
                   key={s.who}
@@ -124,7 +124,7 @@ export default function SolutionOverview({ step }: Props) {
               <div className="h-[1px] flex-1 max-w-32" style={{ background: 'linear-gradient(90deg, transparent, #00B8B3)' }} />
               <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#E6FAF9] border border-[rgba(0,184,179,0.25)]">
                 <div className="w-2 h-2 rounded-full bg-px-teal animate-pulse" />
-                <span className="text-sm font-semibold text-px-teal">All modules share a single Prisma → PostgreSQL data layer</span>
+                <span className="text-sm font-semibold text-px-teal">The platform API owns transactional data through Prisma → PostgreSQL</span>
               </div>
               <div className="h-[1px] flex-1 max-w-32" style={{ background: 'linear-gradient(90deg, #00B8B3, transparent)' }} />
             </motion.div>
@@ -139,7 +139,7 @@ export default function SolutionOverview({ step }: Props) {
               animate={{ opacity: 1, y: 0 }}
               className="flex items-center justify-center gap-2 flex-wrap"
             >
-              {['Next.js 16', 'NestJS', 'FastAPI', 'PostgreSQL + pgvector', 'Redis', 'BullMQ', 'Gemini', 'Stripe'].map((t) => (
+              {['Next.js 16', 'NestJS', 'FastAPI', 'PostgreSQL + pgvector', 'Redis', 'BullMQ', 'Gemini / Azure OpenAI', 'Stripe'].map((t) => (
                 <Badge key={t} variant="teal" size="sm">{t}</Badge>
               ))}
             </motion.div>

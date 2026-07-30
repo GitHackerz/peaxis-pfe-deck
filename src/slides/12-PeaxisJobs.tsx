@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Award, Search, Upload } from 'lucide-react'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
+import ScreenshotFrame from '../components/ui/ScreenshotFrame'
 import { fadeUp, stagger } from '../lib/animations'
 
 interface Props { step: number }
@@ -11,19 +12,19 @@ const pillars = [
     title: 'Job Discovery',
     color: '#00B8B3',
     icon: <Search size={20} />,
-    desc: 'Semantic search and filters surface roles beyond keyword matching.',
+    desc: 'Hybrid full-text and vector search find relevant jobs.',
   },
   {
     title: 'Application UX',
     color: '#009E9A',
     icon: <Upload size={20} />,
-    desc: 'AI CV parsing pre-fills profiles for a low-friction apply flow.',
+    desc: 'CV parsing helps construct a candidate profile.',
   },
   {
-    title: 'AI Matching & Insights',
+    title: 'Application Progress',
     color: '#001027',
     icon: <Award size={20} />,
-    desc: 'Skill-gap feedback and alerts help candidates target the right roles.',
+    desc: 'Application status is visible after submission.',
   },
 ]
 
@@ -41,30 +42,38 @@ export default function PeaxisJobs({ step }: Props) {
             <GradientText variant="navy">PEAXIS Jobs</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted">
-            The candidate portal for discovery, matching, and low-friction applications.
+            The candidate portal for discovery, profile completion, and applications.
           </motion.p>
         </motion.div>
 
-        {/* Three pillars */}
-        <div className="grid grid-cols-3 gap-4">
-          {pillars.map((sec, colIdx) => (
-            <AnimatePresence key={sec.title}>
-              {step >= colIdx + 1 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45 }}
-                  className="bg-white rounded-xl border border-[var(--border)] p-5 flex flex-col gap-3"
-                >
-                  <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${sec.color}1A`, color: sec.color }}>
-                    {sec.icon}
-                  </div>
-                  <h3 className="text-base font-extrabold text-px-navy">{sec.title}</h3>
-                  <p className="text-sm text-px-muted leading-snug">{sec.desc}</p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          ))}
+        <div className="grid grid-cols-2 gap-6 items-stretch">
+          <AnimatePresence>
+            {step >= 1 && (
+              <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.45 }}>
+                <ScreenshotFrame
+                  src="/jobs.png"
+                  alt="PEAXIS Jobs candidate portal"
+                  caption="PEAXIS Jobs — job discovery and candidate application portal"
+                  className="h-full"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <div className="flex flex-col gap-3">
+            {pillars.map((sec, colIdx) => (
+              <AnimatePresence key={sec.title}>
+                {step >= colIdx + 1 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}
+                    className="bg-white rounded-xl border border-[var(--border)] p-4 flex items-center gap-3"
+                  >
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${sec.color}1A`, color: sec.color }}>{sec.icon}</div>
+                    <div><h3 className="text-sm font-extrabold text-px-navy">{sec.title}</h3><p className="text-sm text-px-muted leading-snug">{sec.desc}</p></div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            ))}
+          </div>
         </div>
 
         {/* Business value */}
@@ -77,7 +86,7 @@ export default function PeaxisJobs({ step }: Props) {
             >
               <div className="w-1.5 h-6 rounded bg-[#00B8B3] flex-shrink-0" />
               <p className="text-sm text-px-navy">
-                Replaces opaque applications with clear matching insights and faster apply flows.
+                A clear, structured path from job discovery to application submission.
               </p>
             </motion.div>
           )}

@@ -8,10 +8,11 @@ interface ScreenshotFrameProps {
   src: string
   alt: string
   caption?: string
+  placeholder?: string
   className?: string
 }
 
-export default function ScreenshotFrame({ src, alt, caption, className = '' }: ScreenshotFrameProps) {
+export default function ScreenshotFrame({ src, alt, caption, placeholder, className = '' }: ScreenshotFrameProps) {
   const [failed, setFailed] = useState(false)
 
   return (
@@ -53,7 +54,9 @@ export default function ScreenshotFrame({ src, alt, caption, className = '' }: S
               </svg>
             </div>
             <p className="text-xs font-semibold text-[var(--teal)]">{alt}</p>
-            <p className="text-xs text-[var(--muted)] mt-1">Screenshot placeholder</p>
+            <p className="text-xs text-[var(--muted)] mt-1 text-center max-w-sm">
+              {placeholder ?? 'Replace with a platform screenshot before the defense'}
+            </p>
           </div>
         )}
       </div>

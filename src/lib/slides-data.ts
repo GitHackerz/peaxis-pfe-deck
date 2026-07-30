@@ -13,11 +13,11 @@ export const SLIDES: SlideConfig[] = [
   { id: 'presentation-plan',   steps: 0, label: 'Plan'           },
   // §2 Industry & Problem
   { id: 'industry-context',    steps: 5, label: 'Industry'       },
-  { id: 'recruitment-challenges', steps: 3, label: 'Problem'     },
+  { id: 'company-overview',    steps: 3, label: 'Prospecter'     },
   // §3 Internship
   { id: 'internship-context',  steps: 2, label: 'Internship'     },
+  { id: 'recruitment-challenges', steps: 3, label: 'Problem'     },
   // §4 Existing Solutions & Gap
-  { id: 'competitive-analysis', steps: 3, label: 'Competitors'   },
   { id: 'market-gap',          steps: 3, label: 'Market Gap'     },
   // §5 Methodology & Requirements
   { id: 'methodology',         steps: 2, label: 'Methodology'    },
@@ -36,13 +36,16 @@ export const SLIDES: SlideConfig[] = [
   { id: 'physical-arch',       steps: 3, label: 'Physical Arch.' },
   // §8 Engineering Deep Dive
   { id: 'architecture-decisions', steps: 4, label: 'Decisions'      },
-  { id: 'ai-pipeline',            steps: 3, label: 'AI Pipeline'    },
+  { id: 'ai-runtime',             steps: 3, label: 'AI Runtime'     },
+  { id: 'cv-parsing',             steps: 3, label: 'CV Parsing'     },
+  { id: 'matching-engine',        steps: 3, label: 'Matching'       },
+  { id: 'matching-algorithm',     steps: 3, label: 'Score Algorithm' },
   { id: 'explainable-ai',         steps: 3, label: 'Explainability' },
-  { id: 'multi-tenant-arch',      steps: 3, label: 'Multi-Tenant'   },
+  { id: 'implementation-status',  steps: 3, label: 'Status'         },
   { id: 'background-processing',  steps: 3, label: 'Background'     },
   { id: 'security-arch',          steps: 4, label: 'Security'       },
   { id: 'database-design',        steps: 3, label: 'Database'       },
-  { id: 'rest-api-design',        steps: 3, label: 'REST API'       },
+  { id: 'verification-evidence',  steps: 3, label: 'Verification'   },
   { id: 'ai-model-routing',       steps: 4, label: 'AI Routing'     },
   { id: 'performance-optim',      steps: 4, label: 'Performance'    },
   { id: 'technical-challenges',   steps: 3, label: 'Challenges'     },

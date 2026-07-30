@@ -1,16 +1,16 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { CreditCard, ShieldCheck, Users } from 'lucide-react'
-import Badge from '../components/ui/Badge'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
+import ScreenshotFrame from '../components/ui/ScreenshotFrame'
 import { fadeUp, stagger } from '../lib/animations'
 
 interface Props { step: number }
 
 const pillars = [
-  { icon: <ShieldCheck size={20} />, title: 'Identity & Access', desc: 'Authentication, tenant isolation, and role-based permissions.' },
-  { icon: <CreditCard size={20} />, title: 'Billing & Plans', desc: 'Subscription management through Stripe.' },
-  { icon: <Users size={20} />, title: 'Team & Governance', desc: 'Seats, settings, and account-level policy.' },
+  { icon: <ShieldCheck size={20} />, title: 'Identity & Access', desc: 'Authentication, business scoping, and role-based permissions.' },
+  { icon: <CreditCard size={20} />, title: 'Plans & Entitlements', desc: 'Subscription plan controls and feature access.' },
+  { icon: <Users size={20} />, title: 'Business Context', desc: 'Business settings and member-level access.' },
 ]
 
 export default function PeaxisCore({ step }: Props) {
@@ -31,30 +31,36 @@ export default function PeaxisCore({ step }: Props) {
           </motion.p>
         </motion.div>
 
-        {/* Responsibility pillars */}
-        <AnimatePresence>
-          {step >= 1 && (
-            <div className="grid grid-cols-3 gap-4">
-              {pillars.map((f, i) => (
-                <motion.div
-                  key={f.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
-                  className="flex flex-col gap-3 p-5 rounded-xl bg-white border border-[var(--border)]"
-                >
-                  <div className="w-11 h-11 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0">
-                    {f.icon}
-                  </div>
-                  <div>
-                    <p className="text-base font-extrabold text-px-navy">{f.title}</p>
-                    <p className="text-sm text-px-muted leading-snug mt-1">{f.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          )}
-        </AnimatePresence>
+        <div className="grid grid-cols-2 gap-6 items-stretch">
+          <AnimatePresence>
+            {step >= 1 && (
+              <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.45 }}>
+                <ScreenshotFrame
+                  src="/core.png"
+                  alt="PEAXIS Core business workspace"
+                  caption="PEAXIS Core — access, business context, and plan controls"
+                  className="h-full"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <div className="flex flex-col gap-3">
+            {pillars.map((f, i) => (
+              <AnimatePresence key={f.title}>
+                {step >= i + 1 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex items-center gap-3 p-4 rounded-xl bg-white border border-[var(--border)]"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0">{f.icon}</div>
+                    <div><p className="text-sm font-extrabold text-px-navy">{f.title}</p><p className="text-sm text-px-muted leading-snug mt-0.5">{f.desc}</p></div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            ))}
+          </div>
+        </div>
 
         {/* Business value */}
         <AnimatePresence>
@@ -72,20 +78,6 @@ export default function PeaxisCore({ step }: Props) {
           )}
         </AnimatePresence>
 
-        {/* Tech badges */}
-        <AnimatePresence>
-          {step >= 3 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="flex items-center gap-2"
-            >
-              <Badge variant="teal">JWT RS256</Badge>
-              <Badge variant="navy">Multi-Tenant</Badge>
-              <Badge variant="teal">Stripe Billing</Badge>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   )

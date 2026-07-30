@@ -13,9 +13,9 @@ import { slideVariants } from './lib/animations'
 import IndustryContext from './slides/00-GeneralIntro'
 import Cover from './slides/01-Cover'
 import PresentationPlan from './slides/01b-PresentationPlan'
+import CompanyOverview from './slides/02-CompanyOverview'
 import InternshipContext from './slides/03-InternshipContext'
 import RecruitmentChallenges from './slides/04-RecruitmentPain'
-import CompetitiveAnalysis from './slides/05-ATSLimitations'
 import MarketGap from './slides/06-MarketGap'
 import Methodology from './slides/06b-Methodology'
 import FuncReqCore from './slides/07-FunctionalReq1'
@@ -33,15 +33,18 @@ import {
     AIModelsRouting,
     ArchitectureDecisions,
     BackgroundProcessing,
+    CVParsingPipeline,
     DatabaseDesign,
     EndToEndAIPipeline,
+    EvidenceMatchingEngine,
     ExplainableAI,
+    ImplementationStatus,
+    MatchingAlgorithm,
     FutureTechnicalRoadmap,
-    MultiTenantArchitecture,
     PerformanceOptimizations,
-    RESTAPIDesign,
     SecurityArchitecture,
     TechnicalChallenges,
+    VerificationEvidence,
 } from './slides/18-EngineeringDeepDive'
 import Conclusion from './slides/23-Conclusion'
 import ThankYou from './slides/28-ThankYou'
@@ -50,9 +53,9 @@ export const SLIDE_COMPONENTS = [
   Cover,
   PresentationPlan,
   IndustryContext,
-  RecruitmentChallenges,
+  CompanyOverview,
   InternshipContext,
-  CompetitiveAnalysis,
+  RecruitmentChallenges,
   MarketGap,
   Methodology,
   FuncReqCore,
@@ -68,12 +71,15 @@ export const SLIDE_COMPONENTS = [
   PhysicalArch,
   ArchitectureDecisions,
   EndToEndAIPipeline,
+  CVParsingPipeline,
+  EvidenceMatchingEngine,
+  MatchingAlgorithm,
   ExplainableAI,
-  MultiTenantArchitecture,
+  ImplementationStatus,
   BackgroundProcessing,
   SecurityArchitecture,
   DatabaseDesign,
-  RESTAPIDesign,
+  VerificationEvidence,
   AIModelsRouting,
   PerformanceOptimizations,
   TechnicalChallenges,
@@ -83,7 +89,9 @@ export const SLIDE_COMPONENTS = [
 ]
 
 export default function App() {
-  const isExportMode = new URLSearchParams(window.location.search).get('export') === 'true'
+  const params = new URLSearchParams(window.location.search)
+  const isExportMode = params.get('export') === 'true'
+
   return isExportMode ? <ExportView /> : <PresentationApp />
 }
 

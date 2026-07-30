@@ -13,7 +13,7 @@ const sections = [
     color: '#00B8B3',
     items: [
       'A full-stack multi-tenant SaaS: Core workspace, Hire ATS, and Jobs portal',
-      'Evidence-based assessment: cited requirements, reviewer overrides, and an audit trail',
+      'Evidence-based assessment: cited requirements, deterministic evaluations, and an audit trail',
       'Durable AI processing: queued work outside the request path via a dedicated worker',
     ],
   },
@@ -23,8 +23,8 @@ const sections = [
     color: '#00B8B3',
     items: [
       'Clear separation of concerns across frontend, API, worker, and inference layers',
-      'Tenant isolation enforced at the schema and request level, not retrofitted',
-      'Semantic retrieval with pgvector, and a containerized, independently scalable runtime',
+      'Business-scoped platform controls with explicit access-control hardening priorities',
+      'Semantic retrieval with pgvector and a containerized inference boundary',
     ],
   },
   {
@@ -32,9 +32,9 @@ const sections = [
     title: 'Lessons Learned',
     color: '#00B8B3',
     items: [
-      'Multi-tenant guards must be designed in from the first schema, not added later',
+      'Tenant boundaries require continuous authorization review, not only schema design',
       'A stateless inference boundary keeps business state and authority in one place',
-      'Bounded AI — provider limits, credits, and mandatory review — keeps risk manageable',
+      'Bounded AI — cited evidence, explicit failures, and human review — keeps risk manageable',
     ],
   },
 ]
@@ -109,7 +109,7 @@ export default function Conclusion({ step }: Props) {
                 </svg>
               </div>
               <p className="text-sm text-px-navy leading-relaxed">
-                <strong>PEAXIS demonstrates that AI-assisted recruitment can remain reviewable, tenant-safe, and operationally bounded — with people retaining authority over hiring decisions.</strong>
+                <strong>PEAXIS demonstrates that AI-assisted recruitment can remain reviewable and operationally bounded — with people retaining authority over hiring decisions and known hardening work kept explicit.</strong>
               </p>
             </motion.div>
           )}

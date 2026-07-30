@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { BarChart3, Brain, Calendar, Upload, UserCheck } from 'lucide-react'
+import { Brain, FileCheck2, ShieldCheck, Upload, UserCheck } from 'lucide-react'
 import Card from '../components/ui/Card'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
@@ -11,36 +11,36 @@ const reqs = [
   {
     icon: <Brain size={20} />,
     id: 'FR-06',
-    title: 'AI Match Scoring',
-    items: ['Skill-overlap engine', '0-100 score + explanation', 'Strength/weakness breakdown'],
+    title: 'Evidence Matching',
+    items: ['Requirement-level assessment', '0–100 alignment score'],
     color: '#00B8B3',
   },
   {
     icon: <Upload size={20} />,
     id: 'FR-07',
     title: 'CV Parsing',
-    items: ['PDF / DOCX / TXT upload', 'Configured provider extraction', 'Durable candidate-profile parsing'],
+    items: ['PDF / DOCX / TXT upload', 'Async structured extraction'],
     color: '#00B8B3',
   },
   {
     icon: <UserCheck size={20} />,
     id: 'FR-08',
     title: 'Candidate Onboarding',
-    items: ['Apply with CV', 'Profile completeness score', 'Candidate embeddings'],
+    items: ['Apply with a CV', 'Confirm parsed profile'],
     color: '#00B8B3',
   },
   {
-    icon: <Calendar size={20} />,
+    icon: <FileCheck2 size={20} />,
     id: 'FR-09',
-    title: 'Interview Scheduling',
-    items: ['Interview CRUD + type', 'Application-linked schedule', 'Interviewer assignment'],
+    title: 'Explainable Review',
+    items: ['Cited strengths and gaps', 'Verification state per requirement'],
     color: '#00B8B3',
   },
   {
-    icon: <BarChart3 size={20} />,
+    icon: <ShieldCheck size={20} />,
     id: 'FR-10',
-    title: 'Analytics Dashboard',
-    items: ['Pipeline funnel metrics', 'Score distribution charts', 'Time-to-hire tracking'],
+    title: 'Reliable AI Processing',
+    items: ['Queued AI work items', 'Retry and failure status'],
     color: '#00B8B3',
   },
 ]
@@ -56,10 +56,10 @@ export default function FuncReqAI({ step }: Props) {
             <SectionTag section="Methodology & Requirements" number="5" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            AI & analytics <GradientText variant="teal">requirements</GradientText>
+            AI workflow <GradientText variant="teal">requirements</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            FR-06 to FR-10: the intelligence layer above traditional ATS workflows.
+            Implemented AI capabilities — no scheduling or dashboard claims.
           </motion.p>
         </motion.div>
 

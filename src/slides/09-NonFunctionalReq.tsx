@@ -10,50 +10,50 @@ const nfrs = [
   {
     icon: <Zap size={20} />,
     id: 'NFR-01',
-    title: 'Scalability',
-    detail: 'Stateless API pods; Redis queues absorb spikes.',
+    title: 'Deployment Readiness',
+    detail: 'Web, API, worker, AI runtime, and data services are separated.',
     color: '#00B8B3',
-    metric: 'Horizontal scale',
+    metric: 'Container-ready',
   },
   {
     icon: <ShieldCheck size={20} />,
     id: 'NFR-02',
     title: 'Security',
-    detail: 'Argon2, JWT rotation, OAuth2, tenant scoping, OWASP checks.',
+    detail: 'Auth, file gates, rate limits, tenant scoping, and service secrets.',
     color: '#FE595A',
-    metric: 'OWASP aligned',
+    metric: 'Implemented controls',
   },
   {
     icon: <Activity size={20} />,
     id: 'NFR-03',
-    title: 'Performance',
-    detail: 'Redis caching + BullMQ keep heavy work off requests.',
+    title: 'Responsive Requests',
+    detail: 'Parsing and assessment run outside the HTTP request path.',
     color: '#374151',
-    metric: 'p95 < 200ms',
+    metric: 'No AI in request path',
   },
   {
     icon: <TrendingUp size={20} />,
     id: 'NFR-04',
-    title: 'Availability',
-    detail: 'SDK retries, job retries, and Docker health checks.',
+    title: 'Failure Handling',
+    detail: 'Retries and durable work states expose processing failures.',
     color: '#374151',
-    metric: '99.5% SLA target',
+    metric: 'Explicit work states',
   },
   {
     icon: <Eye size={20} />,
     id: 'NFR-05',
     title: 'Explainability',
-    detail: 'Scores include match, label, skills, gaps, and explanation.',
+    detail: 'Scores retain evidence, gaps, and verification state.',
     color: '#001027',
-    metric: 'Full audit trail',
+    metric: 'Cited assessment trail',
   },
   {
     icon: <Box size={20} />,
     id: 'NFR-06',
     title: 'Modularity',
-    detail: 'NestJS modules, FastAPI service, decoupled frontends.',
+    detail: 'Separate web apps, API, worker, and inference boundary.',
     color: '#00B8B3',
-    metric: 'Microservices',
+    metric: 'Modular platform',
   },
 ]
 
@@ -68,8 +68,11 @@ export default function NFR({ step }: Props) {
             <SectionTag section="Methodology & Requirements" number="5" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Production-grade <GradientText variant="teal">quality attributes</GradientText>
+            Implemented <GradientText variant="teal">quality attributes</GradientText>
           </motion.h2>
+          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-3xl">
+            Delivered engineering qualities; performance SLAs remain to validate.
+          </motion.p>
         </motion.div>
 
         {/* NFR grid */}

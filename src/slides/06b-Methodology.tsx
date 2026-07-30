@@ -15,7 +15,7 @@ const flowSteps = [
   { label: 'Architecture Design', desc: 'Schema, services, and API scoping.' },
   { label: 'MVP Development', desc: 'Core, auth, and base ATS.' },
   { label: 'AI Integration', desc: 'FastAPI, pgvector, and Gemini.' },
-  { label: 'Testing & Tuning', desc: 'Isolation checks and SLA validation.' },
+  { label: 'Verification & Refinement', desc: 'AI-service tests, API checks, E2E flows, and documented limits.' },
 ]
 
 const strategies = [
@@ -32,12 +32,12 @@ const strategies = [
   {
     icon: <GitMerge size={18} className="text-[#00B8B3]" />,
     title: 'Incremental Delivery',
-    desc: 'Validate auth and tenant scope before advanced modules.',
+    desc: 'Validate identity, tenant scope, and core workflow before AI features.',
   },
   {
     icon: <Terminal size={18} className="text-[#00B8B3]" />,
     title: 'Continuous Refinement',
-    desc: 'Profile APIs, tune pgvector, protect p95 targets.',
+    desc: 'Test bounded AI paths, refine retrieval, and record hardening priorities.',
   },
 ]
 
@@ -54,7 +54,7 @@ export default function Methodology({ step }: Props) {
             Engineering <GradientText variant="teal">Methodology</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted">
-            The process used to move from problem to production-grade system.
+            From problem framing to a tested implementation.
           </motion.p>
         </motion.div>
 

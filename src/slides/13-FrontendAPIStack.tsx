@@ -10,12 +10,12 @@ const layers = [
   {
     name: 'Frontend',
     tech: ['Next.js 16', 'React', 'Tailwind', 'TypeScript'],
-    detail: 'Core, Hire, Jobs, and Landing apps with shared React/TypeScript patterns',
+    detail: 'Specialized Core, Hire, Jobs, Admin, and Landing applications share React/TypeScript patterns',
   },
   {
     name: 'API',
     tech: ['NestJS', 'Prisma', 'JWT', 'TypeScript'],
-    detail: 'NestJS + Prisma: 14 modules, 60+ endpoints, one data authority',
+    detail: 'NestJS + Prisma: domain modules, policy enforcement, and transactional platform data',
   },
   {
     name: 'AI Service',
@@ -43,7 +43,7 @@ export default function FrontendAPIStack({ step }: Props) {
             Tech <GradientText variant="teal">Stack</GradientText> — Four Layers
           </motion.h2>
           <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
-            Production-grade architecture. Modular, scalable, and designed for real-world hiring at scale.
+            Implemented application, platform, inference, and data boundaries.
           </motion.p>
         </motion.div>
 
@@ -80,7 +80,7 @@ export default function FrontendAPIStack({ step }: Props) {
               className="grid grid-cols-3 gap-3"
             >
               {[
-                { label: 'Multi-tenant', value: 'Every query scoped to businessId' },
+                { label: 'Tenant controls', value: 'Business-scoped domain records with explicit remediation items' },
                 { label: 'Async processing', value: 'BullMQ + background workers' },
                 { label: 'Retrieval', value: 'pgvector supports job discovery and cited evidence' },
               ].map((p) => (

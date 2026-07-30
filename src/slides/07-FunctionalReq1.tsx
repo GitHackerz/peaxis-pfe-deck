@@ -12,35 +12,35 @@ const reqs = [
     icon: <ShieldCheck size={20} />,
     id: 'FR-01',
     title: 'Authentication & Security',
-    items: ['Argon2 password hashing', 'Google + LinkedIn OAuth2', '15m access + 7d refresh JWT'],
+    items: ['Argon2 password protection', 'JWT + OAuth sign-in'],
     color: '#00B8B3',
   },
   {
     icon: <Users size={20} />,
     id: 'FR-02',
     title: 'Multi-Tenant Architecture',
-    items: ['Business-scoped queries', 'X-Business-ID enforcement', 'Unique business slug routing'],
+    items: ['Business-scoped records', 'Tenant context enforced'],
     color: '#00B8B3',
   },
   {
     icon: <Key size={20} />,
     id: 'FR-03',
     title: 'Roles & Permissions',
-    items: ['Plan-based feature gating', 'Free / Starter / Pro / Enterprise', 'JwtAuthGuard + PlanGuard'],
+    items: ['Role and plan guards', 'Feature access by subscription'],
     color: '#00B8B3',
   },
   {
     icon: <Briefcase size={20} />,
     id: 'FR-04',
     title: 'Job Management',
-    items: ['CRUD + rich filters', 'Semantic search via pgvector', 'Automatic embeddings'],
+    items: ['Create and filter jobs', 'Hybrid text + vector search'],
     color: '#00B8B3',
   },
   {
     icon: <GitBranch size={20} />,
     id: 'FR-05',
     title: 'Application Pipeline',
-    items: ['Applied to Hired/Rejected', 'Stage transition history', 'AI score at submission'],
+    items: ['Tracked application stages', 'Async assessment updates'],
     color: '#00B8B3',
   },
 ]
@@ -59,7 +59,7 @@ export default function FuncReqCore({ step }: Props) {
             Core platform <GradientText variant="teal">requirements</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            FR-01 to FR-05: the foundation for a production-grade recruitment SaaS.
+            Five delivered foundations for the recruitment workflow.
           </motion.p>
         </motion.div>
 

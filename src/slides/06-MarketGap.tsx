@@ -28,10 +28,10 @@ const gaps = [
   },
 ]
 
-const marketStats = [
-  { value: '$1.2B', label: 'HR Tech VC funding in 2024' },
-  { value: '23%', label: 'CAGR of AI Recruitment market' },
-  { value: '78%', label: 'HR leaders plan AI adoption in 2025' },
+const responsePrinciples = [
+  { label: 'Evidence first', detail: 'Every assessment links a requirement to candidate evidence.' },
+  { label: 'Human authority', detail: 'AI assists evaluation; recruiters decide the hiring outcome.' },
+  { label: 'Durable operations', detail: 'Slow AI work runs outside the request path with explicit states.' },
 ]
 
 export default function MarketGap({ step }: Props) {
@@ -78,7 +78,7 @@ export default function MarketGap({ step }: Props) {
           )}
         </AnimatePresence>
 
-        {/* Market stats */}
+        {/* Engineering response */}
         <AnimatePresence>
           {step >= 2 && (
             <motion.div
@@ -87,7 +87,7 @@ export default function MarketGap({ step }: Props) {
               transition={{ duration: 0.4 }}
               className="grid grid-cols-3 gap-3"
             >
-              {marketStats.map((s, i) => (
+              {responsePrinciples.map((s, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -95,8 +95,8 @@ export default function MarketGap({ step }: Props) {
                   transition={{ delay: i * 0.08 }}
                   className="p-3 rounded-xl bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)] text-center"
                 >
-                  <div className="text-3xl font-extrabold text-px-navy">{s.value}</div>
-                  <div className="text-sm text-px-muted mt-0.5">{s.label}</div>
+                  <div className="text-base font-extrabold text-px-navy">{s.label}</div>
+                  <div className="text-sm text-px-muted mt-1">{s.detail}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -119,7 +119,7 @@ export default function MarketGap({ step }: Props) {
               </div>
               <div>
                 <p className="text-base font-bold text-px-navy">This gap defines the project's objective</p>
-                <p className="text-sm text-px-muted">Explainable scoring, integrated workflows, and a candidate-facing experience in a single system.</p>
+                <p className="text-sm text-px-muted">Integrated workflows, evidence-based scoring, and a candidate-facing experience in one auditable system.</p>
               </div>
             </motion.div>
           )}

@@ -8,7 +8,7 @@ import { fadeUp, stagger } from '../lib/animations'
 interface Props { step: number }
 
 const stats = [
-  { value: '42 days', label: 'Avg time-to-hire', sub: 'SHRM 2024', color: '#FE595A' },
+  { value: '42 days', label: 'Average time-to-hire', sub: 'SHRM 2024', color: '#FE595A' },
   { value: '75%', label: 'Recruiters overloaded', sub: 'LinkedIn Talent Report', color: '#001027' },
   { value: '60%', label: 'Candidates report no feedback', sub: 'Indeed Survey 2023', color: '#6B7280' },
 ]
@@ -54,7 +54,7 @@ export default function RecruitmentPain({ step }: Props) {
             Current recruitment <GradientText variant="coral">challenges</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            Engineering problems behind the hiring process, not just symptoms.
+            The scale of the hiring problem, before the engineering response.
           </motion.p>
         </motion.div>
 
@@ -124,15 +124,13 @@ export default function RecruitmentPain({ step }: Props) {
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#FFF0F0] border border-[rgba(254,89,90,0.2)]">
                 <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#FE595A]" />
                 <p className="text-sm text-px-navy">
-                  <strong>Cost of a bad hire:</strong> averages <strong>$14.9K</strong>, while strong candidates
-                  accept competing offers within days.
+                  <strong>Cost of a bad hire:</strong> averages <strong>$14.9K</strong>; strong candidates can accept competing offers within days.
                 </p>
               </div>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl border" style={{ background: '#F3F4F6', borderColor: 'rgba(0,0,0,0.07)' }}>
                 <div className="w-1 h-8 rounded-full flex-shrink-0 bg-[#6B7280]" />
                 <p className="text-sm text-px-navy">
-                  <strong>Regional gap:</strong> many SMEs in the MENA region still rely on spreadsheets, as
-                  legacy ATS tools are costly and poorly localized.
+                  <strong>Engineering response:</strong> keep screening responsive, make every score reviewable, and keep candidates informed.
                 </p>
               </div>
             </motion.div>
