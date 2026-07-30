@@ -12,19 +12,16 @@ const pillars = [
     title: 'Pipeline workspace',
     color: '#00B8B3',
     icon: <Kanban size={20} />,
-    desc: 'Track applications and open each candidate profile.',
   },
   {
     title: 'Evidence assessment',
     color: '#009E9A',
     icon: <Brain size={20} />,
-    desc: 'Review score, cited evidence, gaps, and verification state.',
   },
   {
     title: 'Async processing',
     color: '#001027',
     icon: <FileCheck2 size={20} />,
-    desc: 'AI work progresses with visible pending, retry, and failure states.',
   },
 ]
 
@@ -41,9 +38,6 @@ export default function PeaxisHire({ step }: Props) {
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">PEAXIS Hire</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted">
-            The recruiter workspace for pipeline review and explainable assessment.
-          </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-2 gap-6 items-stretch">
@@ -68,7 +62,7 @@ export default function PeaxisHire({ step }: Props) {
                     className="bg-white rounded-xl border border-[var(--border)] p-4 flex items-center gap-3"
                   >
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${sec.color}1A`, color: sec.color }}>{sec.icon}</div>
-                    <div><h3 className="text-sm font-extrabold text-px-navy">{sec.title}</h3><p className="text-sm text-px-muted leading-snug">{sec.desc}</p></div>
+                    <div><h3 className="text-sm font-extrabold text-px-navy">{sec.title}</h3></div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -86,7 +80,7 @@ export default function PeaxisHire({ step }: Props) {
             >
               <div className="w-1.5 h-6 rounded bg-[#00B8B3] flex-shrink-0" />
               <p className="text-sm text-px-navy">
-                One place to inspect the pipeline and justify an assessment with evidence.
+                Pipeline → evidence → recruiter decision
               </p>
             </motion.div>
           )}

@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { Building2, Settings, Users } from 'lucide-react'
-import Badge from '../components/ui/Badge'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
 import { cinemaEntrance, fadeUp, stagger } from '../lib/animations'
@@ -11,23 +10,17 @@ const modules = [
   {
     icon: <Settings size={20} />,
     name: 'PEAXIS Core',
-    sub: 'Operational Backbone',
-    desc: 'Identity, tenant context, roles, and plan controls.',
-    value: 'Business Operations',
+    sub: 'Business foundation',
   },
   {
     icon: <Users size={20} />,
     name: 'PEAXIS Hire',
-    sub: 'Recruiter Execution',
-    desc: 'Candidate pipeline, profile review, and evidence assessment.',
-    value: 'Recruiter Execution',
+    sub: 'Recruiter workspace',
   },
   {
     icon: <Building2 size={20} />,
     name: 'PEAXIS Jobs',
-    sub: 'Talent Acquisition',
-    desc: 'Job discovery, CV parsing, and candidate applications.',
-    value: 'Talent Acquisition',
+    sub: 'Candidate portal',
   },
 ]
 
@@ -44,9 +37,6 @@ export default function SolutionOverview({ step }: Props) {
           <motion.h2 variants={cinemaEntrance} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">PEAXIS</GradientText> — Modular AI Hiring Operating System
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            Three modules, one platform data layer, and a bounded AI service.
-          </motion.p>
         </motion.div>
 
         {/* Three modules */}
@@ -75,7 +65,6 @@ export default function SolutionOverview({ step }: Props) {
                       <p className="text-xs font-mono text-px-muted mb-0.5">{m.sub}</p>
                       <p className="text-sm font-extrabold text-px-navy">{m.name}</p>
                     </div>
-                    <p className="text-sm text-px-muted leading-relaxed">{m.desc}</p>
                   </div>
                 </motion.div>
               )
@@ -93,9 +82,9 @@ export default function SolutionOverview({ step }: Props) {
               className="grid grid-cols-3 gap-3"
             >
               {[
-                { who: 'Business Admin', uses: 'PEAXIS Core', detail: 'Access, tenant context, plans' },
-                { who: 'Recruiter / HR Team', uses: 'PEAXIS Hire', detail: 'Pipeline and evidence review' },
-                { who: 'Candidate / Talent', uses: 'PEAXIS Jobs', detail: 'Search, profile, application' },
+                { who: 'Business Admin', uses: 'PEAXIS Core' },
+                { who: 'Recruiter / HR Team', uses: 'PEAXIS Hire' },
+                { who: 'Candidate / Talent', uses: 'PEAXIS Jobs' },
               ].map((s, i) => (
                 <motion.div
                   key={s.who}
@@ -106,45 +95,12 @@ export default function SolutionOverview({ step }: Props) {
                 >
                   <p className="text-xs font-bold uppercase tracking-wider text-px-teal">{s.who}</p>
                   <p className="text-sm font-semibold text-px-navy">{s.uses}</p>
-                  <p className="text-xs text-px-muted leading-relaxed">{s.detail}</p>
                 </motion.div>
               ))}
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Integration callout */}
-        <AnimatePresence>
-          {step >= 3 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="flex items-center justify-center gap-3"
-            >
-              <div className="h-[1px] flex-1 max-w-32" style={{ background: 'linear-gradient(90deg, transparent, #00B8B3)' }} />
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#E6FAF9] border border-[rgba(0,184,179,0.25)]">
-                <div className="w-2 h-2 rounded-full bg-px-teal animate-pulse" />
-                <span className="text-sm font-semibold text-px-teal">The platform API owns transactional data through Prisma → PostgreSQL</span>
-              </div>
-              <div className="h-[1px] flex-1 max-w-32" style={{ background: 'linear-gradient(90deg, #00B8B3, transparent)' }} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Tech badges */}
-        <AnimatePresence>
-          {step >= 4 && (
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-center justify-center gap-2 flex-wrap"
-            >
-              {['Next.js 16', 'NestJS', 'FastAPI', 'PostgreSQL + pgvector', 'Redis', 'BullMQ', 'Gemini / Azure OpenAI', 'Stripe'].map((t) => (
-                <Badge key={t} variant="teal" size="sm">{t}</Badge>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   )

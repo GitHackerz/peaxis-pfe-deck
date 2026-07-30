@@ -24,27 +24,18 @@ import NFR from './slides/09-NonFunctionalReq'
 import SolutionOverview from './slides/10-SolutionOverview'
 import PeaxisHire from './slides/11-PeaxisHire'
 import PeaxisJobs from './slides/12-PeaxisJobs'
-import FrontendAPIStack from './slides/13-FrontendAPIStack'
 import LogicalArch from './slides/15-LogicalArchitecture'
 import PeaxisCore from './slides/16-PeaxisCore'
-import PeaxisAIBrain from './slides/16b-PeaxisAIBrain'
 import PhysicalArch from './slides/17-PhysicalArchitecture'
 import {
     AIModelsRouting,
-    ArchitectureDecisions,
-    BackgroundProcessing,
     CVParsingPipeline,
-    DatabaseDesign,
     EndToEndAIPipeline,
     EvidenceMatchingEngine,
-    ExplainableAI,
-    ImplementationStatus,
-    MatchingAlgorithm,
     FutureTechnicalRoadmap,
+    MatchingAlgorithm,
     PerformanceOptimizations,
-    SecurityArchitecture,
     TechnicalChallenges,
-    VerificationEvidence,
 } from './slides/18-EngineeringDeepDive'
 import Conclusion from './slides/23-Conclusion'
 import ThankYou from './slides/28-ThankYou'
@@ -65,21 +56,12 @@ export const SLIDE_COMPONENTS = [
   PeaxisCore,
   PeaxisHire,
   PeaxisJobs,
-  PeaxisAIBrain,
-  FrontendAPIStack,
   LogicalArch,
   PhysicalArch,
-  ArchitectureDecisions,
   EndToEndAIPipeline,
   CVParsingPipeline,
   EvidenceMatchingEngine,
   MatchingAlgorithm,
-  ExplainableAI,
-  ImplementationStatus,
-  BackgroundProcessing,
-  SecurityArchitecture,
-  DatabaseDesign,
-  VerificationEvidence,
   AIModelsRouting,
   PerformanceOptimizations,
   TechnicalChallenges,

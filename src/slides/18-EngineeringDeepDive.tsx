@@ -242,7 +242,7 @@ export function CVParsingPipeline({ step }: Props) {
     <EngineeringSlide
       title="CV Parsing"
       accent="Pipeline"
-      subtitle="The CV is validated and parsed asynchronously into candidate evidence."
+      subtitle="A worker turns a validated CV into grounded, structured evidence — without blocking the candidate."
     >
       <Reveal step={step} at={1}>
         <p className="text-xs font-bold uppercase tracking-wider text-px-navy mb-2">1. Intake and durable parsing</p>
@@ -257,9 +257,9 @@ export function CVParsingPipeline({ step }: Props) {
         />
       </Reveal>
       <Reveal step={step} at={2} className="grid grid-cols-3 gap-3 mt-3">
-        <Card title="Quality gate" detail="PDF, DOCX, and TXT are parsed defensively. Poor-quality PDFs can use OCR only when Google Vision OCR is enabled." tone="navy" />
-        <Card title="Structured extraction" detail="The LLM returns strict JSON. A second validator rejects unsupported citations, invalid fields, and inferred facts." tone="coral" />
-        <Card title="Cache-aware" detail="A checksum can reuse a completed parse; parsed output is cached separately from the authoritative record." tone="teal" />
+        <Card title="Extract text" detail="PDF, DOCX, and TXT use native extraction. Low-quality PDFs can use Google Vision OCR when enabled." tone="navy" meta="file layer" />
+        <Card title="Structured AI" detail="FastAPI calls the active Gemini or Azure provider at temperature 0 to return strict JSON: skills, experience, education, and citations." tone="coral" meta="inference" />
+        <Card title="Ground + persist" detail="Validation rejects unsupported facts. ResumeParse stores status, warnings, model metadata, and the grounded result; checksum/cache avoid duplicate work." tone="teal" meta="control" />
       </Reveal>
       <Reveal step={step} at={3} className="mt-3">
         <p className="text-xs font-bold uppercase tracking-wider text-px-navy mb-2">2. Candidate confirmation and retrieval preparation</p>
@@ -282,7 +282,7 @@ export function EvidenceMatchingEngine({ step }: Props) {
     <EngineeringSlide
       title="Evidence-Based"
       accent="Matching Engine"
-      subtitle="The model classifies cited evidence; the backend makes the reviewable decision."
+      subtitle="Exact rules first; pgvector retrieval only when needed; the backend always owns the final decision."
     >
       <Reveal step={step} at={1}>
         <Flow
@@ -296,9 +296,9 @@ export function EvidenceMatchingEngine({ step }: Props) {
         />
       </Reveal>
       <Reveal step={step} at={2} className="grid grid-cols-3 gap-3 mt-3">
-        <Card title="AI responsibility" detail="When direct evidence is absent, retrieve up to eight similar candidate chunks, then classify only the supplied citation set." tone="coral" />
-        <Card title="Backend responsibility" detail="Exact matching, experience-month calculation, score weights, satisfaction, and verification states are deterministic NestJS rules." tone="navy" />
-        <Card title="Human responsibility" detail="Recruiters define requirements, inspect evidence, and decide the candidate outcome. No AI hiring decision exists." tone="teal" />
+        <Card title="1. Exact evidence" detail="NestJS normalizes requirement text, matches candidate claims, and calculates relevant experience months from CV dates." tone="navy" meta="rules first" />
+        <Card title="2. Semantic fallback" detail="If direct evidence is absent, FastAPI creates a 768-dimension embedding; pgvector retrieves up to 8 candidate chunks for classification." tone="coral" meta="retrieval only" />
+        <Card title="3. Deterministic decision" detail="NestJS sets satisfaction, verification, requirement weights, and the 0–100 score. The recruiter reviews the result and decides." tone="teal" meta="human authority" />
       </Reveal>
       <Reveal step={step} at={3} className="rounded-xl bg-[#FFFBEB] border border-[rgba(254,200,73,0.34)] p-4 mt-3">
         <p className="text-sm font-black text-px-navy">The current alignment and ranking score are the same persisted calculation—not a separate opaque candidate similarity model.</p>
@@ -554,26 +554,25 @@ export function AIModelsRouting({ step }: Props) {
   return (
     <EngineeringSlide
       title="AI Models"
-      accent="& Routing"
-      subtitle="One provider is selected at startup: Gemini or Azure OpenAI."
+      accent="by Use Case"
+      subtitle="Gemini extracts or classifies evidence; deterministic backend rules calculate the final score."
     >
       <Reveal step={step} at={1}>
         <MiniTable
-          headers={['Feature', 'Model route', 'Reason']}
+          headers={['Use case', 'Technology', 'Role']}
           rows={[
-            ['CV parsing', 'Configured provider', 'Structured résumé extraction'],
-            ['Evidence classification', 'Configured provider', 'Only supplied citations are classified'],
-            ['Embeddings', 'Configured embedding model', 'Job search and candidate evidence retrieval'],
-            ['Generated content', 'Configured provider', 'Drafted, reviewable content'],
-            ['Assessment score', 'NestJS + PostgreSQL', 'Deterministic rule application'],
+            ['CV parsing', 'Gemini 3.5 Flash', 'Strict structured résumé JSON'],
+            ['Evidence classification', 'Gemini 3.5 Flash', 'Classify supplied citations only'],
+            ['Embeddings', 'gemini-embedding-001', '768D semantic retrieval with pgvector'],
+            ['OCR fallback', 'Google Vision OCR', 'Recover text from poor PDFs'],
+            ['Final score', 'NestJS + PostgreSQL', 'Deterministic 0–100 calculation'],
           ]}
         />
       </Reveal>
       <Reveal step={step} at={2} className="flex flex-wrap gap-2 mt-3">
-        <Pill>Provider selected at startup</Pill>
-        <Pill tone="yellow">FastAPI rate limit: 60/min per IP</Pill>
-        <Pill tone="navy">Structured JSON where supported</Pill>
-        <Pill tone="coral">Raw résumé content reaches the provider</Pill>
+        <Pill>Gemini-only model path</Pill>
+        <Pill tone="navy">FastAPI isolates inference</Pill>
+        <Pill tone="coral">LLMs do not rank candidates</Pill>
       </Reveal>
     </EngineeringSlide>
   )

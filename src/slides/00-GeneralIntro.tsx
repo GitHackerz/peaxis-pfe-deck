@@ -10,25 +10,21 @@ const forces = [
   {
     icon: <TrendingUp size={20} />,
     title: 'Application volume',
-    body: 'Online job boards and easy-apply flows multiply applications per opening.',
     color: '#00B8B3',
   },
   {
     icon: <Clock size={20} />,
     title: 'Recruiter workload',
-    body: 'The same recruiter teams review a growing volume of candidates per role.',
     color: '#001027',
   },
   {
     icon: <Users size={20} />,
     title: 'Candidate expectations',
-    body: 'Applicants expect fast feedback, transparency, and a clear application status.',
     color: '#6B7280',
   },
   {
     icon: <Bot size={20} />,
     title: 'AI adoption in HR',
-    body: 'Hiring teams increasingly expect AI support in screening and decision-making.',
     color: '#374151',
   },
 ]
@@ -54,9 +50,6 @@ export default function GeneralIntro({ step }: Props) {
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Recruitment in the <GradientText variant="teal">Digital Era</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-2xl">
-            Four forces are reshaping how organizations hire.
-          </motion.p>
         </motion.div>
 
         {/* Four forces grid */}
@@ -78,7 +71,6 @@ export default function GeneralIntro({ step }: Props) {
                   </div>
                   <div>
                     <h3 className="text-base font-extrabold tracking-tight text-px-navy">{f.title}</h3>
-                    <p className="text-sm text-px-muted leading-relaxed mt-0.5">{f.body}</p>
                   </div>
                 </motion.div>
               )}
@@ -86,22 +78,6 @@ export default function GeneralIntro({ step }: Props) {
           ))}
         </div>
 
-        {/* Closing framing — visible after all forces */}
-        <AnimatePresence>
-          {step >= 5 && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#F3F4F6] border border-[rgba(0,0,0,0.07)] text-sm"
-            >
-              <div className="w-2 h-2 rounded-full flex-shrink-0 bg-px-navy" />
-              <p className="text-px-navy">
-                Hiring has become a higher-volume, higher-expectation process — this is the environment
-                in which recruitment software now has to operate.
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
 
       {/* Bottom teal line */}

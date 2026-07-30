@@ -53,13 +53,13 @@ export default function FuncReqAI({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Methodology & Requirements" number="5" />
+            <SectionTag section="Functional Requirements" number="5" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            AI workflow <GradientText variant="teal">requirements</GradientText>
+            AI <GradientText variant="teal">requirements</GradientText>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            Implemented AI capabilities — no scheduling or dashboard claims.
+            Implemented intelligence capabilities.
           </motion.p>
         </motion.div>
 

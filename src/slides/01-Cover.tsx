@@ -28,7 +28,7 @@ export default function Cover({ step: _step }: Props) {
         {/* Top badge row */}
         <motion.div variants={fadeUp} className="flex items-center gap-3 flex-wrap justify-center">
           <Badge variant="teal" size="md">ESPRIT · 2026</Badge>
-          <Badge variant="gray" size="md">Software Engineering</Badge>
+          <Badge variant="gray" size="md">Final Year Project</Badge>
         </motion.div>
 
         {/* Main headline */}
@@ -53,9 +53,6 @@ export default function Cover({ step: _step }: Props) {
         {/* Presenter */}
         <motion.div variants={fadeUp} className="flex flex-col items-center gap-1">
           <p className="text-lg font-bold text-px-navy">BIBANI Mohamed Habib Allah</p>
-          <p className="text-sm text-px-muted">
-            Software Engineer — Prospecter
-          </p>
           <p className="text-xs text-px-muted mt-0.5">
             École Supérieure Privée d'Ingénierie et de Technologie — ESPRIT
           </p>
@@ -77,17 +74,6 @@ export default function Cover({ step: _step }: Props) {
           </div>
         </motion.div>
 
-        {/* Concept badges — what the project is, not what it's built with */}
-        <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 mt-1 max-w-2xl">
-          {['AI-Assisted Recruitment', 'Explainable AI', 'Multi-Tenant SaaS', 'Modular Architecture'].map((t) => (
-            <span
-              key={t}
-              className="text-xs font-semibold text-px-muted px-3 py-1.5 rounded-full bg-white border border-[var(--border)]"
-            >
-              {t}
-            </span>
-          ))}
-        </motion.div>
       </motion.div>
 
       {/* Bottom geometric decoration */}

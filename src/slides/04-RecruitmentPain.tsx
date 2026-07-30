@@ -17,25 +17,21 @@ const pains = [
   {
     icon: <Clock size={22} />,
     title: 'Manual screening',
-    body: 'Reviewing every CV by hand does not scale with rising application volume.',
     color: '#FE595A',
   },
   {
     icon: <Search size={22} />,
     title: 'Keyword-based ATS',
-    body: 'Legacy filters match exact keywords and miss well-qualified, non-standard CVs.',
     color: '#001027',
   },
   {
     icon: <AlertTriangle size={22} />,
     title: 'Inconsistent evaluation',
-    body: 'Criteria vary by reviewer, with limited traceability of how a decision was reached.',
     color: '#6B7280',
   },
   {
     icon: <UserX size={22} />,
     title: 'Candidate experience',
-    body: 'Long application forms and no status feedback push qualified talent away.',
     color: '#374151',
   },
 ]
@@ -53,9 +49,6 @@ export default function RecruitmentPain({ step }: Props) {
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Current recruitment <GradientText variant="coral">challenges</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            The scale of the hiring problem, before the engineering response.
-          </motion.p>
         </motion.div>
 
         {/* Stats row */}
@@ -104,7 +97,6 @@ export default function RecruitmentPain({ step }: Props) {
                     </div>
                     <div>
                       <p className="text-base font-bold text-px-navy mb-1">{p.title}</p>
-                      <p className="text-sm text-px-muted leading-relaxed">{p.body}</p>
                     </div>
                   </Card>
                 </motion.div>

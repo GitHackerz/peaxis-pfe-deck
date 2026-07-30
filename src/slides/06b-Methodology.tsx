@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { GitMerge, RotateCw, ShieldCheck, Terminal } from 'lucide-react'
+import { CheckCircle2, KanbanSquare, Repeat2, UsersRound } from 'lucide-react'
 import Card from '../components/ui/Card'
 import GradientText from '../components/ui/GradientText'
 import SectionTag from '../components/ui/SectionTag'
@@ -10,34 +10,28 @@ interface Props {
 }
 
 const flowSteps = [
-  { label: 'Problem Analysis', desc: 'SME constraints + stack gaps.' },
-  { label: 'Requirements', desc: 'FRs, NFRs, and security boundaries.' },
-  { label: 'Architecture Design', desc: 'Schema, services, and API scoping.' },
-  { label: 'MVP Development', desc: 'Core, auth, and base ATS.' },
-  { label: 'AI Integration', desc: 'FastAPI, pgvector, and Gemini.' },
-  { label: 'Verification & Refinement', desc: 'AI-service tests, API checks, E2E flows, and documented limits.' },
+  { label: 'Backlog' },
+  { label: 'Sprint Planning' },
+  { label: 'Build & Test' },
+  { label: 'Review & Improve' },
 ]
 
 const strategies = [
   {
-    icon: <RotateCw size={18} className="text-[#00B8B3]" />,
-    title: 'Agile Iteration',
-    desc: 'Sprint planning with weekly feedback loops.',
+    icon: <Repeat2 size={18} className="text-[#00B8B3]" />,
+    title: 'Scrum Sprints',
   },
   {
-    icon: <ShieldCheck size={18} className="text-[#00B8B3]" />,
-    title: 'Architecture First',
-    desc: 'Decoupled NestJS modules and FastAPI services.',
+    icon: <KanbanSquare size={18} className="text-[#00B8B3]" />,
+    title: 'Kanban Board',
   },
   {
-    icon: <GitMerge size={18} className="text-[#00B8B3]" />,
+    icon: <CheckCircle2 size={18} className="text-[#00B8B3]" />,
     title: 'Incremental Delivery',
-    desc: 'Validate identity, tenant scope, and core workflow before AI features.',
   },
   {
-    icon: <Terminal size={18} className="text-[#00B8B3]" />,
-    title: 'Continuous Refinement',
-    desc: 'Test bounded AI paths, refine retrieval, and record hardening priorities.',
+    icon: <UsersRound size={18} className="text-[#00B8B3]" />,
+    title: 'Sprint Review',
   },
 ]
 
@@ -53,9 +47,6 @@ export default function Methodology({ step }: Props) {
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
             Engineering <GradientText variant="teal">Methodology</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted">
-            From problem framing to a tested implementation.
-          </motion.p>
         </motion.div>
 
         {/* Two Columns */}
@@ -70,7 +61,7 @@ export default function Methodology({ step }: Props) {
                   transition={{ duration: 0.5 }}
                   className="flex flex-col gap-2"
                 >
-                  <p className="text-xs font-bold uppercase tracking-wider text-px-navy mb-2">Project Engineering Pipeline</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-px-navy mb-2">Sprint cycle</p>
                   <div className="grid grid-cols-2 gap-3">
                     {flowSteps.map((fs, idx) => (
                       <motion.div
@@ -85,7 +76,6 @@ export default function Methodology({ step }: Props) {
                           </div>
                           <div>
                             <p className="text-sm font-extrabold text-px-navy pr-4 mb-0.5">{fs.label}</p>
-                            <p className="text-xs text-px-muted leading-snug">{fs.desc}</p>
                           </div>
                         </Card>
                       </motion.div>
@@ -106,7 +96,7 @@ export default function Methodology({ step }: Props) {
                   transition={{ duration: 0.5 }}
                   className="flex flex-col gap-3"
                 >
-                  <p className="text-xs font-bold uppercase tracking-wider text-px-navy mb-1">Execution Strategies</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-px-navy mb-1">How work was managed</p>
                   <div className="flex flex-col gap-2">
                     {strategies.map((strat, idx) => (
                       <motion.div
@@ -121,7 +111,6 @@ export default function Methodology({ step }: Props) {
                         </div>
                         <div>
                           <p className="text-sm font-bold text-px-navy mb-0.5">{strat.title}</p>
-                          <p className="text-xs text-px-muted leading-snug">{strat.desc}</p>
                         </div>
                       </motion.div>
                     ))}

@@ -12,19 +12,16 @@ const pillars = [
     title: 'Job Discovery',
     color: '#00B8B3',
     icon: <Search size={20} />,
-    desc: 'Hybrid full-text and vector search find relevant jobs.',
   },
   {
     title: 'Application UX',
     color: '#009E9A',
     icon: <Upload size={20} />,
-    desc: 'CV parsing helps construct a candidate profile.',
   },
   {
     title: 'Application Progress',
     color: '#001027',
     icon: <Award size={20} />,
-    desc: 'Application status is visible after submission.',
   },
 ]
 
@@ -41,9 +38,6 @@ export default function PeaxisJobs({ step }: Props) {
           <motion.h2 variants={fadeUp} className="text-4xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="navy">PEAXIS Jobs</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted">
-            The candidate portal for discovery, profile completion, and applications.
-          </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-2 gap-6 items-stretch">
@@ -68,7 +62,7 @@ export default function PeaxisJobs({ step }: Props) {
                     className="bg-white rounded-xl border border-[var(--border)] p-4 flex items-center gap-3"
                   >
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${sec.color}1A`, color: sec.color }}>{sec.icon}</div>
-                    <div><h3 className="text-sm font-extrabold text-px-navy">{sec.title}</h3><p className="text-sm text-px-muted leading-snug">{sec.desc}</p></div>
+                    <div><h3 className="text-sm font-extrabold text-px-navy">{sec.title}</h3></div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -86,7 +80,7 @@ export default function PeaxisJobs({ step }: Props) {
             >
               <div className="w-1.5 h-6 rounded bg-[#00B8B3] flex-shrink-0" />
               <p className="text-sm text-px-navy">
-                A clear, structured path from job discovery to application submission.
+                Discover → apply → follow progress
               </p>
             </motion.div>
           )}

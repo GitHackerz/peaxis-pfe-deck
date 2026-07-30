@@ -1,285 +1,178 @@
 # PEAXIS — Slide-by-slide 20-minute defense pitch
 
 **Timing:** 15 minutes of slides + 5 minutes live demo.  
-**One message to repeat:** **Evidence, not opaque ranking.**
+**Core message:** **Evidence, not opaque ranking.**
 
-This guide follows the deck **in its exact current order**. Do not read every card. For each slide, deliver the short script, then use the final sentence as your transition to the next slide.
+PEAXIS is a launch-oriented SaaS product: Tunisia first, then a MENA expansion direction. It was developed during the final-year internship, but with production-minded concerns: tenant-aware data, authorization, persistence, asynchronous processing, and explainable AI. Do not claim measured accuracy, latency, throughput, fairness, or SLAs until they are formally measured.
 
-## Important — the problem KPIs
+This is the living pitch script. It follows the **current 27-slide deck exactly** and should be updated whenever the slide order or content changes.
 
-The original problem slide contains these figures. Keep them visible and say them aloud:
+## Slides 1–7 — Why PEAXIS exists · 0:00–3:10
 
-- **42 days** average time-to-hire — SHRM 2024
-- **75%** of recruiters overloaded — LinkedIn Talent Report
-- **60%** of candidates report no feedback — Indeed Survey 2023
-- **$14.9K** average cost of a bad hire
+### Slide 1 — Cover · 0:00–0:40
 
-They are not product KPIs; they establish why the problem matters. Do **not** invent PEAXIS performance metrics such as accuracy, time saved, or hiring improvement unless you have measured them.
+“Imagine two candidates applying for the same role. One receives a score of 82 and the other 61. If the recruiter asks: why, what evidence supports this, and can I trust it? Many AI systems cannot answer clearly.
 
----
+PEAXIS addresses this problem: AI should provide evidence, not only ranking. It is not intended to remain a classroom prototype. It is a new SaaS product being prepared for Tunisia, with a MENA expansion direction. That is why I built it with tenant-aware data, durable processing, and explainable AI.”
 
-## Part 1 — Why PEAXIS exists · 0:00–3:55
+**Transition:** “First, here is the journey I will take you through.”
 
-### Slide 1 — Cover · 0:00–0:45
+### Slide 2 — Presentation Overview · 0:40–0:55
 
-“Imagine two candidates applying for the same job. An AI system gives one candidate a score of 82 and the other 61. But when the recruiter asks: *why, what evidence supports this result, and can I trust it?* many systems cannot answer clearly.
+“I will establish the recruitment problem, show PEAXIS and a live workflow, then explain the architecture and AI controls that make an assessment reviewable.”
 
-This is the problem I wanted to solve with PEAXIS: using AI to assist recruitment without turning hiring into an opaque black box.
+**Transition:** “The need begins with how recruitment is changing.”
 
-Good morning. My name is **Mohamed Habib Allah Bibani**, and today I will present PEAXIS, my end-of-studies project. The central idea is simple: AI should provide evidence, not just ranking; the recruiter keeps the final decision.”
+### Slide 3 — Recruitment in the Digital Era · 0:55–1:15
 
-**Transition:** “Let me show you the story of the project in the next 20 minutes.”
+“Application volume, recruiter workload, candidate expectations, and AI adoption are increasing together. The challenge is no longer only processing CVs faster; it is making decisions at scale while preserving trust.”
 
-### Slide 2 — Presentation Plan · 0:45–1:00
+**Transition:** “The internship environment gave me useful engineering patterns for this challenge.”
 
-“I will start with the recruitment problem and its impact. Then I will introduce PEAXIS, demonstrate the complete flow in five minutes, and finally explain the engineering decisions that make the AI result traceable.”
+### Slide 4 — Prospecter, Internship Host · 1:15–1:35
 
-**Transition:** “Before the problem, one quick word about the environment in which this project was developed.”
+“Prospecter is an AI-powered B2B SaaS platform. Its use of multi-tenant design, LLM workflows, Redis, and background workers informed the engineering discipline I applied to PEAXIS. PEAXIS itself remains an independent recruitment product.”
 
-### Slide 3 — Recruitment in the Digital Era · 1:00–1:20
+**Transition:** “I applied those practices to the more sensitive domain of hiring.”
 
-“Recruitment is under pressure from four directions: more applications, the same recruiter capacity, higher candidate expectations, and increasing demand for AI support. So the challenge is no longer just storing CVs; it is making decisions at scale without losing trust.”
+### Slide 5 — Internship Context · 1:35–1:50
 
-**Transition:** “This engineering context was reinforced during my internship.”
+“During the internship I worked with full-stack, AI, and platform-engineering practices. I used them to build a maintainable product foundation rather than a one-time demo.”
 
-### Slide 4 — Prospecter, Internship Host · 1:20–1:40
+**Transition:** “This matters because the recruitment pain is measurable.”
 
-“My internship host, Prospecter, is an AI-powered B2B outbound platform. Its use of LLM workflows, multi-tenant design, Redis, and background workers informed the engineering approach behind PEAXIS.”
+### Slide 6 — Recruitment Challenges · 1:50–2:35
 
-**Transition:** “I reused the engineering discipline, but applied it to a very different and more sensitive domain: hiring.”
+“Average time-to-hire is **42 days**. **75%** of recruiters report overload. **60%** of candidates report no feedback. A bad hire averages **$14.9K**. These are market-context KPIs, not PEAXIS performance claims.
 
-### Slide 5 — Internship Context · 1:40–1:55
+For PEAXIS, they translate to engineering requirements: responsive processing, reviewable results, and a better candidate experience.”
 
-“PEAXIS is an independent product. During the internship, I worked with full-stack patterns, AI integration, and platform engineering. This project applies these ideas to a recruitment workflow where explainability is essential.”
+**Transition:** “Existing tools solve parts of the workflow, but the accountability gap remains.”
 
-**Transition:** “So what makes recruitment a serious engineering problem?”
+### Slide 7 — Market Gap · 2:35–3:10
 
-### Slide 6 — Current Recruitment Challenges · 1:55–2:45
+“The gap is an integrated workflow that connects applications, AI assistance, and recruiter accountability. PEAXIS combines evidence-first assessment, human authority, and durable operations in one platform.”
 
-“The scale of the problem is visible in these KPIs: average time-to-hire is **42 days**; **75%** of recruiters report overload; and **60%** of candidates report receiving no feedback. The impact of a bad hiring decision can average **$14.9K**.
+## Slides 8–11 — Delivery and requirements · 3:10–4:40
 
-Behind these figures are four failures: manual screening does not scale, keyword filters miss context, evaluations can be inconsistent, and candidate experience suffers.
+### Slide 8 — Engineering Methodology
 
-For PEAXIS, these are not just business symptoms. They became engineering requirements: keep the system responsive, make every score reviewable, and keep candidates informed.”
+“I used Scrum to split delivery into short sprints and Kanban to track the backlog, work in progress, and completed work. Each sprint followed: plan, build and test, review, then improve. The platform foundation came before the AI layer.”
 
-**Transition:** “Existing tools solve parts of this workflow, but the central gap remains.”
+### Slide 9 — Core Functional Requirements
 
-### Slide 7 — Market Gap · 2:45–3:15
+“The core delivered capabilities are authentication, business context, roles, job management, and application stages. AI becomes useful only when this workflow is reliable.”
 
-“The gap is an integrated system that combines evidence, human authority, and durable AI operations. PEAXIS connects the candidate journey, recruiter workflow, and assessment logic in one auditable platform.”
+### Slide 10 — AI Functional Requirements
 
-**Transition:** “To build that platform methodically, I followed this process.”
+“The delivered AI capabilities are CV parsing, evidence matching, explainable review, and reliable background processing. I do not claim interview scheduling or analytics as delivered features.”
 
-### Slide 8 — Engineering Methodology · 3:15–3:35
+### Slide 11 — Non-Functional Requirements
 
-“I progressed from problem analysis, to requirements and architecture, then MVP delivery, AI integration, and verification. The key principle was incremental delivery: validate the platform foundation before adding AI.”
+“Security, tenant boundaries, modularity, asynchronous processing, explicit failure states, and explainability are first-class design properties. Measured production-scale SLAs are a future validation step.”
 
-**Transition:** “These are the capabilities that came out of that process.”
+**Transition:** “With the requirements defined, here is the product users interact with.”
 
-### Slide 9 — Core Platform Requirements · 3:35–3:50
+## Slides 12–15 — Product and live proof · 4:40–6:15
 
-“The platform foundation covers authentication, business context, roles, job management, and application stages. These capabilities make the recruitment workflow usable before AI is introduced.”
+### Slide 12 — PEAXIS Overview
 
-**Transition:** “The next requirements are where the AI contribution begins.”
+“Core manages business foundation. Hire is the recruiter workspace. Jobs is the candidate portal. The modules share one controlled platform and AI workflow.”
 
-### Slide 10 — AI Workflow Requirements · 3:50–4:10
+### Slide 13 — PEAXIS Core
 
-“The AI workflow must parse CVs, build candidate evidence, calculate alignment, show cited strengths and gaps, and process work reliably in the background. I deliberately do not present interview scheduling or analytics as delivered functionality.”
+“Core is the SaaS control layer: identity, membership, entitlements, and business context. It provides the tenant-aware foundation for every module.”
 
-**Transition:** “With these requirements defined, here is the product architecture.”
+### Slide 14 — PEAXIS Hire
 
----
+“Hire gives recruiters a pipeline and an assessment view. The value is that a score comes with cited evidence, gaps, and verification states.”
 
-## Part 2 — The product and live proof · 4:10–9:20
+### Slide 15 — PEAXIS Jobs
 
-### Slide 11 — Quality Attributes · 4:10–4:30
+“Jobs supports the candidate journey: discover a role, submit a CV, complete a profile, and follow progress. The submitted profile later becomes grounded evidence for assessment.”
 
-“The solution also needed operational qualities: security, asynchronous work, explicit failure states, explainability, and modularity. These are implementation properties, not unmeasured production SLAs.”
+**Transition to demo:** “I will now show one candidate moving from CV upload to a recruiter-reviewable assessment.”
 
-**Transition:** “Now I can introduce the product itself.”
+## Live demo — 5 minutes · 6:15–11:15
 
-### Slide 12 — Solution Overview · 4:30–4:50
+1. **Candidate upload:** “The candidate submits a CV. The platform validates the file, queues parsing, and returns a processing state; it does not block on an AI request.”
+2. **Structured profile:** “The CV becomes structured skills, experience, and citations. This is evidence preparation, not an automatic hiring decision.”
+3. **Recruiter workspace:** “The recruiter opens the application and the generated assessment.”
+4. **Evidence assessment:** “For a requirement, show one cited proof, one evaluation state, and one gap or verification item. The recruiter can challenge the result.”
+5. **Close:** “The model assists with bounded evidence; deterministic backend rules calculate the assessment; the recruiter keeps the final hiring decision.”
 
-“PEAXIS has three modules. Core controls identity and business context. Jobs supports candidates. Hire supports recruiters. They share one platform API and one bounded AI workflow.”
+**Transition:** “Now that the user outcome is visible, I will explain how it is implemented.”
 
-**Transition:** “Let me quickly position each module, then I will show the most important flow live.”
+## Slides 16–24 — Architecture and AI engineering · 11:15–14:30
 
-### Slide 13 — PEAXIS Core · 4:50–5:00
+### Slide 16 — Logical Architecture
 
-“Core owns authentication, access, business settings, and feature entitlements. It is the control layer shared by the other modules.”
+“The browser calls NestJS, never Gemini directly. NestJS owns authentication, authorization, tenant context, requirements, applications, and final business decisions. FastAPI is the isolated inference boundary. PostgreSQL is the source of truth; Redis supports queues and cache.”
 
-**Transition:** “On top of this foundation sits the recruiter workspace.”
+### Slide 17 — Physical Architecture
 
-### Slide 14 — PEAXIS Hire · 5:00–5:15
+“Web applications, API, worker, AI service, PostgreSQL, and Redis run as separate components. A worker can scale independently when CV volume grows, and slow AI work does not degrade the user-facing API.”
 
-“PEAXIS Hire gives the recruiter a pipeline and, more importantly, an evidence assessment view. A recruiter can inspect the score, the cited evidence, gaps, and verification state.”
+### Slide 18 — AI Runtime & Worker
 
-**Transition:** “The other side of the same workflow is the candidate experience.”
+“NestJS validates and authorizes the request, then writes an `AiWorkItem` in PostgreSQL. BullMQ delivers it to a dedicated worker. The worker calls FastAPI, persists the result, and updates a durable pending, processing, completed, or failed state.
 
-### Slide 15 — PEAXIS Jobs · 5:15–5:30
+The worker is necessary because parsing, embeddings, and classification can take seconds or fail temporarily. It makes work non-blocking, retryable, observable, and durable.”
 
-“PEAXIS Jobs lets candidates discover jobs, submit a CV, complete a structured profile, and follow application status. This supplies the evidence that the recruiter later reviews.”
+### Slide 19 — CV Parsing Pipeline
 
-**Transition:** “Now I will show this end-to-end flow in the real application.”
+“NestJS validates type, size, signature, and checksum, creates `ResumeParse`, and queues `PARSE_CV`. FastAPI extracts native PDF, DOCX, or TXT text. Google Vision OCR is an optional fallback only for poor PDFs.
 
-### Live demo — 5:30–10:30 · 5 minutes
+Gemini **3.5 Flash** returns strict structured JSON at temperature zero: skills, experience, education, languages, and citations. The output is grounded against the original CV text. Unsupported facts and invalid fields are rejected, while warnings, extraction method, model metadata, and output are saved in PostgreSQL. This produces evidence, not a score.”
 
-#### Demo step 1 — Candidate entry · 5:30–6:25
+### Slide 20 — Evidence-Based Matching Engine
 
-“I will use one candidate and one job. The candidate discovers a role and uploads a CV. The file is validated and parsing is started asynchronously. At this point, no autonomous hiring decision has been made.”
+“The recruiter confirms the job requirements. PEAXIS turns the parsed CV into `CandidateEvidenceClaim` records and evidence chunks.
 
-#### Demo step 2 — Structured candidate data · 6:25–7:10
+NestJS tries deterministic matching first: normalized text, token and stem matching, and relevant experience-month calculation. Only when direct evidence is missing does it use `gemini-embedding-001`, producing a 768-dimension vector. pgvector searches only that candidate’s chunks and returns at most eight cited results.
 
-“The CV is converted into structured candidate information. This is evidence preparation: experience, skills, and profile facts are made available for later review.”
+Gemini then classifies only supplied citations as direct, related, transferable, ambiguous, or none. It cannot invent a qualification. NestJS owns the final evaluation.”
 
-#### Demo step 3 — Recruiter workspace · 7:10–8:00
+### Slide 21 — How Matching Is Computed
 
-“Now I switch to the recruiter view. The recruiter sees the candidate in the job pipeline and opens the candidate assessment.”
+“Mandatory with no evidence becomes `REQUIRES_VERIFICATION`; preferred with no evidence is `UNKNOWN`; evidence with unmet years is `PARTIALLY_SATISFIED`; evidence and policy satisfied is `SATISFIED`.
 
-#### Demo step 4 — Evidence assessment · 8:00–9:45
+The final score is deterministic: required requirements weigh 0.55, experience 0.25, preferred 0.10. Satisfied contributes 100, partially satisfied 60, and other states zero. Transferable evidence receives partial credit. pgvector similarity retrieves citations; it does not rank candidates.”
 
-“This is the main contribution. For each requirement, the system shows the evaluation and the evidence used. A recruiter can see a cited proof, a gap, or a verification state.
+### Slide 22 — AI Models by Use Case
 
-The AI does not decide who to hire. It helps classify bounded evidence. The backend applies the deterministic scoring rules, and the recruiter makes the final decision.”
+“PEAXIS uses a Gemini-only model path. The verified configured model for CV parsing and bounded evidence classification is **Gemini 3.5 Flash**. `gemini-embedding-001` produces the 768-dimension semantic vectors. Google Vision OCR is a document-extraction fallback, not the decision engine.
 
-#### Demo step 5 — Close · 9:45–10:30
+The main point is: Gemini extracts and classifies evidence; NestJS and PostgreSQL calculate the final score.”
 
-“The final score is therefore not an unexplained AI opinion. It is a reviewable result based on explicit requirements and evidence. Now that you have seen the user outcome, I will explain the engineering design behind it.”
+### Slide 23 — Performance Optimisations
 
----
+“Performance comes from architecture, not a claim that the model is instantly fast. Redis reuses bounded parse and embedding results. BullMQ moves slow inference off the request path. Candidate-scoped chunk retrieval limits the amount of evidence processed, and provider retries handle transient failures.
 
-## Part 3 — How the system works · 10:30–14:25
+One transparent limit: pgvector is enabled, but there is no ANN vector index in the current baseline migration. That is a measured optimisation step for future scale, not a claim made today.”
 
-### Slide 16 — AI Ownership Boundaries · 10:30–10:45
+### Slide 24 — Technical Challenges & Solutions
 
-“This slide captures the main architectural rule: NestJS owns business rules and records; FastAPI performs inference; the recruiter retains hiring authority.”
+“The key challenges were latency, CV reliability, grounding, explainability, and provider failures. The answers are durable workers and retries; file gates, quality checks, and optional OCR; citation-bound classification; persisted snapshots and evaluations; and explicit failure states.
 
-**Transition:** “The implementation is organised across four technology layers.”
+I also make the remaining access-control gap explicit before production. Engineering quality means documenting what is solved and what still needs hardening.”
 
-### Slide 17 — Tech Stack · 10:45–11:00
+## Slides 25–27 — Launch path and close · 14:30–15:00
 
-“The frontend is specialised into product applications. NestJS and Prisma implement the platform. FastAPI provides the inference boundary. PostgreSQL, pgvector, Redis, and BullMQ provide durable data, retrieval, caching, and background execution.”
+### Slide 25 — Roadmap
 
-**Transition:** “These technologies matter because they enforce clear responsibilities.”
+“Before widening AI functionality, the next priorities are authorization hardening, operational observability, measured accuracy and fairness evaluation, vector lifecycle management, and performance testing. The objective is to strengthen the existing foundation for launch.”
 
-### Slide 18 — Logical Architecture · 11:00–11:25
+### Slide 26 — Conclusion
 
-“The client talks to the platform API, not directly to an AI model. The API controls authorization and data. FastAPI handles bounded AI tasks. PostgreSQL remains the source of truth.”
+“PEAXIS delivers a candidate portal, recruiter workspace, asynchronous AI processing, and an evidence-based assessment engine. Its contribution is the boundary around AI: Gemini helps interpret evidence, backend rules calculate the result, and the recruiter retains authority.
 
-**Transition:** “The physical deployment follows the same separation.”
+It is a SaaS foundation aimed at Tunisia first and MENA next: **evidence, not opaque ranking.**”
 
-### Slide 19 — Physical Architecture · 11:25–11:40
-
-“The web apps, API, worker, AI service, database, and queue infrastructure are separated. This makes each responsibility deployable and observable independently.”
-
-**Transition:** “The key architectural decisions appear when a CV enters this system.”
-
-### Slide 20 — Architecture Decisions · 11:40–11:55
-
-“I selected a modular API, a separate inference service, durable queue processing, PostgreSQL as the source of truth, and pgvector only as retrieval support. These choices keep the model inside a controlled boundary.”
-
-**Transition:** “Let us follow a real AI task from its entry point.”
-
-### Slide 21 — End-to-End AI Runtime · 11:55–12:15
-
-“The API validates the request and creates durable work. The worker executes it. FastAPI returns structured inference. The platform stores the result and exposes its status. The user request never waits for the whole AI operation.”
-
-**Transition:** “The first concrete AI task is CV parsing.”
-
-### Slide 22 — CV Parsing Pipeline · 12:15–12:30
-
-“The CV passes file validation, asynchronous parsing, structured extraction, and profile confirmation. Only then is it prepared as candidate evidence.”
-
-**Transition:** “Prepared evidence is useful only if we can match it to a requirement in a controlled way.”
-
-### Slide 23 — Evidence-Based Matching Engine · 12:30–13:05
-
-“A recruiter requirement is linked to candidate claims and evidence. If necessary, vector retrieval finds relevant cited chunks. The model can classify the bounded citation, but backend rules determine satisfaction, verification, and alignment.”
-
-**Transition:** “This leads directly to the scoring model.”
-
-### Slide 24 — Matching Algorithm · 13:05–13:25
-
-“The final score is deterministic: requirements have weights, each has a satisfaction state, and the weighted calculation produces the alignment score. There is no separate opaque cosine score deciding the ranking.”
-
-**Transition:** “And because the score is deterministic, it can be explained.”
-
-### Slide 25 — Explainable AI · 13:25–13:40
-
-“Each assessment stores its input snapshot, requirement evaluations, cited evidence, gaps, and verification states. This is the audit trail behind the score.”
-
-**Transition:** “An explainable design also has to be honest about what is complete and what still needs hardening.”
-
----
-
-## Part 4 — What is proven and what comes next · 13:40–15:00
-
-### Slide 26 — Implementation Status · 13:40–13:50
-
-“This slide distinguishes delivered functionality from production-hardening work. I consider that distinction important: an academic project should clearly state both its achievements and its limits.”
-
-**Transition:** “One delivered capability that supports reliability is background execution.”
-
-### Slide 27 — Background Processing · 13:50–14:00
-
-“PostgreSQL owns task state. BullMQ and the dedicated worker execute the work asynchronously. This makes retries and failures visible rather than hidden.”
-
-**Transition:** “The same discipline applies to security.”
-
-### Slide 28 — Security Architecture · 14:00–14:10
-
-“The platform uses authentication, tenant context, file gates, rate limits, and service boundaries. The remaining hardening gaps are explicitly documented rather than ignored.”
-
-**Transition:** “The evidence trail itself is persisted in the data model.”
-
-### Slide 29 — AI Data Model · 14:10–14:18
-
-“PostgreSQL stores candidate evidence, assessment snapshots, and requirement evaluations. pgvector helps retrieval, but it does not make the final decision.”
-
-**Transition:** “I also validated the implemented paths.”
-
-### Slide 30 — Verification Evidence · 14:18–14:26
-
-“Verification covers unit, service, E2E, and delivery checks. I do not claim accuracy, fairness, or performance figures without a measured evaluation protocol.”
-
-**Transition:** “The next three slides are technical detail; present them only if time allows or the jury asks.”
-
-### Slide 31 — AI Model Routing · Reserve / 10 seconds if shown
-
-“One provider—Gemini or Azure OpenAI—is configured at startup. There is no silent fallback.”
-
-### Slide 32 — Performance Optimisation · Reserve / 10 seconds if shown
-
-“The design favors bounded retrieval, cache reuse, and background processing over long synchronous AI requests.”
-
-### Slide 33 — Technical Challenges · Reserve / 10 seconds if shown
-
-“The main challenges were evidence quality, authorization boundaries, and operational reliability. They shaped the hardening roadmap.”
-
-### Slide 34 — Future Technical Roadmap · 14:26–14:40
-
-“The next step is to harden the current system before adding more AI: improve authorization coverage, observability, measured accuracy and fairness evaluation, and performance testing.”
-
-**Transition:** “This brings me to the final result of the project.”
-
-### Slide 35 — Conclusion · 14:40–15:00
-
-“PEAXIS delivers a candidate portal, recruiter workspace, asynchronous AI processing, and an evidence-based assessment engine.
-
-The real contribution is the boundary around AI: it helps interpret evidence, backend rules calculate the result, and the recruiter retains the final authority.
-
-PEAXIS demonstrates that AI-assisted recruitment can be innovative without becoming opaque: **evidence, not opaque ranking.** Thank you.”
-
-### Slide 36 — Thank You / Questions
+### Slide 27 — Questions
 
 “Thank you for your attention. I am ready for your questions.”
 
----
-
 ## If the jury asks for metrics
 
-Use the **problem KPIs** only as market-context evidence. Be direct about product metrics:
-
-> “I implemented and tested the workflow. I deliberately do not claim a measured recruitment improvement, model accuracy, or time saving until I run a formal evaluation protocol with a representative dataset and benchmark.”
-
-This answer is stronger than inventing a KPI because it shows engineering honesty.
+“The displayed KPIs describe the recruitment problem. I implemented and tested the workflow, but I deliberately do not claim a measured recruitment improvement, model accuracy, fairness, or time saving until I run a controlled evaluation with a representative dataset.”

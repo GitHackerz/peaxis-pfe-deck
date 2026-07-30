@@ -11,31 +11,19 @@ const sections = [
     icon: <CheckCircle size={18} />,
     title: 'Engineering Achievements',
     color: '#00B8B3',
-    items: [
-      'A full-stack multi-tenant SaaS: Core workspace, Hire ATS, and Jobs portal',
-      'Evidence-based assessment: cited requirements, deterministic evaluations, and an audit trail',
-      'Durable AI processing: queued work outside the request path via a dedicated worker',
-    ],
+    items: ['Full-stack recruitment platform'],
   },
   {
     icon: <Layers3 size={18} />,
     title: 'Architectural Achievements',
     color: '#00B8B3',
-    items: [
-      'Clear separation of concerns across frontend, API, worker, and inference layers',
-      'Business-scoped platform controls with explicit access-control hardening priorities',
-      'Semantic retrieval with pgvector and a containerized inference boundary',
-    ],
+    items: ['Controlled AI architecture'],
   },
   {
     icon: <Lightbulb size={18} />,
     title: 'Lessons Learned',
     color: '#00B8B3',
-    items: [
-      'Tenant boundaries require continuous authorization review, not only schema design',
-      'A stateless inference boundary keeps business state and authority in one place',
-      'Bounded AI — cited evidence, explicit failures, and human review — keeps risk manageable',
-    ],
+    items: ['Human authority stays central'],
   },
 ]
 
@@ -109,7 +97,7 @@ export default function Conclusion({ step }: Props) {
                 </svg>
               </div>
               <p className="text-sm text-px-navy leading-relaxed">
-                <strong>PEAXIS demonstrates that AI-assisted recruitment can remain reviewable and operationally bounded — with people retaining authority over hiring decisions and known hardening work kept explicit.</strong>
+                <strong>Evidence, not opaque ranking.</strong>
               </p>
             </motion.div>
           )}

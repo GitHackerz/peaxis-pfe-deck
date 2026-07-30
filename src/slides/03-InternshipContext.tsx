@@ -12,19 +12,16 @@ const exposure = [
   {
     icon: <Layers size={20} />,
     area: 'Full-Stack Engineering',
-    body: 'Production Next.js and NestJS codebases, with tenant-scoped data models.',
     color: '#00B8B3',
   },
   {
     icon: <Brain size={20} />,
     area: 'AI Integration',
-    body: 'LLM pipelines for parsing, classification, and structured generation.',
     color: '#374151',
   },
   {
     icon: <Code2 size={20} />,
     area: 'Platform Engineering',
-    body: 'Docker deployments, async queues, and semantic search infrastructure.',
     color: '#374151',
   },
 ]
@@ -72,7 +69,6 @@ export default function InternshipContext({ step }: Props) {
                     </div>
                     <div>
                       <p className="text-base font-bold text-px-navy mb-1">{c.area}</p>
-                      <p className="text-sm text-px-muted leading-relaxed">{c.body}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -90,7 +86,7 @@ export default function InternshipContext({ step }: Props) {
               className="flex items-center gap-3 p-4 rounded-xl bg-[#F8FAFC] border border-[var(--border)]"
             >
               <p className="text-sm text-px-muted leading-relaxed">
-                <strong className="text-px-navy">Scope:</strong> PEAXIS is an independent product, built to the production standards observed during the internship.
+                <strong className="text-px-navy">Scope:</strong> Independent product · Production-inspired engineering
               </p>
             </motion.div>
           )}

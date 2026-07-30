@@ -9,12 +9,12 @@ interface Props {
 }
 
 const planSections = [
-  { num: '01', title: 'Context & Scope', detail: 'The hiring problem, internship scope, and the project objective.' },
-  { num: '02', title: 'Requirements & Solution', detail: 'Product requirements and the PEAXIS platform modules.' },
-  { num: '03', title: 'Architecture', detail: 'System boundaries, deployment topology, and design decisions.' },
-  { num: '04', title: 'AI Engineering', detail: 'Parsing, evidence matching, deterministic scoring, and explainability.' },
-  { num: '05', title: 'Validation & Findings', detail: 'Tests, delivery evidence, limitations, and hardening priorities.' },
-  { num: '06', title: 'Conclusion', detail: 'What was implemented, what was learned, and what comes next.' },
+  { num: '01', title: 'Context & Problem' },
+  { num: '02', title: 'Solution & Demo' },
+  { num: '03', title: 'Architecture' },
+  { num: '04', title: 'AI Engineering' },
+  { num: '05', title: 'Verification & Roadmap' },
+  { num: '06', title: 'Conclusion' },
 ]
 
 export default function PresentationPlan({ step: _step }: Props) {
@@ -35,11 +35,8 @@ export default function PresentationPlan({ step: _step }: Props) {
             <SectionTag section="Introduction & Context" number="1" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
-            Presentation <GradientText variant="teal">Plan</GradientText>
+            Presentation <GradientText variant="teal">Overview</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-base text-px-muted max-w-xl">
-            An engineering defense: from problem framing to validated implementation.
-          </motion.p>
         </motion.div>
 
         {/* 2x3 Grid layout */}
@@ -60,9 +57,6 @@ export default function PresentationPlan({ step: _step }: Props) {
                     {sec.title}
                   </h3>
                 </div>
-                <p className="text-xs text-px-muted leading-relaxed">
-                  {sec.detail}
-                </p>
               </Card>
             </motion.div>
           ))}

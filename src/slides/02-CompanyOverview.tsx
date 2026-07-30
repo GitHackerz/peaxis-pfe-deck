@@ -12,28 +12,24 @@ const pillars = [
   {
     icon: <Bot size={20} />,
     title: 'AI SDR Engine',
-    body: 'Autonomous AI sales rep — qualifies leads and orchestrates outreach sequences at scale.',
     color: '#00B8B3',
     bg: '#E6FAF9',
   },
   {
     icon: <Target size={20} />,
     title: 'Lead Intelligence',
-    body: 'Enriches prospects with firmographics and intent signals to prioritise high-value targets.',
     color: '#374151',
     bg: '#F3F4F6',
   },
   {
     icon: <Zap size={20} />,
     title: 'Outbound Automation',
-    body: 'Multi-channel sequences with LLM personalisation — zero manual prospecting.',
     color: '#374151',
     bg: '#F3F4F6',
   },
   {
     icon: <BarChart2 size={20} />,
     title: 'Pipeline Analytics',
-    body: 'Real-time conversion tracking, A/B message testing, and CRM sync.',
     color: '#374151',
     bg: '#F3F4F6',
   },
@@ -105,7 +101,6 @@ export default function CompanyOverview({ step }: Props) {
                     </div>
                     <div>
                       <p className="text-base font-bold text-px-navy mb-1">{pillar.title}</p>
-                      <p className="text-sm text-px-muted leading-relaxed">{pillar.body}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -126,7 +121,7 @@ export default function CompanyOverview({ step }: Props) {
               <Building2 size={16} className="flex-shrink-0 mt-0.5 text-px-muted" />
               <p className="text-sm text-px-muted leading-relaxed">
                 <span className="font-bold text-px-navy">Strategic context — </span>
-                LLM pipelines, multi-tenancy, Redis, and background workers informed PEAXIS.
+                LLM workflows · Multi-tenancy · Background workers
               </p>
             </motion.div>
           )}

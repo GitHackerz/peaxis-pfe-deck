@@ -8,9 +8,9 @@ import { fadeUp, stagger } from '../lib/animations'
 interface Props { step: number }
 
 const pillars = [
-  { icon: <ShieldCheck size={20} />, title: 'Identity & Access', desc: 'Authentication, business scoping, and role-based permissions.' },
-  { icon: <CreditCard size={20} />, title: 'Plans & Entitlements', desc: 'Subscription plan controls and feature access.' },
-  { icon: <Users size={20} />, title: 'Business Context', desc: 'Business settings and member-level access.' },
+  { icon: <ShieldCheck size={20} />, title: 'Identity & Access' },
+  { icon: <CreditCard size={20} />, title: 'Plans & Entitlements' },
+  { icon: <Users size={20} />, title: 'Business Context' },
 ]
 
 export default function PeaxisCore({ step }: Props) {
@@ -26,9 +26,6 @@ export default function PeaxisCore({ step }: Props) {
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             <GradientText variant="teal">PEAXIS Core</GradientText>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-px-muted max-w-2xl">
-            The shared business foundation every module relies on.
-          </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-2 gap-6 items-stretch">
@@ -54,7 +51,7 @@ export default function PeaxisCore({ step }: Props) {
                     className="flex items-center gap-3 p-4 rounded-xl bg-white border border-[var(--border)]"
                   >
                     <div className="w-10 h-10 rounded-lg bg-[#E6FAF9] flex items-center justify-center text-px-teal flex-shrink-0">{f.icon}</div>
-                    <div><p className="text-sm font-extrabold text-px-navy">{f.title}</p><p className="text-sm text-px-muted leading-snug mt-0.5">{f.desc}</p></div>
+                    <div><p className="text-sm font-extrabold text-px-navy">{f.title}</p></div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -72,7 +69,7 @@ export default function PeaxisCore({ step }: Props) {
             >
               <div className="w-1 h-6 rounded-full bg-px-teal flex-shrink-0" />
               <p className="text-sm text-px-navy">
-                One control center for tenancy, access, and billing across every module.
+                One control centre for every module
               </p>
             </motion.div>
           )}
