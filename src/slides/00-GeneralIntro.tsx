@@ -45,7 +45,7 @@ export default function GeneralIntro({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-1">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Industry & Problem" number="2" />
+            <SectionTag section="Recruitment Context" number="3" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Recruitment in the <GradientText variant="teal">Digital Era</GradientText>

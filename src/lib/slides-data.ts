@@ -11,11 +11,11 @@ export const SLIDES: SlideConfig[] = [
   // §1 Introduction
   { id: 'cover',               steps: 0, label: 'Cover'          },
   { id: 'presentation-plan',   steps: 0, label: 'Plan'           },
-  // §2 Industry & Problem
-  { id: 'industry-context',    steps: 4, label: 'Industry'       },
+  // §2 Internship Context
   { id: 'company-overview',    steps: 3, label: 'Prospecter'     },
-  // §3 Internship
   { id: 'internship-context',  steps: 2, label: 'Internship'     },
+  // §3 Recruitment Context
+  { id: 'industry-context',    steps: 4, label: 'Industry'       },
   { id: 'recruitment-challenges', steps: 3, label: 'Problem'     },
   // §4 Existing Solutions & Gap
   { id: 'ats-limitations',     steps: 3, label: 'Competitors'    },

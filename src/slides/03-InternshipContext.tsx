@@ -34,7 +34,7 @@ export default function InternshipContext({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Internship" number="3" />
+            <SectionTag section="Internship Context" number="2" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Internship <GradientText variant="teal">Context</GradientText>

@@ -44,7 +44,7 @@ export default function RecruitmentPain({ step }: Props) {
         {/* Header */}
         <motion.div variants={stagger} initial="hidden" animate="visible" className="flex flex-col gap-2">
           <motion.div variants={fadeUp}>
-            <SectionTag section="Industry & Problem" number="2" />
+            <SectionTag section="Recruitment Context" number="3" />
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-px-navy">
             Current recruitment <GradientText variant="coral">challenges</GradientText>

@@ -44,9 +44,9 @@ import ThankYou from './slides/28-ThankYou'
 export const SLIDE_COMPONENTS = [
   Cover,
   PresentationPlan,
-  IndustryContext,
   CompanyOverview,
   InternshipContext,
+  IndustryContext,
   RecruitmentChallenges,
   ATSLimitations,
   MarketGap,
