@@ -9,7 +9,7 @@ const stages = ['Extract content', 'AI structures information', 'Validate agains
 export default function CvUnderstanding({ step }: SlideProps) {
   const active = step >= 3 ? 3 : step - 1 // -1 = nothing started yet
   return (
-    <Slide section="Engineering & AI" title={<>How PEAXIS <span className="gradient-text-teal">understands a CV</span></>} source="Fictitious CV and candidate">
+    <Slide section="AI" title={<>How PEAXIS <span className="gradient-text-teal">understands a CV</span></>} source="Fictitious CV and candidate">
       <div className="flex h-full flex-col gap-4 pb-3">
         <div className="grid grid-cols-[420px_1fr_500px] items-center gap-4">
           <div className="h-[318px]"><CvDocument scan={step === 1} evidence={step >= 3} /></div>

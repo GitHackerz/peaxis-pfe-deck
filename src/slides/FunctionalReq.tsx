@@ -1,30 +1,34 @@
 import { Check } from 'lucide-react'
-import Reveal from '../components/slide/Reveal'
+import FocusNote from '../components/slide/FocusNote'
 import Slide from '../components/slide/Slide'
 import type { SlideProps } from './registry'
 
 const cols = [
-  { who: 'Candidate', items: ['Discover jobs', 'Build a profile from a CV', 'Apply in a few clicks', 'Follow every application'] },
-  { who: 'Recruiter', items: ['Create and publish jobs', 'Manage candidates', 'Run the hiring pipeline', 'Review evidence', 'Schedule interviews', 'Use AI assistance'] },
-  { who: 'Platform', items: ['Multi-tenant organizations', 'Roles and access', 'Billing and entitlements', 'Protected files', 'Notifications'] },
+  { who: 'Candidate', items: ['Discover jobs', 'Build a profile from a CV', 'Apply in a few clicks', 'Follow every application'], note: 'Candidates find roles, build a profile from their CV, apply and follow the status of each application.' },
+  { who: 'Recruiter', items: ['Create and publish jobs', 'Manage candidates', 'Run the hiring pipeline', 'Review evidence', 'Schedule interviews', 'Use AI assistance'], note: 'Recruiters publish jobs, run the pipeline, review evidence, schedule interviews and get AI help they can review.' },
+  { who: 'Platform', items: ['Multi-tenant organizations', 'Roles and access', 'Billing and entitlements', 'Protected files', 'Notifications'], note: 'Each company is an isolated organization, with roles, plans and entitlements, private files and notifications.' },
 ]
 
 export default function FunctionalReq({ step }: SlideProps) {
   return (
-    <Slide section="Method & requirements" title={<>What each user <span className="gradient-text-teal">needs to do</span></>}>
-      <div className="grid h-full grid-cols-3 gap-10 pb-2">
-        {cols.map(({ who, items }, i) => (
-          <Reveal key={who} show={step >= i} className="flex flex-col gap-4 border-t-[3px] border-px-teal pt-4">
-            <p className="text-[30px] font-extrabold text-px-navy">{who}</p>
-            <ul className="flex flex-col gap-3">
-              {items.map((t) => (
-                <li key={t} className="flex items-start gap-3 text-[23px] leading-snug text-px-navy">
-                  <Check size={22} className="mt-0.5 shrink-0 text-px-teal" strokeWidth={3} /> {t}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        ))}
+    <Slide section="Requirements" title={<>Functional <span className="gradient-text-teal">requirements</span></>}>
+      <div className="flex h-full flex-col justify-between pb-2">
+        <div className="grid grid-cols-3 gap-10">
+          {cols.map(({ who, items }, i) => {
+            const dim = step > 0 && step !== i + 1
+            return (
+              <div key={who} className={`flex flex-col gap-3 border-t-[3px] pt-4 transition-all duration-300 ${step === i + 1 ? 'border-px-teal' : 'border-px-teal/60'} ${dim ? 'opacity-30' : ''}`}>
+                <p className="text-[30px] font-extrabold text-px-navy">{who}</p>
+                <ul className="flex flex-col gap-2.5">
+                  {items.map((t) => (
+                    <li key={t} className="flex items-start gap-3 text-[21px] leading-snug text-px-navy"><Check size={22} className="mt-0.5 shrink-0 text-px-teal" strokeWidth={3} /> {t}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          })}
+        </div>
+        <FocusNote id={step} title={step > 0 ? cols[step - 1].who : undefined} text={step > 0 ? cols[step - 1].note : undefined} />
       </div>
     </Slide>
   )

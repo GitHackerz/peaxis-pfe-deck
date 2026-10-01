@@ -8,7 +8,7 @@ const humans = ['Requirements', 'Stage changes', 'Interviews', 'Rejection', 'Off
 
 export default function HumanAI({ step }: SlideProps) {
   return (
-    <Slide section="Engineering & AI" title={<>Explainable, <span className="gradient-text-teal">human-controlled</span> AI</>}>
+    <Slide section="AI" title={<>Explainable, <span className="gradient-text-teal">human-controlled</span> AI</>}>
       <div className="flex h-full flex-col justify-evenly pb-3">
         <div className="grid grid-cols-2 gap-10">
           <Reveal show={step >= 0} from="left" className="rounded-3xl bg-white p-7 ring-1 ring-black/10">

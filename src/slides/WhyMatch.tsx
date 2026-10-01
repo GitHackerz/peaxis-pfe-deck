@@ -9,7 +9,7 @@ const H = 'text-[13px] font-bold uppercase tracking-[0.16em] text-px-muted'
 export default function WhyMatch({ step }: SlideProps) {
   return (
     <Slide
-      section="Engineering & AI"
+      section="AI"
       title={<>Why does this candidate <span className="gradient-text-teal">match?</span></>}
       source="Illustrative example: not a real candidate"
     >

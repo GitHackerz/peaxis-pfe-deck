@@ -14,8 +14,9 @@ import HumanAI from './HumanAI'
 import JobsExperience from './JobsExperience'
 import Landscape from './Landscape'
 import LogicalArch from './LogicalArch'
-import MethodQuality from './MethodQuality'
+import Methodology from './Methodology'
 import Monitoring from './Monitoring'
+import NonFunctional from './NonFunctional'
 import Perspectives from './Perspectives'
 import PfeToProduct from './PfeToProduct'
 import Pillars from './Pillars'
@@ -32,16 +33,17 @@ export const SLIDE_REGISTRY: SlideDef[] = [
   { id: 'challenges', label: 'Challenges', section: 'Problem', steps: 3, component: Challenges },
   { id: 'landscape', label: 'Landscape', section: 'Problem', steps: 1, component: Landscape },
   { id: 'gap', label: 'Objective', section: 'Problem', steps: 1, component: Gap },
-  { id: 'method', label: 'Method & quality', section: 'Method', steps: 1, component: MethodQuality },
-  { id: 'functional', label: 'Requirements', section: 'Method', steps: 2, component: FunctionalReq },
+  { id: 'method', label: 'Methodology', section: 'Methodology', steps: 2, component: Methodology },
+  { id: 'functional', label: 'Functional requirements', section: 'Requirements', steps: 3, component: FunctionalReq },
+  { id: 'nfr', label: 'Non-functional requirements', section: 'Requirements', steps: 6, component: NonFunctional },
   { id: 'platform', label: 'Platform', section: 'Solution', steps: 1, component: PlatformOverview },
   { id: 'jobs', label: 'PEAXIS Jobs', section: 'Solution', steps: 3, component: JobsExperience },
   { id: 'hire', label: 'PEAXIS Hire', section: 'Solution', steps: 3, component: HireExperience },
-  { id: 'architecture', label: 'Architecture', section: 'Engineering', steps: 4, component: LogicalArch },
-  { id: 'cv', label: 'CV understanding', section: 'Engineering', steps: 3, component: CvUnderstanding },
-  { id: 'match', label: 'Why it matches', section: 'Engineering', steps: 4, component: WhyMatch },
-  { id: 'human-ai', label: 'Human-controlled AI', section: 'Engineering', steps: 2, component: HumanAI },
-  { id: 'production', label: 'Production', section: 'Production', steps: 3, component: ProductionArch },
+  { id: 'architecture', label: 'Logical architecture', section: 'Architecture', steps: 4, component: LogicalArch },
+  { id: 'production', label: 'Physical architecture', section: 'Architecture', steps: 3, component: ProductionArch },
+  { id: 'cv', label: 'CV understanding', section: 'AI', steps: 3, component: CvUnderstanding },
+  { id: 'match', label: 'Why it matches', section: 'AI', steps: 4, component: WhyMatch },
+  { id: 'human-ai', label: 'Human-controlled AI', section: 'AI', steps: 2, component: HumanAI },
   { id: 'pillars', label: 'Security & reliability', section: 'Production', steps: 4, component: Pillars },
   { id: 'monitoring', label: 'Monitoring', section: 'Production', steps: 4, component: Monitoring },
   { id: 'pfe-to-product', label: 'PFE to product', section: 'Production', steps: 2, component: PfeToProduct },

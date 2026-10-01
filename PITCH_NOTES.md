@@ -2,23 +2,24 @@
 
 **Controls.** `→` / `Space` / `Enter` = next reveal, then next slide · `←` = back · `Home` / `End` · `F` fullscreen · **`B` jumps to the backup slides**. Footer dots show reveal progress. Skipping reveals is always safe.
 
-**Time budget (talk = 15:00).** Slides 1–22 are the timed deck; slide 21 is the live demo (5:00, not counted); slide 22 closes the session. Backup slides B1–B7 come after Questions and are never presented unless asked.
+**Time budget (talk = 15:00).** Slides 1–23 are the deck; the live demo is slide 22 (5:00, not counted); slide 23 closes the session. Backup slides B1–B7 come after Questions and are never presented unless asked.
 
 | # | Slide | Time | | # | Slide | Time |
 |---|---|---|---|---|---|---|
-| 1 | Cover | 0:20 | | 12 | Architecture | 1:00 |
-| 2 | Context | 0:40 | | 13 | CV understanding | 0:55 |
-| 3 | Recruitment today | 0:45 | | 14 | Why it matches | 1:10 |
-| 4 | Challenges | 0:30 | | 15 | Human-controlled AI | 0:25 |
-| 5 | Landscape | 0:35 | | 16 | Production | 0:50 |
-| 6 | Objective | 0:25 | | 17 | Security & reliability | 0:55 |
-| 7 | Method & quality | 0:30 | | 18 | Monitoring | 0:40 |
-| 8 | Requirements | 0:30 | | 19 | PFE → product | 0:35 |
-| 9 | Platform | 0:25 | | 20 | Perspectives | 0:35 |
-| 10 | PEAXIS Jobs | 0:50 | | 21 | **Live demo** | 5:00 + 0:10 intro |
-| 11 | PEAXIS Hire | 1:10 | | 22 | Conclusion + Questions | 0:30 |
+| 1 | Cover | 0:20 | | 13 | Logical architecture | 1:00 |
+| 2 | Context | 0:40 | | 14 | Physical architecture | 0:50 |
+| 3 | Recruitment today | 0:45 | | 15 | CV understanding | 0:55 |
+| 4 | Challenges | 0:30 | | 16 | Why it matches | 1:10 |
+| 5 | Landscape | 0:35 | | 17 | Human-controlled AI | 0:25 |
+| 6 | Objective | 0:25 | | 18 | Security & reliability | 0:55 |
+| 7 | Methodology: Scrum | 0:30 | | 19 | Monitoring | 0:40 |
+| 8 | Functional requirements | 0:30 | | 20 | PFE → product | 0:35 |
+| 9 | Non-functional requirements | 0:30 | | 21 | Perspectives | 0:35 |
+| 10 | Platform | 0:25 | | 22 | LIVE DEMO | 5:00 |
+| 11 | PEAXIS Jobs | 0:50 | | 23 | Conclusion + Questions | 0:30 |
+| 12 | PEAXIS Hire | 1:10 | |  |  |  |
 
-Talk total ≈ 15:00. **If you run long, cut in this order:** slide 8 (say one sentence), slide 9, slide 7, slide 15 (merge into 14).
+Talk total ≈ 15:40 (the live demo is separate); trim as below to land on 15:00. **If you run long, cut in this order:** the platform slide (one sentence), methodology (two sentences), human-controlled AI (merge into 'Why it matches'), monitoring.
 
 ---
 
@@ -51,77 +52,81 @@ Job platforms optimize reach. Established ATS optimize process. AI tools optimiz
 *Reveals:* (1) four objectives.
 How can AI make recruitment more efficient without turning hiring into a black box? Centralize the workflow, understand candidate evidence, assist with AI, keep humans in control. *→ How I worked.*
 
-## 7. Method & quality (0:30)
-**Message:** Built like a product from day one.
-*Reveals:* (1) six quality requirements.
-Plan, build, test, review, improve, with a backlog, sprints and continuous validation. And six quality requirements from the start: security, reliability, performance, scalability, explainability, maintainability. They come back later with real answers. *→ What users need.*
+## 7. Methodology: Scrum (0:30)
+**Message:** Scrum adapted to a solo project: backlog, sprints, increments, review.
+*Reveals:* (1) the loop and practices; (2) takeaway.
+I used Scrum adapted to one person: a product backlog of epics, sprints that plan, build and test, a deployable increment each time, then review and retrospective, with feedback feeding the backlog. Epics and review checklists live in the repository and every change passes automated checks. *(Don't quote a sprint length unless you can defend it.)* *→ What the product must do.*
 
-## 8. Requirements (0:30)
+## 8. Functional requirements (0:30)
 **Message:** Needs grouped by who has them.
-*Reveals:* candidate → recruiter → platform.
-Candidates discover, apply, follow. Recruiters create jobs, run the pipeline, review evidence, interview, use AI help. The platform provides organizations, roles, billing, files, notifications. *→ The solution.*
+*Reveals:* click 1/2/3 highlights candidate / recruiter / platform and shows a one-line description at the bottom; read it aloud.
+Candidates discover, apply, follow. Recruiters create jobs, run the pipeline, review evidence, interview, use AI help. The platform provides organizations, roles, billing, files, notifications. *→ And how well it must do it.*
 
-## 9. Platform (0:25)
+## 9. Non-functional requirements (0:30)
+**Message:** Six qualities, each with a concrete answer.
+*Reveals:* six clicks, one per quality, each with a description bar. Walk them in order: security (isolation per organization), reliability (no data loss), performance (slow AI in the background), scalability (separate services), explainability (every score traced to evidence), maintainability (typed, tested, documented). *→ Now the solution.*
+
+## 10. Platform (0:25)
 **Message:** Two experiences, one platform.
 *Reveals:* (1) shared platform strip.
 PEAXIS Jobs for candidates, PEAXIS Hire for hiring teams, on shared identity, organizations, permissions, files, billing and AI. Don't list services. *→ Candidate first.*
 
-## 10. PEAXIS Jobs (0:50)
+## 11. PEAXIS Jobs (0:50)
 **Message:** Discover, apply with a CV, always know where you stand.
 *Reveals:* (1) job details; (2) apply; (3) track.
 *Start:* searching and filtering jobs. *(1)* Clear requirements. *(2)* Apply with the CV, profile prefilled. *(3)* Track each stage. Real interface patterns, fictitious data. *→ The recruiter side.*
 
-## 11. PEAXIS Hire (1:10)
+## 12. PEAXIS Hire (1:10)
 **Message:** Pipeline, evidence and next action in one workspace.
 *Reveals:* (1) candidate highlighted; (2) drawer with evidence; (3) interview scheduled, candidate moves.
 *Start:* a Kanban from Applied to Offer. *(1)* I open Amina. *(2)* Each requirement is linked to evidence from her CV. Kubernetes is "needs verification", not rejection. *(3)* The recruiter schedules the interview and she moves forward. *→ How does it work underneath?*
 
-## 12. Architecture (1:00)
+## 13. Logical architecture (1:00)
 **Message:** The API is the single authority; AI only does inference.
 *Reveals:* (1) web; (2) API; (3) database, worker, storage; (4) AI + model.
 *(1)* Users use the Next.js platform. *(2)* It talks to the NestJS API: rules, security, orchestration. *(3)* The API owns PostgreSQL and hands long work to a worker through Redis and BullMQ; files are private. *(4)* The worker calls the FastAPI AI service, which calls Gemini. The AI never touches business data. *→ Let me zoom into the AI.*
 
-## 13. CV understanding (0:55)
-**Message:** AI structures the CV; PEAXIS checks it against the source.
-*Reveals:* (1) extraction; (2) structured profile; (3) validated.
-Extract the content, let AI structure role, experience, skills, education, then check each piece against the source text. PEAXIS does not blindly trust generated output. *(If asked: scanned PDFs have an optional OCR path, off by default.)* *→ Then the job match.*
-
-## 14. Why it matches (1:10)
-**Message:** Every result can be traced back to evidence.
-*Reveals:* (1) requirements; (2) evidence; (3) assessment; (4) alignment.
-Job requirements, CV evidence for each, a status per requirement, then the alignment: 85% in this illustrative example. AI helps retrieve and classify the evidence; the platform applies the final rules. *(Backup B4: weights and caps.)* *→ So who decides?*
-
-## 15. Human-controlled AI (0:25)
-**Message:** AI supports recruiter judgment; it does not replace it.
-*Reveals:* (1) humans; (2) statement.
-AI parses, retrieves, summarizes, recommends, explains, drafts. Humans control requirements, stage changes, interviews, rejection, offers and the decision. *→ Is it only a prototype? No.*
-
-## 16. Production (0:50)
+## 14. Physical architecture (0:50)
 **Message:** Public application and data layer are separated.
 *Reveals:* (1) private network + data server; (2) storage + backups; (3) takeaway.
 Cloudflare in front, an application server with web, API, worker and AI, and a separate data server with PostgreSQL and Redis reachable only over a private network. Files in private object storage, database backed up offsite. *→ And beyond the diagram?*
 
-## 17. Security & reliability (0:55)
+## 15. CV understanding (0:55)
+**Message:** AI structures the CV; PEAXIS checks it against the source.
+*Reveals:* (1) extraction; (2) structured profile; (3) validated.
+Extract the content, let AI structure role, experience, skills, education, then check each piece against the source text. PEAXIS does not blindly trust generated output. *(If asked: scanned PDFs have an optional OCR path, off by default.)* *→ Then the job match.*
+
+## 16. Why it matches (1:10)
+**Message:** Every result can be traced back to evidence.
+*Reveals:* (1) requirements; (2) evidence; (3) assessment; (4) alignment.
+Job requirements, CV evidence for each, a status per requirement, then the alignment: 85% in this illustrative example. AI helps retrieve and classify the evidence; the platform applies the final rules. *(Backup B4: weights and caps.)* *→ So who decides?*
+
+## 17. Human-controlled AI (0:25)
+**Message:** AI supports recruiter judgment; it does not replace it.
+*Reveals:* (1) humans; (2) statement.
+AI parses, retrieves, summarizes, recommends, explains, drafts. Humans control requirements, stage changes, interviews, rejection, offers and the decision. *→ Is it only a prototype? No.*
+
+## 18. Security & reliability (0:55)
 **Message:** Designed to be secure, recoverable and able to grow.
 *Reveals:* security → reliability → scalability → operations → takeaway.
 Security: organization isolation, secure access, private data, protected infrastructure. Reliability: durable background work, events saved with the business change, an AI outage never loses an application. Scalability: separated services, long AI work off the request path, workers that grow independently. No Kubernetes at today's scale, clear boundaries for growth. *→ And we can watch it run.*
 
-## 18. Monitoring (0:40)
+## 19. Monitoring (0:40)
 **Message:** We can see what the system is doing.
 *Reveals:* (1) Grafana Alloy; (2) Grafana Cloud; (3) what we watch; (4) honesty line.
 Each server runs a Grafana Alloy agent that ships metrics and logs to Grafana Cloud: Prometheus, Loki, dashboards, alerts, synthetic checks. We watch servers, API and AI, the queue and worker heartbeat, database, Redis and backups. It is configured as code and bounded so it cannot block the app. Honest next step: verify alert delivery at each release. *→ So where does PEAXIS stand?*
 
-## 19. PFE → product (0:35)
+## 20. PFE → product (0:35)
 **Message:** Not built only for the defense.
 *Reveals:* (1) achievements; (2) closing line.
 Final year project, engineered product, deployed in production, first client companies starting to test, feedback next. No traction numbers claimed: validation has just begun. *→ What comes next?*
 
-## 20. Perspectives (0:35)
+## 21. Perspectives (0:35)
 **Message:** Deepen Hire, then PEAXIS HR.
 *Reveals:* (1) PEAXIS HR (future); (2) closing line.
 Direction one: Hire becomes a complete ATS: collaboration and scorecards, a communication hub, a source-linked copilot, enterprise readiness. Direction two, clearly future: PEAXIS HR, beyond hiring. Possible areas, not commitments. *→ Let me show it live.*
 
-## 21. LIVE DEMO (5:00)
+## 22. LIVE DEMO (5:00)
 *Reveal:* (1) recruiter lane. Intro 10 s: "A candidate applies; a recruiter understands the evidence."
 **Script (5 min). Demo account + fictitious CV only.**
 1. **0:00 Candidate:** jobs page, search, open the target job (30 s).
@@ -133,7 +138,7 @@ Direction one: Hire becomes a complete ATS: collaboration and scorecards, a comm
 7. **STOP** at ~5:00. No billing, settings, admin or analytics unless asked.
 **Fallbacks:** if AI scoring is slow, say "it runs in the background, by design" and use a pre-applied candidate. Pre-flight: confirm AI processing is enabled in the demo environment.
 
-## 22. Conclusion + Questions (0:30)
+## 23. Conclusion + Questions (0:30)
 Three ideas: one platform; explainable AI that assists rather than replaces; production engineering. "What started as a final year project has evolved into a production SaaS platform designed to solve a real recruitment problem." Then go to the Questions slide.
 
 ---
