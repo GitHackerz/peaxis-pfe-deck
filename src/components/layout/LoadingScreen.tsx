@@ -9,13 +9,13 @@ export default function LoadingScreen({ onComplete }: Props) {
   const [phase, setPhase] = useState<'logo' | 'done'>('logo')
 
   useEffect(() => {
-    const t = setTimeout(() => setPhase('done'), 1800)
+    const t = setTimeout(() => setPhase("done"), 700)
     return () => clearTimeout(t)
   }, [])
 
   useEffect(() => {
     if (phase === 'done') {
-      const t = setTimeout(onComplete, 700)
+      const t = setTimeout(onComplete, 350)
       return () => clearTimeout(t)
     }
   }, [phase, onComplete])

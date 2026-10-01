@@ -1,4 +1,3 @@
-import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
@@ -18,11 +17,17 @@ const config: Config = {
         'px-navy':     '#001027',
         'px-navy-lt':  '#0E2A47',
         'px-muted':    '#6B7280',
+        // PEAXIS product UI (apps/web tokens)
+        'a-bg': '#F8FAFC', 'a-fg': '#0A1120', 'a-primary': '#029090', 'a-accent': '#E8FBFA',
+        'a-muted': '#F1F5F9', 'a-mfg': '#64748B', 'a-border': '#E2E8F0',
+        'a-ok': '#047857', 'a-ok-s': '#ECFDF5', 'a-warn': '#B45309', 'a-warn-s': '#FFFBEB',
+        'a-info': '#0369A1', 'a-info-s': '#F0F9FF', 'a-bad': '#DC2626', 'a-bad-s': '#FEF2F2',
         'px-border':   'rgba(0,0,0,0.08)',
         'px-border-md':'rgba(0,0,0,0.12)',
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        app: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       backgroundImage: {
