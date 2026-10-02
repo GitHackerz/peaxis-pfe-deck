@@ -1,5 +1,5 @@
 import type { SlideDef } from './registry'
-import { DomainDetail, MatchDetail, MonitoringDetail, ProdDetail, QueueDetail, SecurityDetail, TestingDetail } from './Appendix'
+import { DomainDetail, MatchDetail, MonitoringDetail, SecurityDetail, TestingDetail } from './Appendix'
 import Challenges from './Challenges'
 import Conclusion from './Conclusion'
 import Context from './Context'
@@ -17,10 +17,12 @@ import LogicalArch from './LogicalArch'
 import Methodology from './Methodology'
 import Monitoring from './Monitoring'
 import NonFunctional from './NonFunctional'
+import Delivery from './Delivery'
 import Perspectives from './Perspectives'
 import PfeToProduct from './PfeToProduct'
 import Pillars from './Pillars'
 import PlatformOverview from './PlatformOverview'
+import Processing from './Processing'
 import ProductionArch from './ProductionArch'
 import Questions from './Questions'
 import WhyMatch from './WhyMatch'
@@ -41,21 +43,21 @@ export const SLIDE_REGISTRY: SlideDef[] = [
   { id: 'hire', label: 'PEAXIS Hire', section: 'Solution', steps: 3, component: HireExperience },
   { id: 'architecture', label: 'Logical architecture', section: 'Architecture', steps: 4, component: LogicalArch },
   { id: 'production', label: 'Physical architecture', section: 'Architecture', steps: 3, component: ProductionArch },
+  { id: 'processing', label: 'How an application is processed', section: 'Architecture', steps: 3, component: Processing },
   { id: 'cv', label: 'CV understanding', section: 'AI', steps: 3, component: CvUnderstanding },
   { id: 'match', label: 'Why it matches', section: 'AI', steps: 4, component: WhyMatch },
   { id: 'human-ai', label: 'Human-controlled AI', section: 'AI', steps: 2, component: HumanAI },
   { id: 'pillars', label: 'Security & reliability', section: 'Production', steps: 4, component: Pillars },
+  { id: 'delivery', label: 'Testing & delivery', section: 'Production', steps: 2, component: Delivery },
   { id: 'monitoring', label: 'Monitoring', section: 'Production', steps: 4, component: Monitoring },
   { id: 'pfe-to-product', label: 'PFE to product', section: 'Production', steps: 2, component: PfeToProduct },
   { id: 'perspectives', label: 'Perspectives', section: 'Perspectives', steps: 2, component: Perspectives },
   { id: 'demo', label: 'LIVE DEMO', section: 'Demo', steps: 1, component: Demo },
   { id: 'conclusion', label: 'Conclusion', section: 'Conclusion', steps: 3, component: Conclusion },
   { id: 'questions', label: 'Questions', section: 'Questions', steps: 0, component: Questions },
-  { id: 'a-prod', label: 'Backup: infrastructure', section: 'Backup', steps: 0, component: ProdDetail, appendix: true },
   { id: 'a-monitoring', label: 'Backup: monitoring', section: 'Backup', steps: 0, component: MonitoringDetail, appendix: true },
   { id: 'a-security', label: 'Backup: security', section: 'Backup', steps: 0, component: SecurityDetail, appendix: true },
   { id: 'a-match', label: 'Backup: assessment', section: 'Backup', steps: 0, component: MatchDetail, appendix: true },
-  { id: 'a-queue', label: 'Backup: async work', section: 'Backup', steps: 0, component: QueueDetail, appendix: true },
   { id: 'a-domain', label: 'Backup: data model', section: 'Backup', steps: 0, component: DomainDetail, appendix: true },
   { id: 'a-testing', label: 'Backup: testing', section: 'Backup', steps: 0, component: TestingDetail, appendix: true },
 ]

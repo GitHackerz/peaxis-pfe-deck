@@ -10,7 +10,7 @@ const float = (d: number) => ({ animate: { y: [0, -9, 0] }, transition: { durati
 export default function Cover() {
   return (
     <div className="slide-root">
-      <div className="pointer-events-none absolute -right-40 top-10 h-[760px] w-[760px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(0,184,179,0.16) 0%, transparent 65%)' }} />
+      <div className="pointer-events-none absolute right-0 top-10 h-[760px] w-[560px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(0,184,179,0.16) 0%, transparent 65%)' }} />
       <motion.div variants={stagger} initial="hidden" animate="visible" className="relative z-10 flex h-full w-[560px] flex-col justify-center gap-4 pl-[80px] pt-6">
         <motion.div variants={fadeUp} className="flex items-center gap-3">
           <Badge variant="teal" size="md">ESPRIT · 2026</Badge>
@@ -32,10 +32,13 @@ export default function Cover() {
 
       <motion.div
         initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, ease: EASE, delay: 0.3 }}
-        className="absolute right-[24px] top-[160px] h-[400px] w-[600px]" style={{ perspective: 1400 }}
+        className="absolute right-[24px] top-[160px] h-[400px] w-[600px]"
       >
-        <div className="absolute left-0 top-6 origin-top-left" style={{ width: 1000, height: 560, transform: 'rotateY(-9deg) rotateX(3deg) scale(0.58)' }}>
-          <HireBoard step={2} className="h-full w-full" />
+        {/* Clip wrapper: the unscaled 1000px board box must not widen the layout (it shrank the exported PDF). */}
+        <div className="absolute inset-0 overflow-hidden" style={{ perspective: 1400 }}>
+          <div className="absolute left-0 top-6" style={{ width: 1000, height: 560, zoom: 0.58, transform: 'rotateY(-9deg) rotateX(3deg)' }}>
+            <HireBoard step={2} className="h-full w-full" />
+          </div>
         </div>
         <motion.div {...float(0)} className="absolute -left-10 bottom-4 flex items-center gap-3 rounded-2xl bg-white p-3 pr-5 shadow-[0_18px_40px_-12px_rgba(0,16,39,0.35)] ring-1 ring-black/5">
           <ScoreRing value={85} size={64} stroke={7} />

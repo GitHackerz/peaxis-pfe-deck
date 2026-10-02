@@ -72,6 +72,10 @@ body.export-mode *::after {
   width: 1280px;
   height: 720px;
   overflow: hidden;
+  /* Off-canvas product UI (drawers, glows) must not widen the print layout and shrink the PDF. */
+  overflow: clip;
+  contain: paint;
+  clip-path: inset(0);
   page-break-after: always;
   break-after: page;
 }
@@ -80,4 +84,11 @@ body.export-mode *::after {
 
 @media (prefers-reduced-motion: reduce) {
   .stage * { animation: none !important; }
+}
+
+/* Gradient-clipped text prints with a hairline box in PDF: use a solid brand teal there. */
+body.export-mode .gradient-text-teal {
+  background: none;
+  -webkit-text-fill-color: #029090;
+  color: #029090;
 }

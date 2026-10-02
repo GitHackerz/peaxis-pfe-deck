@@ -31,7 +31,7 @@ export default function LogicalArch({ step }: SlideProps) {
     <Slide section="Architecture" title={<><span className="gradient-text-teal">Logical</span> architecture</>}>
       <div className="relative mx-auto h-[430px] w-[1120px]">
         {/* Client layer */}
-        <Reveal show className="absolute left-0 top-3 h-[372px] w-[190px]">
+        <Reveal show className="absolute left-0 top-3 h-[372px] w-[185px]">
           <Layer tag="Client layer" tone="#6B7280" className="h-full">
             <div className="mt-3 flex h-full flex-col justify-around pb-4">
               <Box icon={<Users size={22} />} title="Candidates" sub="PEAXIS Jobs" />
@@ -41,7 +41,7 @@ export default function LogicalArch({ step }: SlideProps) {
           </Layer>
         </Reveal>
         {/* Application layer */}
-        <Reveal show={step >= 1} className="absolute left-[260px] top-3 h-[210px] w-[580px]">
+        <Reveal show={step >= 1} className="absolute left-[270px] top-3 h-[200px] w-[560px]">
           <Layer tag="Application layer" tone="#E5484D" className="h-full">
             <div className="mt-2 flex flex-col gap-3">
               <div className="grid grid-cols-2 gap-3"><Box icon={<Layers size={22} />} title="Web platform" sub="Next.js" /><Box dark icon={<Cpu size={22} />} title="API" sub="NestJS · rules & security" /></div>
@@ -51,7 +51,7 @@ export default function LogicalArch({ step }: SlideProps) {
           </Layer>
         </Reveal>
         {/* AI layer */}
-        <Reveal show={step >= 3} className="absolute left-[260px] top-[243px] h-[150px] w-[580px]">
+        <Reveal show={step >= 3} className="absolute left-[270px] top-[248px] h-[142px] w-[560px]">
           <Layer tag="AI layer" tone="#029090" className="h-full">
             <div className="mt-2 grid grid-cols-[1fr_170px] gap-3">
               <div className="flex flex-col gap-2.5"><Box icon={<Bot size={22} />} title="AI service" sub="FastAPI · inference only" /><Chips items={['CV parsing', 'Evidence', 'Embeddings', 'Drafts']} /></div>
@@ -60,7 +60,7 @@ export default function LogicalArch({ step }: SlideProps) {
           </Layer>
         </Reveal>
         {/* Data layer */}
-        <Reveal show={step >= 2} className="absolute left-[910px] top-3 h-[372px] w-[210px]">
+        <Reveal show={step >= 2} className="absolute left-[930px] top-3 h-[372px] w-[190px]">
           <Layer tag="Data layer" tone="#3B6FD4" className="h-full">
             <div className="mt-3 flex h-full flex-col justify-around pb-4">
               <Box icon={<Database size={22} />} title="PostgreSQL" sub="+ pgvector" />
@@ -73,14 +73,14 @@ export default function LogicalArch({ step }: SlideProps) {
         <svg className="absolute inset-0 pointer-events-none" width="1120" height="430" fill="none">
           <defs><marker id="lh" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto"><path d="M2 2L12 7L2 12" stroke="#4B5563" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" /></marker></defs>
           <g stroke="#4B5563" strokeWidth="2.5" markerEnd="url(#lh)">
-            <line x1="190" y1="110" x2="260" y2="110" style={{ opacity: step >= 1 ? 1 : 0, transition: 'opacity .4s' }} />
-            <line x1="840" y1="110" x2="910" y2="110" style={{ opacity: step >= 2 ? 1 : 0, transition: 'opacity .4s' }} />
-            <line x1="550" y1="213" x2="550" y2="243" style={{ opacity: step >= 3 ? 1 : 0, transition: 'opacity .4s' }} />
+            <line x1="185" y1="110" x2="270" y2="110" style={{ opacity: step >= 1 ? 1 : 0, transition: 'opacity .4s' }} />
+            <line x1="830" y1="110" x2="930" y2="110" style={{ opacity: step >= 2 ? 1 : 0, transition: 'opacity .4s' }} />
+            <line x1="550" y1="203" x2="550" y2="248" style={{ opacity: step >= 3 ? 1 : 0, transition: 'opacity .4s' }} />
           </g>
         </svg>
-        <Link className="left-[190px] top-[50px] w-[70px]">HTTPS REST JWT</Link>
-        <Link className="left-[840px] top-[52px] w-[70px]">SQL Prisma</Link>
-        <Reveal show={step >= 3} className="absolute left-[570px] top-[217px] text-[13px] font-semibold text-px-navy">Internal call · service secret</Reveal>
+        <Link className="left-[185px] top-[70px] w-[85px]">HTTPS<br />REST · JWT</Link>
+        <Link className="left-[830px] top-[70px] w-[100px]">SQL<br />Prisma</Link>
+        <Reveal show={step >= 3} className="absolute left-[566px] top-[217px] rounded bg-[#F8FAFC] px-2 text-[13px] font-semibold text-px-navy">Internal call · service secret</Reveal>
         <Reveal show={step >= 4} className="absolute bottom-0 left-0 right-0 text-center text-[19px] font-semibold text-px-navy">
           The API is the single authority: the AI layer never touches the data layer.
         </Reveal>

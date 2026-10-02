@@ -37,8 +37,8 @@ export default function ProductionArch({ step }: SlideProps) {
 
         <Reveal show className="absolute left-0 top-[90px] w-[100px]"><Node title="Internet" sub="Users" icon={<Globe size={20} />} className="flex-col text-center !gap-1" /></Reveal>
         <Reveal show className="absolute left-[150px] top-[80px] w-[120px]"><Node title="Cloudflare" sub="DNS · edge TLS" icon={<ShieldCheck size={20} />} className="flex-col text-center !gap-1" /></Reveal>
-        <L x={95} y={92} w={60}>HTTPS</L>
-        <L x={258} y={92} w={80}>HTTPS (origin)</L>
+        <L x={100} y={96} w={50}>HTTPS</L>
+        <L x={270} y={96} w={60}>HTTPS</L>
 
         {/* Application server */}
         <Reveal show className="absolute left-[330px] top-[20px] h-[250px] w-[350px]">
@@ -63,7 +63,7 @@ export default function ProductionArch({ step }: SlideProps) {
             <p className="mt-3 text-[13px] text-px-muted">Reachable only over the private network; never exposed to the Internet</p>
           </div>
         </Reveal>
-        <L x={680} y={62} w={110} show={step >= 1}>WireGuard<br />private network</L>
+        <L x={680} y={74} w={110} show={step >= 1}>WireGuard<br />private network</L>
 
         {/* Managed services */}
         <Reveal show={step >= 2} className="absolute left-[330px] top-[330px] w-[190px]"><Node title="Object storage" sub="Private · S3 API · files" icon={<HardDrive size={22} />} /></Reveal>

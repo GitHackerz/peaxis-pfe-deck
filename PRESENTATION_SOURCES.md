@@ -43,3 +43,12 @@
 
 ## Not claimed (no evidence in the repo)
 Client names, number of clients, revenue, testimonials, usage metrics, uptime figures. The statements "deployed in production" and "first client companies beginning to test" come from your brief.
+
+## KPI figures (slide 22, footer "Counted from the PEAXIS repository and deployment evidence")
+| Figure | How it was obtained | Type |
+| --- | --- | --- |
+| 1,400+ automated tests | Count of test cases (`it(`/`test(`/`def test_`) across 314 test files in API, web, admin and AI service (about 1,495 found; rounded down) | Repo |
+| 27 backend modules | `ls apps/api/src/modules` | Repo |
+| 122 data models, 28 migrations | `model` blocks in `apps/api/prisma/schema.prisma`; migration folders | Repo |
+| 7 automated CI jobs | Jobs in `.github/workflows/ci.yml`: changes, quality, observability-config, node-tests, ai, prisma-and-api-e2e, security (browser E2E runs in a separate workflow) | Repo |
+| 68/68 production checks | `docs/audits/evidence/hire-manual-deployment-2026-09-21/deployment-outcome.json` (`independentRuntimeChecks`: passed 68, failed 0) | Repo |

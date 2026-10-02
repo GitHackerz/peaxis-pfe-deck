@@ -14,32 +14,6 @@ function Col({ title, items }: { title: string; items: ReactNode[] }) {
 
 const B = ({ children }: { children: ReactNode }) => <b>{children}</b>
 
-export function ProdDetail() {
-  return (
-    <Slide section="Backup · Infrastructure" title="Production architecture in detail">
-      <div className="grid grid-cols-3 gap-8">
-        <Col title="Edge" items={[
-          <>Cloudflare is the only Internet path to the origin; firewall admits <B>ports 80/443 from Cloudflare ranges only</B>.</>,
-          <>Caddy terminates origin TLS and routes by host: apex and tenant subdomains → Web, admin → Admin, API → NestJS.</>,
-          <>Web, Admin and API bind to loopback; the worker has no port; the AI service is reachable only on the Docker network.</>,
-        ]} />
-        <Col title="Application server" items={[
-          <>Containers: <B>web, admin, api, api-worker, ai-api, ClamAV</B> (malware scan).</>,
-          <>API and worker share one image with different commands.</>,
-          <>Database migration is an explicit deployment stage, never API start-up.</>,
-          <>Releases use immutable image digests; a manual rollback path exists.</>,
-        ]} />
-        <Col title="Data server and storage" items={[
-          <>PostgreSQL (+ pgvector) and Redis are native services bound to loopback and a <B>WireGuard</B> address.</>,
-          <>The firewall admits them only from the application server over WireGuard.</>,
-          <>Files: private S3-compatible object storage, never public.</>,
-          <>Backups: continuous WAL archiving plus nightly encrypted dumps to offsite object storage.</>,
-        ]} />
-      </div>
-    </Slide>
-  )
-}
-
 export function MonitoringDetail() {
   return (
     <Slide section="Backup · Operations" title="Monitoring stack in detail">
@@ -113,30 +87,6 @@ export function MatchDetail() {
           <>Every evaluation stores its citation, constraint check and confidence.</>,
           <>Recruiters can review and waive requirements; the assessment is advisory and never changes a stage.</>,
           <>Embeddings: gemini-embedding-001, 768 dimensions, pgvector.</>,
-        ]} />
-      </div>
-    </Slide>
-  )
-}
-
-export function QueueDetail() {
-  return (
-    <Slide section="Backup · AI & queues" title="Asynchronous processing and failure behavior">
-      <div className="grid grid-cols-3 gap-8">
-        <Col title="Write path" items={[
-          <>The business transaction saves the change, its history, a versioned <B>Platform Event</B> and the AI work intent together.</>,
-          <>Applying never fails because Redis or the AI provider is down.</>,
-        ]} />
-        <Col title="Worker" items={[
-          <>Durable work rows in PostgreSQL; BullMQ <B>ai-tasks</B> queue on Redis delivers them.</>,
-          <>A dedicated worker runs CV parsing, assessment, evidence indexing and generated content.</>,
-          <>Scheduled reconciliation redelivers pending or stale work; retries are bounded.</>,
-        ]} />
-        <Col title="Recovery" items={[
-          <>Redis loss: workers reconnect and work is rebuilt from the durable rows.</>,
-          <>Provider outage: applications and jobs keep working; AI artifacts show FAILED rather than silently missing.</>,
-          <>Notifications are idempotent: replayed events never duplicate.</>,
-          <>Restore runbook replays privacy tombstones before traffic resumes.</>,
         ]} />
       </div>
     </Slide>
