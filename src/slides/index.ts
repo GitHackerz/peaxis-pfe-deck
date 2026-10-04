@@ -19,6 +19,7 @@ import Monitoring from './Monitoring'
 import NonFunctional from './NonFunctional'
 import Delivery from './Delivery'
 import Perspectives from './Perspectives'
+import Plan from './Plan'
 import PfeToProduct from './PfeToProduct'
 import Pillars from './Pillars'
 import PlatformOverview from './PlatformOverview'
@@ -30,6 +31,7 @@ import WhyMatch from './WhyMatch'
 /** Single source of truth for slide order, labels and reveal-step counts. */
 export const SLIDE_REGISTRY: SlideDef[] = [
   { id: 'cover', label: 'Cover', section: 'Introduction', steps: 0, component: Cover, hideBrand: true },
+  { id: 'plan', label: 'Presentation plan', section: 'Introduction', steps: 0, component: Plan },
   { id: 'context', label: 'Context', section: 'Context', steps: 2, component: Context },
   { id: 'digital-era', label: 'Recruitment today', section: 'Problem', steps: 2, component: DigitalEra },
   { id: 'challenges', label: 'Challenges', section: 'Problem', steps: 3, component: Challenges },
