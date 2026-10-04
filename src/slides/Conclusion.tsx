@@ -23,7 +23,8 @@ export default function Conclusion({ step }: SlideProps) {
         ))}
       </div>
       <Reveal show={step >= 3} className="mt-12 max-w-[980px]">
-        <p className="text-[28px] font-semibold leading-snug text-px-navy">What started as a Final Year Project has evolved into a production SaaS platform designed to solve a real recruitment problem.</p>
+        <p className="text-[30px] font-extrabold leading-snug text-px-navy">Not just 85%: the evidence behind it. <span className="gradient-text-teal">Show the evidence. Let the human decide.</span></p>
+        <p className="mt-3 text-[19px] text-px-muted">What started as a Final Year Project is now a production SaaS platform built to solve a real recruitment problem.</p>
       </Reveal>
     </div>
   )

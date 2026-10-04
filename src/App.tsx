@@ -4,6 +4,7 @@ import GridBackground from './components/background/GridBackground'
 import LightAurora from './components/background/LightAurora'
 import LoadingScreen from './components/layout/LoadingScreen'
 import Navigation from './components/layout/Navigation'
+import PresenterTimer from './components/layout/PresenterTimer'
 import ProgressBar from './components/layout/ProgressBar'
 import ExportView from './ExportView'
 import { usePresentation } from './hooks/usePresentation'
@@ -84,6 +85,7 @@ function PresentationApp() {
 
       {!isLoading && (
         <div className="fixed inset-0 overflow-hidden" onClick={handleClick}>
+          <PresenterTimer />
           <ProgressBar slideIndex={state.slideIndex} totalSlides={state.totalSlides} />
           <div className="stage" style={{ transform: `translate(-50%, -50%) scale(${scale})` }}>
             <AnimatePresence mode="wait">

@@ -21,8 +21,8 @@ export default function HumanAI({ step }: SlideProps) {
           </Reveal>
         </div>
         <Reveal show={step >= 2} className="flex flex-col gap-3">
-          <p className="text-[34px] font-extrabold leading-tight text-px-navy">AI supports recruiter judgment. It does not replace it.</p>
-          <p className="text-[18px] text-px-muted">Evidence-linked · reviewable · versioned · advisory only: no AI step moves a candidate or makes an offer.</p>
+          <p className="text-[34px] font-extrabold leading-tight text-px-navy">Show the evidence. <span className="gradient-text-teal">Let the human decide.</span></p>
+          <p className="text-[18px] text-px-muted">AI supports recruiter judgment, it does not replace it. Evidence-linked, reviewable, advisory only: no AI step moves a candidate or makes an offer.</p>
         </Reveal>
       </div>
     </Slide>

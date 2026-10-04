@@ -1,8 +1,11 @@
 # PEAXIS Pitch Script
 
 **The story in one line:** *"Why 85%?" Every AI score needs evidence, and PEAXIS shows it.*
-**Thread to keep all the way:** Amina (the candidate) → the recruiter → "Why 85%?" → back to it in the conclusion.
-**Timing:** about 14 min 40 s of slides + 5 min live demo.
+**Thread to keep all the way:** Amine (the candidate) → the recruiter → "Why 85%?" → back to it in the conclusion.
+**Timing:** about 14 min of slides + 5 min live demo.
+**Keys:** `→` next · `←` back · `T` show a timer (turns yellow after 15:00) · `R` restart it · `B` backup slides · `F` fullscreen.
+
+**Pacing checkpoints** (press `T` on slide 1): slide 7 by 4:00 · slide 13 (Hire) done by 7:30 · slide 18 (Why 85%?) done by 11:30 · demo starts by 14:30. If you are late at a checkpoint, use the "If you run long" list.
 
 ## 1 · Cover (55 s)
 
@@ -14,11 +17,11 @@ You're hiring a backend engineer. Your company uses a modern ATS, powered by AI,
 
 The tool shows you a candidate: **85% match**.
 
-Would you invite her to an interview?
+Would you invite him to an interview?
 
 My first question would be: **"Why 85%?"**
 
-Which skills does her CV really support? What still needs checking?
+Which skills does his CV really support? What still needs checking?
 
 That question is the heart of **PEAXIS**, the AI recruitment platform I built: **show the evidence, and let the human decide**.
 
@@ -144,21 +147,21 @@ PEAXIS has **two experiences on one platform**.
 
 Behind both, they share the same services: identity, organizations, permissions, files, billing, and AI.
 
-Let's follow Amina, a fictional candidate, and start with PEAXIS Jobs.
+Let's follow Amine, a fictional candidate, and start with PEAXIS Jobs.
 
 ## 12 · PEAXIS Jobs (45 s)
 
-Amina is looking for a backend engineering job.
+Amine is looking for a backend engineering job.
 
-She searches, opens a position, and reads the requirements.
+He searches, opens a position, and reads the requirements.
 
-Then she **applies with her CV**. The platform reads the CV and fills her profile, so she doesn't retype everything.
+Then he **applies with his CV**. The platform reads the CV and fills his profile, so he doesn't retype everything.
 
-After that, she can **follow her application, stage by stage**.
+After that, he can **follow his application, stage by stage**.
 
 These screens use fictional data, to show the journey.
 
-For Amina it's simple: she finds the job, applies, and always knows where she stands.
+For Amine it's simple: he finds the job, applies, and always knows where he stands.
 
 Now let's see the same application from the recruiter's side.
 
@@ -166,15 +169,15 @@ Now let's see the same application from the recruiter's side.
 
 The recruiter sees candidates in a pipeline: applied, screening, interview, and offer.
 
-Let's open Amina's profile.
+Let's open Amine's profile.
 
 Here is the **85%** from my opening question. And now we can look behind it.
 
-Each requirement is linked to **evidence from her CV**.
+Each requirement is linked to **evidence from his CV**.
 
 Look at Kubernetes. It says **"needs verification"**. That's not a rejection. It's something to check during the interview.
 
-The recruiter reviews the evidence, schedules the interview, and moves Amina forward.
+The recruiter reviews the evidence, schedules the interview, and moves Amine forward.
 
 This is the key idea: **AI supports the review, and the recruiter takes the action**.
 
@@ -206,7 +209,7 @@ Files stay in private storage, and the database backups are stored offsite.
 
 The main point: **the database is never exposed to the Internet**.
 
-Now let's follow what happens when Amina clicks "Apply".
+Now let's follow what happens when Amine clicks "Apply".
 
 ## 16 · What happens when a candidate applies (45 s)
 
@@ -220,7 +223,7 @@ But what if the AI service is down?
 
 *(small pause)*
 
-**Amina's application is still saved.** The work is retried later.
+**Amine's application is still saved.** The work is retried later.
 
 Applying never depends on the AI finishing.
 
@@ -238,7 +241,7 @@ Because a nicely written AI answer is not enough. Every piece of information mus
 
 Now we can compare this profile with the job.
 
-## 18 · Why does this candidate match? (55 s)
+## 18 · Why 85%? (55 s)
 
 And now we can answer the first question: **"Why 85%?"**
 
@@ -248,7 +251,7 @@ AI helps **find and classify the evidence**. Then the platform applies **clear r
 
 Must-have requirements weigh more. And a missing must-have caps the score.
 
-The 85% here is an illustration. It's not a probability that Amina will succeed in the job.
+The 85% here is an illustration. It's not a probability that Amine will succeed in the job.
 
 What matters is that the recruiter can see what supports the result, and what still needs checking.
 
@@ -274,7 +277,7 @@ As the load grows, the services are separated, so I can scale the workers alone.
 
 At this scale, I didn't need Kubernetes. I chose **clear service boundaries**, and an infrastructure I can operate.
 
-These choices protect the same journey we just followed with Amina.
+These choices protect the same journey we just followed with Amine.
 
 I also needed a safe way to ship changes.
 
@@ -324,7 +327,7 @@ Now, enough slides. Let me show it live.
 
 Before you start: use the fictional demo account, and prepare one candidate that is already processed.
 
-We followed Amina on the slides. Now I'll show the same journey live: **apply as a candidate, then review the evidence as a recruiter**.
+We followed Amine on the slides. Now I'll show the same journey live: **apply as a candidate, then review the evidence as a recruiter**.
 
 The demo profile may have a different name or score. Point to what is really on the screen.
 
@@ -386,7 +389,7 @@ Remember **five parts**, not 27 speeches:
 |---|---|---|---|
 | The reason | 1–7 | Why did I build this? | "Why 85%?" |
 | The plan | 8–10 | How did I organize the work? | Method and requirements |
-| The journey | 11–13 | What do users do? | Amina applies, recruiter reviews |
+| The journey | 11–13 | What do users do? | Amine applies, recruiter reviews |
 | The engineering | 14–22 | How does it work and keep running? | Save, explain, protect |
 | The result | 23–27 | What exists today? | Product, demo, evidence |
 

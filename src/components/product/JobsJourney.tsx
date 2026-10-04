@@ -77,7 +77,7 @@ function Apply() {
         <p className="mb-4 text-[14px] text-a-mfg">Northwind · Tunis</p>
         <div className="flex items-center gap-3 rounded-xl border border-a-border p-4">
           <FileText size={26} className="text-a-primary" />
-          <div className="flex-1"><p className="text-[16px] font-semibold">cv_amina_benali.pdf</p><p className="text-[13px] text-a-mfg">Scanned and parsed · profile prefilled</p></div>
+          <div className="flex-1"><p className="text-[16px] font-semibold">cv_amine_benali.pdf</p><p className="text-[13px] text-a-mfg">Scanned and parsed · profile prefilled</p></div>
           <Chip tone="ok"><Check size={14} strokeWidth={3} />Ready</Chip>
         </div>
         <div className="mt-3 flex items-center gap-3 rounded-xl border border-dashed border-a-border p-3 text-[14px] text-a-mfg"><Upload size={16} />Replace CV</div>

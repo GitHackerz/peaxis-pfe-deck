@@ -8,7 +8,7 @@ const mark = (on: boolean) => (on ? 'rounded bg-px-teal/20 px-0.5 underline deco
 export function CvDocument({ scan, evidence }: { scan: boolean; evidence: boolean }) {
   return (
     <div className="font-app relative h-full w-full overflow-hidden rounded-lg bg-white p-5 text-a-fg shadow-[0_20px_50px_-20px_rgba(0,16,39,0.4)] ring-1 ring-black/10">
-      <p className="text-[22px] font-bold leading-tight">AMINA BENALI</p>
+      <p className="text-[22px] font-bold leading-tight">AMINE BENALI</p>
       <p className="text-[15px] text-a-mfg">Backend Engineer · Tunis</p>
       <hr className="my-2 border-a-border" />
       <p className="text-[12px] font-bold uppercase tracking-widest text-a-mfg">Experience</p>

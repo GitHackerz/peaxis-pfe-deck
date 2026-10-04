@@ -10,7 +10,7 @@ export default function WhyMatch({ step }: SlideProps) {
   return (
     <Slide
       section="AI"
-      title={<>Why does this candidate <span className="gradient-text-teal">match?</span></>}
+      title={<>Why <span className="gradient-text-teal">85%</span>?</>}
       source="Illustrative example: not a real candidate"
     >
       <div className="flex h-full flex-col justify-between pb-3">

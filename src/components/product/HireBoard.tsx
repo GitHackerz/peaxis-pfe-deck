@@ -10,7 +10,7 @@ const COLUMNS: { id: string; label: string; cands: Cand[] }[] = [
     { id: 'omar', name: 'Omar Chaabane', headline: 'Backend developer', score: 71 },
   ] },
   { id: 'screening', label: 'Screening', cands: [
-    { id: 'amina', name: 'Amina Benali', headline: 'Backend engineer · 4 yrs', score: 85 },
+    { id: 'amine', name: 'Amine Benali', headline: 'Backend engineer · 4 yrs', score: 85 },
     { id: 'sarah', name: 'Sarah Mansour', headline: 'DevOps engineer', score: 78, reviewed: true },
   ] },
   { id: 'interview', label: 'Interview', cands: [{ id: 'lina', name: 'Lina Gharbi', headline: 'Backend engineer', score: 90, reviewed: true }] },
@@ -47,7 +47,7 @@ export default function HireBoard({ step, className = '' }: { step: number; clas
   const drawerOpen = step === 2
   const cols = COLUMNS.map((col) => ({
     ...col,
-    cands: col.cands.filter((c) => !(moved && c.id === 'amina')).concat(moved && col.id === 'interview' ? [{ ...COLUMNS[1].cands[0], chip: 'Interview · Thu 10:00' }] : []),
+    cands: col.cands.filter((c) => !(moved && c.id === 'amine')).concat(moved && col.id === 'interview' ? [{ ...COLUMNS[1].cands[0], chip: 'Interview · Thu 10:00' }] : []),
   }))
   return (
     <AppWindow url="northwind.peaxis.com/pipeline" className={className}>
@@ -60,7 +60,7 @@ export default function HireBoard({ step, className = '' }: { step: number; clas
           {cols.map((col) => (
             <div key={col.id} className="flex flex-col gap-2.5 rounded-xl bg-a-muted/70 p-2.5">
               <div className="flex items-center justify-between px-1 text-[14px] font-semibold"><span>{col.label}</span><span className="text-a-mfg">{col.cands.length}</span></div>
-              {col.cands.map((c) => <CandidateCard key={c.id} c={c} active={c.id === 'amina' && step >= 1} dim={drawerOpen && c.id !== 'amina'} />)}
+              {col.cands.map((c) => <CandidateCard key={c.id} c={c} active={c.id === 'amine' && step >= 1} dim={drawerOpen && c.id !== 'amine'} />)}
             </div>
           ))}
         </div>
@@ -72,8 +72,8 @@ export default function HireBoard({ step, className = '' }: { step: number; clas
           className="absolute bottom-0 right-0 top-0 flex w-[520px] flex-col border-l border-a-border bg-white shadow-[-12px_0_30px_-12px_rgba(0,16,39,0.25)]"
         >
           <div className="flex items-center gap-3 border-b border-a-border px-4 py-2">
-            <Avatar name="Amina Benali" size={40} />
-            <div className="flex-1"><p className="text-[18px] font-bold leading-tight">Amina Benali</p><p className="text-[13px] text-a-mfg">Backend engineer · 4 years · Tunis</p></div>
+            <Avatar name="Amine Benali" size={40} />
+            <div className="flex-1"><p className="text-[18px] font-bold leading-tight">Amine Benali</p><p className="text-[13px] text-a-mfg">Backend engineer · 4 years · Tunis</p></div>
             <ScoreRing value={85} size={50} stroke={5} />
             <X size={18} className="text-a-mfg" />
           </div>

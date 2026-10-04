@@ -13,13 +13,13 @@ function Layer({ tag, tone, children, className = '' }: { tag: string; tone: str
   )
 }
 const Box = ({ icon, title, sub, dark }: { icon: ReactNode; title: string; sub?: string; dark?: boolean }) => (
-  <div className={`flex items-center gap-2.5 rounded-xl px-3 py-2.5 ${dark ? 'bg-px-navy text-white' : 'bg-white ring-1 ring-black/10'}`}>
+  <div className={`flex items-center gap-2.5 rounded-xl px-3 py-2.5 ${dark ? 'bg-px-teal-lt ring-2 ring-px-teal' : 'bg-white ring-1 ring-black/10'}`}>
     <span className="text-px-teal">{icon}</span>
-    <div><p className="text-[17px] font-extrabold leading-tight">{title}</p>{sub && <p className={`text-[13px] leading-tight ${dark ? 'text-white/70' : 'text-px-muted'}`}>{sub}</p>}</div>
+    <div><p className="text-[17px] font-extrabold leading-tight">{title}</p>{sub && <p className={`text-[13px] leading-tight text-px-muted`}>{sub}</p>}</div>
   </div>
 )
 const Chips = ({ items }: { items: string[] }) => (
-  <div className="flex flex-wrap gap-1.5">{items.map((c) => <span key={c} className="rounded-md bg-px-teal-lt px-2 py-1 text-[14px] font-semibold text-[#0B7F7B]">{c}</span>)}</div>
+  <div className="flex flex-wrap gap-1">{items.map((c) => <span key={c} className="whitespace-nowrap rounded-md bg-px-teal-lt px-2 py-1 text-[13px] font-semibold text-[#0B7F7B]">{c}</span>)}</div>
 )
 const Link = ({ children, className = '' }: { children: ReactNode; className?: string }) => (
   <div className={`absolute flex items-center justify-center text-center text-[13px] font-semibold leading-tight text-px-navy ${className}`}>{children}</div>
@@ -51,11 +51,11 @@ export default function LogicalArch({ step }: SlideProps) {
           </Layer>
         </Reveal>
         {/* AI layer */}
-        <Reveal show={step >= 3} className="absolute left-[270px] top-[248px] h-[142px] w-[560px]">
+        <Reveal show={step >= 3} className="absolute left-[270px] top-[248px] h-[136px] w-[560px]">
           <Layer tag="AI layer" tone="#029090" className="h-full">
-            <div className="mt-2 grid grid-cols-[1fr_170px] gap-3">
+            <div className="mt-2 grid grid-cols-[1fr_150px] gap-3">
               <div className="flex flex-col gap-2.5"><Box icon={<Bot size={22} />} title="AI service" sub="FastAPI · inference only" /><Chips items={['CV parsing', 'Evidence', 'Embeddings', 'Drafts']} /></div>
-              <Box icon={<Cloud size={22} />} title="Gemini" sub="External LLM provider" />
+              <Box icon={<Cloud size={22} />} title="Gemini" sub="LLM provider" />
             </div>
           </Layer>
         </Reveal>

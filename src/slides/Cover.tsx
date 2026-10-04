@@ -42,7 +42,7 @@ export default function Cover() {
         </div>
         <motion.div {...float(0)} className="absolute -left-10 bottom-4 flex items-center gap-3 rounded-2xl bg-white p-3 pr-5 shadow-[0_18px_40px_-12px_rgba(0,16,39,0.35)] ring-1 ring-black/5">
           <ScoreRing value={85} size={64} stroke={7} />
-          <div className="font-app"><p className="text-[15px] font-bold">Alignment</p><p className="text-[12px] text-a-mfg">traced to CV evidence</p></div>
+          <div className="font-app"><p className="text-[15px] font-bold">Why 85%?</p><p className="text-[12px] text-a-mfg">traced to CV evidence</p></div>
         </motion.div>
         <motion.div {...float(1.2)} className="font-app absolute -top-2 right-2 flex items-center gap-2 rounded-xl bg-white px-4 py-3 shadow-[0_18px_40px_-12px_rgba(0,16,39,0.35)] ring-1 ring-black/5">
           <Check size={18} className="text-a-ok" strokeWidth={3} /><span className="text-[15px] font-semibold">NestJS</span><Chip tone="ok">Satisfied</Chip>

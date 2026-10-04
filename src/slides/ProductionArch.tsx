@@ -5,11 +5,11 @@ import Slide from '../components/slide/Slide'
 import type { SlideProps } from './registry'
 
 function Node({ title, sub, tone = 'plain', icon, className = '' }: { title: string; sub?: string; tone?: 'plain' | 'navy' | 'teal'; icon?: ReactNode; className?: string }) {
-  const cls = tone === 'navy' ? 'bg-px-navy text-white' : tone === 'teal' ? 'bg-px-teal-lt ring-1 ring-px-teal/40' : 'bg-white ring-1 ring-black/10'
+  const cls = tone === 'navy' ? 'bg-px-teal-lt ring-2 ring-px-teal' : tone === 'teal' ? 'bg-px-teal-lt ring-1 ring-px-teal/40' : 'bg-white ring-1 ring-black/10'
   return (
     <div className={`flex items-center gap-2.5 rounded-xl px-3 py-2.5 ${cls} ${className}`}>
       {icon && <span className="text-px-teal">{icon}</span>}
-      <div><p className="text-[17px] font-extrabold leading-tight">{title}</p>{sub && <p className={`text-[13px] leading-tight ${tone === 'navy' ? 'text-white/70' : 'text-px-muted'}`}>{sub}</p>}</div>
+      <div><p className="text-[17px] font-extrabold leading-tight">{title}</p>{sub && <p className={`text-[13px] leading-tight text-px-muted`}>{sub}</p>}</div>
     </div>
   )
 }
