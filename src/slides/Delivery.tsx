@@ -42,7 +42,6 @@ export default function Delivery({ step }: SlideProps) {
           <p className="text-[13px] font-bold uppercase tracking-[0.18em] text-px-muted">What the CI jobs check</p>
           <div className="mt-3 flex flex-wrap gap-3">{checks.map((c) => <span key={c} className="rounded-full bg-px-teal-lt px-4 py-2 text-[17px] font-semibold text-[#0B7F7B]">{c}</span>)}</div>
         </motion.div>
-        <motion.p initial={false} animate={step >= 4 ? { opacity: 1 } : { opacity: 0 }} className="absolute bottom-0 left-0 border-l-[4px] border-px-teal pl-4 text-[24px] font-semibold">Nothing reaches production without passing the checks, and every release can be rolled back.</motion.p>
       </div>
     </Slide>
   )

@@ -61,3 +61,9 @@ Client names, number of clients, revenue, testimonials, usage metrics, uptime fi
 | Ashby: all-in-one ATS + CRM + scheduling + analytics with AI | ashbyhq.com | External |
 | Workable: paid plans from $299/month (list), AI agent with credits | workable.com/pricing (October 2026; prices change) | External |
 | PEAXIS free entry plan and local TND billing | `docs/product/overview.md` (`HIRE_FREE`; local TND / manual commercial access) | Repo |
+
+## KPI update (slide 27)
+| Figure | How it was obtained | Type |
+| --- | --- | --- |
+| 7 months of development, 142 commits | `git log` of `peaxis-workspace`: first commit 2026-03-03, 142 commits (October 2026) | Repo |
+| 27 backend modules, 122 data models, 28 migrations, 68/68 production checks | see KPI figures above | Repo |

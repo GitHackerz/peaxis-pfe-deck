@@ -1,6 +1,5 @@
 import { Rocket } from 'lucide-react'
 import { motion } from 'framer-motion'
-import CountUp from '../components/slide/CountUp'
 import Reveal from '../components/slide/Reveal'
 import Slide from '../components/slide/Slide'
 import type { SlideProps } from './registry'
@@ -15,21 +14,14 @@ const timeline: { label: string; state: State }[] = [
   { label: 'Continuous improvement', state: 'next' },
 ]
 
-const kpis = [
-  { to: 1400, suffix: '+', fmt: (n: number) => n.toLocaleString('en-US'), label: 'automated tests', sub: 'API, web, admin and AI service' },
-  { to: 27, suffix: '', fmt: (n: number) => String(n), label: 'backend modules', sub: '122 data models, 28 migrations' },
-  { to: 7, suffix: '', fmt: (n: number) => String(n), label: 'automated CI jobs', sub: 'quality, tests, security scans' },
-  { to: 68, suffix: '/68', fmt: (n: number) => String(n), label: 'production checks passed', sub: 'at the first production deployment' },
-]
 
 export default function PfeToProduct({ step }: SlideProps) {
   return (
     <Slide
       section="Production"
       title={<>From Final Year Project to <span className="gradient-text-teal">real product</span></>}
-      source="Counted from the PEAXIS repository and deployment evidence, October 2026"
     >
-      <div className="flex h-full flex-col justify-between pb-2">
+      <div className="flex h-full flex-col justify-evenly pb-2">
         <Reveal show className="relative flex items-start justify-between pt-2">
           <div className="absolute left-[60px] right-[60px] top-[26px] h-[3px] bg-black/10" />
           <motion.div className="absolute left-[60px] top-[26px] h-[3px] bg-px-teal" initial={{ width: 0 }} animate={{ width: '57%' }} transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }} />
@@ -43,20 +35,8 @@ export default function PfeToProduct({ step }: SlideProps) {
             </div>
           ))}
         </Reveal>
-        <Reveal show={step >= 1} className="grid grid-cols-4 divide-x divide-black/10 border-y border-black/10 py-6">
-          {kpis.map((k) => (
-            <div key={k.label} className="flex flex-col gap-1 px-7 first:pl-0">
-              <p className="text-[52px] font-extrabold leading-none tracking-tight text-px-navy">
-                <span className="gradient-text-teal"><CountUp to={k.to} run={step >= 1} format={k.fmt} /></span>
-                <span className="text-[34px] text-px-navy">{k.suffix}</span>
-              </p>
-              <p className="mt-1 text-[19px] font-bold leading-tight">{k.label}</p>
-              <p className="text-[14px] leading-snug text-px-muted">{k.sub}</p>
-            </div>
-          ))}
-        </Reveal>
-        <Reveal show={step >= 2}>
-          <p className="text-[24px] font-semibold leading-snug text-px-navy">PEAXIS was not built only to pass a school project. It is a SaaS product for real companies, and the first ones are starting to test it.</p>
+        <Reveal show={step >= 1}>
+          <p className="text-[32px] font-bold leading-snug tracking-[-0.02em] text-px-navy">PEAXIS was not built only to pass a school project. It is a SaaS product for real companies, and the first ones are starting to test it.</p>
         </Reveal>
       </div>
     </Slide>

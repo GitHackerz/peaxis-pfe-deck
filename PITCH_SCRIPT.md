@@ -1,18 +1,24 @@
 # PEAXIS Pitch Script
 
+**Timing:** the talk (everything except the live demo and questions) takes about **13:40** at a calm pace (about 130 words per minute, including the pauses for each click). Never go past 15:00. The live demo is separate: **5:00**.
+
+**Checkpoints** (press `T` on slide 1 to start the timer): the story ends (slide 5) by **1:45** · Existing solutions (slide 10) by **4:45** · Hire (slide 17) by **8:05** · Why 85%? (slide 22) by **11:15** · Perspectives (slide 27) by **13:10**, then the demo.
+
+**If you are more than 30 seconds late at a checkpoint:** say one sentence instead of three on the Methodology, Functional requirements, Platform and Monitoring slides.
+
 ## 1 · Cover (25 s)
 
 **85%.**
 
-One number can be enough to move a candidate forward — or leave them behind.
+One number can move a candidate forward, or leave them behind.
 
 But what does that number actually mean?
 
-Good morning, distinguished members of the jury, my supervisor, and everyone present today. Thank you for being here.
+Good morning to the jury and everyone here. Thank you for being here.
 
-Today I'm presenting PEAXIS, my final year project: an AI recruitment platform. Let me start with a short story.
+Today I present PEAXIS, my final year project: an AI recruitment platform, supervised by Mme Olfa Mannai and Mr. Fedi Naimi, whom I thank for their support. Let me start with a short story.
 
-## 2 · Story 1: Meet Amine (18 s)
+## 2 · Story 1: Meet Amine (20 s)
 
 *Clicks: the offer appears, the CV flies to it, "…and waits".*
 
@@ -43,7 +49,7 @@ But before making that decision, several questions remain:
 
 Keep those questions in mind.
 
-## 5 · Story 4: The real question (15 s)
+## 5 · Story 4: The real question (25 s)
 
 *Click: the 85% is crossed out, then the question appears.*
 
@@ -57,119 +63,103 @@ Throughout this presentation, we'll follow Amine's journey, and eventually come 
 
 But first, let me show you how this presentation is organized.
 
-## 6 · Plan (25 s)
+## 6 · Plan (30 s)
 
-Here is how the next minutes are organized.
+Here is how the presentation is organized.
 
-I'll start with the context and the problem: why recruitment needs clearer decisions.
+First, the context and the problem. Then my method, and what the platform must do.
 
-Then how I organized the project, and what the platform has to do.
+Then the platform itself, through a candidate and a recruiter. Then the architecture, the AI, and the production side.
 
-Then the platform itself, through the eyes of a candidate and a recruiter.
-
-Then the architecture, the AI, and how it runs in production.
-
-And I'll finish with where PEAXIS stands today, what comes next, and a live demo.
+And finally, results, next steps, and a live demo.
 
 Let's start with the context.
 
 ## 7 · Context (35 s)
 
-I built PEAXIS during my final year project at Prospecter, a company that builds an AI product for B2B prospecting. It's based in Doha, Qatar, and I worked there full time as a software engineer.
+I built PEAXIS during my final year project at Prospecter, an AI company based in Doha, Qatar, where I worked full time as a software engineer.
 
-That environment mixed three things: AI, software, and running a real product in production.
+My work covered three areas: the application, the AI, and the infrastructure.
 
-My work covered the same three areas: the application, the AI, and the infrastructure.
+I built PEAXIS independently, from the architecture to the deployment.
 
-I built PEAXIS independently, from the architecture to the deployment, with guidance from my supervisors, Mme Olfa Mannai and Mr. Fedi Naimi. Thank you both for your support.
-
-So, why did I choose recruitment?
+So, why recruitment?
 
 ## 8 · Recruitment today (40 s)
 
 Let's look at hiring from both sides.
 
-A candidate sends a CV, and waits. A recruiter receives applications, reads them, compares profiles, and organizes interviews.
+A candidate sends a CV and waits. A recruiter receives applications, reads them, compares profiles, and organizes interviews.
 
-When applications grow, this work becomes hard to manage.
+When applications grow, this becomes hard to manage.
 
-The numbers on this slide give the context. According to SHRM, it takes about a month and a half to fill a role. And according to LinkedIn, 37% of recruiting teams are already trying generative AI.
+According to SHRM, it takes about a month and a half to fill a role. And according to LinkedIn, 37% of recruiting teams already try generative AI.
 
-AI can help with the workload. But a hiring decision still needs a reason that people can understand.
+AI can help. But a hiring decision still needs a reason people can understand.
 
-And that creates three problems.
+That creates three problems.
 
 ## 9 · Challenges (25 s)
 
-First, manual work. Reading and comparing CVs takes a lot of time.
+First, manual work: reading and comparing CVs takes time.
 
-Second, scattered tools. The CV is in one place, the discussion is in email, and the interview is in a calendar.
+Second, scattered tools: the CV, the emails, and the calendar live in different places.
 
-Third, unclear AI results. A score appears, but the recruiter can't see why.
+Third, unclear AI results: a score appears, but the recruiter can't see why.
 
-These are the three problems I wanted PEAXIS to solve.
+These are the problems I wanted PEAXIS to solve. But tools already exist, so where does PEAXIS fit?
 
-But recruitment tools already exist. So where does PEAXIS fit?
+## 10 · Existing solutions (50 s)
 
-## 10 · Existing solutions (45 s)
+Of course, I'm not the first. Here are four tools companies use today. *(Click once per row.)*
 
-Of course, I'm not the first. Let me show four tools that companies use today. *(Click once per row.)*
+LinkedIn Recruiter is strong at sourcing. PEAXIS starts after the application, with evidence per requirement.
 
-LinkedIn Recruiter, with its Hiring Assistant, is strong at sourcing: finding candidates in a huge network. PEAXIS starts after the application, with evidence for each requirement.
+Greenhouse is a mature enterprise ATS with AI linked to sources. It's the closest to my philosophy. My choice: a lighter product.
 
-Greenhouse is a mature enterprise ATS, with structured hiring and AI answers linked to sources. It's the closest to my philosophy. My choice is a lighter product, with evidence in every candidate review.
+Ashby is an all-in-one suite. PEAXIS is narrower on purpose.
 
-Ashby is an all-in-one suite: ATS, CRM, scheduling, analytics, and AI everywhere. PEAXIS is narrower on purpose: it's centered on explainable assessment.
+Workable is an easy ATS from about 299 dollars a month. PEAXIS has a free plan, and local billing in dinars.
 
-Workable is an easy ATS for small companies, with paid plans starting around 299 dollars a month. PEAXIS has a free entry plan, and billing in local currency, the Tunisian dinar.
-
-So I'm not saying "nobody has AI in recruitment". My focus is different: one journey from candidate to recruiter, with every AI result linked to evidence.
-
-That focus became my project question.
+So my focus: one journey from candidate to recruiter, with every AI result linked to evidence. That became my project question.
 
 ## 11 · Objective (25 s)
 
-My question was simple: how can AI make recruitment more efficient, while keeping decisions understandable?
+My question: how can AI make recruitment more efficient, while keeping decisions understandable?
 
-I split it into four goals. Bring the workflow together. Understand the candidate's information. Assist the recruiter. And keep the human in control.
+Four goals: bring the workflow together, understand the candidate's information, assist the recruiter, and keep the human in control.
 
-That last goal shaped the whole platform.
-
-Now, how did I organize the work to reach it?
+That last goal shaped the whole platform. Now, how did I organize the work?
 
 ## 12 · Methodology (25 s)
 
 I used Scrum, adapted to working alone.
 
-I had a backlog, and I worked in sprints. Each sprint had to produce something that works, followed by a review and a retrospective.
-
-I tracked epics and checklists in the repository, and automated checks verified every change.
+I had a backlog and worked in sprints, each followed by a review and a retrospective. Epics and checklists were tracked in the repository, and automated checks verified every change.
 
 Then I started with the users: what does each one need to do?
 
-## 13 · Functional requirements (30 s)
+## 13 · Functional requirements (20 s)
 
-For the candidate, the journey is: find a job, apply, and follow the application.
+For the candidate: find a job, apply, and follow the application.
 
 For the recruiter: publish a role, review candidates, and organize interviews.
 
-And underneath, every company needs its own workspace, its own permissions, private files, and billing.
-
-So the requirements cover the journey you see, and the services you don't see.
+Underneath, each company needs its own workspace, permissions, private files, and billing.
 
 But these features also have to work well.
 
-## 14 · Non-functional requirements (30 s)
+## 14 · Non-functional requirements (35 s)
 
-A CV is personal data, so security matters.
+Four qualities guided the design.
 
-An application must survive a failure, so reliability matters.
+Security: a CV is personal data, so each company's data is isolated and files stay private.
 
-The platform also needs speed, room to grow, and code I can maintain.
+Reliability: an application must survive a failure, so background work is durable and can be retried.
 
-And because AI is involved, explainability is a requirement from day one.
+Scalability: the platform needs room to grow, so services are separated and workers can scale alone.
 
-I'll show you how each one shaped the implementation.
+And explainability: because AI is involved, every result is linked to evidence.
 
 Now, let's meet the product.
 
@@ -183,89 +173,71 @@ Behind both, they share the same services: identity, organizations, permissions,
 
 Let's follow Amine, a fictional candidate, and start with PEAXIS Jobs.
 
-## 16 · PEAXIS Jobs (45 s)
+## 16 · PEAXIS Jobs (30 s)
 
-Amine is looking for a backend engineering job.
+Amine is looking for a backend engineering job. He searches, opens a position, and reads the requirements.
 
-He searches, opens a position, and reads the requirements.
+Then he applies with his CV, and the platform fills his profile, so he doesn't retype everything.
 
-Then he applies with his CV. The platform reads the CV and fills his profile, so he doesn't retype everything.
-
-After that, he can follow his application, stage by stage.
-
-These screens use fictional data, to show the journey.
-
-For Amine it's simple: he finds the job, applies, and always knows where he stands.
+After that, he follows his application, stage by stage. These screens use fictional data.
 
 Now let's see the same application from the recruiter's side.
 
-## 17 · PEAXIS Hire (55 s)
+## 17 · PEAXIS Hire (45 s)
 
 The recruiter sees candidates in a pipeline: applied, screening, interview, and offer.
 
-Let's open Amine's profile.
+Let's open Amine's profile. Here is the 85% from my opening question, and now we can look behind it.
 
-Here is the 85% from my opening question. And now we can look behind it.
+Each requirement is linked to evidence from his CV. Look at Kubernetes: it says "needs verification". That's not a rejection, it's something to check in the interview.
 
-Each requirement is linked to evidence from his CV.
-
-Look at Kubernetes. It says "needs verification". That's not a rejection. It's something to check during the interview.
-
-The recruiter reviews the evidence, schedules the interview, and moves Amine forward.
-
-This is the key idea: AI supports the review, and the recruiter takes the action.
+The recruiter reviews the evidence, schedules the interview, and moves Amine forward. AI supports the review, and the recruiter takes the action.
 
 To make this work, I needed a clear architecture.
 
-## 18 · Logical architecture (55 s)
+## 18 · Logical architecture (40 s)
 
 Think of the system as four layers.
 
-At the top, the users: candidates, recruiters, and visitors.
+The users: candidates, recruiters, and visitors.
 
-Then the application layer: the Next.js web platform, the NestJS API with the business rules, and a worker for long tasks.
+The application layer: the Next.js web platform, the NestJS API with the business rules, and a worker for long tasks.
 
-Then the data layer: PostgreSQL, Redis, and private file storage.
+The data layer: PostgreSQL, Redis, and private file storage.
 
 And the AI layer: a FastAPI service that calls Gemini.
 
-One rule matters most: the API is the only authority. The AI service processes what it receives, but it has no direct access to the database.
+One rule matters most: the API is the only authority. The AI service has no direct access to the database.
 
-That's the logic. Now, how did I deploy it?
+Now, how did I deploy it?
 
-## 19 · Physical architecture (40 s)
+## 19 · Physical architecture (30 s)
 
-A request first goes through Cloudflare, then Caddy on the application server. That server runs the web, API, worker, and AI containers.
+A request goes through Cloudflare, then Caddy on the application server, which runs the web, API, worker, and AI containers.
 
-PostgreSQL and Redis run on a separate data server. The two servers talk through a private WireGuard connection.
+PostgreSQL and Redis run on a separate data server, connected through a private WireGuard link.
 
-Files stay in private storage, and the database backups are stored offsite.
-
-The main point: the database is never exposed to the Internet.
+Files stay in private storage, and backups are stored offsite. The database is never exposed to the Internet.
 
 Now let's follow what happens when Amine clicks "Apply".
 
-## 20 · What happens when a candidate applies (45 s)
+## 20 · What happens when a candidate applies (40 s)
 
 *Each click moves Amine's application one step. The last click breaks the AI step.*
 
-First, the platform saves the application, and its event, in one transaction. It also records the work to do.
+First, the platform saves the application and its event in one transaction, and records the work to do.
 
-A worker picks up that work from the queue. The AI helps classify the evidence, and the platform rules calculate the alignment.
-
-Then the result is ready for the recruiter.
+A worker picks it up from the queue. The AI helps classify the evidence, and the platform rules calculate the alignment. Then the result is ready for the recruiter.
 
 But what if the AI service is down?
 
 *(small pause)*
 
-Amine's application is still saved. The work is retried later.
-
-Applying never depends on the AI finishing.
+Amine's application is still saved, and the work is retried later.
 
 Let's look closer at how a CV becomes usable information.
 
-## 21 · How PEAXIS understands a CV (40 s)
+## 21 · How PEAXIS understands a CV (30 s)
 
 A CV is just a document. The platform needs a structured profile.
 
@@ -277,19 +249,15 @@ Because a nicely written AI answer is not enough. Every piece of information mus
 
 Now we can compare this profile with the job.
 
-## 22 · Why 85%? (55 s)
+## 22 · Why 85%? (50 s)
 
 And now we can answer the first question: "Why 85%?"
 
 On the left, the job requirements. In the middle, the evidence from the CV. On the right, the status of each requirement.
 
-AI helps find and classify the evidence. Then the platform applies clear rules to calculate the score.
+AI helps find and classify the evidence. Then the platform applies clear rules to calculate the score. Must-have requirements weigh more, and a missing must-have caps the score.
 
-Must-have requirements weigh more. And a missing must-have caps the score.
-
-The 85% here is an illustration. It's not a probability that Amine will succeed in the job.
-
-What matters is that the recruiter can see what supports the result, and what still needs checking.
+The 85% here is an illustration, not a probability that Amine will succeed. What matters is that the recruiter can see what supports the result, and what still needs checking.
 
 So who decides in the end?
 
@@ -301,57 +269,35 @@ The recruiter controls the requirements, the interviews, the stage changes, the 
 
 **Show the evidence. Let the human decide.**
 
-But to use this in real life, the system must also be reliable.
+Now, how do I ship this safely?
 
-## 24 · Security and reliability (40 s)
-
-Each company's data must be protected. So access is checked on every request, and files stay private.
-
-Each application must be kept. So background work is durable, and it can be retried.
-
-As the load grows, the services are separated, so I can scale the workers alone.
-
-At this scale, I didn't need Kubernetes. I chose clear service boundaries, and an infrastructure I can operate.
-
-These choices protect the same journey we just followed with Amine.
-
-I also needed a safe way to ship changes.
-
-## 25 · Testing and delivery (30 s)
+## 24 · Testing and delivery (25 s)
 
 *Each click moves a change one gate further, from commit to rollback-ready.*
 
-Every change goes through seven automated CI jobs: lint and type checks, tests, migration and end-to-end checks, and security scans.
+Every change goes through seven automated CI jobs: lint and types, tests, migrations and end-to-end checks, and security scans. The repository has more than 1,400 tests.
 
-The repository has more than 1,400 tests.
-
-Images are built and scanned. The deployment is gated. And I can roll back to the previous release.
-
-So there are checks before anything reaches the product.
+Images are built and scanned, the deployment is gated, and I can roll back.
 
 After the deployment, I need to know how the system behaves.
 
-## 26 · Monitoring (25 s)
+## 25 · Monitoring (25 s)
 
-Grafana Alloy collects metrics and logs from the servers, and sends them to Grafana Cloud.
+Grafana Alloy collects metrics and logs from the servers and sends them to Grafana Cloud.
 
-I follow the API, the queues, the worker heartbeat, the database, Redis, and the backups, with dashboards, alerts, and synthetic checks.
-
-My next step: verify the alert delivery at every release.
+I follow the API, the queues, the worker heartbeat, the database, Redis, and the backups, with dashboards, alerts, and synthetic checks. My next step: verify alert delivery at every release.
 
 So, where does PEAXIS stand today?
 
-## 27 · From project to product (35 s)
+## 26 · From project to product (20 s)
 
 PEAXIS started as my final year project. Today it's deployed in production, and the first client companies are starting to test it.
 
-The engineering numbers: more than 1,400 tests, 27 backend modules, seven CI jobs, and 68 out of 68 checks passed at the first production deployment.
-
-These numbers describe the engineering. User validation has just begun, and I'm not claiming measured hiring results yet.
+User validation has just begun, and I'm not claiming measured hiring results yet.
 
 So what comes next?
 
-## 28 · Perspectives (25 s)
+## 27 · Perspectives (25 s)
 
 First, I want to deepen PEAXIS Hire: team collaboration, scorecards, communication, and a copilot linked to its sources. And enterprise readiness.
 
@@ -361,7 +307,7 @@ These are future directions. Today, my focus is the recruitment platform you jus
 
 Now, enough slides. Let me show it live.
 
-## 29 · Live demo (5 min)
+## 28 · Live demo (5 min)
 
 > **Before you start:** use the fictional demo account, and prepare one candidate that is already processed.
 
@@ -385,19 +331,19 @@ The demo profile may have a different name or score. Point to what is really on 
 
 Let me finish by going back to our first question.
 
-## 30 · Conclusion (30 s)
+## 29 · Conclusion (30 s)
 
 At the beginning I asked: would you invite a candidate with an 85% match?
 
 Now we have something better than a number: the evidence behind it.
 
-That's what I built with PEAXIS: one recruitment platform, explainable AI, and the engineering to run it in production.
+That's what I built: one recruitment platform, explainable AI, and the engineering to run it in production.
 
 **Show the evidence. Let the human decide.**
 
-Thank you to the jury, and to everyone here, for your attention. I'm happy to answer your questions.
+Thank you for your attention. I'm happy to answer your questions.
 
-## 31 · Questions
+## 30 · Questions
 
 Breathe. Let the person finish the question. Give the short answer first, then explain if needed.
 

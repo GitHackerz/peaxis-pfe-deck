@@ -12,7 +12,7 @@ const areas = [
 export default function Context({ step }: SlideProps) {
   return (
     <Slide section="Context" title={<>Built at <span className="gradient-text-teal">Prospecter</span>, an AI product company</>}>
-      <div className="flex h-full flex-col justify-between pb-2">
+      <div className="flex h-full flex-col justify-center pb-10">
         <div className="grid grid-cols-[1fr_1.2fr] gap-14">
           <Reveal show>
             <p className="text-[13px] font-bold uppercase tracking-widest text-[#029090]">The host company</p>
@@ -28,10 +28,6 @@ export default function Context({ step }: SlideProps) {
             </ul>
           </Reveal>
         </div>
-        <Reveal show={step >= 2} className="border-t border-black/10 pt-5">
-          <p className="text-[22px] font-semibold text-px-navy">Built independently, from architecture to deployment.</p>
-          <p className="mt-1 text-[17px] text-px-muted">Supervised by <b className="text-px-navy">Mme Olfa Mannai</b> (academic) and <b className="text-px-navy">Mr. Fedi Naimi</b> (company). Thank you for your support.</p>
-        </Reveal>
       </div>
     </Slide>
   )

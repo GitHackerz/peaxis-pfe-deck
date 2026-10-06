@@ -1,6 +1,6 @@
 import { Layers, ListChecks, SearchX } from 'lucide-react'
 import Reveal from '../components/slide/Reveal'
-import Slide, { Takeaway } from '../components/slide/Slide'
+import Slide from '../components/slide/Slide'
 import type { SlideProps } from './registry'
 
 const items = [
@@ -12,7 +12,7 @@ const items = [
 export default function Challenges({ step }: SlideProps) {
   return (
     <Slide section="Problem" title={<>Three <span className="gradient-text-teal">problems</span> to solve</>}>
-      <div className="flex h-full flex-col justify-between pb-2">
+      <div className="flex h-full flex-col justify-center pb-10">
         <div className="grid grid-cols-3 gap-12 pt-2">
           {items.map(({ icon: Icon, n, title, text }, i) => (
             <Reveal key={title} show={step >= i} className="flex flex-col gap-3 border-t-[3px] border-px-teal pt-4">
@@ -22,7 +22,6 @@ export default function Challenges({ step }: SlideProps) {
             </Reveal>
           ))}
         </div>
-        <Reveal show={step >= 3}><Takeaway>These are the three problems I wanted PEAXIS to solve.</Takeaway></Reveal>
       </div>
     </Slide>
   )

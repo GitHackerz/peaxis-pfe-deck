@@ -38,12 +38,6 @@ export default function WhyMatch({ step }: SlideProps) {
           <Reveal show={step >= 4}>
             <p className="text-[28px] font-extrabold text-px-navy">Every result can be traced back to evidence.</p>
           </Reveal>
-          <Reveal show={step >= 4}>
-            <p className="text-[18px] text-px-muted">AI helps retrieve and classify relevant evidence. The platform applies the final assessment rules.</p>
-          </Reveal>
-          <Reveal show={step >= 4}>
-            <p className="text-[16px] text-px-muted">Must-have skills weigh most, then experience, then nice-to-haves. A missing must-have caps the score, so a high number is never misleading.</p>
-          </Reveal>
         </div>
       </div>
     </Slide>

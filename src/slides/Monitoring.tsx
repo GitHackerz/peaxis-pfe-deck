@@ -1,6 +1,6 @@
 import { Activity, Bell, Boxes, DatabaseBackup, FileText, Gauge, HeartPulse, Server } from 'lucide-react'
 import Reveal from '../components/slide/Reveal'
-import Slide, { Takeaway } from '../components/slide/Slide'
+import Slide from '../components/slide/Slide'
 import type { SlideProps } from './registry'
 
 const watched = [
@@ -46,9 +46,6 @@ export default function Monitoring({ step }: SlideProps) {
               <p className="text-[15px] leading-snug text-px-muted">{d}</p>
             </div>
           ))}
-        </Reveal>
-        <Reveal show={step >= 4}>
-          <Takeaway>My next step: verify the alert delivery at every release.</Takeaway>
         </Reveal>
       </div>
     </Slide>

@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 
-/** Description bar for click-to-focus slides; cross-fades when the focused item changes. */
-export default function FocusNote({ id, title, text }: { id: number; title?: string; text?: string }) {
+/** Description for click-to-focus slides; cross-fades when the focused item changes. */
+export default function FocusNote({ id, title, text, center = false }: { id: number; title?: string; text?: string; center?: boolean }) {
   return (
-    <div className="flex h-[84px] items-stretch gap-4">
-      <div className="w-[4px] shrink-0 rounded-full bg-px-teal" />
-      <motion.div key={id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="flex flex-col justify-center">
+    <div className={`flex h-[84px] items-stretch gap-4 ${center ? 'justify-center' : ''}`}>
+      {!center && <div className="w-[4px] shrink-0 rounded-full bg-px-teal" />}
+      <motion.div key={id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className={`flex flex-col justify-center ${center ? 'items-center text-center' : ''}`}>
         {text ? (
           <>
             <p className="text-[14px] font-bold uppercase tracking-[0.16em] text-[#029090]">{title}</p>

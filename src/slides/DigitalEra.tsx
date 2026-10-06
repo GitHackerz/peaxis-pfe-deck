@@ -1,7 +1,7 @@
 import { ArrowRight, Clock, FileText, Sparkles } from 'lucide-react'
 import Person from '../components/story/Person'
 import Reveal from '../components/slide/Reveal'
-import Slide, { Takeaway } from '../components/slide/Slide'
+import Slide from '../components/slide/Slide'
 import type { SlideProps } from './registry'
 
 const recruiter = ['Receives applications', 'Reads', 'Compares profiles', 'Organizes interviews']
@@ -51,7 +51,6 @@ export default function DigitalEra({ step }: SlideProps) {
           </div>
         </Reveal>
 
-        <Reveal show={step >= 3}><Takeaway>AI can help with the workload, but a hiring decision still needs a reason people can understand.</Takeaway></Reveal>
       </div>
     </Slide>
   )

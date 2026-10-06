@@ -12,7 +12,7 @@ const goals = [
 export default function Gap({ step }: SlideProps) {
   return (
     <div className="slide-root flex flex-col justify-center px-[80px] pt-10">
-      <span className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#029090]">Problem · Project objective</span>
+      <span className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#029090]">Project objective</span>
       <h2 className="mt-3 max-w-[1000px] text-[46px] font-bold leading-[1.1] tracking-[-0.025em] text-px-navy">
         How can AI make recruitment more efficient,{' '}
         <span className="gradient-text-teal">while keeping decisions understandable?</span>

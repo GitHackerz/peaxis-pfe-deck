@@ -34,9 +34,6 @@ export default function Perspectives({ step }: SlideProps) {
             <ul className="flex flex-col gap-1.5 text-[20px] font-semibold text-px-navy/80">{hr.map((h) => <li key={h}>{h}</li>)}</ul>
           </Reveal>
         </div>
-        <Reveal show={step >= 2}>
-          <p className="text-[22px] font-semibold leading-snug text-px-navy">These are future directions. Today, my focus is the recruitment platform you just saw.</p>
-        </Reveal>
       </div>
     </Slide>
   )

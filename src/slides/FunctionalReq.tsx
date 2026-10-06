@@ -29,7 +29,7 @@ export default function FunctionalReq({ step }: SlideProps) {
             )
           })}
         </div>
-        <FocusNote id={step} title={step > 0 ? cols[step - 1].who : undefined} text={step > 0 ? cols[step - 1].note : undefined} />
+        <div className="h-[84px]">{step > 0 && <FocusNote id={step} title={cols[step - 1].who} text={cols[step - 1].note} />}</div>
       </div>
     </Slide>
   )
