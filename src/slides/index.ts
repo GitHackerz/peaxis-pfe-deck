@@ -9,7 +9,6 @@ import DigitalEra from './DigitalEra'
 import FunctionalReq from './FunctionalReq'
 import Gap from './Gap'
 import HireExperience from './HireExperience'
-import HumanAI from './HumanAI'
 import JobsExperience from './JobsExperience'
 import Landscape from './Landscape'
 import LogicalArch from './LogicalArch'
@@ -52,7 +51,6 @@ export const SLIDE_REGISTRY: SlideDef[] = [
   { id: 'production', label: 'Physical architecture', section: 'Architecture', steps: 3, component: ProductionArch },
   { id: 'cv', label: 'CV understanding', section: 'AI', steps: 3, component: CvUnderstanding },
   { id: 'match', label: 'Why it matches', section: 'AI', steps: 4, component: WhyMatch },
-  { id: 'human-ai', label: 'Human-controlled AI', section: 'AI', steps: 1, component: HumanAI },
   { id: 'delivery', label: 'Testing & delivery', section: 'Production', steps: 4, component: Delivery },
   { id: 'monitoring', label: 'Monitoring', section: 'Production', steps: 3, component: Monitoring },
   { id: 'pfe-to-product', label: 'PFE to product', section: 'Production', steps: 1, component: PfeToProduct },

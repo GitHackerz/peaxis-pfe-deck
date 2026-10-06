@@ -1,8 +1,8 @@
 # PEAXIS Pitch Script
 
-**Timing:** the talk (everything except the live demo and questions) takes about **13:00** at a calm pace (about 130 words per minute, including the pauses for each click). Never go past 15:00. The live demo is separate: **5:00**.
+**Timing:** the talk (everything except the live demo and questions) takes about **12:55** at a calm pace (about 130 words per minute, including the pauses for each click). Never go past 15:00. The live demo is separate: **5:00**.
 
-**Checkpoints** (press `T` on slide 1 to start the timer): the story ends (slide 5) by **1:55** · Existing solutions (slide 10) by **4:45** · Hire (slide 17) by **8:05** · Why 85%? (slide 21) by **10:35** · Perspectives (slide 26) by **12:30**, then the demo.
+**Checkpoints** (press `T` on slide 1 to start the timer): the story ends (slide 5) by **1:55** · Existing solutions (slide 10) by **4:45** · Hire (slide 17) by **8:05** · Why 85%? (slide 21) by **10:50** · Perspectives (slide 25) by **12:25**, then the demo.
 
 **If you are more than 30 seconds late at a checkpoint:** say one sentence instead of three on the Methodology, Functional requirements, Platform and Monitoring slides.
 
@@ -233,7 +233,7 @@ Because a nicely written AI answer is not enough. Every piece of information mus
 
 Now we can compare this profile with the job.
 
-## 21 · Why 85%? (50 s)
+## 21 · Why 85%? (65 s)
 
 And now we can answer the first question: "Why 85%?"
 
@@ -243,19 +243,13 @@ AI helps find and classify the evidence. Then the platform applies clear rules t
 
 The 85% here is an illustration, not a probability that Amine will succeed. What matters is that the recruiter can see what supports the result, and what still needs checking.
 
-So who decides in the end?
-
-## 22 · Human-controlled AI (20 s)
-
-AI can parse, summarize, explain, recommend, and draft.
-
-The recruiter controls the requirements, the interviews, the stage changes, the rejections, and the offers.
+So who decides in the end? The recruiter does. AI assists, and the human controls the requirements, the interviews, the stage changes, the rejections, and the offers.
 
 **Show the evidence. Let the human decide.**
 
 Now, how do I ship this safely?
 
-## 23 · Testing and delivery (25 s)
+## 22 · Testing and delivery (25 s)
 
 *Each click moves a change one gate further, from commit to rollback-ready.*
 
@@ -265,7 +259,7 @@ Images are built and scanned, the deployment is gated, and I can roll back.
 
 After the deployment, I need to know how the system behaves.
 
-## 24 · Monitoring (25 s)
+## 23 · Monitoring (25 s)
 
 Grafana Alloy collects metrics and logs from the servers and sends them to Grafana Cloud.
 
@@ -273,7 +267,7 @@ I follow the API, the queues, the worker heartbeat, the database, Redis, and the
 
 So, where does PEAXIS stand today?
 
-## 25 · From project to product (20 s)
+## 24 · From project to product (20 s)
 
 PEAXIS started as my final year project. Today it's deployed in production, and the first client companies are starting to test it.
 
@@ -281,7 +275,7 @@ User validation has just begun, and I'm not claiming measured hiring results yet
 
 So what comes next?
 
-## 26 · Perspectives (25 s)
+## 25 · Perspectives (25 s)
 
 First, I want to deepen PEAXIS Hire: team collaboration, scorecards, communication, and a copilot linked to its sources. And enterprise readiness.
 
@@ -291,7 +285,7 @@ These are future directions. Today, my focus is the recruitment platform you jus
 
 Now, enough slides. Let me show it live.
 
-## 27 · Live demo (5 min)
+## 26 · Live demo (5 min)
 
 > **Before you start:** use the fictional demo account, and prepare one candidate that is already processed.
 
@@ -315,7 +309,7 @@ The demo profile may have a different name or score. Point to what is really on 
 
 Let me finish by going back to our first question.
 
-## 28 · Conclusion (30 s)
+## 27 · Conclusion (30 s)
 
 At the beginning I asked: would you invite a candidate with an 85% match?
 
@@ -327,7 +321,7 @@ That's what I built: one recruitment platform, explainable AI, and the engineeri
 
 Thank you for your attention. I'm happy to answer your questions.
 
-## 29 · Questions
+## 28 · Questions
 
 Breathe. Let the person finish the question. Give the short answer first, then explain if needed.
 
