@@ -25,7 +25,6 @@ import StoryReal from './StoryReal'
 import Plan from './Plan'
 import PfeToProduct from './PfeToProduct'
 import PlatformOverview from './PlatformOverview'
-import Processing from './Processing'
 import ProductionArch from './ProductionArch'
 import Questions from './Questions'
 import WhyMatch from './WhyMatch'
@@ -51,10 +50,9 @@ export const SLIDE_REGISTRY: SlideDef[] = [
   { id: 'hire', label: 'PEAXIS Hire', section: 'Solution', steps: 3, component: HireExperience },
   { id: 'architecture', label: 'Logical architecture', section: 'Architecture', steps: 4, component: LogicalArch },
   { id: 'production', label: 'Physical architecture', section: 'Architecture', steps: 3, component: ProductionArch },
-  { id: 'processing', label: 'How an application is processed', section: 'Architecture', steps: 6, component: Processing },
   { id: 'cv', label: 'CV understanding', section: 'AI', steps: 3, component: CvUnderstanding },
   { id: 'match', label: 'Why it matches', section: 'AI', steps: 4, component: WhyMatch },
-  { id: 'human-ai', label: 'Human-controlled AI', section: 'AI', steps: 2, component: HumanAI },
+  { id: 'human-ai', label: 'Human-controlled AI', section: 'AI', steps: 1, component: HumanAI },
   { id: 'delivery', label: 'Testing & delivery', section: 'Production', steps: 4, component: Delivery },
   { id: 'monitoring', label: 'Monitoring', section: 'Production', steps: 3, component: Monitoring },
   { id: 'pfe-to-product', label: 'PFE to product', section: 'Production', steps: 1, component: PfeToProduct },

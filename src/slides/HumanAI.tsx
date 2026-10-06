@@ -9,7 +9,7 @@ const humans = ['Requirements', 'Interviews', 'Stage changes', 'Rejections', 'Of
 export default function HumanAI({ step }: SlideProps) {
   return (
     <Slide section="AI" title={<>Explainable, <span className="gradient-text-teal">human-controlled</span> AI</>}>
-      <div className="flex h-full flex-col justify-evenly pb-3">
+      <div className="flex h-full flex-col justify-center pb-10">
         <div className="grid grid-cols-2 gap-10">
           <Reveal show={step >= 0} from="left" className="rounded-xl bg-white p-7 border border-black/10">
             <div className="flex items-center gap-3 text-[#029090]"><Bot size={32} /><p className="text-[26px] font-extrabold uppercase tracking-wide">AI assists</p></div>
@@ -20,9 +20,6 @@ export default function HumanAI({ step }: SlideProps) {
             <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 text-[24px] font-semibold text-px-navy">{humans.map((a) => <li key={a}>{a}</li>)}</ul>
           </Reveal>
         </div>
-        <Reveal show={step >= 2} className="flex flex-col gap-3">
-          <p className="text-[34px] font-extrabold leading-tight text-px-navy">Show the evidence. <span className="gradient-text-teal">Let the human decide.</span></p>
-        </Reveal>
       </div>
     </Slide>
   )

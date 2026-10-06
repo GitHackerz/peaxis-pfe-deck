@@ -1,12 +1,12 @@
 # PEAXIS Pitch Script
 
-**Timing:** the talk (everything except the live demo and questions) takes about **13:40** at a calm pace (about 130 words per minute, including the pauses for each click). Never go past 15:00. The live demo is separate: **5:00**.
+**Timing:** the talk (everything except the live demo and questions) takes about **13:00** at a calm pace (about 130 words per minute, including the pauses for each click). Never go past 15:00. The live demo is separate: **5:00**.
 
-**Checkpoints** (press `T` on slide 1 to start the timer): the story ends (slide 5) by **1:45** · Existing solutions (slide 10) by **4:45** · Hire (slide 17) by **8:05** · Why 85%? (slide 22) by **11:15** · Perspectives (slide 27) by **13:10**, then the demo.
+**Checkpoints** (press `T` on slide 1 to start the timer): the story ends (slide 5) by **1:55** · Existing solutions (slide 10) by **4:45** · Hire (slide 17) by **8:05** · Why 85%? (slide 21) by **10:35** · Perspectives (slide 26) by **12:30**, then the demo.
 
 **If you are more than 30 seconds late at a checkpoint:** say one sentence instead of three on the Methodology, Functional requirements, Platform and Monitoring slides.
 
-## 1 · Cover (25 s)
+## 1 · Cover (35 s)
 
 **85%.**
 
@@ -75,7 +75,7 @@ And finally, results, next steps, and a live demo.
 
 Let's start with the context.
 
-## 7 · Context (35 s)
+## 7 · Context (25 s)
 
 I built PEAXIS during my final year project at Prospecter, an AI company based in Doha, Qatar, where I worked full time as a software engineer.
 
@@ -219,25 +219,9 @@ PostgreSQL and Redis run on a separate data server, connected through a private 
 
 Files stay in private storage, and backups are stored offsite. The database is never exposed to the Internet.
 
-Now let's follow what happens when Amine clicks "Apply".
+Now let's look at the AI, starting with the CV.
 
-## 20 · What happens when a candidate applies (40 s)
-
-*Each click moves Amine's application one step. The last click breaks the AI step.*
-
-First, the platform saves the application and its event in one transaction, and records the work to do.
-
-A worker picks it up from the queue. The AI helps classify the evidence, and the platform rules calculate the alignment. Then the result is ready for the recruiter.
-
-But what if the AI service is down?
-
-*(small pause)*
-
-Amine's application is still saved, and the work is retried later.
-
-Let's look closer at how a CV becomes usable information.
-
-## 21 · How PEAXIS understands a CV (30 s)
+## 20 · How PEAXIS understands a CV (30 s)
 
 A CV is just a document. The platform needs a structured profile.
 
@@ -249,7 +233,7 @@ Because a nicely written AI answer is not enough. Every piece of information mus
 
 Now we can compare this profile with the job.
 
-## 22 · Why 85%? (50 s)
+## 21 · Why 85%? (50 s)
 
 And now we can answer the first question: "Why 85%?"
 
@@ -261,7 +245,7 @@ The 85% here is an illustration, not a probability that Amine will succeed. What
 
 So who decides in the end?
 
-## 23 · Human-controlled AI (20 s)
+## 22 · Human-controlled AI (20 s)
 
 AI can parse, summarize, explain, recommend, and draft.
 
@@ -271,7 +255,7 @@ The recruiter controls the requirements, the interviews, the stage changes, the 
 
 Now, how do I ship this safely?
 
-## 24 · Testing and delivery (25 s)
+## 23 · Testing and delivery (25 s)
 
 *Each click moves a change one gate further, from commit to rollback-ready.*
 
@@ -281,7 +265,7 @@ Images are built and scanned, the deployment is gated, and I can roll back.
 
 After the deployment, I need to know how the system behaves.
 
-## 25 · Monitoring (25 s)
+## 24 · Monitoring (25 s)
 
 Grafana Alloy collects metrics and logs from the servers and sends them to Grafana Cloud.
 
@@ -289,7 +273,7 @@ I follow the API, the queues, the worker heartbeat, the database, Redis, and the
 
 So, where does PEAXIS stand today?
 
-## 26 · From project to product (20 s)
+## 25 · From project to product (20 s)
 
 PEAXIS started as my final year project. Today it's deployed in production, and the first client companies are starting to test it.
 
@@ -297,7 +281,7 @@ User validation has just begun, and I'm not claiming measured hiring results yet
 
 So what comes next?
 
-## 27 · Perspectives (25 s)
+## 26 · Perspectives (25 s)
 
 First, I want to deepen PEAXIS Hire: team collaboration, scorecards, communication, and a copilot linked to its sources. And enterprise readiness.
 
@@ -307,7 +291,7 @@ These are future directions. Today, my focus is the recruitment platform you jus
 
 Now, enough slides. Let me show it live.
 
-## 28 · Live demo (5 min)
+## 27 · Live demo (5 min)
 
 > **Before you start:** use the fictional demo account, and prepare one candidate that is already processed.
 
@@ -331,7 +315,7 @@ The demo profile may have a different name or score. Point to what is really on 
 
 Let me finish by going back to our first question.
 
-## 29 · Conclusion (30 s)
+## 28 · Conclusion (30 s)
 
 At the beginning I asked: would you invite a candidate with an 85% match?
 
@@ -343,7 +327,7 @@ That's what I built: one recruitment platform, explainable AI, and the engineeri
 
 Thank you for your attention. I'm happy to answer your questions.
 
-## 30 · Questions
+## 29 · Questions
 
 Breathe. Let the person finish the question. Give the short answer first, then explain if needed.
 
