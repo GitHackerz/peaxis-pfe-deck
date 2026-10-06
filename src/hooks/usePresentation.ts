@@ -67,12 +67,6 @@ export function usePresentation(): PresentationState {
           e.preventDefault()
           goTo(SLIDES.length - 1)
           break
-        case 'b':
-        case 'B': {
-          const first = SLIDES.findIndex((x) => x.appendix)
-          if (first >= 0) goTo(first)
-          break
-        }
         case 'f':
         case 'F':
           if (!document.fullscreenElement) void document.documentElement.requestFullscreen()

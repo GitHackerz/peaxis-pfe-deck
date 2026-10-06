@@ -11,7 +11,6 @@ export interface SlideDef {
   /** Number of click-to-reveal steps (0 = static). */
   steps: number
   component: ComponentType<SlideProps>
-  appendix?: boolean
   /** Hide the centre PEAXIS logo (cover). */
   hideBrand?: boolean
 }

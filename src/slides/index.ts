@@ -1,5 +1,4 @@
 import type { SlideDef } from './registry'
-import { DomainDetail, MatchDetail, MonitoringDetail, SecurityDetail, TestingDetail } from './Appendix'
 import Challenges from './Challenges'
 import Conclusion from './Conclusion'
 import Context from './Context'
@@ -19,6 +18,10 @@ import Monitoring from './Monitoring'
 import NonFunctional from './NonFunctional'
 import Delivery from './Delivery'
 import Perspectives from './Perspectives'
+import StoryMeet from './StoryMeet'
+import StoryRecruiter from './StoryRecruiter'
+import StoryQuestions from './StoryQuestions'
+import StoryReal from './StoryReal'
 import Plan from './Plan'
 import PfeToProduct from './PfeToProduct'
 import Pillars from './Pillars'
@@ -31,11 +34,15 @@ import WhyMatch from './WhyMatch'
 /** Single source of truth for slide order, labels and reveal-step counts. */
 export const SLIDE_REGISTRY: SlideDef[] = [
   { id: 'cover', label: 'Cover', section: 'Introduction', steps: 0, component: Cover, hideBrand: true },
+  { id: 'story-1', label: 'Story: Meet Amine', section: 'Story', steps: 3, component: StoryMeet },
+  { id: 'story-2', label: 'Story: The recruiter', section: 'Story', steps: 3, component: StoryRecruiter },
+  { id: 'story-3', label: 'Story: Questions', section: 'Story', steps: 4, component: StoryQuestions },
+  { id: 'story-4', label: 'Story: The real question', section: 'Story', steps: 1, component: StoryReal },
   { id: 'plan', label: 'Presentation plan', section: 'Introduction', steps: 0, component: Plan },
   { id: 'context', label: 'Context', section: 'Context', steps: 2, component: Context },
-  { id: 'digital-era', label: 'Recruitment today', section: 'Problem', steps: 2, component: DigitalEra },
+  { id: 'digital-era', label: 'Recruitment today', section: 'Problem', steps: 3, component: DigitalEra },
   { id: 'challenges', label: 'Challenges', section: 'Problem', steps: 3, component: Challenges },
-  { id: 'landscape', label: 'Landscape', section: 'Problem', steps: 1, component: Landscape },
+  { id: 'landscape', label: 'Existing solutions', section: 'Problem', steps: 4, component: Landscape },
   { id: 'gap', label: 'Objective', section: 'Problem', steps: 1, component: Gap },
   { id: 'method', label: 'Methodology', section: 'Methodology', steps: 2, component: Methodology },
   { id: 'functional', label: 'Functional requirements', section: 'Requirements', steps: 3, component: FunctionalReq },
@@ -45,21 +52,16 @@ export const SLIDE_REGISTRY: SlideDef[] = [
   { id: 'hire', label: 'PEAXIS Hire', section: 'Solution', steps: 3, component: HireExperience },
   { id: 'architecture', label: 'Logical architecture', section: 'Architecture', steps: 4, component: LogicalArch },
   { id: 'production', label: 'Physical architecture', section: 'Architecture', steps: 3, component: ProductionArch },
-  { id: 'processing', label: 'How an application is processed', section: 'Architecture', steps: 3, component: Processing },
+  { id: 'processing', label: 'How an application is processed', section: 'Architecture', steps: 6, component: Processing },
   { id: 'cv', label: 'CV understanding', section: 'AI', steps: 3, component: CvUnderstanding },
   { id: 'match', label: 'Why it matches', section: 'AI', steps: 4, component: WhyMatch },
   { id: 'human-ai', label: 'Human-controlled AI', section: 'AI', steps: 2, component: HumanAI },
   { id: 'pillars', label: 'Security & reliability', section: 'Production', steps: 4, component: Pillars },
-  { id: 'delivery', label: 'Testing & delivery', section: 'Production', steps: 2, component: Delivery },
+  { id: 'delivery', label: 'Testing & delivery', section: 'Production', steps: 4, component: Delivery },
   { id: 'monitoring', label: 'Monitoring', section: 'Production', steps: 4, component: Monitoring },
   { id: 'pfe-to-product', label: 'PFE to product', section: 'Production', steps: 2, component: PfeToProduct },
   { id: 'perspectives', label: 'Perspectives', section: 'Perspectives', steps: 2, component: Perspectives },
   { id: 'demo', label: 'LIVE DEMO', section: 'Demo', steps: 1, component: Demo },
   { id: 'conclusion', label: 'Conclusion', section: 'Conclusion', steps: 3, component: Conclusion },
   { id: 'questions', label: 'Questions', section: 'Questions', steps: 0, component: Questions },
-  { id: 'a-monitoring', label: 'Backup: monitoring', section: 'Backup', steps: 0, component: MonitoringDetail, appendix: true },
-  { id: 'a-security', label: 'Backup: security', section: 'Backup', steps: 0, component: SecurityDetail, appendix: true },
-  { id: 'a-match', label: 'Backup: assessment', section: 'Backup', steps: 0, component: MatchDetail, appendix: true },
-  { id: 'a-domain', label: 'Backup: data model', section: 'Backup', steps: 0, component: DomainDetail, appendix: true },
-  { id: 'a-testing', label: 'Backup: testing', section: 'Backup', steps: 0, component: TestingDetail, appendix: true },
 ]

@@ -3,19 +3,19 @@ import Reveal from '../components/slide/Reveal'
 import type { SlideProps } from './registry'
 
 const goals = [
-  { icon: LayoutGrid, text: 'Centralize the recruitment workflow' },
-  { icon: ScanSearch, text: 'Understand candidate evidence' },
-  { icon: Brain, text: 'Assist recruiters with AI' },
-  { icon: Hand, text: 'Keep humans in control' },
+  { icon: LayoutGrid, text: 'Bring the workflow together' },
+  { icon: ScanSearch, text: "Understand the candidate's information" },
+  { icon: Brain, text: 'Assist the recruiter' },
+  { icon: Hand, text: 'Keep the human in control' },
 ]
 
 export default function Gap({ step }: SlideProps) {
   return (
     <div className="slide-root flex flex-col justify-center px-[80px] pt-10">
       <span className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#029090]">Problem · Project objective</span>
-      <h2 className="mt-3 max-w-[1090px] text-[46px] font-extrabold leading-[1.1] tracking-tight text-px-navy">
-        How can AI make recruitment more efficient{' '}
-        <span className="gradient-text-teal">without turning hiring into a black box?</span>
+      <h2 className="mt-3 max-w-[1000px] text-[46px] font-bold leading-[1.1] tracking-[-0.025em] text-px-navy">
+        How can AI make recruitment more efficient,{' '}
+        <span className="gradient-text-teal">while keeping decisions understandable?</span>
       </h2>
       <div className="mt-12 grid grid-cols-4 gap-8">
         {goals.map(({ icon: Icon, text }, i) => (

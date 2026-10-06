@@ -1,4 +1,5 @@
 import { Rocket } from 'lucide-react'
+import { motion } from 'framer-motion'
 import CountUp from '../components/slide/CountUp'
 import Reveal from '../components/slide/Reveal'
 import Slide from '../components/slide/Slide'
@@ -31,20 +32,20 @@ export default function PfeToProduct({ step }: SlideProps) {
       <div className="flex h-full flex-col justify-between pb-2">
         <Reveal show className="relative flex items-start justify-between pt-2">
           <div className="absolute left-[60px] right-[60px] top-[26px] h-[3px] bg-black/10" />
-          <div className="absolute left-[60px] top-[26px] h-[3px] bg-px-teal" style={{ width: '57%' }} />
+          <motion.div className="absolute left-[60px] top-[26px] h-[3px] bg-px-teal" initial={{ width: 0 }} animate={{ width: '57%' }} transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }} />
           {timeline.map((t) => (
             <div key={t.label} className="relative flex w-[170px] flex-col items-center gap-3 text-center">
               <span className={`flex h-[54px] w-[54px] items-center justify-center rounded-full ring-4 ring-[#F8FAFC] ${t.state === 'done' ? 'bg-px-teal text-white' : t.state === 'now' ? 'bg-px-navy text-white' : 'bg-white text-px-muted shadow-sm'}`}>
-                {t.state === 'now' ? <Rocket size={26} /> : t.state === 'done' ? <span className="text-[24px] font-bold">✓</span> : <span className="h-3 w-3 rounded-full bg-black/20" />}
+                {t.state === 'now' ? <motion.span animate={{ scale: [1, 1.18, 1] }} transition={{ repeat: Infinity, duration: 1.8 }} className="flex"><Rocket size={26} /></motion.span> : t.state === 'done' ? <span className="text-[24px] font-bold">✓</span> : <span className="h-3 w-3 rounded-full bg-black/20" />}
               </span>
               <span className={`text-[19px] font-bold leading-tight ${t.state === 'next' ? 'text-px-muted' : 'text-px-navy'}`}>{t.label}</span>
               {t.state === 'now' && <span className="-mt-1 rounded-full bg-px-navy/10 px-3 py-0.5 text-[13px] font-bold uppercase tracking-wider text-px-navy">Starting</span>}
             </div>
           ))}
         </Reveal>
-        <Reveal show={step >= 1} className="grid grid-cols-4 gap-5">
+        <Reveal show={step >= 1} className="grid grid-cols-4 divide-x divide-black/10 border-y border-black/10 py-6">
           {kpis.map((k) => (
-            <div key={k.label} className="flex flex-col gap-1 rounded-2xl bg-white px-5 py-5 shadow-sm ring-1 ring-black/5">
+            <div key={k.label} className="flex flex-col gap-1 px-7 first:pl-0">
               <p className="text-[52px] font-extrabold leading-none tracking-tight text-px-navy">
                 <span className="gradient-text-teal"><CountUp to={k.to} run={step >= 1} format={k.fmt} /></span>
                 <span className="text-[34px] text-px-navy">{k.suffix}</span>
@@ -55,7 +56,7 @@ export default function PfeToProduct({ step }: SlideProps) {
           ))}
         </Reveal>
         <Reveal show={step >= 2}>
-          <p className="text-[24px] font-semibold leading-snug text-px-navy">PEAXIS was not built only for the defense. It is a SaaS product intended for real organizations, and the first client companies are starting to test it.</p>
+          <p className="text-[24px] font-semibold leading-snug text-px-navy">PEAXIS was not built only to pass a school project. It is a SaaS product for real companies, and the first ones are starting to test it.</p>
         </Reveal>
       </div>
     </Slide>

@@ -52,3 +52,12 @@ Client names, number of clients, revenue, testimonials, usage metrics, uptime fi
 | 122 data models, 28 migrations | `model` blocks in `apps/api/prisma/schema.prisma`; migration folders | Repo |
 | 7 automated CI jobs | Jobs in `.github/workflows/ci.yml`: changes, quality, observability-config, node-tests, ai, prisma-and-api-e2e, security (browser E2E runs in a separate workflow) | Repo |
 | 68/68 production checks | `docs/audits/evidence/hire-manual-deployment-2026-09-21/deployment-outcome.json` (`independentRuntimeChecks`: passed 68, failed 0) | Repo |
+
+## Existing-solutions slide (slide 6)
+| Claim | Source | Type |
+| --- | --- | --- |
+| LinkedIn Hiring Assistant: AI agent for recruiters, sourcing and shortlists, add-on to LinkedIn Recruiter | business.linkedin.com/hire/hiring-assistant | External |
+| Greenhouse: structured, explainable, human-led AI; source-linked Candidate Insights | greenhouse.com/ai-recruiting | External |
+| Ashby: all-in-one ATS + CRM + scheduling + analytics with AI | ashbyhq.com | External |
+| Workable: paid plans from $299/month (list), AI agent with credits | workable.com/pricing (October 2026; prices change) | External |
+| PEAXIS free entry plan and local TND billing | `docs/product/overview.md` (`HIRE_FREE`; local TND / manual commercial access) | Repo |

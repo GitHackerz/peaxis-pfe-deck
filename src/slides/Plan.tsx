@@ -15,13 +15,13 @@ export default function Plan() {
       title={<>Presentation <span className="gradient-text-teal">plan</span></>}
       lead="From the recruitment problem to a working product."
     >
-      <ol className="flex h-full flex-col justify-center gap-3 pb-2">
+      <ol className="flex h-full flex-col justify-center pb-2">
         {parts.map(({ title, detail }, index) => (
-          <li key={title} className="flex items-center gap-6 rounded-xl border border-black/5 bg-white/75 px-6 py-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-px-teal-lt font-mono text-[20px] font-bold text-[#029090]">
+          <li key={title} className="flex items-center gap-8 border-t border-black/10 px-2 py-[18px] last:border-b">
+            <span className="w-12 shrink-0 font-mono text-[22px] font-bold text-[#029090]">
               {String(index + 1).padStart(2, '0')}
             </span>
-            <p className="w-[480px] shrink-0 text-[24px] font-bold leading-tight text-px-navy">{title}</p>
+            <p className="w-[480px] shrink-0 text-[27px] font-bold leading-tight tracking-[-0.01em] text-px-navy">{title}</p>
             <p className="border-l border-px-teal/25 pl-6 text-[18px] leading-snug text-px-muted">{detail}</p>
           </li>
         ))}

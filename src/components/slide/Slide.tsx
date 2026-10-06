@@ -17,8 +17,8 @@ export default function Slide({ section, title, lead, children, source, align = 
   return (
     <div className="slide-root flex flex-col" style={{ padding: '92px 80px 60px' }}>
       <header className={`flex flex-col gap-2 ${center ? 'items-center text-center' : ''}`}>
-        <span className="text-[15px] font-bold uppercase tracking-[0.18em] text-[#029090]">{section}</span>
-        <h2 className="text-[46px] font-extrabold leading-[1.08] tracking-tight text-px-navy">{title}</h2>
+        <span className="flex items-center gap-3 text-[14px] font-bold uppercase tracking-[0.2em] text-[#029090]"><span className="h-[2px] w-8 bg-px-teal" />{section}</span>
+        <h2 className="text-[44px] font-bold leading-[1.1] tracking-[-0.025em] text-px-navy">{title}</h2>
         {lead && <p className="mt-1 max-w-[900px] text-[22px] leading-snug text-px-muted">{lead}</p>}
       </header>
       <div className="relative mt-6 min-h-0 flex-1">{children}</div>

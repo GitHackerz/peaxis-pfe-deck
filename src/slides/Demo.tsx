@@ -7,7 +7,7 @@ const recruiter = ['Application received', 'Review candidate', 'Understand evide
 
 function Lane({ title, items, show }: { title: string; items: string[]; show: boolean }) {
   return (
-    <Reveal show={show} className="flex flex-col items-center justify-center gap-2 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/10">
+    <Reveal show={show} className="flex flex-col items-center justify-center gap-2 rounded-xl bg-white p-6 shadow-sm border border-black/10">
       <p className="text-[15px] font-bold uppercase tracking-[0.2em] text-[#029090]">{title}</p>
       {items.map((t, i) => (
         <div key={t} className="flex flex-col items-center gap-1.5">

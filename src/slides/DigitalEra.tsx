@@ -1,43 +1,57 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Clock, FileText, Sparkles } from 'lucide-react'
+import Person from '../components/story/Person'
 import Reveal from '../components/slide/Reveal'
 import Slide, { Takeaway } from '../components/slide/Slide'
 import type { SlideProps } from './registry'
 
-const chain = ['More applications', 'More screening', 'More coordination', 'Slower decisions', 'Candidate experience suffers']
+const recruiter = ['Receives applications', 'Reads', 'Compares profiles', 'Organizes interviews']
 
 export default function DigitalEra({ step }: SlideProps) {
   return (
     <Slide
       section="Problem"
-      title={<>Recruitment in the <span className="gradient-text-teal">digital era</span></>}
+      title={<>Hiring, seen from <span className="gradient-text-teal">both sides</span></>}
       source="Sources: SHRM, 2025 Recruiting Benchmarking · LinkedIn, Future of Recruiting 2025"
     >
-      <div className="flex h-full flex-col justify-between pb-4">
-        <div className="flex items-center gap-2 pt-4">
-          {chain.map((c, i) => (
-            <div key={c} className="flex items-center gap-2">
-              <Reveal show={step >= 0} delay={i * 0.12}>
-                <div className={`rounded-xl px-4 py-5 text-center text-[19px] font-bold leading-snug ${i === 4 ? 'bg-[#FFF0F0] text-[#C93435]' : 'bg-white text-px-navy shadow-sm ring-1 ring-black/5'}`} style={{ width: 168, minHeight: 92 }}>
-                  {c}
+      <div className="flex h-full flex-col justify-between pb-3">
+        <Reveal show className="grid grid-cols-[300px_1fr] gap-5">
+          <div className="flex items-center gap-4 rounded-xl bg-white px-5 py-4 border border-black/10">
+            <Person variant="candidate" size={64} />
+            <div><p className="text-[13px] font-bold uppercase tracking-widest text-[#029090]">Candidate</p><p className="text-[21px] font-extrabold leading-tight">Sends a CV, then waits</p></div>
+          </div>
+          <div className="flex items-center gap-3 rounded-xl bg-white px-5 py-4 border border-black/10">
+            <span className="shrink-0"><Person variant="recruiter" size={64} /></span>
+            <div className="mr-2"><p className="text-[13px] font-bold uppercase tracking-widest text-px-muted">Recruiter</p></div>
+            <div className="flex flex-1 items-center gap-2">
+              {recruiter.map((r, i) => (
+                <div key={r} className="flex flex-1 items-center gap-2">
+                  <span className="flex-1 rounded-lg bg-black/[0.04] px-2 py-2 text-center text-[16px] font-bold leading-tight">{r}</span>
+                  {i < recruiter.length - 1 && <ArrowRight size={16} className="shrink-0 text-px-teal" />}
                 </div>
-              </Reveal>
-              {i < 4 && <ArrowRight size={22} className="shrink-0 text-px-muted" />}
+              ))}
             </div>
-          ))}
-        </div>
-
-        <Reveal show={step >= 1} className="flex items-baseline gap-5">
-          <span className="text-[64px] font-extrabold leading-none text-px-navy">≈ 1.5 <span className="text-[30px]">months</span></span>
-          <span className="max-w-[560px] text-[21px] leading-snug text-px-muted">median time-to-fill, for executive and non-executive roles alike (SHRM, 2025)</span>
+          </div>
         </Reveal>
 
-        <Reveal show={step >= 2} className="flex flex-col gap-4">
-          <p className="text-[26px] leading-snug text-px-navy">
-            <span className="font-extrabold text-[#029090]">37%</span> of recruiting organizations are already integrating or experimenting with generative AI
-            <span className="text-px-muted"> (LinkedIn, 2025).</span>
-          </p>
-          <Takeaway>AI can remove repetitive work, but hiring also demands trust, transparency and human oversight.</Takeaway>
+        <Reveal show={step >= 1} className="flex items-center gap-5 border-l-[4px] border-[#FE595A] bg-[#FFF0F0]/60 px-6 py-3">
+          <FileText size={26} className="text-[#C93435]" />
+          <p className="text-[24px] font-bold text-[#C93435]">When applications grow, the work becomes hard to manage</p>
         </Reveal>
+
+        <Reveal show={step >= 2} className="grid grid-cols-2 gap-5">
+          <div className="flex items-center gap-5 rounded-xl bg-white px-6 py-4 border border-black/10">
+            <Clock size={34} className="shrink-0 text-px-teal" />
+            <p className="whitespace-nowrap text-[48px] font-extrabold leading-none tracking-tight">≈ 1.5<span className="ml-1 text-[22px]"> months</span></p>
+            <p className="text-[16px] leading-snug text-px-muted">median time to fill a role (SHRM)</p>
+          </div>
+          <div className="flex items-center gap-5 rounded-xl bg-white px-6 py-4 border border-black/10">
+            <Sparkles size={34} className="shrink-0 text-px-teal" />
+            <p className="text-[56px] font-extrabold leading-none tracking-tight text-[#029090]">37%</p>
+            <p className="text-[16px] leading-snug text-px-muted">of recruiting teams already try generative AI (LinkedIn)</p>
+          </div>
+        </Reveal>
+
+        <Reveal show={step >= 3}><Takeaway>AI can help with the workload, but a hiring decision still needs a reason people can understand.</Takeaway></Reveal>
       </div>
     </Slide>
   )

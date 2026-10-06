@@ -5,7 +5,7 @@ import Slide from '../components/slide/Slide'
 import type { SlideProps } from './registry'
 
 function Node({ title, sub, tone = 'plain', icon, className = '' }: { title: string; sub?: string; tone?: 'plain' | 'navy' | 'teal'; icon?: ReactNode; className?: string }) {
-  const cls = tone === 'navy' ? 'bg-px-teal-lt ring-2 ring-px-teal' : tone === 'teal' ? 'bg-px-teal-lt ring-1 ring-px-teal/40' : 'bg-white ring-1 ring-black/10'
+  const cls = tone === 'navy' ? 'bg-px-teal-lt ring-2 ring-px-teal' : tone === 'teal' ? 'bg-px-teal-lt ring-1 ring-px-teal/40' : 'bg-white border border-black/10'
   return (
     <div className={`flex items-center gap-2.5 rounded-xl px-3 py-2.5 ${cls} ${className}`}>
       {icon && <span className="text-px-teal">{icon}</span>}
@@ -42,7 +42,7 @@ export default function ProductionArch({ step }: SlideProps) {
 
         {/* Application server */}
         <Reveal show className="absolute left-[330px] top-[20px] h-[250px] w-[350px]">
-          <div className="relative h-full rounded-2xl border-2 border-px-navy bg-white/80 p-4">
+          <div className="relative h-full rounded-xl border-2 border-px-navy bg-white/80 p-4">
             <Tag>Application server</Tag>
             <Node tone="navy" title="Caddy reverse proxy" sub="Docker containers · only public entry" className="mt-2" />
             <div className="mt-2.5 grid grid-cols-3 gap-2">
@@ -54,7 +54,7 @@ export default function ProductionArch({ step }: SlideProps) {
 
         {/* Data server */}
         <Reveal show={step >= 1} className="absolute left-[790px] top-[20px] h-[242px] w-[330px]">
-          <div className="relative h-full rounded-2xl border-2 border-px-teal bg-white/80 p-4">
+          <div className="relative h-full rounded-xl border-2 border-px-teal bg-white/80 p-4">
             <Tag>Data server</Tag>
             <div className="mt-3 flex flex-col gap-2.5">
               <Node tone="teal" title="PostgreSQL + pgvector" sub="Authoritative data" icon={<Database size={22} />} />

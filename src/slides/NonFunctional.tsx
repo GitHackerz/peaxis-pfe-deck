@@ -1,6 +1,7 @@
 import { Eye, Gauge, Lock, Maximize2, RefreshCw, Wrench } from 'lucide-react'
 import FocusNote from '../components/slide/FocusNote'
 import Slide from '../components/slide/Slide'
+import { IS_EXPORT } from '../lib/mode'
 import type { SlideProps } from './registry'
 
 const items = [
@@ -19,11 +20,11 @@ export default function NonFunctional({ step }: SlideProps) {
         <div className="grid grid-cols-3 gap-x-8 gap-y-4">
           {items.map(({ icon: Icon, n, req }, i) => {
             const active = step === i + 1
-            const dim = step > 0 && !active
+            const dim = !IS_EXPORT && step > 0 && !active
             return (
-              <div key={n} className={`flex flex-col gap-1 rounded-2xl border px-6 py-5 transition-all duration-300 ${active ? 'border-px-teal bg-px-teal-lt shadow-md' : 'border-black/10 bg-white'} ${dim ? 'opacity-35' : ''}`}>
-                <Icon size={28} className="text-px-teal" />
-                <p className="text-[26px] font-extrabold">{n}</p>
+              <div key={n} className={`flex flex-col gap-1 border-t-[3px] px-1 pb-5 pt-4 transition-all duration-300 ${active ? 'border-px-teal' : 'border-black/15'} ${dim ? 'opacity-30' : ''}`}>
+                <Icon size={26} className="text-px-teal" />
+                <p className="text-[26px] font-bold">{n}</p>
                 <p className="text-[18px] text-px-muted">{req}</p>
               </div>
             )

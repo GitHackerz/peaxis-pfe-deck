@@ -1,7 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
-import GridBackground from './components/background/GridBackground'
-import LightAurora from './components/background/LightAurora'
 import LoadingScreen from './components/layout/LoadingScreen'
 import Navigation from './components/layout/Navigation'
 import PresenterTimer from './components/layout/PresenterTimer'
@@ -9,7 +7,7 @@ import ProgressBar from './components/layout/ProgressBar'
 import ExportView from './ExportView'
 import { usePresentation } from './hooks/usePresentation'
 import { slideVariants } from './lib/animations'
-import { MAIN_SLIDE_COUNT, SLIDES } from './lib/slides-data'
+import { SLIDES } from './lib/slides-data'
 
 const STAGE_W = 1280
 const STAGE_H = 720
@@ -33,11 +31,7 @@ export default function App() {
 /** Logos + footer shared by every slide (rendered inside the 16:9 stage). */
 export function StageChrome({ index, step }: { index: number; step: number }) {
   const def = SLIDES[index]
-  const mainNo = SLIDES.slice(0, index + 1).filter((s) => !s.appendix).length
-  const appendixNo = SLIDES.slice(0, index + 1).filter((s) => s.appendix).length
-  const label = def.appendix
-    ? `Backup A${appendixNo}`
-    : `${String(mainNo).padStart(2, '0')} / ${MAIN_SLIDE_COUNT}`
+  const label = `${String(index + 1).padStart(2, '0')} / ${SLIDES.length}`
   return (
     <>
       <div className="absolute left-0 right-0 top-0 z-40 flex items-center justify-between px-10 pt-5 pointer-events-none">
@@ -45,7 +39,8 @@ export function StageChrome({ index, step }: { index: number; step: number }) {
         {!def.hideBrand && <span><img src="/peaxis-logo.png" alt="PEAXIS" style={{ height: 28, width: 'auto' }} /></span>}
         <span><img src="/esprit-logo.png" alt="ESPRIT" style={{ height: 32, width: 'auto' }} /></span>
       </div>
-      <div className={`absolute bottom-[18px] left-[80px] z-40 flex items-center gap-3 text-[12.5px] font-mono tabular-nums text-px-muted`}>
+      <div className="absolute bottom-[42px] left-[80px] right-[80px] z-40 border-t border-black/10" />
+      <div className={`absolute bottom-[16px] left-[80px] z-40 flex items-center gap-3 text-[12.5px] font-mono tabular-nums text-px-muted`}>
         <span>{label}</span>
         <span className="opacity-40">·</span>
         <span className="uppercase tracking-widest">{def.section}</span>
@@ -80,8 +75,6 @@ function PresentationApp() {
   return (
     <>
       <AnimatePresence>{isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}</AnimatePresence>
-      <LightAurora />
-      <GridBackground />
 
       {!isLoading && (
         <div className="fixed inset-0 overflow-hidden" onClick={handleClick}>

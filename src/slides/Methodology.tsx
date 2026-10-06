@@ -1,38 +1,45 @@
-import { RefreshCw } from 'lucide-react'
+import { ArrowRight, FolderGit2, ShieldCheck } from 'lucide-react'
 import Reveal from '../components/slide/Reveal'
-import Slide, { Takeaway } from '../components/slide/Slide'
+import Slide from '../components/slide/Slide'
 import type { SlideProps } from './registry'
 
-const loop = [
-  ['Product backlog', 'Epics and user stories'],
-  ['Sprint', 'Plan, build, test'],
-  ['Increment', 'Working, deployable slice'],
-  ['Review & retro', 'Validate, then adapt'],
+const cycle = [
+  { t: 'Backlog', d: 'What to build, in order', at: 0 },
+  { t: 'Sprint', d: 'Build something that works', at: 0 },
+  { t: 'Review', d: 'Check the result', at: 1 },
+  { t: 'Retrospective', d: 'Improve how I work', at: 1 },
 ]
-const practices = ['Epics, tasks and review checklists tracked in the repository', 'Every change passes automated checks (lint, types, tests) before release', 'Continuous validation with supervisors and first users']
+
+const proof = [
+  { icon: FolderGit2, t: 'Tracked in the repository', d: 'Epics, tasks and review checklists' },
+  { icon: ShieldCheck, t: 'Verified automatically', d: 'Automated checks on every change' },
+]
 
 export default function Methodology({ step }: SlideProps) {
   return (
-    <Slide section="Method" title={<>Methodology: <span className="gradient-text-teal">Scrum</span>, adapted to a solo project</>}>
-      <div className="flex h-full flex-col justify-evenly pb-2">
-        <Reveal show className="relative grid grid-cols-4 gap-5">
-          {loop.map(([t, d], i) => (
-            <div key={t} className={`flex flex-col gap-1 rounded-2xl px-5 py-5 ${i === 0 ? 'bg-px-navy text-white' : 'bg-white shadow-sm ring-1 ring-black/5'}`}>
-              <span className={`text-[14px] font-bold ${i === 0 ? 'text-px-teal' : 'text-[#029090]'}`}>{i + 1}</span>
-              <p className="text-[25px] font-extrabold leading-tight">{t}</p>
-              <p className={`text-[16px] ${i === 0 ? 'text-white/75' : 'text-px-muted'}`}>{d}</p>
+    <Slide section="Methodology" title={<>Scrum, <span className="gradient-text-teal">adapted to working alone</span></>}>
+      <div className="flex h-full flex-col justify-between pb-2">
+        <div className="flex items-stretch gap-3">
+          {cycle.map(({ t, d, at }, i) => (
+            <div key={t} className="flex flex-1 items-stretch gap-3">
+              <Reveal show={step >= at} delay={(i % 2) * 0.1} className="flex-1 border-t-[3px] border-px-teal bg-white px-5 py-5">
+                <span className="font-mono text-[14px] font-bold text-[#029090]">{String(i + 1).padStart(2, '0')}</span>
+                <p className="text-[27px] font-bold leading-tight">{t}</p>
+                <p className="mt-1 text-[16px] leading-snug text-px-muted">{d}</p>
+              </Reveal>
+              {i < cycle.length - 1 && <ArrowRight size={22} className="shrink-0 self-center text-px-teal" />}
+            </div>
+          ))}
+        </div>
+        <Reveal show={step >= 2} className="grid grid-cols-2 gap-10 border-t border-black/10 pt-6">
+          {proof.map(({ icon: Icon, t, d }) => (
+            <div key={t} className="flex items-start gap-4">
+              <Icon size={30} className="mt-1 shrink-0 text-px-teal" />
+              <div><p className="text-[24px] font-bold leading-tight">{t}</p><p className="mt-1 text-[18px] text-px-muted">{d}</p></div>
             </div>
           ))}
         </Reveal>
-        <Reveal show={step >= 1} className="flex items-center gap-3 text-[18px] font-semibold text-[#029090]">
-          <RefreshCw size={22} /> Repeated sprint after sprint; feedback feeds the backlog
-        </Reveal>
-        <Reveal show={step >= 1}>
-          <ul className="flex flex-col gap-2 text-[21px] text-px-navy">
-            {practices.map((p) => <li key={p} className="flex gap-3"><span className="mt-[11px] h-2 w-2 shrink-0 rounded-full bg-px-teal" />{p}</li>)}
-          </ul>
-        </Reveal>
-        <Reveal show={step >= 2}><Takeaway>One person, one backlog, small validated increments: the discipline of Scrum without the ceremony.</Takeaway></Reveal>
+        <Reveal show={step >= 2}><p className="text-[22px] text-px-muted">Then I started with the users: what does each one need to do?</p></Reveal>
       </div>
     </Slide>
   )

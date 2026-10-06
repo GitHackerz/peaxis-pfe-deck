@@ -5,7 +5,7 @@
 
 /* ─── PEAXIS deck design tokens ─────────────────────────────────────────── */
 :root {
-  --bg:        #F8FAFC;
+  --bg:        #F7F8FA;
   --teal:      #00B8B3;
   --teal-lt:   #E6FAF9;
   --teal-dk:   #029090;
@@ -27,10 +27,7 @@ html, body, #root {
 }
 
 .gradient-text-teal {
-  background: linear-gradient(135deg, #00B8B3, #029090);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #029090;
 }
 
 /* ─── Fixed 16:9 stage (all slides are authored at 1280×720) ───────────── */

@@ -1,6 +1,7 @@
 import { Check } from 'lucide-react'
 import FocusNote from '../components/slide/FocusNote'
 import Slide from '../components/slide/Slide'
+import { IS_EXPORT } from '../lib/mode'
 import type { SlideProps } from './registry'
 
 const cols = [
@@ -15,7 +16,7 @@ export default function FunctionalReq({ step }: SlideProps) {
       <div className="flex h-full flex-col justify-between pb-2">
         <div className="grid grid-cols-3 gap-10">
           {cols.map(({ who, items }, i) => {
-            const dim = step > 0 && step !== i + 1
+            const dim = !IS_EXPORT && step > 0 && step !== i + 1
             return (
               <div key={who} className={`flex flex-col gap-3 border-t-[3px] pt-4 transition-all duration-300 ${step === i + 1 ? 'border-px-teal' : 'border-px-teal/60'} ${dim ? 'opacity-30' : ''}`}>
                 <p className="text-[30px] font-extrabold text-px-navy">{who}</p>

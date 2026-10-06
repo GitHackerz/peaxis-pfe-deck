@@ -18,7 +18,7 @@ export default function WhyMatch({ step }: SlideProps) {
           <p className={H}>Job requirements</p><span /><p className={H}>Candidate evidence</p><span /><p className={H}>Assessment</p><span />
           {EXAMPLE_REQUIREMENTS.map((r, i) => (
             <div key={r.label} className="contents">
-              <Reveal show={step >= 1} delay={i * 0.06} className="flex items-baseline gap-2 rounded-lg bg-white px-4 py-1.5 ring-1 ring-black/10">
+              <Reveal show={step >= 1} delay={i * 0.06} className="flex items-baseline gap-2 rounded-lg bg-white px-4 py-1.5 border border-black/10">
                 <span className="text-[21px] font-bold text-px-navy">{r.label}</span><span className="text-[13px] text-px-muted">{r.badge}</span>
               </Reveal>
               <Reveal show={step >= 2} delay={i * 0.06} from="none"><ArrowRight size={20} className="text-px-teal" /></Reveal>

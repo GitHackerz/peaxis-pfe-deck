@@ -6,14 +6,14 @@ import type { SlideProps } from './registry'
 
 function Layer({ tag, tone, children, className = '' }: { tag: string; tone: string; children: ReactNode; className?: string }) {
   return (
-    <div className={`relative rounded-2xl border bg-white/80 p-4 ${className}`} style={{ borderColor: tone }}>
+    <div className={`relative rounded-xl border bg-white/80 p-4 ${className}`} style={{ borderColor: tone }}>
       <span className="absolute -top-3 left-4 rounded-md px-2.5 py-0.5 text-[13px] font-bold uppercase tracking-wider text-white" style={{ background: tone }}>{tag}</span>
       {children}
     </div>
   )
 }
 const Box = ({ icon, title, sub, dark }: { icon: ReactNode; title: string; sub?: string; dark?: boolean }) => (
-  <div className={`flex items-center gap-2.5 rounded-xl px-3 py-2.5 ${dark ? 'bg-px-teal-lt ring-2 ring-px-teal' : 'bg-white ring-1 ring-black/10'}`}>
+  <div className={`flex items-center gap-2.5 rounded-xl px-3 py-2.5 ${dark ? 'bg-px-teal-lt ring-2 ring-px-teal' : 'bg-white border border-black/10'}`}>
     <span className="text-px-teal">{icon}</span>
     <div><p className="text-[17px] font-extrabold leading-tight">{title}</p>{sub && <p className={`text-[13px] leading-tight text-px-muted`}>{sub}</p>}</div>
   </div>
